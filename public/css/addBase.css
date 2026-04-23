@@ -1,0 +1,207 @@
+
+.container-custom {
+    max-width: 90%;
+}
+@media (max-width: 1200px) {
+    .container-custom {
+        max-width: 100%;
+    }
+}
+
+.toast-container {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    z-index: 1050;
+}
+
+.navigation {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.navigation .pagination {
+    display: inline-block;
+}
+
+.navigation .pagination span,
+.navigation .pagination li {
+    display: inline;
+    margin: 0 5px;
+}
+
+.navigation .pagination span a,
+.navigation .pagination li a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+a:hover,
+.navigation .pagination li a:hover {
+    text-decoration: underline;
+}
+
+.card-text .blockLeft{
+    float: left;
+    width: 50%;
+}
+.card-text .blockRight{
+    float: right;
+    width: 49%;
+}
+
+.modal-dialog.modal-lg-artikelinfo {
+    max-width: 60%;
+}
+
+.thumbnail {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    cursor: pointer;
+    margin: 5px;
+}
+.modal-img {
+    width: 100%;
+    height: auto;
+}
+main {
+    overflow-y: auto;
+    height: 100%;
+    padding: 1rem;
+    background-color: #e9ecef;
+}
+.main-layout {
+    flex: 1 1 auto;
+    display: flex;
+    overflow: hidden;
+}
+.sidebar {
+    width: 255px;
+    background-color: #f8f9fa;
+    padding: 0.5rem;
+    overflow-y: auto;
+    border-right: 1px solid #dee2e6;
+}
+.breadcrumb {
+    padding: .75rem 1rem;
+    background-color: #e9ecef;
+    border-radius: .25rem;
+}
+.navbar{
+    padding: .5rem 1rem;
+}
+@media (max-width: 991.98px) {
+    header {
+        padding-top: .25rem !important;
+        padding-bottom: .25rem !important;
+    }
+}
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1900px;
+    }
+}
+@media (min-width: 1600px) {
+    .container-fluid {
+        max-width: 2000px;
+    }
+}
+
+.language-switcher {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.language-switcher .lang-link img {
+    width: 20px; /* Anpassen der Flaggengröße */
+    height: auto;
+    margin-right: 5px;
+}
+
+/* Beispiel für Dropdown-Funktionalität */
+/* Versteckt alle Links außer dem ersten */
+.language-switcher li + li {
+    display: none;
+}
+
+/* Zeigt die anderen Links an, wenn die Liste aktiv ist (z.B. bei Hover) */
+.language-switcher:hover li + li {
+    display: block;
+}
+
+li p {
+    margin-bottom: 0;
+}
+
+.status-green {
+    color: #5cb85c; /* Ein sattes Grün */
+    font-weight: bold;
+}
+
+/* Die anderen Klassen bleiben wie gehabt */
+.status-yellow {
+    color: #f0ad4e;
+    font-weight: bold;
+}
+
+.status-orange {
+    color: #f47c3c;
+    font-weight: bold;
+}
+
+.status-red {
+    color: #d9534f;
+    font-weight: bold;
+}
+.status-gray {
+    color: grey;
+    font-weight: bold;
+}
+.ais-timestamp {
+    font-size: 0.80em;
+    display: inline-block;
+    /* Alternative Werte: 12px, smaller, etc. */
+}
+
+/* In deiner CSS-Datei oder einem <style> Block */
+.ship-flag {
+    position: relative;
+    width: 1.33333em;
+    height: 1em;
+    background-position: 50% center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    font-size: 20px;
+    line-height: 1em;
+    vertical-align: middle;
+    border-radius: 1px;
+    flex-shrink: 0;
+    border: 1px solid rgb(231, 237, 241);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #dee2e6;
+    }
+
+    /* Optional: Ein Icon anzeigen, wenn das Bild fehlt */
+    .ship-flag:empty::before {
+        content: "⚐"; /* Ein einfaches Flaggen-Symbol als Text-Fallback */
+        background-color: #f8f9fa; /* Hellgrauer Hintergrund als Fallback */
+        font-size: 12px; /* Für ein optionales Icon oder Text */
+    }
+
+/* Schriftgröße für Details */
+.ship-details-small {
+    font-size: 0.825rem; /* Etwas kleiner als fs-6 */
+}
+
+/* Farben nach Schiffstyp */
+.type-tanker { color: #d63384; }   /* Magenta/Rosa */
+.type-cargo  { color: #0d6efd; }   /* Blau */
+.type-containerschiff  { color: #fdd50d; }   /* yellow */
+.type-vehicles-carrier { color: #0d6efd; }   /* Blau */
+.type-tug    { color: #fd7e14; }   /* Orange */
+.type-passenger { color: #6f42c1; } /* Lila */
+.type-default { color: #6c757d; }  /* Grau */

@@ -1,0 +1,38 @@
+<div class="flaggenliste" style="width: 100%; max-width: 300px;">
+    {% if (hafenListe is defined) %}
+    <h5>{{ 'Hafenliste'|trans }}</h5>
+    {% for hafen in hafenListe %}
+        <div class="flaggen-item"
+             style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;"
+             title="{{ 'Hafen'|trans }}: {{ hafen.hafenname }} ({{ hafen.land|upper }})&#10;{{ 'Abfahrt'|trans }}: {{ hafen.departure|date('d.m.Y H:i') }}&#10;{{ 'Ankunft'|trans }}: {{ hafen.arrival|date('d.m.Y') }}">
+            {% set flagge = hafen.flagge ?? 'no-image-found.png' %}
+            <div style="flex-grow: 1;">
+                <a href="{{ path('projekt_deails', {id: hafen.schiffsId})}}">
+                    <strong style="display: inline-block; width: 225px;">{{ hafen.schiffsname }}</strong>
+                </a>
+                <small>
+                        <span aria-label="LR"
+                              role="img"
+                              title="{{  hafen.land }}"
+                              style="display: inline-block;
+                                      width: 1.33333em;
+                                      height: 1em;
+                                      background-image: url('/img/flaggen/{{ flagge }}');
+                                      background-position: 50% center;
+                                      background-repeat: no-repeat;
+                                      background-size: contain;
+                                      font-size: 20px;
+                                      line-height: 1em;
+                                      vertical-align: middle;
+                                      border-radius: 1px;
+                                      flex-shrink: 0;
+                                      border: 1px solid rgb(231, 237, 241);">
+                        </span>
+                    {{ hafen.hafenname }}
+                </small>
+                <small>{{ hafen.arrival|date('d.m. H:i') }} - {{ hafen.departure|date('d.m.Y') }}</small>
+            </div>
+        </div>
+    {% endfor %}
+    {% endif %}
+</div>

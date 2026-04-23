@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mein Profil{% endblock %}
+
+{% block body %}
+    <div class="container mt-4">
+        <h1>Mein Profil bearbeiten</h1>
+
+        <div class="card p-4">
+            {{ form_start(form) }}
+
+            <div class="row">
+                <div class="col-md-6">
+                    {{ form_row(form.firstname, {'label': 'Vorname'}) }}
+                </div>
+                <div class="col-md-6">
+                    {{ form_row(form.lastname, {'label': 'Nachname'}) }}
+                </div>
+            </div>
+
+            {# Optional: Passwort Änderung #}
+            {% if form.plainPassword is defined %}
+                {{ form_row(form.plainPassword, {'label': 'Neues Passwort (leer lassen zum Behalten)'}) }}
+            {% endif %}
+
+            <button class="btn btn-primary mt-3">Speichern</button>
+
+            {{ form_end(form) }}
+        </div>
+    </div>
+{% endblock %}

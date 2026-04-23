@@ -1,0 +1,19 @@
+<ul class="language-switcher">
+    <li>
+        <a href="/change/local/{{ app.request.locale }}" class="lang-link">
+            <img src="{{ asset('img/flaggen/' ~ app.request.locale ~ '.svg') }}" alt="{{ app.request.locale }}">
+            <span>{{ app.request.locale|upper }}</span>
+        </a>
+    </li>
+    {% set availableLocales = ['de', 'en'] %}
+    {% for locale in availableLocales %}
+        {% if locale != app.request.locale %}
+            <li>
+                <a href="/change/local/{{ locale }}" class="lang-link">
+                    <img src="{{ asset('img/flaggen/' ~ locale ~ '.svg') }}" alt="{{ locale }}">
+                    <span>{{ locale|upper }}</span>
+                </a>
+            </li>
+        {% endif %}
+    {% endfor %}
+</ul>

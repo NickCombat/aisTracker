@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   version="1.0"
+   width="500"
+   height="300"
+   viewBox="0 0 500 300"
+   id="Flagge"
+   xml:space="preserve">
+
+<rect
+   width="500"
+   height="300"
+   style="fill:red"
+   id="Rot" />
+<rect
+   width="500"
+   height="100"
+   y="100"
+   style="fill:#fd0"
+   id="Gelb" />
+</svg>

@@ -1,0 +1,87 @@
+<nav id="main-nav" class="d-none d-md-block navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+
+            <li class="nav-item">
+                <a class="nav-link" href="{{ path('app_home') }}">{{ 'Home'|trans }}</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="dropdownProjekte" role="button"
+                   data-bs-toggle="dropdown" aria-expanded="false">
+                    {{ 'Projekte'|trans }}
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownProjekte">
+                    <li><a class="dropdown-item" href="{{ path('projekte_uebersicht_list') }}">{{'Übersicht'|trans}}</a></li>
+                    {% if is_granted('ROLE_USER') %}
+                        <li><a class="dropdown-item" href="{{ path('projekt_anlegen') }}">{{ 'neu anlegen'|trans }}</a></li>
+                        <li><a class="dropdown-item" href="{{ path('projekt_ais_map') }}">{{ 'Übersicht Karte'|trans }}</a></li>
+                    {% endif %}
+                    {% if is_granted('ROLE_USER') %}
+                        <li><a class="dropdown-item" href="{{ path('projekt_archiv_list') }}">{{ 'Archivierte Projekte'|trans }}</a></li>
+                    {% endif %}
+                </ul>
+            </li>
+            {% if is_granted('ROLE_USER') %}
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdownEinstellungen" role="button"
+                       data-bs-toggle="dropdown" aria-expanded="false">
+                        {{ 'Einstellungen'|trans }}
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownEinstellungen">
+                        <li><a class="dropdown-item" href="{{ path('einstellungen_seitenpatameter_liste') }}">{{ 'Parameter'|trans }}</a></li>
+                        <li><a class="dropdown-item" href="{{ path('schiffstypen_edit') }}">{{ 'Schiffstypen'|trans }}</a></li>
+                        <li><a class="dropdown-item" href="{{ path('ship_status') }}">{{ 'Projekt Status'|trans }}</a></li>
+                        <li><a class="dropdown-item" href="{{ path('flaggen_edit') }}">{{ 'Flaggenstaaten'|trans }}</a></li>
+                        <li><a class="dropdown-item" href="{{ path('hafen_edit') }}">{{ 'Hafenliste'|trans }}</a></li>
+                        {% if is_granted('ROLE_ADMIN') %}
+                            <li><a class="dropdown-item" href="{{ path('sec_user_index') }}">{{ 'Benutzer'|trans }}</a></li>
+                            <li><a class="dropdown-item" href="{{ path('sec_user_login_log') }}">{{ 'Login Log'|trans }}</a></li>
+                        {% endif %}
+                    </ul>
+                </li>
+            {% endif %}
+            {% if is_granted('ROLE_ADMIN') %}
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdownFunktionen" role="button"
+                       data-bs-toggle="dropdown" aria-expanded="false">
+                        {{ 'Funktionen'|trans }}
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownFunktionen">
+                        <li><a class="dropdown-item" href="{{ path('app_recover_ais_api_daten') }}">{{ 'Recover AIS'|trans }}</a></li>
+                        <li><a class="dropdown-item" href="{{ path('ais_control') }}">{{ 'AIS Stream Monitor'|trans }}</a></li>
+                    </ul>
+                </li>
+            {% endif %}
+
+            {% if app.user %}
+                <li class="nav-item d-flex align-items-center">
+                    <a class="nav-link" href="{{ path('app_profile', {'id': app.user.id}) }}">
+                        <i class="fa fa-user"></i> {% if app.user.firstname %}
+                            {{ app.user.firstname }} {{ app.user.lastname }}
+                        {% else %}
+                            {{ app.user.userIdentifier }}
+                        {% endif %}
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link btn btn-outline-light btn-sm px-3" href="{{ path('app_logout') }}">
+                        {{ 'Logout'|trans }}
+                    </a>
+                </li>
+            {% else %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('app_login') }}">{{ 'Login'|trans }}</a>
+                </li>
+            {% endif %}
+            {#            <li class="nav-item">#}
+            {#                <a class="nav-link disabled" aria-disabled="true">Disabled</a>#}
+            {#            </li>#}
+        </ul>
+    </div>
+</nav>

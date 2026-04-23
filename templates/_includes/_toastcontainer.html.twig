@@ -1,0 +1,28 @@
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+    {% for type, messages in app.flashes() %}
+        {% for message in messages %}
+            <div class="toast align-items-center text-white {% if type == 'success' %}bg-success{% else %}bg-warning{% endif %} border-0"
+                 role="alert"
+                 aria-live="assertive"
+                 aria-atomic="true">
+
+                <div class="d-flex">
+                    <div class="toast-body">
+                        <strong>
+                            {% if type == 'success' %}
+                                Erfolg:
+                            {% else %}
+                                Achtung:
+                            {% endif %}
+                        </strong>
+                        {{message}}
+                    </div>
+                    <button type="button"
+                            class="btn-close btn-close-white me-2 m-auto"
+                            data-bs-dismiss="toast"
+                            aria-label="{{ 'Close'|trans }}"></button>
+                </div>
+            </div>
+        {% endfor %}
+    {% endfor %}
+</div>

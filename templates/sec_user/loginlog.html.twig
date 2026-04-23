@@ -1,0 +1,66 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'Benutzerverwaltung'|trans }}{% endblock %}
+
+{% block headline%}{{ headline|trans }}{% endblock %}
+
+{% block breadcrumb %}
+    {{ include('_includes/_breadcrumb.html.twig') }}
+{% endblock %}
+
+{% block body %}
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1>{{ 'Login Log'|trans }}</h1>
+    </div>
+
+    <div class="card shadow">
+        <div class="card-body p-0">
+            <table class="table table-striped table-hover mb-0">
+                <thead class="table-light">
+                <tr>
+                    <th>{{ 'Name'|trans }}</th>
+                    <th>{{ 'E-Mail'|trans }}</th>
+                    <th>{{ 'Rollen'|trans }}</th>
+                    <th>{{ 'Aktion'|trans }}</th>
+                    <th>{{ 'Herkunft'|trans }}</th>
+                    <th>{{ 'Zeit'|trans }}</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for login in sec_users %}
+                    <tr>
+                        <td>{{ login.user.firstname }} {{ login.user.lastname }}</td>
+                        <td>{{ login.user.email }}</td>
+                        <td>
+                            {% for role in login.user.roles %}
+                                {% if role == 'ROLE_ADMIN' %}
+                                    <span class="badge bg-danger">{{ 'Admin'|trans }}</span>
+                                {% elseif role == 'ROLE_USER' %}
+                                    <span class="badge bg-secondary">{{ 'User'|trans }}</span>
+                                {% else %}
+                                    <span class="badge bg-info">{{ role }}</span>
+                                {% endif %}
+                            {% endfor %}
+                        </td>
+                        <td>
+                            {{ login.status }}
+                        </td>
+                        <td>
+                            {{ login.ipAdresse }}
+                        </td>
+                        <td>
+                            {{ login.loginTime|date('d.m.Y H:i') }}
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="5" class="text-center py-4">{{ 'Keine Login Einträge gefunden'|trans }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

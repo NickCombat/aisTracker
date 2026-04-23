@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}SecUser{% endblock %}
+
+{% block body %}
+    <h1>SecUser</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ sec_user.id }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ sec_user.email }}</td>
+            </tr>
+            <tr>
+                <th>Roles</th>
+                <td>{{ sec_user.roles ? sec_user.roles|json_encode : '' }}</td>
+            </tr>
+            <tr>
+                <th>Password</th>
+                <td>{{ sec_user.password }}</td>
+            </tr>
+            <tr>
+                <th>Firstname</th>
+                <td>{{ sec_user.firstname }}</td>
+            </tr>
+            <tr>
+                <th>Lastname</th>
+                <td>{{ sec_user.lastname }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('sec_user_index') }}">back to list</a>
+
+    <a href="{{ path('sec_user_edit', {'id': sec_user.id}) }}">edit</a>
+
+    {{ include('sec_user/_delete_form.html.twig') }}
+{% endblock %}

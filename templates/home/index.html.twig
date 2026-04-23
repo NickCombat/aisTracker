@@ -1,0 +1,75 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Projekte{% endblock %}
+
+{% block headline%}{{ 'Projekte'|trans }}{% endblock %}
+
+{% block breadcrumb %}
+    <nav aria-label="breadcrumb" class="d-none d-lg-block px-3 pt-1 pb-2 bg-white border-bottom">
+        <ol class="breadcrumb small mb-0">
+            <li class="breadcrumb-item"><a href="/">{{ 'Home'|trans }}</a></li>
+        </ol>
+    </nav>
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <style>
+        .example-wrapper { margin: 1em auto; font: 18px/1.5 sans-serif; }
+        .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+
+        .health-container {
+            width: 120px;
+            cursor: help;
+        }
+        .health-progress-bg {
+            height: 8px;
+            background-color: #e9ecef;
+            border-radius: 4px;
+            overflow: hidden;
+            display: flex;
+        }
+        .health-bar {
+            height: 100%;
+            transition: width 0.6s ease;
+        }
+        /* Pulsieren bei kritischen Fehlern */
+        .health-pulse-red {
+            animation: health-blink 1.5s infinite;
+        }
+        @keyframes health-blink {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+    </style>
+{% endblock %}
+
+{% block submenue %}
+    <nav class="sidebar">
+        <ul class="nav flex-column">
+            <li class="nav-item">
+                <b>{{ 'calendar.week_short'|trans({ '%weekNumber%': "now"|date("W") }) }}</b> <span id="date-time-display" data-days-json="{{ translated_days|json_encode }}"></span>
+            </li>
+        </ul>
+        {{ include('_includes/_shipStatusListe.html.twig') }}
+    </nav>
+{% endblock %}
+
+{% block body %}
+    <div class="example-wrapper">
+
+
+        <div class="row g-0">
+            <div  class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-1">
+                {% if(shipdatas) %}
+                    {% for shipdata in shipdatas %}
+                        <div class="col d-flex">
+                            {{ include('projekte_uebersicht/shipCard.html.twig') }}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

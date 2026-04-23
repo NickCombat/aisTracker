@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %} | {% endblock %}</title>
+    <meta name="description" content="Research & Development">
+    <meta name="author" content="Research & Development">
+    <link rel="icon" href="" sizes="32x32">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <script src="/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="{{ asset('css/addBase.css') }}">
+    {% endblock %}
+</head>
+<body class="d-flex flex-column vh-100">
+<div class="container py-3 px-md-4 d-flex flex-column flex-grow-1">
+    <!-- Toast Container -->
+    {{ include('_includes/_toastcontainer.html.twig') }}
+
+    <!-- Seiten Überschrift -->
+    {# --- HEADER --- #}
+    <header class="border-bottom pb-2 mb-3">
+        <div class="d-flex justify-content-between align-items-center">
+            <span class="h5 mb-0">{% block headline %}Page Headline{% endblock %}</span>
+            <span class="h5 mb-0 rightalign">
+            {{ include('_includes/_languageSelect.html.twig') }}
+        </span>
+            {# Burger nur auf XS und SM sichtbar #}
+            <button class="btn btn-outline-secondary d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hauptnavigationsleiste -->
+    {{ include('_includes/_mainnavbox.html.twig') }}
+
+    <!-- breadcrumb -->
+    {% block breadcrumb %}
+        {{ include('_includes/_breadcrumb.html.twig') }}
+    {% endblock %}
+
+    <!-- Contentbereich mit fester Sidebar + scrollbarem Main -->
+    <div class="main-layout">
+        {% set translated_days = [
+            'days.sun'|trans,
+            'days.mon'|trans,
+            'days.tue'|trans,
+            'days.wed'|trans,
+            'days.thu'|trans,
+            'days.fri'|trans,
+            'days.sat'|trans
+        ] %}
+        {% block submenue %}
+            {# Sidebar #}
+            <nav class="col-md-3 col-lg-2 d-none d-md-block bg-light sidebar overflow-auto">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <b>{{ 'calendar.week_short'|trans({ '%weekNumber%': "now"|date("W") }) }}</b> <span id="date-time-display" data-days-json="{{ translated_days|json_encode }}"></span>
+                    </li>
+                </ul>
+            </nav>
+        {% endblock %}
+
+        <main role="main" class="col-md-9 col-lg-10 overflow-auto">
+            <h2>{% block subheadline %}{% endblock %}</h2>
+            {% block body %}{{ 'Fehler - Seite nicht gefunden.'|trans }}{% endblock %}
+        </main>
+    </div>
+</div>
+
+{% if (currentDate is defined ) %}
+    <!-- API Modal HafenLog -->
+    <div class="modal fade" id="updatePortDataModal" tabindex="-1" aria-labelledby="updatePortDataModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="updatePortDataModalLabel">{{ 'Hafen-Logbuch aktualisieren'|trans }}</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form action="{{ path('ship_update_port_data', {'id': shipdata.id}) }}" method="post">
+                    <div class="modal-body">
+                        <p>{{ 'hafenlog.edit'|trans }}</p>
+
+                        {# CSRF-Token für die Sicherheit #}
+                        <input type="hidden" name="_token" value="{{ csrf_token('update-port-data-' ~ shipdata.id) }}">
+
+                        <div class="mb-3">
+                            <label for="todate" class="form-label">{{ 'Von Datum'|trans }}</label>
+                            {# Der Benutzer gibt das Startdatum ein. Max 'heute'. #}
+                            <input type="date" class="form-control" id="todate" name="todate" required
+                                   max="{{ currentDate }}">
+                        </div>
+                        <div class="mb-3">
+                            <label for="fromdate" class="form-label">{{ 'Bis Datum'|trans }}</label>
+                            {# Das Enddatum ist auf 'heute' gesetzt und nicht änderbar. #}
+                            <input type="date" class="form-control" id="fromdate" name="fromdate" required
+                                   value="{{ currentDate }}"
+                                   max="{{ currentDate }}">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{ 'Abbrechen'|trans }}</button>
+                            <button type="submit" class="btn btn-primary">{{ 'Daten abrufen'|trans }}</button>
+                        </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endif %}
+<!-- Bootstrap 5 Bundle (inkl. Popper) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+{% block javascript %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script>
+    // 1. Globale Konfiguration & PDF.js
+    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
+    // 2. Hilfsfunktionen
+    function redirectTo(url) { window.location.href = url; }
+
+    function updateDateTime() {
+    const displaySpan = document.getElementById('date-time-display');
+    if (!displaySpan) return;
+    const daysJson = displaySpan.dataset.daysJson ?? '["So","Mo","Di","Mi","Do","Fr","Sa"]';
+    const days = JSON.parse(daysJson);
+    const now = new Date();
+    const formattedDate = `${days[now.getUTCDay()]} ${now.getUTCDate().toString().padStart(2, '0')}.${(now.getUTCMonth() + 1).toString().padStart(2, '0')}.${now.getUTCFullYear()}`;
+    const formattedTime = `${now.getUTCHours().toString().padStart(2, '0')}:${now.getUTCMinutes().toString().padStart(2, '0')} UTC`;
+    displaySpan.innerText = `${formattedDate} ${formattedTime}`;
+}
+
+    const MaintenanceManager = {
+    // Initialisiert die Event-Listener
+    init: function() {
+    const saveBtn = document.getElementById('btnSaveDetails');
+    if (saveBtn) {
+    saveBtn.addEventListener('click', () => this.saveDetails());
+}
+},
+
+    // Sammelt Daten und sendet sie an den Controller
+    saveDetails: function() {
+    const btn = document.getElementById('btnSaveDetails');
+    const originalText = btn.innerHTML;
+    const fileInput = document.getElementById('inputImage');
+
+    const formData = new FormData();
+
+    // IDs und Stammdaten
+    formData.append('db_id', document.getElementById('modalDbId').value);
+    formData.append('id', document.getElementById('modalCornerId').value);
+    formData.append('ship_id', document.getElementById('modalShipId')?.value || '');
+
+    // Die Felder, die Techniker bearbeiten können
+    formData.append('serial', document.getElementById('inputSerial').value);
+    formData.append('mac', document.getElementById('inputMac').value);
+
+    // Wartungs-Daten
+    formData.append('action', document.getElementById('inputAction').value);
+    formData.append('comment', document.getElementById('inputComment').value);
+
+    if (fileInput && fileInput.files.length > 0) {
+    formData.append('image', fileInput.files[0]);
+}
+
+    // UI Feedback
+    btn.disabled = true;
+    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i>...';
+
+    fetch('/deck/save-details', {
+    method: 'POST',
+    body: formData
+})
+    .then(r => r.json())
+    .then(data => {
+    if (data.status === 'success') {
+    // Zentraler Reload oder DOM-Update
+    location.reload();
+} else {
+    alert('Fehler: ' + data.message);
+    btn.disabled = false;
+    btn.innerHTML = originalText;
+}
+})
+    .catch(err => {
+    console.error('Fehler:', err);
+    btn.disabled = false;
+    btn.innerHTML = originalText;
+});
+}
+};
+
+    // PDF Thumbnail Funktion
+    function generatePdfThumbnail(pdfUrl, canvasId) {
+    const canvas = document.getElementById(canvasId);
+    if (!canvas) {
+    console.error("Canvas nicht gefunden:", canvasId);
+    return;
+}
+
+    // PDF.js laden
+    const loadingTask = pdfjsLib.getDocument({
+    url: pdfUrl,
+    disableAutoFetch: true,
+    disableStream: true
+});
+
+    loadingTask.promise.then(pdf => {
+    console.log("PDF geladen:", pdfUrl);
+    pdf.getPage(1).then(page => {
+    const context = canvas.getContext('2d');
+    const viewport = page.getViewport({ scale: 0.5 }); // Etwas größer für bessere Qualität
+
+    canvas.height = viewport.height;
+    canvas.width = viewport.width;
+
+    const renderContext = {
+    canvasContext: context,
+    viewport: viewport
+};
+    page.render(renderContext);
+});
+}).catch(err => {
+    console.error("Fehler beim PDF-Rendering für " + canvasId + ":", err.message);
+    // Falls das Rendering fehlschlägt, zeigen wir das Icon als Fallback deutlicher
+    canvas.style.display = 'none';
+    const fallback = canvas.nextElementSibling;
+    if (fallback) fallback.classList.remove('opacity-25');
+});
+}
+
+    // 3. Initialisierung bei DOMContentLoaded
+    document.addEventListener('DOMContentLoaded', function () {
+    // Zeit & Tooltips
+    updateDateTime();
+    setInterval(updateDateTime, 60000);
+
+    // Initialisiert alle Tooltips auf der Seite
+    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+    const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+
+    // Toasts
+    const toastElList = [].slice.call(document.querySelectorAll('.toast'));
+    toastElList.map(el => new bootstrap.Toast(el, { autohide: false }).show());
+
+
+    if (modalBody) {
+    // Spinner anzeigen
+    modalBody.innerHTML = `
+                        <div class="modal-body d-flex justify-content-center p-5">
+                            <div class="spinner-border text-primary" role="status"></div>
+                        </div>`;
+
+
+
+
+
+        // --- ZENTRALE FUNKTION ZUM ÖFFNEN DES Maintenance-MODALS ---
+        MaintenanceManager.init();
+        // --- ZENTRALE EVENT-DELEGATION FÜR WARTUNGS-BUTTONS ---
+        document.addEventListener('click', function(e) {
+            // Prüfe, ob das geklickte Element (oder ein Parent davon) ein Wartungs-Button ist
+            const btn = e.target.closest('.btn-maintenance-list, .btn-locate');
+
+            if (btn && btn.classList.contains('btn-maintenance-list')) {
+                e.preventDefault();
+
+                // Daten aus den Attributen auslesen
+                const dbId = btn.getAttribute('data-db-id');
+                const pos  = btn.getAttribute('data-position');
+                const ship = btn.getAttribute('data-ship-id');
+
+                // Deine globale Funktion aufrufen
+                if (typeof openMaintenanceModal === "function") {
+                    openMaintenanceModal(dbId, pos, ship);
+                }
+            }
+        });
+
+    });
+
+    // Modul-Funktionen (Global verfügbar)
+    /**
+     * Globaler Aufruf zum Öffnen des Wartungsmodals
+     */
+    function openMaintenanceModal(dbId, position, shipId)
+    {
+        const modalElement = document.getElementById('detailModal');
+        if (!modalElement) return;
+
+        const detailModal = bootstrap.Modal.getOrCreateInstance(modalElement);
+        const historyList = document.getElementById('logHistoryList');
+
+        // 1. UI Reset
+        document.getElementById('modalTitle').innerText = 'Position: ' + position;
+        document.getElementById('modalCornerId').value = position;
+        document.getElementById('modalDbId').value = dbId;
+        document.getElementById('modalShipId').value = shipId;
+        document.getElementById('inputAction').selectedIndex = 0;
+
+        // Felder leeren / Loading State
+        document.getElementById('inputSerial').value = 'Laden...';
+        document.getElementById('inputMac').value = 'Laden...';
+        document.getElementById('inputComment').value = '';
+        document.getElementById('logHistoryList').innerHTML = '<div class="text-center text-muted"><i class="fas fa-spinner fa-spin"></i> Lade Daten...</div>';
+        document.getElementById('modalItemPic').src = '/images/no-image-found.png';
+        document.getElementById('inputImage').value = '';
+
+        // 2. Modal zeigen
+        detailModal.show();
+
+        // 3. Daten laden
+        fetch('/deck/get-details', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+                db_id: dbId,      // Wir nutzen hier direkt die DB-ID, das ist sicherer
+                id: position,     // Fallback
+                ship_id: shipId
+            })
+        })
+        .then(r => r.json())
+        .then(data => {
+            document.getElementById('inputSerial').value = data.serial || '';
+            document.getElementById('inputMac').value = data.mac || '';
+
+            // Historie rendern (Logik wie gehabt)
+            const list = document.getElementById('logHistoryList');
+            if (data.logs && data.logs.length > 0) {
+                let html = '<ul class="list-group list-group-flush">';
+                data.logs.forEach(log => {
+                    let imageHtml = '';
+                    if (log.image)
+                    {
+                        imageHtml = `<br>
+                            <button type="button"
+                                    onclick="showImagePreview('/img/maintenance/${log.image}')"
+                                    class="btn btn-link btn-sm p-0 text-primary text-decoration-none shadow-none">
+                                <i class="fas fa-image"></i> Foto ansehen
+                            </button>
+                            <img src="/img/maintenance/${log.image}" style="display:none;" loading="lazy">`;
+                    }
+                    let badgeColor = 'secondary';
+                    if (log.action === 'BATTERY_CHANGE') badgeColor = 'success';
+                    if (log.action === 'DAMAGE_REPORT') badgeColor = 'danger';
+
+                    html += `
+                        <li class="list-group-item px-0 py-2">
+                                <div class="d-flex w-100 justify-content-between">
+                                    <small class="mb-1 text-muted">${log.date}</small>
+                                    <span class="badge bg-${badgeColor}">${log.action}</span>
+                                </div>
+                                <p class="mb-1 small">
+                                    ${log.comment || '-'}
+                                    ${imageHtml} </p>
+                                <small class="text-muted">Von: ${log.user}</small>
+                            </li>`;
+                    });
+                html += '</ul>';
+                list.innerHTML = html;
+            } else {
+                list.innerHTML = '<div class="text-center py-2">Keine Einträge.</div>';
+            }
+        });
+    }
+
+    function initializeDropzoneModal() {
+        const dropZone = document.getElementById('drop-zone');
+        const fileInput = document.getElementById('image_upload_images');
+        const previewContainer = document.getElementById('preview-container');
+
+        if (!dropZone || !fileInput) return;
+
+        dropZone.onclick = () => fileInput.click();
+        dropZone.ondragover = (e) => { e.preventDefault(); dropZone.classList.add('dragover'); };
+        dropZone.ondragleave = () => dropZone.classList.remove('dragover');
+        dropZone.ondrop = (e) => {
+            e.preventDefault();
+            dropZone.classList.remove('dragover');
+            fileInput.files = e.dataTransfer.files;
+
+            // Vorschau
+            if (previewContainer) {
+                previewContainer.innerHTML = '';
+                Array.from(fileInput.files).forEach(file => {
+                    const reader = new FileReader();
+                    reader.onload = (ev) => {
+                        const img = document.createElement('img');
+                        img.src = ev.target.result;
+                        img.classList.add('img-thumbnail', 'm-1');
+                        img.style.maxHeight = '80px';
+                        previewContainer.appendChild(img);
+                    };
+                    reader.readAsDataURL(file);
+                });
+            }
+        };
+    }
+
+    function initializeDeleteButtons() {
+        document.querySelectorAll('.delete-image').forEach(btn => {
+            btn.onclick = function(e) {
+                e.preventDefault();
+                const id = this.dataset.id;
+                const wrapper = this.closest('.image-wrapper') || this.closest('.col');
+                if (confirm('Löschen bestätigen?')) {
+                    fetch(`/net/galerie/image-delete/${id}`, {
+                        method: 'DELETE',
+                        headers: {'X-Requested-With': 'XMLHttpRequest'}
+                    })
+                    .then(r => r.json())
+                    .then(data => { if(data.success) wrapper.remove(); });
+                }
+            };
+        });
+    }
+
+    // Copy-To-Clipboard & Keep-Alive Logik (wie bisher, aber gekapselt)
+    setInterval(function() {
+        fetch('{{ path('app_keep_alive') }}', { method: 'POST', headers: {'X-Requested-With': 'XMLHttpRequest'} })
+        .catch(() => console.warn("Keep-alive failed"));
+    }, 300000);
+</script>
+{% endblock %}
+</body>
+</html>
