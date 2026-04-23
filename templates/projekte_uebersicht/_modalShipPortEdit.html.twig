@@ -1,0 +1,30 @@
+<div class="modal fade" id="editPortModal" tabindex="-1" aria-labelledby="editPortModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        {# Die Action-URL wird auf die neue Controller-Route zeigen #}
+        <form method="post" action="/api/port-visit/update">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editPortModalLabel">{{ 'Hafenaufenthalt bearbeiten'|trans }}</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    {# Versteckte IDs #}
+                    <input type="hidden" name="arrival_id" id="editArrivalId">
+                    <input type="hidden" name="departure_id" id="editDepartureId">
+
+                    <div class="mb-3">
+                        <label for="editArrival" class="form-label">{{ 'Ankunft'|trans }} (GMT)</label>
+                        <input type="datetime-local" class="form-control" id="editArrival" name="arrival" step="60">
+                    </div>
+                    <div class="mb-3">
+                        <label for="editDeparture" class="form-label">{{ 'Abfahrt'|trans }} (GMT)</label>
+                        <input type="datetime-local" class="form-control" id="editDeparture" name="departure" step="60">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">{{ 'Speichern'|trans }}</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

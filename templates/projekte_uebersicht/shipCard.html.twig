@@ -1,0 +1,266 @@
+<!-- uebersicht/liste -->
+{# shipCard.html.twig #}
+<div class="card shadow-sm d-flex flex-column h-100 w-100"
+     data-id="{{ shipdata.id }}"
+     style="border: 2px solid rgba(90,98,104,0.73); border-radius: 5px; background-color: #e9ecef; overflow: hidden;"
+>
+    <a href="{{ path('projekt_deails', {'id': shipdata.id}) }}" title="Zum Projekt">
+        <div style="height: 180px; width: 100%; overflow: hidden; background-color: #dee2e6;">
+            {% if shipdata.pic %}
+                <img src="/img/projekte/{{ shipdata.pic }}" class="w-100 h-100" style="object-fit: cover;" alt="{{ shipdata.name }}">
+            {% else %}
+                <img src="{{ asset('images/no-image-found.png') }}" class="w-100 h-100" style="object-fit: cover;" alt="{{ shipdata.name }}">
+            {% endif %}
+        </div>
+    </a>
+    <div class="card-body d-flex flex-column flex-grow-1"
+         style="padding: 0.25rem;
+         {% if shipdata.isInLteRange %} background-color: #b0efb0;
+         {% else %} background-color: #e9ecef;
+         {% endif %}">
+        <h5 class="card-title d-flex justify-content-between align-items-center mb-3">
+            <b class="ms-1">{{ shipdata.name }}</b>
+            {% if shipdata.flag and shipdata.flag.flagge %}
+                {# Flagge mit Bootstrap Tooltip #}
+                <span class="ship-flag me-1"
+                      role="img"
+                      aria-label="Flagge von {{ shipdata.flag.amtlichekurzform }}"
+                      data-bs-toggle="tooltip"
+                      data-bs-placement="top"
+                      data-bs-title="{{ shipdata.flag.amtlichekurzform }}"
+                      style="background-image: url('/img/flaggen/{{ shipdata.flag.flagge }}'); cursor: help;">
+                </span>
+            {% else %}
+                {# Fallback ohne Tooltip oder mit festem Text #}
+                <span class="ship-flag me-1"
+                      data-bs-toggle="tooltip"
+                      data-bs-title="Keine Flagge hinterlegt"
+                      aria-label="Keine Flagge"
+                      style="cursor: help;">
+                </span>
+            {% endif %}
+        </h5>
+        <div class="card-text small">
+            <div style="min-height: 180px;">
+                {% set total   = shipdata.total_count|default(0) %}
+                {% set defects = shipdata.defect_count|default(0) %}
+                {% set checks  = shipdata.check_count|default(0) %}
+                {% set okCount = total - defects - checks %}
+
+                {% if total > 0 %}
+                    {# Gewichtete Berechnung: Prüf-Fälle zählen nur zu 50% als 'gesund' #}
+                    {% set percent = (((okCount + (checks * 0.5)) / total) * 100)|round %}
+
+                    {# Anteile für die Stacked Bar berechnen #}
+                    {% set okWidth = (okCount / total * 100) %}
+                    {% set checkWidth = (checks / total * 100) %}
+                    {% set defectWidth = (defects / total * 100) %}
+                {% else %}
+                    {# Fallback für Schiffe ohne Komponenten #}
+                    {% set total = 1 %}
+                    {% set percent = 100 %}
+                    {% set okWidth = 100 %}
+                    {% set checkWidth = 0 %}
+                    {% set defectWidth = 0 %}
+                {% endif %}
+                <div class="health-container"
+                     data-bs-toggle="tooltip"
+                     data-bs-html="true"
+                     title="<div class='text-start'>
+                                <strong>{{ 'Status-Details'|trans }}</strong><br>
+                                <span class='text-success'>●</span> {{ 'Einsatzbereit'|trans }}: {{ okCount }}<br>
+                                <span class='text-warning'>●</span> {{ 'Prüfen'|trans }}: {{ checks }}<br>
+                                <span class='text-danger'>●</span> {{ 'Defekt'|trans }}: {{ defects }}<br>
+                                <hr class='my-1 border-white opacity-25'>
+                                <small>{{ 'Letzte Wartung'|trans }}: {{ shipdata.last_action ? shipdata.last_action|date('d.m.Y') : '-' }}</small>
+                            </div>">
+                    <div class="progress" style="height: 6px; background-color: rgba(0,0,0,0.1);">
+                        <div class="progress-bar bg-success" style="width: {{ (okCount/total*100)|default(0) }}%"></div>
+                        <div class="progress-bar bg-warning" style="width: {{ (checks/total*100)|default(0) }}%"></div>
+                        <div class="progress-bar bg-danger" style="width: {{ (defects/total*100)|default(0) }}%"></div>
+                    </div>
+
+                    <div class="d-flex justify-content-between mt-1" style="font-size: 0.65rem;">
+                        <span class="text-muted">Health: {{ percent }}%</span>
+                        {% if defects > 0 %}
+                            <span class="text-danger fw-bold"><i class="fas fa-exclamation-triangle"></i> {{ defects }}</span>
+                        {% endif %}
+                    </div>
+                </div>
+                {# Sicherer Zugriff auf das Datum der letzten Wartung #}
+                {% if shipdata.last_action %}
+                    <small class="text-muted">Letzte Aktivität: {{ shipdata.last_action|date('d.m.Y') }}</small>
+                {% else %}
+                    <small class="text-muted">Noch keine Wartung</small>
+                {% endif %}
+                {% set typeClass = 'type-' ~ (shipdata.type|lower|replace({' ': '-'})) %}
+                <div  class="d-flex justify-content-between mb-1 {{ typeClass|default('type-default') }}">
+                    {{ shipdata.type|trans }}
+                {% if ( shipdata.imo != 0 or shipdata.mmsi != 0 ) %}
+                    {% if app.user %}
+                        <form action="{{ path('ship_update_position', {'id': shipdata.id}) }}" method="post"
+                              class="d-inline">
+                            <input type="hidden" name="_token"
+                                   value="{{ csrf_token('update-position-' ~ shipdata.id) }}">
+                            <button type="submit" class="btn btn-outline-secondary btn-sm"
+                                    title="{{ 'button.update_position.title'|trans }}">
+                                <i class="fa-solid fa-earth-europe"></i>
+                            </button>
+                        </form>
+                        {% set btnClass = shipdata.aisUpdate ? 'btn-success' : 'btn-danger' %}
+                        <button
+                                class="btn btn-sm toggle-ais-btn {{ btnClass }}"
+                                data-ship-id="{{ shipdata.id }}"
+                                data-current-status="{{ shipdata.aisUpdate ? '1' : '0' }}"
+                                data-toggle-url="{{ path('projekt_toggle_ais', {id: shipdata.id}) }}"
+                                title="AIS-Update ist {% if shipdata.aisUpdate %}AN{% else %}AUS{% endif %}"
+                        >
+                            {% if shipdata.aisUpdate %}
+                                {{ 'AKTIV'|trans }}
+                            {% else %}
+                                {{ 'INAKTIV'|trans }}
+                            {% endif %}
+                        </button>
+                    {% else %}
+                        {% set btnClass = shipdata.aisUpdate ? 'btn-success' : 'btn-danger' %}
+                        <span
+                                class="btn btn-sm {{ btnClass }}"
+                                data-current-status="{{ shipdata.aisUpdate ? '1' : '0' }}"
+                                title="AIS-Update ist {% if shipdata.aisUpdate %}AN{% else %}AUS{% endif %}"
+                        >
+                        {% if shipdata.aisUpdate %}
+                            {{ 'AKTIV'|trans }}
+                        {% else %}
+                            {{ 'INAKTIV'|trans }}
+                        {% endif %}
+                    </span>
+                    {% endif %}
+                {% endif %}
+                </div>
+                {% if shipdata.latestPositionCheck is not null %}
+                    <p class="card-text fs-6" style="padding-left: 3px;padding-right: 3px;margin-bottom: unset;">
+                        {{ 'letzer Check'|trans }}: <span class="text-end"
+                                                          style="max-width: 260px;float: right;">{{ shipdata.latestPositionCheck|date('d.m.Y H:i') }}</span>
+                    </p>
+                {% endif %}
+                {% if ( shipdata.latestPositionHistory ) %}
+                    {% import "_macros/_berechnungen.html.twig" as berechnungen %}
+                    {% if ( shipdata.latestPositionHistory.NAVSTAT ) %}
+                        <p class="card-text fs-6" style="padding-left: 3px;padding-right: 3px;margin-bottom: unset;">
+                            {{ 'ais Status'|trans }}: <span class="text-end"
+                                                            style="max-width: 260px;float: right;">{{ shipdata.latestPositionHistory.NAVSTAT.beschreibung|trans }}</span>
+                        </p>
+                    {% endif %}
+                    {% if ( shipdata.latestPositionHistory.destination != shipdata.latestPositionHistory.locode ) %}
+                        <p class="card-text fs-6" style="padding-left: 3px;padding-right: 3px;margin-bottom: unset;">
+                            {{ 'Destination'|trans }}: <span class="text-end"
+                                                             style="max-width: 260px;float: right;">{{ shipdata.latestPositionHistory.destination }}</span>
+                        </p>
+                    {% endif %}
+                    {% if ( shipdata.latestPositionHistory.zone ) %}
+                        <p class="card-text fs-6 " style="padding-left: 3px;padding-right: 3px;margin-bottom: unset;">
+                            {{ 'Seebebiet'|trans }}: <span class="text-end"
+                                                           style="max-width: 260px;float: right;">{{ shipdata.latestPositionHistory.zone|trans }}</span>
+                            <br>
+                            {{ berechnungen.aisTimestampAnzeigen(shipdata.latestPositionHistory.TIMESTAMP) }}
+                        </p>
+                    {% endif %}
+                    {# --- Next Port --- #}
+                    <div class="card-text fs-8 d-flex ship-details-small justify-content-between align-items-center w-100">
+                        {% set portLog = shipdata.CurrentOrNextPortLog %}
+                        {% if portLog %}
+                            <strong class="me-2 text-nowrap">
+                                {{ (portLog.eventTimestamp < date() ? 'Aktuell in' : 'Nächstes Ziel')|trans }}:
+                            </strong>
+                            <span class="text-end text-nowrap flex-grow-1 "
+                                  title="{{ portLog.port.bezeichnung }} am {{ portLog.eventTimestamp|date('d.m.Y H:i') }}"
+                                  style="overflow: hidden; text-overflow: ellipsis;">
+                                [{{ portLog.port.kuerzel }}] - {{ portLog.eventTimestamp|date('d.m.Y') }}
+                                                    {# Uhrzeit wird nur auf großen Bildschirmen eingeblendet #}
+                                <span class="d-none d-lg-inline"> {{ portLog.eventTimestamp|date('H:i') }}</span>
+                            </span>
+                        {% endif %}
+                    </div>
+                {% endif %}
+            </div>
+        {% if shipdata.status is not null and shipdata.status.style is not empty %}
+            <div class="card-text d-flex justify-content-center align-items-center mb-3 {{ shipdata.status.style }}">
+                {{ shipdata.status.bezeichnung|trans }}
+            </div>
+        {% else %}
+            {# Fallback, wenn kein Status oder kein Style gesetzt ist #}
+            <div class="card-text d-flex justify-content-center align-items-center mb-3">
+                {{ shipdata.status.bezeichnung | default('Kein Status') }}
+            </div>
+        {% endif %}
+            <ul class="list-group list-group-flush mb-3">
+                {% if (0 != shipdata.imo ) %}
+                    <li class="list-group-item" style="background: transparent;">IMO: {{ shipdata.imo }}</li>
+                {% endif %}
+                {% if (0 != shipdata.mmsi ) %}
+                    <li class="list-group-item" style="background: transparent;">MMSI: {{ shipdata.mmsi }}</li>
+                {% endif %}
+                {% if ('-' != shipdata.Rufzeichen ) %}
+                    <li class="list-group-item" style="background: transparent;">c/s: {{ shipdata.Rufzeichen }}</li>
+                {% endif %}
+                {% if ( shipdata.isInLteRange ) %}
+                    <li class="list-group-item" style="background-color: lightgreen;">lte Empfang: möglich<p
+                                class="text-end"
+                                style="width: 100px;float: right;">
+                            ({{ shipdata.aisData.distance|default(0) | number_format(2, ',', '.') }} km)</p></li>
+                {% elseif ( shipdata.aisData and shipdata.aisData.distance ) %}
+                    <li class="list-group-item" style="background: transparent;">{{ 'lte Entfernung'|trans }}: <p class="text-end"
+                                                                                 style="width: 100px;float: right;">{{ shipdata.aisData.distance|default(0) | number_format(2, ',', '.') }}
+                            km</p></li>
+                {% endif %}
+                {% if (0 != shipdata.laenge ) %}
+                    <li class="list-group-item fs-6" style="background: transparent;">{{ 'Länge'|trans }}: <p class="text-end"
+                                                                             style="width: 100px;float: right;">{{ shipdata.laenge }}
+                            m</p></li>
+                {% endif %}
+                {% if (0 != shipdata.breite ) %}
+                    <li class="list-group-item fs-6" style="background: transparent;">{{ 'Breite'|trans }}: <p class="text-end"
+                                                                              style="width: 100px;float: right;">{{ shipdata.breite }}
+                            m</p></li>
+                {% endif %}
+                {% if ( shipdata.latestPositionHistory and shipdata.latestPositionHistory.DRAUGHT ) %}
+                    <li class="list-group-item fs-6" style="background: transparent;">{{ 'Tiefgang'|trans }}: <p class="text-end"
+                                                                                style="width: 100px;float: right;">{{ shipdata.latestPositionHistory.DRAUGHT }}
+                            m</p></li>
+                {% endif %}
+            </ul>
+        </div>
+        <!-- Buttonline -->
+        <div class="mt-auto pt-3 border-top d-flex gap-2">
+            <a href="{{ path('projekt_deails', {'id': shipdata.id}) }}"
+               title="{{ 'Projekt Komponenten'|trans }}">
+                <img src="{{ asset('/images/view-details-icon-18.jpg') }}" height="30" alt="X">
+            </a>
+            <a href="{{ path('projekt_bearbeiten', {'id': shipdata.id}) }}"
+               title="{{ 'Projekt Eigenschaften'|trans }}">
+                <img src="{{ asset('/images/edit-icon.png') }}" height="30" alt="X">
+            </a>
+            {% if shipdata.status.id != '2' %}
+                <a href="{{ path('projekt_zum_archiv', {id: shipdata.id}) }}"
+                   title="{{ 'Projekt ins Archiv'|trans }}">
+                    <img src="{{ asset('/images/archiv1.png') }}" height="30" alt="X">
+                </a>
+            {% endif %}
+            {% if shipdata.status.id == '2' %}
+                <a href="{{ path('projekt_von_archiv', {id: shipdata.id}) }}"
+                   title="{{ 'Projekt zurück aus Archiv'|trans }}">
+                    <img src="/images/archiv2.png" height="30rem" alt="X">
+                </a>
+            {% endif %}
+            {% if is_granted('ROLE_TEAMLEAD') %}
+                {#                    Löschen nur wenn im Projekt noch keine Komponenten angelegt wurden. #}
+                {% if shipdata.netKomponentens is empty %}
+                    <a href="{{ path('projekt_entfernen', {id: shipdata.id}) }}"
+                       title="{{ 'Projekt vollständig löschen'|trans }}">
+                        <img src="{{ asset('/images/delete-icon.png') }}" height="30rem" alt="X">
+                    </a>
+                {% endif %}
+            {% endif %}
+        </div>
+    </div>
+</div>

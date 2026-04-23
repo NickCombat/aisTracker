@@ -1,0 +1,160 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Übersicht Projekte{% endblock %}
+
+{% block headline%}{{ headline|trans }}{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <style>
+        .content-wrapper { margin: 1em auto; font: 18px/1.5 sans-serif; }
+        .content-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+        .status-yellow {
+            color: #f0ad4e; /* Ein Gelb-Orange-Ton */
+            font-weight: bold;
+        }
+        .status-orange {
+            color: #f47c3c; /* Ein kräftiges Orange */
+            font-weight: bold;
+        }
+        .status-red {
+            color: #d9534f; /* Ein sattes Rot */
+            font-weight: bold;
+        }
+
+        .health-container {
+            width: 120px;
+            cursor: help;
+        }
+        .health-progress-bg {
+            height: 8px;
+            background-color: #e9ecef;
+            border-radius: 4px;
+            overflow: hidden;
+            display: flex;
+        }
+        .health-bar {
+            height: 100%;
+            transition: width 0.6s ease;
+        }
+        /* Pulsieren bei kritischen Fehlern */
+        .health-pulse-red {
+            animation: health-blink 1.5s infinite;
+        }
+        @keyframes health-blink {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+    </style>
+{% endblock %}
+
+{% block breadcrumb %}
+    {{ include('_includes/_breadcrumb.html.twig') }}
+{% endblock %}
+
+{% block submenue %}
+    <nav class="sidebar">
+        <ul class="nav flex-column">
+            <li class="nav-item">
+                <b>{{ 'calendar.week_short'|trans({ '%weekNumber%': "now"|date("W") }) }}</b> <span id="date-time-display" data-days-json="{{ translated_days|json_encode }}"></span>
+            </li>
+        </ul>
+        {{ include('_includes/_shipStatusListe.html.twig') }}
+    </nav>
+{% endblock %}
+
+{% block body %}
+    <div class="content-wrapper">
+        <div class="row g-0">
+            <div id="projekt-list" class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-1">
+                {% if shipdatas %}
+                    {% for shipdata in shipdatas %}
+                        <div class="col d-flex">
+                            {{ include('projekte_uebersicht/shipCard.html.twig') }}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+{% endblock %}
+
+{% block javascript %}
+        {{ parent() }}
+<script>
+        $(function() {
+            $("#projekt-list").sortable({
+                items: "> .col",
+                update: function(event, ui) {
+                    let sortOrder = [];
+                    $("#projekt-list > .col").each(function(index) {
+                        let card = $(this).find('.card');
+                        let cardId = card.data("id");
+                        if (cardId) {
+                            sortOrder.push({
+                                id: cardId,
+                                order: index + 1
+                            });
+                        }
+                    });
+
+                    $.ajax({
+                        url: "{{ path('projekt_sortieren') }}",
+                        method: "POST",
+                        data: JSON.stringify(sortOrder),
+                        contentType: "application/json",
+                        success: function(response) {
+                            console.log("Reihenfolge gespeichert!", response);
+                        },
+                        error: function(xhr, status, error) {
+                            console.error("Fehler beim Speichern:", xhr.responseText);
+                        }
+                    });
+                }
+            });
+        });
+        document.addEventListener('DOMContentLoaded', function () {
+            const buttons = document.querySelectorAll('.toggle-ais-btn');
+
+            buttons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const shipId = this.dataset.shipId;
+                    const url = this.dataset.toggleUrl;
+                    let currentStatus = this.dataset.currentStatus === '1';
+
+                    // Ajax-Anfrage senden
+                    fetch(url, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            // Optional: Symfony CSRF-Token, falls aktiv
+                        }
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            // Status im Frontend aktualisieren
+                            const newStatus = data.newStatus;
+
+                            this.textContent = newStatus ? 'AKTIV' : 'INAKTIV';
+                            this.dataset.currentStatus = newStatus ? '1' : '0';
+
+                            // Button-Farbe aktualisieren (Bootstrap-Klassen)
+                            this.classList.toggle('btn-success', newStatus);
+                            this.classList.toggle('btn-danger', !newStatus);
+                        } else {
+                            console.error('Umschalten fehlgeschlagen');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Fehler bei der Ajax-Anfrage:', error);
+                    });
+                });
+            });
+        });
+    </script>
+{% endblock %}

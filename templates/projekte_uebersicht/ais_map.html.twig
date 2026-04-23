@@ -1,0 +1,215 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Übersicht Projekte{% endblock %}
+
+{% block headline %}{{ headline|trans }}{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <style>
+        /* Styling für die permanenten Schiffsnamen */
+        .leaflet-tooltip.ship-label {
+            background-color: rgba(255, 255, 255, 0.8);
+            border: 1px solid #999;
+            border-radius: 4px;
+            padding: 2px 6px;
+            font-weight: bold;
+            font-size: 11px;
+            white-space: nowrap;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+        }
+
+        /* Kleiner Pfeil des Tooltips ausblenden für sauberere Optik */
+        .leaflet-tooltip-left:before, .leaflet-tooltip-right:before {
+            display: none;
+        }
+
+        .info {
+            padding: 8px 12px;
+            font: 14px/16px Arial, Helvetica, sans-serif;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+            border-radius: 5px;
+            line-height: 20px;
+            color: #555;
+        }
+        .legend i {
+            width: 14px;
+            height: 14px;
+            float: left;
+            margin-right: 8px;
+            opacity: 0.8;
+            border-radius: 50%;
+        }
+        .ship-counter {
+            font-weight: bold;
+            color: #004a99;
+            margin-bottom: 5px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 3px;
+        }
+    </style>
+{% endblock %}
+
+{% block breadcrumb %}
+    {{ include('_includes/_breadcrumb.html.twig') }}
+{% endblock %}
+
+{% block submenue %}
+    <nav class="sidebar">
+        <ul class="nav flex-column">
+            <li class="nav-item">
+                <b>{{ 'calendar.week_short'|trans({ '%weekNumber%': "now"|date("W") }) }}</b> <span
+                        id="date-time-display" data-days-json="{{ translated_days|json_encode }}"></span>
+            </li>
+        </ul>
+        {{ include('_includes/_shipStatusListe.html.twig') }}
+    </nav>
+{% endblock %}
+
+{% block body %}
+    <div class="content-wrapper">
+        <div class="row g-0">
+            <div>{{ 'In der Karte werden %count% Schiffe angezeigt.'|trans({'%count%': shipcount}) }}</div>
+            <div id="ship-map" style="height: 600px;"></div>
+
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascript %}
+{{ parent() }}
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+    // 1. Karte initialisieren
+    const map = L.map('ship-map', {
+        closePopupOnClick: false
+    });
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© OpenStreetMap'
+    }).addTo(map);
+
+    // --- NEU: DEFINITION DER CONTROLS NACH OBEN VERSCHOBEN ---
+
+    // Counter Control definieren
+    const counter = L.control({position: 'topright'});
+    counter.onAdd = function (map) {
+        this._div = L.DomUtil.create('div', 'info');
+        this.update(0);
+        return this._div;
+    };
+    counter.update = function (num) {
+        this._div.innerHTML = `<div class="ship-counter">Live-Tracking</div>` +
+                              `Schiffe auf Karte: <b>${num || 0}</b>`;
+    };
+    counter.addTo(map);
+
+    // Legende Control definieren
+    const legend = L.control({position: 'bottomright'});
+    legend.onAdd = function (map) {
+        const div = L.DomUtil.create('div', 'info legend');
+        const categories = [
+            { label: 'Vehicles Carrier', color: 'yellow' },   // Yellow
+            { label: 'Military ops'    , color: '#095301'},   // Grün
+            { label: 'Tanker'          , color: '#cc0000'},   // Rot
+            { label: 'Frachter'        , color: '#ff9900'},   // Orange
+            { label: 'Containerschiff' , color: '#1a53ff'},   // Blau
+            { label: 'Sonstige'        , color: '#555555'},   // Grau
+        ];
+        div.innerHTML = '<strong>Schiffstypen</strong><br>';
+        categories.forEach(cat => {
+            div.innerHTML += `<i style="background: ${cat.color}"></i> ${cat.label}<br>`;
+        });
+        return div;
+    };
+    legend.addTo(map);
+
+    // --- MARKER LOGIK ---
+
+    const ships = {{ ships_json|raw }};
+    const markerGroup = [];
+
+    function getShipIcon(course, color) {
+        return L.divIcon({
+            className: 'custom-ship-icon',
+            html: `
+                <div style="transform: rotate(${course}deg); display: flex; justify-content: center; align-items: center;">
+                    <svg viewBox="0 0 24 24" width="30" height="30">
+                        <path d="M12,2L4.5,20.29L5.21,21L12,18L18.79,21L19.5,20.29L12,2Z"
+                              fill="${color}" stroke="white" stroke-width="1"/>
+                    </svg>
+                </div>`,
+            iconSize: [30, 30],
+            iconAnchor: [15, 15]
+        });
+    }
+
+    ships.forEach(ship => {
+        if (ship.latitude && ship.longitude) {
+            const latLng = [parseFloat(ship.latitude), parseFloat(ship.longitude)];
+            markerGroup.push(latLng);
+
+            const icon = getShipIcon(ship.course || 0, ship.color || '#555555');
+            const marker = L.marker(latLng, { icon: icon }).addTo(map);
+
+            marker.bindTooltip(ship.shipName, {
+                permanent: true,
+                direction: 'right',
+                offset: [15, 0],
+                className: 'ship-label'
+            });
+
+            const popupContent = `
+                <div style="min-width: 150px;">
+                    <a href="${ship.detailUrl}" style="text-decoration: none; color: #004a99; font-weight: bold; font-size: 14px;">
+                        ${ship.shipName} ➔
+                    </a>
+                    <br><small>${ship.navStatus || ''}</small>
+                    <hr style="margin: 4px 0;">
+                    <div style="font-size: 11px; line-height: 1.4;">
+                        <b>Ziel:</b> ${ship.destinationPort || 'Unbekannt'}<br>
+                        <b>Ankunft (ETA):</b> ${ship.formattedEta || 'Keine Angabe'}<br>
+                        <hr style="margin: 3px 0; border: none; border-top: 1px dashed #ccc;">
+                        MMSI: ${ship.mmsi}<br>
+                        Speed: ${ship.speed} kn<br>
+                        Kurs: ${ship.course}°<br>
+                        Stand: ${ship.formattedDate || 'Unbekannt'}
+                    </div>
+                </div>
+            `;
+
+            marker.bindPopup(popupContent, {
+                autoClose: false,
+                closeOnClick: false,
+                offset: [0, -10]
+            });
+
+            marker.openPopup();
+        }
+    });
+
+    // Karte zentrieren
+    if (markerGroup.length > 0) {
+        const bounds = L.latLngBounds(markerGroup);
+        map.fitBounds(bounds, { padding: [50, 50], maxZoom: 15 });
+    }
+
+    // Initiale Zählung der sichtbaren Schiffe
+    const updateVisibleCount = () => {
+        let visibleCount = 0;
+        map.eachLayer(function(layer) {
+            if (layer instanceof L.Marker && map.getBounds().contains(layer.getLatLng())) {
+                visibleCount++;
+            }
+        });
+        counter.update(visibleCount);
+    };
+
+    // Events für dynamische Zählung
+    map.on('moveend', updateVisibleCount);
+    updateVisibleCount(); // Erster Aufruf nach fitBounds
+
+</script>
+{% endblock %}

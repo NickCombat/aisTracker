@@ -1,0 +1,19 @@
+{# templates/vessel/show.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block title %}Vessel Details{% endblock %}
+
+{% block body %}
+    <h1>Vessel Details</h1>
+    {% if vessel.error is defined %}
+    <p>Error: {{ vessel.error }}</p>
+    {% else %}
+    <ul>
+        <li>Name: {{ vessel.name }}</li>
+        <li>IMO: {{ vessel.imo }}</li>
+        <li>Position: {{ vessel.position.latitude }}, {{ vessel.position.longitude }}</li>
+        <li>Speed: {{ vessel.speed }} knots</li>
+        <li>Course: {{ vessel.course }} degrees</li>
+    </ul>
+    {% endif %}
+{% endblock %}

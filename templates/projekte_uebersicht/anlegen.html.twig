@@ -1,0 +1,280 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Projekt anlegen{% endblock %}
+
+{% block headline%}{{ headline|trans }}{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <style>
+        .flaggenstaat-option {
+            display: flex;
+            align-items: center;
+        }
+        .flaggenstaat-option img {
+            margin-right: 10px;
+        }
+        #image-container img
+        {
+            max-width: -webkit-fill-available;
+        }
+        .custom-select-container {
+            position: relative;
+            display: inline-block;
+        }
+        .custom-select {
+            width: 100%;
+            padding: 10px;
+        }
+        .custom-select-option {
+            display: flex;
+            align-items: center;
+        }
+        .custom-select-option img {
+            margin-right: 10px;
+        }
+    </style>
+{% endblock %}
+
+{% block submenue %}
+    {% if projekt_id != '' %}
+        {{ include('_includes/_projektUebersichtMenue.html.twig') }}
+    {% endif %}
+{%  endblock %}
+
+{% block breadcrumb %}
+    {{ include('_includes/_breadcrumb.html.twig') }}
+{% endblock %}
+
+{% block body %}
+    <div class="row g-0" >
+        <a href="{{ path('projekte_uebersicht_list') }}" class="btn btn-primary">{{'Zurück'|trans}}</a>
+        <div class="card mb-3">
+            <div class="row g-0">
+                <div class="col-md-4">
+                {% if(shipdata) %}
+                    {% if(shipdata.pic) %}
+                    <img src="/img/projekte/{{ shipdata.pic }}" class="card-img" alt="{{ shipdata.name }}">
+                    {% endif %}                       
+                {% else %}
+                <img src="{{ asset('images/no-image-found.png') }}" class="card-img" alt="...">
+                {% endif %}
+                    <div id="image-container">
+                        <img id="flag-image" src="" alt="Flag Image" style="display: none;">
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        {{ form_start(form) }}
+                            {{ form_row(form.name) }}
+                            {{ form_row(form.imo) }}
+                            {{ form_row(form.MMSI) }}
+                            {{ form_row(form.flag) }}
+                            {{ form_row(form.Rufzeichen) }}
+                            {{ form_row(form.laenge) }}
+                            {{ form_row(form.breite) }}
+                        {{ form_end(form) }}
+                        {# Verstecktes Hilfsformular für Bay-Aktionen #}
+                        {% if(shipdata) %}
+                        <form id="js-add-bay-form" action="{{ path('projekt_add_single_bay', {id: shipdata.id}) }}" method="post" style="display:none;">
+                            <input type="hidden" name="new_bay_nr" id="js-input-nr">
+                            <input type="hidden" name="with_20ft" id="js-input-20">
+                        </form>
+
+                        <form id="js-delete-bay-form" action="" method="post" style="display:none;"></form>
+                        <form id="js-clear-all-form" action="{{ path('projekt_clear_bays', {id: shipdata.id}) }}" method="post" style="display:none;"></form>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+        {# Bay-Struktur Konfiguration Card #}
+        {% if (shipdata and shipdata.type.id == 1) %}
+        <div class="card border-primary mb-4">
+            <div class="card-header bg-primary text-white d-flex justify-content-between">
+                <span><i class="fas fa-th-list"></i> {{ 'Bay-Struktur Konfiguration'|trans }}</span>
+                <form action="{{ path('projekt_clear_bays', {id: shipdata.id}) }}" method="post" onsubmit="return confirm('ALLES LÖSCHEN?')">
+                    <button class="btn btn-danger btn-sm">{{ 'Struktur komplett leeren'|trans }}</button>
+                </form>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    {# Formular zum Hinzufügen einer einzelnen Bay #}
+                    <div class="col-md-4">
+                        <h6>{{ 'Bay hinzufügen'|trans }}</h6>
+                        <div class="bg-light p-3 rounded border">
+                            <div class="mb-3">
+                                <label for="manual_bay_nr" class="form-label">40' {{ 'Bay Nummer'|trans }}</label>
+                                <input id="manual_bay_nr" type="number" class="form-control" placeholder="z.B. 12">
+                            </div>
+                            <div class="form-check form-switch mb-3">
+                                <input class="form-check-input" type="checkbox" id="manual_check20" checked>
+                                <label class="form-check-label" for="manual_check20">{{ 'Inkl.'|trans }} 20' {{ 'Fore/Aft'|trans }} (±1)</label>
+                            </div>
+                            <button type="button" id="btn-execute-add" class="btn btn-success btn-sm w-100">{{'Hinzufügen'|trans}}</button>
+                        </div>
+                    </div>
+                    {# Liste der vorhandenen Bays zur Kontrolle #}
+                    <div class="col-md-8">
+                        <h6>{{ 'Aktuelle Struktur'|trans }}</h6>
+                        <div class="table-responsive" style="max-height: 300px;">
+                            <table class="table table-hover table-sm">
+                                <thead class="table-secondary">
+                                <tr>
+                                    <th>{{ 'Bay'|trans }}</th>
+                                    <th>{{ 'Typ'|trans }}</th>
+{#                                    <th>{{ 'Struktur'|trans }}</th>#}
+                                    <th>{{ 'Aktion'|trans }}</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for bay in mainBays %}
+                                    <tr>
+                                        <td><strong>{{ bay.bayNumber|format('%02d') }}</strong></td>
+                                        <td>40'</td>
+                                        {#                                        <td>40'</td> #}
+                                        <td>
+                                            {# Einzel-Löschen Button ohne Form-Tag #}
+                                            <button type="button"
+                                                    class="btn btn-link text-danger p-0 btn-delete-single"
+                                                    data-url="{{ path('projekt_delete_single_bay', {bayId: bay.id}) }}">
+                                                <i class="fas fa-trash-alt"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                {% else %}
+                                    <tr>
+                                        <td colspan="3"
+                                            class="text-center text-muted italic">{{ 'Keine Bays konfiguriert'|trans }}.
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bay-navigation mb-4 p-3 bg-light border rounded">
+                    <h5>{{ 'Schiffs-Übersicht'|trans }} ({{ 'Bays'|trans }})</h5>
+                    <div class="d-flex flex-wrap gap-2">
+                        {% for bay in bayRange %}
+                            {% set b = bay.bayNumber %}
+                            {% if b % 2 == 0 %}
+                                {% set isOccupied = b in allBays %}
+                                <a href="{{ path('projekt_show_deck_foundation', {id: shipdata.id, bay: b}) }}"
+                                   class="btn btn-sm btn-outline-secondary opacity-50"
+                                   style="min-width: 45px;">
+                                    {{ b|format('%02d') }}
+                                    {% if isOccupied %}<br><small style="font-size: 0.6rem;">●</small>{% endif %}
+                                </a>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+
+                    {% if orphanedBays is not empty %}
+                        <div class="alert alert-warning mt-3">
+                            <h6><i class="fas fa-tools"></i> {{ 'Fehlende Bay-Strukturen'|trans }}</h6>
+                            <p>{{ 'Für diese Bays existiert Hardware im Plan-Format'|trans }} ({{ 'Zahl'|trans }}
+                                |...), {{ 'aber sie sind nicht in der Struktur angelegt'|trans }}:</p>
+                            <div class="d-flex flex-wrap gap-2">
+                                {% for ob in orphanedBays %}
+                                    {% if ob matches '/^\\d+$/' %}
+                                        <button type="button" class="btn btn-sm btn-danger btn-quick-add" data-bay="{{ ob }}">
+                                            + Bay {{ ob }} {{ 'anlegen'|trans }}
+                                        </button>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                    {% endif %}
+                </div>
+
+            </div>
+        </div>
+        {% endif %}
+    </div>
+{% endblock %}
+
+{% block javascript %}
+{{ parent() }}
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const selectElement = document.querySelector('.custom-select');
+            const options = selectElement.options;
+
+            for (let i = 0; i < options.length; i++) {
+                const option = options[i];
+                const imageUrl = option.getAttribute('data-image');
+                if (imageUrl) {
+                    const imgElement = document.createElement('img');
+                    imgElement.src = imageUrl;
+                    imgElement.width = 20;
+                    imgElement.height = 15;
+                    imgElement.style.marginRight = '10px';
+                    const text = option.textContent;
+                    option.textContent = ''; // Entferne den Textinhalt
+                    option.appendChild(imgElement);
+                    option.appendChild(document.createTextNode(' ' + text));
+                }
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+
+            // 1. Manuelles Hinzufügen (Button oben)
+            const btnAdd = document.getElementById('btn-execute-add');
+            if (btnAdd) {
+                btnAdd.addEventListener('click', function() {
+                    const nr = document.getElementById('manual_bay_nr').value;
+                    const with20 = document.getElementById('manual_check20').checked ? "1" : "0";
+
+                    if(nr) {
+                        document.getElementById('js-input-nr').value = nr;
+                        document.getElementById('js-input-20').value = with20;
+                        document.getElementById('js-add-bay-form').submit();
+                    } else {
+                        alert("Bitte eine Bay-Nummer eingeben.");
+                    }
+                });
+            }
+
+            // 2. Quick-Add (Rote Buttons bei fehlenden Bays)
+            document.addEventListener('click', function(e) {
+                const quickBtn = e.target.closest('.btn-quick-add');
+                if (quickBtn) {
+                    e.preventDefault();
+                    document.getElementById('js-input-nr').value = quickBtn.getAttribute('data-bay');
+                    document.getElementById('js-input-20').value = "1";
+                    document.getElementById('js-add-bay-form').submit();
+                }
+            });
+
+            // 3. Einzel-Löschen (Mülleimer in der Tabelle)
+            document.querySelectorAll('.btn-delete-single').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    if(confirm("Diese Bay wirklich löschen?")) {
+                        const form = document.getElementById('js-delete-bay-form');
+                        form.action = this.getAttribute('data-url');
+                        form.submit();
+                    }
+                });
+            });
+
+            // 4. Alles löschen (Button im Header)
+            // Suche den Button über die Klasse oder ID, da er im Header liegt
+            const btnClearAll = document.querySelector('.card-header .btn-danger');
+            if (btnClearAll) {
+                // Wir entfernen den Submit-Typ, falls er noch einer ist
+                btnClearAll.type = "button";
+                btnClearAll.addEventListener('click', function(e) {
+                    if(confirm("WIRKLICH ALLES LÖSCHEN?")) {
+                        document.getElementById('js-clear-all-form').submit();
+                    }
+                });
+            }
+        });
+    </script>
+{% endblock %}

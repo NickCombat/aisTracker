@@ -1,0 +1,153 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{'Projekt Häfen'|trans}}{% endblock %}
+
+{% block headline%}{{ headline|trans }}{% endblock %}
+
+{% block submenue %}
+    {% if projekt_id != '' %}
+        {{ include('_includes/_projektUebersichtMenue.html.twig') }}
+    {% endif %}
+{%  endblock %}
+
+{% block body %}
+    <div class="row g-0" >
+        <a href="{{ path('projekte_uebersicht_list') }}" class="btn btn-primary">Zurück</a>
+        <div class="card mb-3">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    {% if(shipdata.pic) %}
+                    <img src="/img/projekte/{{ shipdata.pic }}" class="card-img" alt="{{ shipdata.name }}">
+                    {% else %}
+                    <img src="{{ asset('images/no-image-found.png') }}" class="card-img" alt="{{ shipdata.name }}">
+                    {% endif %}
+                    <h5>Häufigkeit Häfen</h5>
+                    <table style="margin-left: auto; margin-right: auto;">
+                        <thead>
+                        <tr>
+                            <th>Hafen</th>
+                            <th>Anzahl Besuche</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for hafenName, anzahl in auswertung.hafen %}
+                            <tr>
+                                <td>{{ hafenName }}</td>
+                                <td>{{ anzahl }}</td>
+                            </tr>
+                        {% else %}
+                            <tr>
+                                <td colspan="2">Keine Daten verfügbar.</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                    <hr>
+                    <h5>Häufigkeit Länder</h5>
+                    <table style="margin-left: auto; margin-right: auto;">
+                        <thead>
+                        <tr>
+                            <th>Land</th>
+                            <th>Anzahl Besuche (gesamt)</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for landName, anzahl in auswertung.land %}
+                            <tr>
+                                <td>{{ landName }}</td>
+                                <td>{{ anzahl }}</td>
+                            </tr>
+                        {% else %}
+                            <tr>
+                                <td colspan="2">Keine Daten verfügbar.</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="mt-3">{{'vorherige Häfen'|trans}}</h5>
+                        <ul class="past-ports-list list-unstyled">
+                            {# Der Controller ruft die neue Funktion shipdata.getPastPortVisits() auf #}
+                            {% for visit in shipdata.PastPortVisits %}
+                                <li>
+                                    <span style="text-align:right;width: 50px; display: inline-block;">{{ loop.index }}.</span>
+                                    {# Hafeninformationen #}
+                                    {% if visit.port %}
+                                        <strong style="width: 65px; display: inline-block;">{{ visit.port.kuerzel }}</strong>
+                                        <span class="hover-info ms-2" data-title="{{ visit.port.bezeichnung }}, {{ visit.port.flag.amtlichekurzform }}" style="width: 220px; overflow: hidden;display: inline-block;">
+                                            <span class="text-muted" style="font-size: 0.9em;">{{ visit.port.bezeichnung }}, {{ visit.port.flag.amtlichekurzform }}</span>
+                                        </span>
+                                        {# Flagge #}
+                                        <span class="hover-info" data-title="{{ visit.port.flag.amtlichevollform }}"
+                                              style="width: 1.3em; height: 1em; display: inline-block; background-image: url('/img/flaggen/{{ visit.port.flag.flagge }}'); background-position: center; background-repeat: no-repeat; background-size: contain; vertical-align: middle; border: 1px solid #e7edf1;">
+                                        </span>
+                                    {% endif %}
+                                    {# Ankunfts- und Abfahrtsdatum #}
+                                    <span class="text-muted" style="font-size: 0.9em;">
+                                    {{ visit.arrival ? visit.arrival|date('d.m.') : '??' }} - {{ visit.departure|date('d.m.Y') }}
+                                    </span>
+                                    {% if visit.durationDays is not null %}
+                                        <strong> ({{ visit.durationDays }} {{ 'Tage'|trans }})</strong>
+                                    {% endif %}
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascript %}
+{{ parent() }}
+<script>
+    /**
+     * Analysiert eine Liste besuchter Häfen und zählt die Besuche pro Hafen und pro Land.
+     *
+     * @param {Array<Object>} besuchteHaefen - Eine Liste von Objekten,
+     * wobei jedes Objekt mindestens 'name' (Hafen) und 'land' (Land) enthält.
+     * @returns {Object} Ein Objekt mit den Zählungen: { hafen: {...}, land: {...} }
+     */
+    function analysiereHafenbesuche(besuchteHaefen) {
+
+        // Prüfen, ob die Eingabe valide ist.
+        if (!Array.isArray(besuchteHaefen) || besuchteHaefen.length === 0) {
+            console.warn("Eingabe ist keine valide Liste.");
+            return { hafen: {}, land: {} };
+        }
+
+        // Die 'reduce'-Methode iteriert über die Liste und baut ein "Akkumulator"-Objekt auf.
+        const auswertung = besuchteHaefen.reduce((akkumulator, hafen) => {
+
+            // Annahme: Die Objekte haben die Eigenschaften 'name' und 'land'.
+            // Falls Ihre Eigenschaften anders heißen (z.B. 'portName', 'country'),
+            // müssen Sie dies hier anpassen.
+            const hafenName = hafen.name;
+            const landName = hafen.land;
+
+            // Fehlerbehandlung: Sicherstellen, dass die Daten vorhanden sind.
+            if (!hafenName || !landName) {
+                console.warn("Überspringe Eintrag wegen fehlender Daten:", hafen);
+                return akkumulator;
+            }
+
+            // Zähle den Hafen:
+            // (akkumulator.hafen[hafenName] || 0) holt den bisherigen Wert oder 0,
+            // dann wird + 1 gerechnet.
+            akkumulator.hafen[hafenName] = (akkumulator.hafen[hafenName] || 0) + 1;
+
+            // Zähle das Land (gleiches Prinzip):
+            akkumulator.land[landName] = (akkumulator.land[landName] || 0) + 1;
+
+            // Gib den aktualisierten Akkumulator für die nächste Iteration zurück.
+            return akkumulator;
+
+        }, { hafen: {}, land: {} }); // Startwert: Ein Objekt mit zwei leeren Zähler-Objekten
+
+        return auswertung;
+    }
+</script>
+{% endblock %}

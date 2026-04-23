@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Projekt bearbeiten{% endblock %}
+
+{% block headline%}{{ headline|trans }}{% endblock %}
+
+{% block body %}
+    <div class="row g-0" >
+        <a href="{{ path('projekte_uebersicht_list') }}" class="btn btn-primary">Zurück</a>
+        <div class="card mb-3">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    {% if(shipdata.pic) %}
+                    <img src="/img/projekte/{{ shipdata.pic }}" class="card-img" alt="{{ shipdata.name }}">
+                    {% else %}
+                    <img src="{{ asset('images/no-image-found.png') }}" class="card-img" alt="{{ shipdata.name }}">
+                    {% endif %}                
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        {{ form(form) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

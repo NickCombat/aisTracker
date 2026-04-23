@@ -1,0 +1,119 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'Gefahrene Strecke'|trans }}{% endblock %}
+
+{% block headline%}{{ headline|trans }}{% endblock %}
+
+{% block submenue %}
+    {% if projekt_id != '' %}
+        {{ include('_includes/_projektUebersichtMenue.html.twig') }}
+    {% endif %}
+{%  endblock %}
+
+{% block body %}
+    <div class="row g-0" >
+        <div class="card mb-3">
+            <div class="row g-0">
+                <h5>{{ 'Gefahrene Strecke'|trans }}</h5>
+                <div class="card-body">
+                    <form method="get" class="row g-3 align-items-center">
+                        <div class="col-auto">
+                            <label for="months" class="col-form-label fw-bold">Zeitraum:</label>
+                        </div>
+                        <div class="col-auto">
+                            <select name="months" id="months" class="form-select form-select-sm" onchange="this.form.submit()">
+                                {% for i in [1, 3, 6, 12, 24] %}
+                                    <option value="{{ i }}" {{ selectedMonths == i ? 'selected' : '' }}>
+                                        {{ i }} {{ (i == 1 ? 'Monat' : 'Monate') }}
+                                    </option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="col-auto">
+                            <span class="text-muted small">
+                                ({{ pathDataCount }} {{ 'Wegpunkte gefunden'|trans }})
+                            </span>
+                        </div>
+                    </form>
+                    <div class="mt-2 d-flex gap-3 small justify-content-center">
+                        <span><i class="fas fa-square" style="color: #dc3545;"></i> Fahrt (> 5 kn)</span>
+                        <span><i class="fas fa-square" style="color: #ffc107;"></i> Manövrieren (1-5 kn)</span>
+                        <span><i class="fas fa-square" style="color: #007bff;"></i> Liegezeit (< 1 kn)</span>
+                    </div>
+                </div>
+
+                <div id="shipMap" style="height: 800px; width: 100%; border-radius: 8px;"></div>
+                <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+                <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascript %}
+{{ parent() }}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const pathData = {{ pathJson|raw }};
+
+        if (pathData.length === 0) {
+            document.getElementById('shipMap').innerHTML = "Keine AIS-Daten verfügbar.";
+            return;
+        }
+
+        const lastPos = pathData[pathData.length - 1];
+        const map = L.map('shipMap').setView([lastPos[0], lastPos[1]], 10);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap'
+        }).addTo(map);
+
+        // 1. Farbiges Zeichnen der Segmente
+        for (let i = 0; i < pathData.length - 1; i++) {
+            const p1 = pathData[i];
+            const p2 = pathData[i+1];
+            const speed = parseFloat(p1[3]);
+
+            let segmentColor = '#007bff'; // Blau (Liegen)
+            if (speed > 5) {
+                segmentColor = '#dc3545'; // Rot (Fahrt)
+            } else if (speed > 1) {
+                segmentColor = '#ffc107'; // Gelb (Manöver)
+            }
+
+            L.polyline([
+                [p1[0], p1[1]],
+                [p2[0], p2[1]]
+            ], {
+                color: segmentColor,
+                weight: 4,
+                opacity: 0.8
+            }).addTo(map);
+        } // <--- HIER muss die For-Schleife enden!
+
+        // 2. Marker für die letzte Position (Aktueller Standort)
+        L.marker([lastPos[0], lastPos[1]])
+            .addTo(map)
+            .bindPopup(`<b>Letzte Position</b><br>Zeit: ${lastPos[2]}<br>Kurs: ${lastPos[4]}<br>Speed: ${lastPos[3]}`)
+            .openPopup();
+
+        // 3. Karte auf den Verlauf zoomen
+        const latLngs = pathData.map(p => [p[0], p[1]]);
+        const fullBounds = L.polyline(latLngs).getBounds();
+        map.fitBounds(fullBounds);
+
+        // 4. Optionale Historie-Punkte (alle 5 Punkte ein kleiner Kreis)
+        pathData.forEach((p, index) => {
+            if (index % 5 === 0) {
+                L.circleMarker([p[0], p[1]], {
+                    radius: 3,
+                    color: '#333',
+                    fillOpacity: 0.5
+                })
+                .addTo(map)
+                .bindTooltip(`${p[2]} | Kurs: ${p[4]} | Speed: ${p[3]}`);
+            }
+        });
+    });
+</script>
+{% endblock %}
