@@ -124,7 +124,7 @@ class NetEinstellungenController extends AbstractController
             ],
             [
                 'label' => 'breadcrumb.einstellungen',
-                'route' => 'einstellungen'
+                'route' => 'net_einstellungen'
             ],
             [
                 'label' => $this->translator->trans('Benutzer Liste'),
