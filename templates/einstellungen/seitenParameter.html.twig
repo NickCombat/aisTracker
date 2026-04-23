@@ -1,0 +1,65 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Einstellungen{% endblock %}
+
+{% block headline%}{{ headline|trans }}{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <style>
+        form{
+            margin-left: 10px;
+            margin-right: 10px;
+            width: 100%;
+        }
+    </style>
+{% endblock %}
+
+{% block breadcrumb %}
+    {{ include('_includes/_breadcrumb.html.twig') }}
+{% endblock %}
+
+{% block body %}
+    <div style="max-width: 1100px;">
+        {# Optional: Eine Kopfzeile für die "Tabelle", die auf kleinen Bildschirmen ausgeblendet wird #}
+        <div class="row fw-bold border-bottom pb-2 mb-3 d-none d-md-flex">
+            <div class="col-md-3">{{ 'Name'|trans }}</div>
+            <div class="col-md-3">{{ 'Wert'|trans }}</div>
+            <div class="col-md-4">{{ 'Beschreibung'|trans }}</div>
+            <div class="col-md-2 text-end">{{ 'Aktionen'|trans }}</div>
+        </div>
+        {# --- Formulare zum ÄNDERN --- #}
+        {% for form in parameterTypenFormArr %}
+            {# Wir verwenden form_start, um die Reihe zu definieren und die Elemente vertikal zu zentrieren #}
+            {{ form_start(form, {'attr': {'class': 'row g-3 align-items-center mb-3'}}) }}
+            {# Die Input-Felder bekommen feste, größere Spaltenbreiten #}
+            <div class="col-md-3">{{ form_widget(form.name) }}</div>
+            <div class="col-md-3">{{ form_widget(form.wert) }}</div>
+            <div class="col-md-4">{{ form_widget(form.beschreibung) }}</div>
+            {# Die Aktions-Buttons werden in einer Gruppe zusammengefasst #}
+            <div class="col-md-2 text-end">
+                <div class="btn-group">
+                    {{ form_widget(form.mod, {'attr': {'class': 'btn-sm btn-primary'}}) }}
+                    {{ form_widget(form.delete, {
+                        'label': '<i class="fas fa-trash-alt" title="Löschen"></i>',
+                        'label_html': true,
+                        'attr': {
+                            'class': 'btn-sm btn-outline-danger',
+                            'title': 'Löschen'
+                        }
+                    }) }}
+                </div>
+            </div>
+            {{ form_end(form) }}
+        {% endfor %}
+        <hr>
+        {# --- Formular zum HINZUFÜGEN --- #}
+        <h5 class="mt-4 mb-3">{{'Neuen Parameter hinzufügen'|trans}}</h5>
+        {{ form_start(parameterTypenFormNew, {'attr': {'class': 'row g-3 align-items-center'}}) }}
+        <div class="col-md-3">{{ form_row(parameterTypenFormNew.name) }}</div>
+        <div class="col-md-3">{{ form_row(parameterTypenFormNew.wert) }}</div>
+        <div class="col-md-4">{{ form_row(parameterTypenFormNew.beschreibung) }}</div>
+        <div class="col-md-2">{{ form_row(parameterTypenFormNew.add) }}</div>
+        {{ form_end(parameterTypenFormNew) }}
+    </div>
+{% endblock %}

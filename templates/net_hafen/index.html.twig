@@ -1,0 +1,101 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Einstellungen Hafenliste{% endblock %}
+
+{% block headline%}{{ headline|trans }}{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <style>
+        form,
+        .formHeader{
+            margin-left: 10px;
+            margin-right: 10px;
+            width: 100%;
+        }
+    </style>
+{% endblock %}
+
+{% block breadcrumb %}
+    {{ include('_includes/_breadcrumb.html.twig') }}
+{% endblock %}
+
+{% block body %}
+    <div class="row g-0" style="width: 1100px">
+        <div class="row formHeader">
+            <div class="card col-md-2">Kürzel</div>
+            <div class="card col-md-3">Bezeichnung</div>
+            <div class="card col-md-1">Land</div>
+            <div class="card col-md-3">Flagge</div>
+            <div class="card col-md-2"></div>
+        </div>
+        {% for form in formArray %}
+            {{ form_start(form) }}
+            {% set kuerzel = form.vars.value.land %}
+            {% set flagge = flaggenMap[kuerzel] ?? 'no-image-found.png' %}
+            <div class="row">
+                <div class="card col-md-2">
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                        <span aria-label="LR"
+                              role="img"
+                              title="{{ form.vars.value.land }}"
+                              style="display: inline-block;
+                                     width: 1.33333em;
+                                     height: 1em;
+                                     background-image: url('/img/flaggen/{{ flagge }}');
+                                     background-position: 50% center;
+                                     background-repeat: no-repeat;
+                                     background-size: contain;
+                                     font-size: 20px;
+                                     line-height: 1em;
+                                     vertical-align: middle;
+                                     border-radius: 1px;
+                                     flex-shrink: 0;
+                                     border: 1px solid rgb(231, 237, 241);">
+                        </span>
+                        {{ form_widget(form.kuerzel) }}
+                    </div>
+                </div>
+                <div class="card col-md-3">
+                    {{ form_widget(form.bezeichnung) }}
+                </div>
+
+                <div class="card col-md-1">
+                    {{ form_widget(form.land) }}
+                </div>
+                <div class="card col-md-3">
+                    {{ form_widget(form.flag) }}
+                </div>
+                <div class="card col-md-2">
+                    <button
+                            type="submit"
+                            name="submit_id"
+                            value="{{ form.vars.value.id }}"
+                            class="btn btn-primary"
+                    >Ändern</button>
+                </div>
+            </div>
+            {{ form_end(form) }}
+
+        {% endfor %}
+        {{ form_start(formNew) }}
+        <div class="row" style="margin-top: 10px;">
+            <div class="card col-md-2">
+                {{ form_widget(formNew.kuerzel) }}
+            </div>
+            <div class="card col-md-3">
+                {{ form_widget(formNew.bezeichnung) }}
+            </div>
+            <div class="card col-md-1">
+                {{ form_widget(formNew.land) }}
+            </div>
+            <div class="card col-md-3">
+                {{ form_widget(formNew.flag) }}
+            </div>
+            <div class="card col-md-2">
+                {{ form_widget(formNew.add) }}
+            </div>
+        </div>
+        {{ form_end(formNew) }}
+    </div>
+{% endblock %}

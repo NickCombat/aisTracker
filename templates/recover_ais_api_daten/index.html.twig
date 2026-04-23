@@ -1,0 +1,151 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Einstellungen{% endblock %}
+
+{% block headline%}{{ headline|trans }}{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <style>
+    </style>
+{% endblock %}
+
+{% block breadcrumb %}
+    {{ include('_includes/_breadcrumb.html.twig') }}
+{% endblock %}
+
+{% block body %}
+    <div class="row g-0">
+        <form action="{{ path('app_work_recover_ais_api_daten') }}" method="post">
+            <input type="hidden" name="_token" value="{{ csrf_token('recover-token') }}">
+        {% for datei in dateiListe %}
+            <div class="row">
+                <div class="col-md-1">
+                    <span class="text-md-right">{{ loop.index }}</span>
+                </div>
+                <div class="card col-md-1">
+                    <span class="text-md-center">
+                        <input
+                                type="checkbox"
+                                class="form-check-input form-check-input"
+                                id="{{ loop.index }}"
+                                name="fileArray[]"
+                                value="{{ datei.name }}"
+                        >
+                    </span>
+                </div>
+                <div class="card col-md-5">
+                    {{ datei.name }}
+                    <br>
+                    <i>{{ datei.ship.name }}</i>
+                </div>
+                <div class="card col-md-1" style="text-align: right;">
+                    {{ (datei.size / 1024)|number_format(2, ',', '.') }} KB
+                </div>
+                <div class="card col-md-2" style="text-align: right;">
+                    {{ datei.date|date('d.m.Y H:i:s') }}
+                </div>
+                <div class="card col-md-2">
+                    <!-- Der Vorschau-Button -->
+                    <button type="button"
+                            class="btn btn-sm btn-outline-info preview-btn"
+                            data-filename="{{ datei.name }}"
+                            data-bs-toggle="modal"
+                            data-bs-target="#jsonPreviewModal"
+                            title="Inhalt anzeigen">
+                        <i class="fas fa-eye"></i> Vorschau
+                    </button>
+                    <a href="{{ path('app_work_recover_ais_api_file', {'restore': datei.name}) }}"
+                       class="btn btn-sm btn-outline-primary"
+                       onclick="return confirm('Möchten Sie die Daten aus {{ datei.name }} wirklich wiederherstellen?')"
+                       title="Wiederherstellen">
+                        <i class="fas fa-sync-alt"></i>
+                    </a>
+                </div>
+            </div>
+        {% endfor %}
+            <button class="btn btn-primary" type="submit">{{ 'Auswahl erneut verarbeiten'|trans }}</button>
+        </form>
+    </div>
+    <div class="modal fade" id="jsonPreviewModal" tabindex="-1" aria-labelledby="jsonPreviewModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="jsonPreviewModalLabel">Vorschau</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body bg-dark text-light">
+                    <!-- Hier wird der formatierte JSON-Inhalt geladen -->
+                    <pre><code id="jsonPreviewContent" class="language-json">Lade Inhalt...</code></pre>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Schließen</button>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascript %}
+{{ parent() }}
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const previewModal = document.getElementById('jsonPreviewModal');
+            if (previewModal) {
+                const modalTitle = document.getElementById('jsonPreviewModalLabel');
+                const modalContent = document.getElementById('jsonPreviewContent');
+
+                // Wir fangen das "show.bs.modal"-Event ab, um zu wissen, welcher Button geklickt wurde
+                previewModal.addEventListener('show.bs.modal', async (event) => {
+                    const button = event.relatedTarget; // Der Button, der das Modal ausgelöst hat
+                    if (!button) return; // Schutz, falls Modal anders ausgelöst wird
+
+                    const filename = button.getAttribute('data-filename');
+                    if (!filename) return;
+
+                    // 1. Modal-Inhalt zurücksetzen und Titel setzen
+                    modalTitle.textContent = `Vorschau: ${filename}`;
+                    modalContent.textContent = 'Lade Inhalt...';
+                    modalContent.style.color = '#e0e0e0'; // Standard-Textfarbe
+
+                    try {
+                        // 2. Daten vom Server abrufen
+                        // Wir verwenden die in der Controller-Datei definierte Route
+                        const url = `{{ path('app_recover_ais_preview', {filename: 'FILENAME_PLACEHOLDER'}) }}`.replace('FILENAME_PLACEHOLDER', filename);
+
+                        const response = await fetch(url);
+
+                        if (!response.ok) {
+                            const errorText = await response.text();
+                            throw new Error(`Fehler beim Laden: ${errorText} (Status ${response.status})`);
+                        }
+
+                        const rawText = await response.text();
+
+                        // 3. JSON parsen und "pretty-printen" (schön formatieren)
+                        try {
+                            const parsedJson = JSON.parse(rawText);
+                            // JSON.stringify mit 2 Leerzeichen Einrückung
+                            modalContent.textContent = JSON.stringify(parsedJson, null, 2);
+                        } catch (jsonError) {
+                            // Wenn es kein valides JSON ist (z.B. nur ein Text-String), zeige den Rohtext
+                            console.warn('Fehler beim Parsen von JSON, zeige Rohtext:', jsonError);
+                            modalContent.textContent = rawText;
+                        }
+
+                    } catch (error) {
+                        console.error('Fetch-Fehler:', error);
+                        modalContent.textContent = `Konnte Datei nicht laden:\n${error.message}`;
+                        modalContent.style.color = '#ff8a8a'; // Fehlerfarbe
+                    }
+                });
+
+                // Optional: Modal leeren, wenn es geschlossen wird
+                previewModal.addEventListener('hidden.bs.modal', () => {
+                    modalTitle.textContent = 'Vorschau';
+                    modalContent.textContent = '';
+                });
+            }
+        });
+    </script>
+{% endblock %}

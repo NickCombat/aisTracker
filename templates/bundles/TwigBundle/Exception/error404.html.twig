@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ein Fehler 404 ist aufgetreten{% endblock %}
+
+{% block breadcrumb %}
+    <nav aria-label="breadcrumb" class="d-none d-lg-block px-3 pt-1 pb-2 bg-white border-bottom">
+        <ol class="breadcrumb small mb-0">
+            <li class="breadcrumb-item"><a href="/">{{ 'Home'|trans }}</a></li>
+        </ol>
+    </nav>
+{% endblock %}
+
+{% block body %}
+    <div class="container text-center mt-5">
+        <h1 class="display-1">😟</h1>
+        <h2 class="mb-4">Hoppla! Ein interner Serverfehler 404 ist aufgetreten.</h2>
+        <p class="lead">
+            Wir wurden bereits über das Problem informiert und arbeiten an einer Lösung.
+            Bitte versuchen Sie es später erneut.
+        </p>
+        <a href="{{ path('app_home') }}" class="btn btn-primary mt-3">Zur Startseite</a>
+
+        {#
+        Dieser Block zeigt detaillierte Fehlermeldungen nur im Entwicklungs-Modus an.
+        Auf dem Live-System wird er ignoriert.
+        #}
+        {% if app.debug %}
+            <div class="alert alert-danger mt-5 text-start">
+                <p>
+                    <strong>Fehlercode:</strong> {{ status_code }}<br>
+                    <strong>Meldung:</strong> {{ status_text }}
+                </p>
+                <pre><code>{{ exception.message }}</code></pre>
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}

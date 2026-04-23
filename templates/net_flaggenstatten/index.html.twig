@@ -1,0 +1,142 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Einstellungen Hafenliste{% endblock %}
+
+{% block headline%}{{ headline|trans }}{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <style>
+        form{
+            margin-left: 10px;
+            margin-right: 10px;
+            width: 100%;
+        }
+    </style>
+{% endblock %}
+
+{% block breadcrumb %}
+    {{ include('_includes/_breadcrumb.html.twig') }}
+{% endblock %}
+
+{% block body %}
+    <div class="row g-0" style="width: 1100px">
+            {% for form in formArray %}
+
+                {{ form_start(form) }}
+                <div class="row">
+                    <div class="card col-md-3">
+                        <div style="display: flex; align-items: center; gap: 8px;">
+                            <button
+                                    type="button"
+                                    class="btn btn-sm btn-outline-secondary"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#uploadFlagModal"
+                                    data-id="{{ form.vars.value.id }}"
+                                    data-name="{{ form.vars.value.AmtlicheKurzform }}"
+                            >
+                        {% if form.vars.value.flagge %}
+                            <img src="{{ asset('/img/flaggen/' ~ form.vars.value.flagge) }}"
+                                 alt="Flagge von {{ form.vars.value.AmtlicheKurzform }}"
+                                 onerror="this.onerror=null; this.src='/img/no-image-found.png';"
+                                 style="display: inline-block;
+                                         width: 1.33333em;
+                                         height: 1em;
+                                         background-image: url('/img/flaggen/{{ form.vars.value.flagge }}');
+                                         background-position: 50% center;
+                                         background-repeat: no-repeat;
+                                         background-size: contain;
+                                         font-size: 20px;
+                                         line-height: 1em;
+                                         vertical-align: middle;
+                                         border-radius: 1px;
+                                         flex-shrink: 0;
+                                         border: 1px solid rgb(231, 237, 241);"
+                            >
+                        {% endif %}
+                            </button>
+                            {{ form_widget(form.AmtlicheKurzform) }}
+                        </div>
+                    </div>
+                    <div class="card col-md-5">
+                        {{ form_widget(form.AmtlicheVollform) }}
+                    </div>
+                    <div class="card col-md-1">
+                        {{ form_widget(form.kuerzel) }}
+                    </div>
+                    <div class="card col-md-2">
+                        <button
+                                type="submit"
+                                name="submit_id"
+                                value="{{ form.vars.value.id }}"
+                                class="btn btn-primary"
+                        >
+                            Ändern</button>
+                    </div>
+                </div>
+                {% set flaggenId = form.vars.value.id %}
+                {% set amtlicheKurzform = form.vars.value.AmtlicheKurzform %}
+                {{ form_end(form) }}
+            {% endfor %}
+            {{ form_start(formNew) }}
+            <div class="row" style="margin-top: 10px">
+                <div class="card col-md-3">
+                    {{ form_widget(formNew.AmtlicheKurzform) }}
+                </div>
+                <div class="card col-md-5">
+                    {{ form_widget(formNew.AmtlicheVollform) }}
+                </div>
+                <div class="card col-md-1">
+                    {{ form_widget(formNew.kuerzel) }}
+                </div>
+                <div class="card col-md-2">
+                    {{ form_widget(formNew.add) }}
+                </div>
+            </div>
+            {{ form_end(formNew) }}
+    </div>
+    <!-- Modal -->
+    <div class="modal fade"
+         id="uploadFlagModal"
+         tabindex="-1"
+         aria-labelledby="uploadFlagModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                {{ form_start(editForm, {
+                    'action': path('upload_flag'),
+                    'attr': {'enctype': 'multipart/form-data'}
+                }) }}
+                <div class="modal-header">
+                    <h5 class="modal-title" id="uploadFlagModalLabel">Flagge hochladen</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Schließen"></button>
+                </div>
+                <div class="modal-body">
+                    <input type="hidden" name="flaggenstaat_id" id="flaggenstaat_id">
+                    <p id="flaggenstaat_name"></p>
+                    {{ form_row(editForm.flag) }}
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Hochladen</button>
+                </div>
+                {{ form_end(editForm) }}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascript %}
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const modal = document.getElementById('uploadFlagModal');
+            modal.addEventListener('show.bs.modal', function (event) {
+                const button = event.relatedTarget;
+                const id = button.getAttribute('data-id');
+                const name = button.getAttribute('data-name');
+
+                modal.querySelector('#flaggenstaat_id').value = id;
+                modal.querySelector('#flaggenstaat_name').textContent = 'Flagge für ' + name;
+            });
+        });
+    </script>
+{% endblock %}

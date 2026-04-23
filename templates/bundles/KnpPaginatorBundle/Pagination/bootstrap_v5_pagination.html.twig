@@ -1,0 +1,37 @@
+{% extends '@KnpPaginator/Pagination/sliding.html.twig' %}
+
+{% block pagination %}
+    {% if pageCount > 1 %}
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+                {% if previous is defined %}
+                    <li class="first">
+                        <a href="{{ path(route, query|merge({(pageParameterName): 1})) }}" class="btn btn-sm btn-primary">&lt;&lt;</a>
+                    </li>
+                    <li class="previous">
+                        <a href="{{ path(route, query|merge({(pageParameterName): previous})) }}" class="btn btn-sm btn-primary">&lt;</a>
+                    </li>
+                {% endif %}
+
+                {% for page in pagesInRange %}
+                    {% if page != current %}
+                        <li class="page">
+                            <a href="{{ path(route, query|merge({(pageParameterName): page})) }}" class="btn btn-sm btn-secondary">{{ page }}</a>
+                        </li>
+                    {% else %}
+                        <li class="current btn btn-sm btn-secondary active">{{ page }}</li>
+                    {% endif %}
+                {% endfor %}
+
+                {% if next is defined %}
+                    <li class="next">
+                        <a href="{{ path(route, query|merge({(pageParameterName): next})) }}" class="btn btn-sm btn-primary">&gt;</a>
+                    </li>
+                    <li class="last">
+                        <a href="{{ path(route, query|merge({(pageParameterName): pageCount})) }}" class="btn btn-sm btn-primary">&gt;&gt;</a>
+                    </li>
+                {% endif %}
+            </ul>
+        </nav>
+    {% endif %}
+{% endblock %}

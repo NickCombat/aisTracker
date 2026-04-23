@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Einstellungen{% endblock %}
+
+{% block headline%}{{ headline|trans }}{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <style>
+        form{
+            margin-left: 10px;
+            margin-right: 10px;
+            width: 100%;
+        }
+    </style>
+{% endblock %}
+
+{% block breadcrumb %}
+    {{ include('_includes/_breadcrumb.html.twig') }}
+{% endblock %}
+
+{% block body %}
+    <div class="row g-0"  style="max-width: 1100px;">
+{#        {% for KomponentenTypenForm in KomponentenTypenFormArr %}#}
+{#        {{ form_start(KomponentenTypenForm) }}#}
+{#        <div class="row">#}
+{#            <div class="col-md-1 text-md-center"></div>#}
+{#            <div class="card col-md-6">#}
+{#                {{ form_widget(KomponentenTypenForm.bezeichnung) }}#}
+{#            </div>#}
+{#            <div class="card col-md-2">#}
+{#                {{ form_widget(KomponentenTypenForm.add) }}#}
+{#            </div>#}
+{#            <div class="col-md-3"></div>#}
+{#        </div>#}
+{#        {{ form_end(KomponentenTypenForm) }}#}
+{#        {% endfor %}#}
+{#        {{ form_start(KomponentenTypenFormNew) }}#}
+{#        <div class="row" style="margin-top: 10px;">#}
+{#            <div class="col-md-1 text-md-center"></div>#}
+{#            <div class="card col-md-6">#}
+{#                {{ form_widget(KomponentenTypenFormNew.bezeichnung) }}#}
+{#            </div>#}
+{#            <div class="card col-md-2">#}
+{#                {{ form_widget(KomponentenTypenFormNew.add) }}#}
+{#            </div>#}
+{#            <div class="col-md-3"></div>#}
+{#        </div>#}
+{#        {{ form_end(KomponentenTypenFormNew) }}#}
+    </div>
+{% endblock %}

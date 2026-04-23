@@ -1,0 +1,35 @@
+{% if breadcrumb is defined and breadcrumb %}
+<nav aria-label="breadcrumb" class="d-none d-lg-block px-3 pt-1 pb-2 bg-white border-bottom">
+        <ol class="breadcrumb small mb-0">
+            {{ breadcrumb | raw }}
+        </ol>
+    </nav>
+{% elseif breadcrumbs is defined and breadcrumbs %}
+    <nav aria-label="breadcrumb" class="d-none d-lg-block px-3 pt-1 pb-2 bg-white border-bottom">
+        <ol class="breadcrumb small mb-0">
+            {% for crumb in breadcrumbs %}
+                {% if loop.last %}
+                    <li class="breadcrumb-item" style="font-weight: bold;">
+                        <a href="{{ crumb.route is defined ? path(crumb.route, crumb.routeParams|default({})) : '#' }}">
+                            {{ crumb.label|trans(crumb.params|default({})) }}
+                        </a>
+                    </li>
+                {% else %}
+                    <li class="breadcrumb-item">
+                        <a href="{{ crumb.route is defined ? path(crumb.route, crumb.routeParams|default({})) : '#' }}">
+                            {{ crumb.label|trans(crumb.params|default({})) }}
+                        </a>
+                    </li>
+                {% endif %}
+            {% endfor %}
+        </ol>
+    </nav>
+{% else %}
+    <nav aria-label="breadcrumb" class="d-none d-lg-block px-3 pt-1 pb-2 bg-white border-bottom">
+        <ol class="breadcrumb small mb-0">
+            <li class="breadcrumb-item"><a class="nav-link" href="{{ path('app_home') }}">{{ 'Home'|trans }}</a></li>
+            <li class="breadcrumb-item"><a href="#">Library</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Data... >NA<</li>
+        </ol>
+    </nav>
+{% endif %}

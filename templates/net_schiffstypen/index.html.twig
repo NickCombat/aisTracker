@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Einstellungen Hafenliste{% endblock %}
+
+{% block headline%}{{ headline|trans }}{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <style>
+        form{
+            margin-left: 10px;
+            margin-right: 10px;
+            width: 100%;
+        }
+    </style>
+{% endblock %}
+
+{% block breadcrumb %}
+    {{ include('_includes/_breadcrumb.html.twig') }}
+{% endblock %}
+
+{% block body %}
+    <div class="row g-0"  style="max-width: 1100px;">
+        {% for form in formArray %}
+
+            {{ form_start(form) }}
+            <div class="row">
+                <div class="card col-md-3">
+                    {{ form_widget(form.bezeichnung) }}
+                </div>
+                <div class="card col-md-7">
+                    {{ form_widget(form.Beschreibung) }}
+                </div>
+                <div class="card col-md-2">
+                    <button
+                            type="submit"
+                            name="submit_id"
+                            value="{{ form.vars.value.id }}"
+                            class="btn btn-primary"
+                    >Ändern</button>
+                </div>
+                <div class=""></div>
+            </div>
+            {{ form_end(form) }}
+
+        {% endfor %}
+        {{ form_start(formNew) }}
+        <div class="row" style="margin-top: 10px">
+            <div class="card col-md-3">
+                {{ form_widget(formNew.bezeichnung) }}
+            </div>
+            <div class="card col-md-7">
+                {{ form_widget(formNew.Beschreibung) }}
+            </div>
+            <div class=""></div>
+            <div class="card col-md-2">
+                {{ form_widget(formNew.add) }}
+            </div>
+            <div class=""></div>
+        </div>
+        {{ form_end(formNew) }}
+    </div>
+{% endblock %}

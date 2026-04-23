@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Einstellungen Kostenstellen{% endblock %}
+
+{% block headline%}{{ headline|trans }}{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <style>
+        form{
+            margin-left: 10px;
+            margin-right: 10px;
+            width: 100%;
+        }
+    </style>
+{% endblock %}
+
+{% block breadcrumb %}
+    {{ include('_includes/_breadcrumb.html.twig') }}
+{% endblock %}
+
+{% block body %}
+    <div class="row g-0"  style="max-width: 1100px;">
+        {% for statusForm in statusFormArray %}
+
+            {{ form_start(statusForm) }}
+            <div class="row">
+                <div class="card col-md-6">
+                    {{ form_widget(statusForm.bezeichnung) }}
+                </div>
+                <div class="card col-md-3">
+                    {{ form_widget(statusForm.style) }}
+                </div>
+                <div class="card col-md-1 {{ field_value(statusForm.style) }}">
+                </div>
+                <div class="card col-md-2">
+                    {{ form_widget(statusForm.mod) }}
+                </div>
+            </div>
+            {{ form_end(statusForm) }}
+        {% endfor %}
+        {{ form_start(statusFormNew) }}
+        <div class="row" style="margin-top: 10px">
+            <div class="card col-md-6">
+                {{ form_widget(statusFormNew.bezeichnung) }}
+                <small>{{ form_help(statusFormNew.bezeichnung) }}</small>
+            </div>
+            <div class="card col-md-4">
+                {{ form_widget(statusFormNew.style) }}
+                <small>{{ form_help(statusFormNew.style) }}</small>
+            </div>
+            <div class="card col-md-2">
+                {{ form_widget(statusFormNew.add) }}
+            </div>
+        </div>
+        {{ form_end(statusFormNew) }}
+    </div>
+{% endblock %}
