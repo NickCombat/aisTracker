@@ -67,7 +67,7 @@ class NetShipStatusController extends AbstractController
         $breadcrumb  = '<li class="breadcrumb-item"><a href="' .$this->generateUrl( 'net_einstellungen') . '">Einstellungen</a></li>';
         $breadcrumb .= '<li class="breadcrumb-item"><a href="#">Projekt Status</a></li>';
 
-        return $this->render( 'net_einstellungen/shipstatus.html.twig', [
+        return $this->render( 'einstellungen/shipstatus.html.twig', [
             'headline'        => 'Projekt Status',
             'breadcrumb'      => $breadcrumb,
             'statusFormArray' => $bestellungKostenstellenFormArray,

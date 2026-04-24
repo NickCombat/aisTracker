@@ -1,0 +1,116 @@
+{# templates/admin/ais_status.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'AIS Stream Status'|trans }}{% endblock %}
+
+{% block headline%}{{'AIS Stream Status'|trans}}{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <style>
+        /* Kleiner visueller Effekt für den aktiven Status */
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(0.95);
+                opacity: 0.8;
+            }
+            70% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(0.95);
+                opacity: 0.8;
+            }
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+    <div class="container mt-4">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h1><i class="fas fa-satellite-dish"></i> {{ 'AIS Stream Monitor'|trans }}</h1>
+            <a href="{{ path('projekte_uebersicht_list') }}" class="btn btn-outline-secondary btn-sm">
+                <i class="fas fa-arrow-left"></i> Zurück
+            </a>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="card-header fw-bold">{{ 'System-Status'|trans }}</div>
+                    <div class="card-body text-center">
+                        {% if is_running %}
+                            <div class="display-4 text-success mb-2">
+                                <i class="fas fa-check-circle pulse-animation"></i>
+                            </div>
+                            <span class="badge bg-success fs-6">{{ 'Aktiv'|trans }}</span>
+                            <p class="text-muted mt-3 small">{{ 'Prozess-ID'|trans }} (PID): <code>{{ pid }}</code></p>
+                        {% else %}
+                            <div class="display-4 text-danger mb-2">
+                                <i class="fas fa-times-circle"></i>
+                            </div>
+                            <span class="badge bg-danger fs-6">{{ 'Inaktiv'|trans }}</span>
+                            <p class="text-muted mt-3 small">{{'Der Dienst wird aktuell nicht ausgeführt.' |trans}}</p>
+                        {% endif %}
+                        <div class="mt-2 small">
+                            Lock-Datei:
+                            {% if lock_exists %}
+                                <span class="text-success fw-bold">{{ 'Vorhanden'|trans }}</span>
+                            {% else %}
+                                <span class="text-muted">{{ 'Nicht vorhanden'|trans }}</span>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="card-footer d-grid">
+                        {% if is_running %}
+                            <a href="{{ path('ais_control', {action: 'stop'}) }}" class="btn btn-outline-danger"
+                               onclick="return confirm({{ 'Prozess wirklich beenden?'|trans }})">
+                                <i class="fas fa-stop"></i> {{ 'Stream stoppen'|trans }}
+                            </a>
+                        {% else %}
+                            <a href="{{ path('ais_control', {action: 'start'}) }}" class="btn btn-primary">
+                                <i class="fas fa-play"></i> {{ 'Stream jetzt starten'|trans }}
+                            </a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header fw-bold">{{ 'Informationen'|trans }}</div>
+                    <div class="card-body">
+                        <h5>{{ 'Funktionsweise'|trans }}</h5>
+                        <p>{{ 'ais.stream'|trans }}</p>
+
+                        <div class="alert alert-info">
+                            <i class="fas fa-info-circle"></i> <strong>{{ 'Watchdog-Info'|trans }}:</strong>
+                            {{'aisstream.Cronjob.neu'|trans}}
+                        </div>
+
+                        <h6>{{ 'Konfiguration'|trans }}</h6>
+                        <table class="table table-sm">
+                            <tr>
+                                <td>{{ 'Dienst'|trans }}:</td>
+                                <td>aisstream.io (v0)</td>
+                            </tr>
+                            <tr>
+                                <td>{{ 'Filtertyp'|trans }}:</td>
+                                <td>{{ 'Dynamische MMSI-Liste (Datenbank-basiert)'|trans }}</td>
+                            </tr>
+                            <tr>
+                                <td>{{ 'Speichermethode'|trans }}:</td>
+                                <td>{{ 'NetShipPositionHistory (ORM)'|trans }}</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
