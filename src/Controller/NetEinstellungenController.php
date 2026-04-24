@@ -41,7 +41,7 @@ class NetEinstellungenController extends AbstractController
         $breadcrumb .= '</a></li>';
         $breadcrumb .= '<li class="breadcrumb-item"><a href="#"></a></li>';
 
-        return $this->render('net_einstellungen/index.html.twig', [
+        return $this->render('einstellungen/index.html.twig', [
             'headline'                => $this->translator->trans('Einstellungen Komponententypen'),
             'breadcrumb'              => $breadcrumb,
         ]);
