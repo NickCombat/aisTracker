@@ -1,0 +1,33 @@
+{% macro navItem(url, label, count = 0, icon = null, active = false, target = null) %}
+    <li class="nav-item">
+        <a class="nav-link d-flex align-items-center {% if active %}active fw-bold text-primary{% endif %}"
+           href="{{ url }}"
+                {% if target %}
+                    target="{{ target }}"
+                {% endif %}
+        >
+            {% if icon %}
+                <i class="{{ icon }} me-2"></i>
+            {% endif %}
+            {% if count > 0 %}
+                <span class="badge bg-primary text-white me-2">{{ count }}</span>
+            {% endif %}
+            {{ label|trans }}
+        </a>
+    </li>
+{% endmacro %}
+{% macro copyButton(copyText) %}
+    <button type="button"
+            title="In die Zwischenablage kopieren"
+            data-bs-toggle="tooltip"
+            data-copy-text="{{ copyText }}"
+            data-icon-default="fa-regular fa-copy"
+            data-icon-success="fa-solid fa-check"
+            data-icon-fail="fa-solid fa-triangle-exclamation"
+            data-flash-ms="1400"
+            aria-label="Text in die Zwischenablage kopieren"
+    >
+        <i class="fa-regular fa-copy" aria-hidden="true"></i>
+        <span class="sr-only">Kopieren</span>
+    </button>
+{% endmacro %}
