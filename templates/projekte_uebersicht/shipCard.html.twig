@@ -240,18 +240,18 @@
                title="{{ 'Projekt Eigenschaften'|trans }}">
                 <img src="{{ asset('/images/edit-icon.png') }}" height="30" alt="X">
             </a>
-            {% if shipdata.status.id != '2' %}
-                <a href="{{ path('projekt_zum_archiv', {id: shipdata.id}) }}"
-                   title="{{ 'Projekt ins Archiv'|trans }}">
-                    <img src="{{ asset('/images/archiv1.png') }}" height="30" alt="X">
-                </a>
-            {% endif %}
-            {% if shipdata.status.id == '2' %}
-                <a href="{{ path('projekt_von_archiv', {id: shipdata.id}) }}"
-                   title="{{ 'Projekt zurück aus Archiv'|trans }}">
-                    <img src="/images/archiv2.png" height="30rem" alt="X">
-                </a>
-            {% endif %}
+{#            {% if shipdata.status.id != '2' %}#}
+{#                <a href="{{ path('projekt_zum_archiv', {id: shipdata.id}) }}"#}
+{#                   title="{{ 'Projekt ins Archiv'|trans }}">#}
+{#                    <img src="{{ asset('/images/archiv1.png') }}" height="30" alt="X">#}
+{#                </a>#}
+{#            {% endif %}#}
+{#            {% if shipdata.status.id == '2' %}#}
+{#                <a href="{{ path('projekt_von_archiv', {id: shipdata.id}) }}"#}
+{#                   title="{{ 'Projekt zurück aus Archiv'|trans }}">#}
+{#                    <img src="/images/archiv2.png" height="30rem" alt="X">#}
+{#                </a>#}
+{#            {% endif %}#}
         </div>
     </div>
 </div>
