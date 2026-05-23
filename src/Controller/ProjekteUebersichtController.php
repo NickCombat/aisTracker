@@ -169,7 +169,7 @@ class ProjekteUebersichtController extends GalerieService
             ]
         ];
 
-        return $this->render('projekte_uebersicht/details.html.twig', [
+        return $this->render('projekte_uebersicht/detailsEdit.html.twig', [
             'headline'    => $headline,
             'breadcrumbs' => $breadcrumbs,
             'projekt_id'  => $shipdataObject->getId(),

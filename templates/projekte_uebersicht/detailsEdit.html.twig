@@ -1,0 +1,157 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Projekt Bearbeiten{% endblock %}
+
+{% block headline%}{{ headline|trans }}{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+{% endblock %}
+
+{% block submenue %}
+    {% if projekt_id != '' %}
+        {{ include('_includes/_projektUebersichtMenue.html.twig') }}
+    {% endif %}
+{%  endblock %}
+
+{% block breadcrumb %}
+    {{ include('_includes/_breadcrumb.html.twig') }}
+{% endblock %}
+
+{% block body %}
+    <div class="row g-0">
+        {{ include('projekte_uebersicht/shipInfoCard.html.twig') }}
+
+        <div>
+            {#            <a href="{{ path('strucktur_anlegen', {'id': shipdata.id}) }}" class="btn btn-primary">{{'Komponente hinzufügen'|trans}}</a> #}
+            <a href="{{ path('projekt_artikel_hinzufuegen', {id: shipdata.id}) }}" class="btn btn-primary">{{'Komponente
+            hinzufügen'|trans}}</a>
+            <a href="{{ path('projekt_anlagen_add', {id: shipdata.id}) }}" class="btn btn-primary">{{'Anlagen hinzufügen'|trans}}</a>
+        </div>
+        <!-- KomponentenListe -->
+
+    </div>
+
+    <!-- pdfModal -->
+    <div class="modal fade" id="pdfModal" tabindex="-1" role="dialog" aria-labelledby="pdfModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="pdfModalLabel">PDF Vorschau</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Schließen">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <iframe id="pdfFrame" src="" width="100%" height="500px"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascript %}
+{{ parent() }}
+<script>
+        $('#pdfModal').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget); // Button that triggered the modal
+            var url = button.data('url'); // Extract info from data-* attributes
+            var modal = $(this);
+            modal.find('.modal-body iframe').attr('src', url);
+        });
+
+        document.querySelectorAll('.delete-entry').forEach(button => {
+            button.addEventListener('click', function(event) {
+                event.preventDefault();
+                const entry = this.closest('li');
+                const entryId = entry.getAttribute('data-id');
+
+                fetch(`/api/delPortTime/${entryId}`, {
+                    method: 'DELETE',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-Requested-With': 'XMLHttpRequest'
+                    }
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        entry.remove();
+                    } else {
+                        alert('Fehler beim Löschen des Eintrags.');
+                    }
+                });
+            });
+        });
+
+        document.querySelectorAll('.edit-entry').forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                // Daten aus den Attributen holen
+                const arrivalId = this.getAttribute('data-arrival-id');
+                const departureId = this.getAttribute('data-departure-id');
+                let arrivalDate = this.getAttribute('data-arrival');
+                let departureDate = this.getAttribute('data-departure');
+
+                // WICHTIG: Das Format für datetime-local korrigieren (Leerzeichen zu T)
+                if (arrivalDate) {
+                    arrivalDate = arrivalDate.replace(' ', 'T');
+                }
+                if (departureDate) {
+                    departureDate = departureDate.replace(' ', 'T');
+                }
+
+                // Felder im Modal befüllen
+                document.getElementById('editArrivalId').value = arrivalId;
+                document.getElementById('editDepartureId').value = departureId;
+                document.getElementById('editArrival').value = arrivalDate;
+                document.getElementById('editDeparture').value = departureDate;
+
+                // Modal anzeigen
+                var myModal = new bootstrap.Modal(document.getElementById('editPortModal'));
+                myModal.show();
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const buttons = document.querySelectorAll('.toggle-ais-btn');
+
+            buttons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const shipId = this.dataset.shipId;
+                    const url = this.dataset.toggleUrl;
+                    let currentStatus = this.dataset.currentStatus === '1';
+
+                    // Ajax-Anfrage senden
+                    fetch(url, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            // Optional: Symfony CSRF-Token, falls aktiv
+                        }
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            // Status im Frontend aktualisieren
+                            const newStatus = data.newStatus;
+
+                            this.textContent = newStatus ? 'AKTIV' : 'INAKTIV';
+                            this.dataset.currentStatus = newStatus ? '1' : '0';
+
+                            // Button-Farbe aktualisieren (Bootstrap-Klassen)
+                            this.classList.toggle('btn-success', newStatus);
+                            this.classList.toggle('btn-danger', !newStatus);
+                        } else {
+                            console.error('Umschalten fehlgeschlagen');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Fehler bei der Ajax-Anfrage:', error);
+                    });
+                });
+            });
+        });
+</script>
+{% endblock %}
