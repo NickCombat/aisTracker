@@ -1,0 +1,39 @@
+{% import '_includes/_macros.html.twig' as ui %}
+<nav class="col-md-2 d-none d-md-block bg-light sidebar">
+    <div class="sidebar-sticky">
+        <ul class="nav flex-column">
+            <li class="nav-item">
+                <b>{{ 'calendar.week_short'|trans({ '%weekNumber%': "now"|date("W") }) }}</b> <span id="date-time-display" data-days-json="{{ translated_days|json_encode }}"></span>
+            </li>
+            {{ ui.navItem(path( 'projekt_deails', {'id': projekt_id}), 'Projektdaten', 0, 'fa fa-ship', app.request.attributes.get('_route') == 'projekt_deails') }}
+            {% if app.user %}
+                {{ ui.navItem(path('projekt_bearbeiten', {'id': projekt_id}), 'Projekt bearbeiten', 0, 'fa-regular fa-pen-to-square', app.request.attributes.get('_route') == 'projekt_bearbeiten') }}
+            {% endif %}
+            {{ ui.navItem(path('hafen_liste', {'id': projekt_id}), 'Häfen', 0, 'fa-solid fa-anchor-circle-check', app.request.attributes.get('_route') == 'hafen_liste') }}
+            {{ ui.navItem(path('nav_liste', {'id': projekt_id}), 'Navpunkte', 0, 'fa-solid fa-compass-drafting', app.request.attributes.get('_route') == 'nav_liste') }}
+            {{ ui.navItem(path('projekt_komponenten_list', {'id': projekt_id}), 'Komponentenliste', 0, 'fa-solid fa-database', app.request.attributes.get('_route') == 'projekt_komponenten_list') }}
+            {{ ui.navItem(path('projekt_komponenten_wartung', {'id': projekt_id}), 'Komponenten Wartung', 0, 'fa-solid fa-gears', app.request.attributes.get('_route') == 'projekt_komponenten_wartung') }}
+            {{ ui.navItem(path('ship_dashboard', {'id': projekt_id}), 'breadcrumb.ship.dashboard', 0, 'fa-solid fa-toolbox', app.request.attributes.get('_route') == 'ship_dashboard') }}
+            {{ ui.navItem(path('projekt_baugruppen_list', {'id': projekt_id}), 'Baugruppen Summen', 0, 'fa-solid fa-list', app.request.attributes.get('_route') == 'projekt_baugruppen_list') }}
+            {{ ui.navItem(path('projekt_komponenten_mengen', {'id': projekt_id}), 'Projekt Mengen', 0, 'fa-solid fa-diagram-project', app.request.attributes.get('_route') == 'projekt_komponenten_mengen') }}
+            {{ ui.navItem(path('projekt_anlagen_add', {'id': projekt_id}), 'Anlagen', shipdata.anlagenCount|default(0), 'fa-regular fa-file', app.request.attributes.get('_route') == 'projekt_anlagen_add') }}
+            {{ ui.navItem(path('projekt_komponenten_ipadressen', {'id': projekt_id}), 'IP Adressen', 0, 'fa-solid fa-globe', app.request.attributes.get('_route') == 'projekt_komponenten_ipadressen') }}
+            {{ ui.navItem(path('projekt_netzwerk_struktur', {'id': projekt_id}), 'Netzwerk Struktur', 0, 'fa-solid fa-network-wired', app.request.attributes.get('_route') == 'projekt_netzwerk_struktur') }}
+            {% if app.user %}
+            {{ ui.navItem(path('projekt_netzwerk_struktur_raw', {'id': projekt_id}), 'Netzwerk Raw', 0, 'fa-solid fa-circle-nodes', app.request.attributes.get('_route') == 'projekt_netzwerk_struktur_raw', '_blank') }}
+            {% endif %}
+            {% if (shipdata.type.id == 1) %}
+            {{ ui.navItem(path('projekt_show_deck', {'id': projekt_id}), 'Bays Oberdeck', 0, 'fa fa-map', app.request.attributes.get('_route') == 'projekt_show_deck') }}
+            {% endif %}
+            {% if app.user %}
+            {{ ui.navItem(path('projekt_komponenten_export', {'id': projekt_id}), 'Export Excel', 0, 'fa-regular fa-file-excel', app.request.attributes.get('_route') == 'projekt_komponenten_export') }}
+            {% endif %}
+            {% if is_granted('ROLE_TECH') %}
+            {{ ui.navItem(path('projekt_komponenten_bestellen', {'id': projekt_id}), 'Komponenten bestellen', 0, 'fa-solid fa-cart-arrow-down', app.request.attributes.get('_route') == 'projekt_komponenten_bestellen') }}
+            {{ ui.navItem(path('app_ship_installation_index', {'id': projekt_id}), 'Komponenten verbauen', 0, 'fa-solid fa-screwdriver-wrench', app.request.attributes.get('_route') == 'app_ship_installation_index') }}
+            {{ ui.navItem(path('app_ship_installation_ausbau', {'id': projekt_id}), 'Komponenten ausbauen', 0, 'fa-solid fa-screwdriver-wrench', app.request.attributes.get('_route') == 'app_ship_installation_ausbau') }}
+            {% endif %}
+            {{ ui.navItem(path('projekt_galerie', {'id': projekt_id}), 'Projekt Galerie', shipdata.imageCount|default(0), 'fa-regular fa-images', app.request.attributes.get('_route') == 'projekt_galerie') }}
+        </ul>
+    </div>
+</nav>

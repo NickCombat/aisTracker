@@ -1,0 +1,56 @@
+{# templates/macros/berechnungen.html.twig #}
+
+{% macro aisTimestampAnzeigen(timestamp) %}
+    {% if timestamp %}
+        {% set dataDate = timestamp %}
+        {% set oneHourAgo = date('-1 hour') %}
+        {% set twoHoursAgo = date('-2 hours') %}
+        {% set fourHoursAgo = date('-4 hours') %}
+
+        {% set statusClass = '' %}
+        {% if dataDate < fourHoursAgo %}
+            {# älter als 4 Stunden -> rot #}
+            {% set statusClass = 'status-red' %}
+        {% elseif dataDate < twoHoursAgo %}
+            {# 2-4 Stunden alt -> orange #}
+            {% set statusClass = 'status-orange' %}
+        {% elseif dataDate < oneHourAgo %}
+            {# 1-2 Stunden alt -> gelb #}
+            {% set statusClass = 'status-yellow' %}
+        {% else %}
+            {# jünger als 1 Stunde -> grün #}
+            {% set statusClass = 'status-green' %}
+        {% endif %}
+
+        {% set secondsOld = date('now').timestamp - timestamp.timestamp %}
+        {% set daysOld = (secondsOld / 86400)|round(0, 'floor') %}
+        {% set hoursOld = ((secondsOld % 86400) / 3600)|round(0, 'floor') %}
+        {% set minutesOld = ((secondsOld % 3600) / 60)|round(0, 'floor') %}
+
+        {# 1. übersetzten Einheiten (z.B. "Std." oder "hr(s)") #}
+        {% set unit_days = 'unit.days'|trans %}
+        {% set unit_hours = 'unit.hours'|trans %}
+        {% set unit_minutes = 'unit.minutes'|trans %}
+
+        {# 2. ageText #}
+        {% set ageText = '' %}
+        {% if daysOld > 0 %}
+            {% set ageText = daysOld ~ ' ' ~ unit_days ~ ' ' ~ hoursOld ~ ' ' ~ unit_hours %}
+        {% elseif hoursOld > 0 %}
+            {% set ageText = hoursOld ~ ' ' ~ unit_hours ~ ' ' ~ minutesOld ~ ' ' ~ unit_minutes %}
+        {% else %}
+            {% set ageText = minutesOld ~ ' ' ~ unit_minutes %}
+        {% endif %}
+
+        {# 3. Gesamte Ausgabe übersetzen #}
+        <span class="{{ statusClass }} ais-timestamp">
+            {% set datetime = timestamp|date('d.m.Y H:i') %}
+            {{ 'timestamp.with_age.format'|trans({
+                '%datetime%': datetime,
+                '%age%': ageText
+            }) }}
+        </span>
+    {% else %}
+        <span class="status-gray ais-timestamp">{{'Keine Positionsdaten verfügbar'|trans}}</span>
+    {% endif %}
+{% endmacro %}
