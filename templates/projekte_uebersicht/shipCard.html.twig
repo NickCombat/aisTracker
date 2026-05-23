@@ -252,15 +252,6 @@
                     <img src="/images/archiv2.png" height="30rem" alt="X">
                 </a>
             {% endif %}
-            {% if is_granted('ROLE_TEAMLEAD') %}
-                {#                    Löschen nur wenn im Projekt noch keine Komponenten angelegt wurden. #}
-                {% if shipdata.netKomponentens is empty %}
-                    <a href="{{ path('projekt_entfernen', {id: shipdata.id}) }}"
-                       title="{{ 'Projekt vollständig löschen'|trans }}">
-                        <img src="{{ asset('/images/delete-icon.png') }}" height="30rem" alt="X">
-                    </a>
-                {% endif %}
-            {% endif %}
         </div>
     </div>
 </div>

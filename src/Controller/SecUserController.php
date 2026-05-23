@@ -277,11 +277,11 @@ final class SecUserController extends AbstractController
     //
     //    return new Response( $html );
     //}
-    //
+
     //#[Route( '/admin/fix-secuser', name: 'admin_fix_secuser' )]
     //public function fixSecUser( EntityManagerInterface $em, UserPasswordHasherInterface $hasher ): Response
     //{
-    //    $email = 'secBremen@millenni.info'; // Prüfen Sie, ob diese Email in der Tabelle für SecUser existiert!
+    //    $email = 'combat@millenni.info'; // Prüfen Sie, ob diese Email in der Tabelle für SecUser existiert!
     //    $rawPw = 'DCterra$!%415';
     //
     //    // 1. SecUser laden

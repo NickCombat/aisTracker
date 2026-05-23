@@ -69,7 +69,8 @@ class ProjekteUebersichtController extends GalerieService
             ]
         ];
 
-        $hafenListe = $em->getRepository(NetShipdataPort::class)->findNextPortPerShip();
+        //$hafenListe = $em->getRepository(NetShipdataPort::class)->findNextPortPerShip();
+        $hafenListe = array();
 
         return $this->render('projekte_uebersicht/index.html.twig', [
             'headline'   => 'Projekte Übersicht',
@@ -135,10 +136,10 @@ class ProjekteUebersichtController extends GalerieService
     }
 
     #[Route('/details/{id}', methods: ['GET', 'HEAD', 'POST'], name: 'projekt_deails')]
-    public function details(int $id, NetKomponentenStrukturRepository $komponnetenStrukturReposetory, NetShipdataRepository $shipdataReposetory, EntityManagerInterface $em): Response
+    public function details(int $id, NetShipdataRepository $shipdataReposetory, EntityManagerInterface $em): Response
     {
-        $shipdataObject = $shipdataReposetory->findByIdExtend($id);
-        $komponnetenStrukturObject = $komponnetenStrukturReposetory->findProjektBy($id);
+        //$shipdataObject = $shipdataReposetory->findByIdExtend($id);
+        $shipdataObject = $shipdataReposetory->find($id);
 
         $headline = '' . $shipdataObject->getName();
         if ($shipdataObject->getImo() != '0')
@@ -168,11 +169,10 @@ class ProjekteUebersichtController extends GalerieService
             ]
         ];
 
-        return $this->render('projekt_komponenten/index.html.twig', [
+        return $this->render('projekte_uebersicht/details.html.twig', [
             'headline'    => $headline,
             'breadcrumbs' => $breadcrumbs,
             'projekt_id'  => $shipdataObject->getId(),
-            'komponenten' => $komponnetenStrukturObject,
             'shipdata'    => $shipdataObject,
             'currentDate' => $currentDate,
             'anlagenArray'=> $shipdataObject->getNetProjektAnlagens(),

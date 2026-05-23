@@ -78,21 +78,22 @@ class NetShipdataRepository extends ServiceEntityRepository
         $shipIds = array_map(fn($s) => $s->getId(), $ships);
         $conn = $this->getEntityManager()->getConnection();
 
-        $statsSql = "
-            SELECT 
-                p.id,
-                (SELECT COUNT(nk.id) FROM net_komponenten nk WHERE nk.shipdata_id = p.id) as total_count,
-                (SELECT COUNT(nk.id) FROM net_komponenten nk WHERE nk.shipdata_id = p.id AND nk.zustand = 'defekt') as defect_count,
-                (SELECT COUNT(nk.id) FROM net_komponenten nk WHERE nk.shipdata_id = p.id AND nk.zustand = 'pruefen') as check_count,
-                (SELECT MAX(nml.created_at) 
-                 FROM komponenten_maintenance_log nml
-                 INNER JOIN net_komponenten nk ON nml.net_komponente_id = nk.id
-                 WHERE nk.shipdata_id = p.id) as last_action
-            FROM net_shipdata p
-            WHERE p.id IN (?)
-        ";
-
-        $statsRows = $conn->executeQuery($statsSql, [$shipIds], [\Doctrine\DBAL\ArrayParameterType::INTEGER])->fetchAllAssociative();
+        //$statsSql = "
+        //    SELECT
+        //        p.id,
+        //        (SELECT COUNT(nk.id) FROM net_komponenten nk WHERE nk.shipdata_id = p.id) as total_count,
+        //        (SELECT COUNT(nk.id) FROM net_komponenten nk WHERE nk.shipdata_id = p.id AND nk.zustand = 'defekt') as defect_count,
+        //        (SELECT COUNT(nk.id) FROM net_komponenten nk WHERE nk.shipdata_id = p.id AND nk.zustand = 'pruefen') as check_count,
+        //        (SELECT MAX(nml.created_at)
+        //         FROM komponenten_maintenance_log nml
+        //         INNER JOIN net_komponenten nk ON nml.net_komponente_id = nk.id
+        //         WHERE nk.shipdata_id = p.id) as last_action
+        //    FROM net_shipdata p
+        //    WHERE p.id IN (?)
+        //";
+        //
+        //$statsRows = $conn->executeQuery($statsSql, [$shipIds], [\Doctrine\DBAL\ArrayParameterType::INTEGER])->fetchAllAssociative();
+        $statsRows = [];
 
         // Indexiere die Stats nach ID für schnellen Zugriff
         $statsById = [];
