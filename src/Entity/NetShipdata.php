@@ -13,8 +13,8 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 #[ORM\Entity(repositoryClass: NetShipdataRepository::class)]
 #[UniqueEntity(
-    fields: ['imo'],
-    message: 'Die IMO Nummer ist immer eindeutig.'
+    fields: ['MMSI'],
+    message: 'Die MMSI Nummer ist immer eindeutig.'
 )]
 class NetShipdata
 {

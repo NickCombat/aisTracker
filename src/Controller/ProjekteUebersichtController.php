@@ -181,45 +181,9 @@ class ProjekteUebersichtController extends GalerieService
     
     #[Route('/bearbeiten/{id}', methods: ['GET', 'HEAD', 'POST'], name: 'projekt_bearbeiten')]
     #[IsGranted('ROLE_USER')]
-    public function bearbeiten(int $id, NetShipdataRepository $shipdataReposetory, NetBayStructureRepository $bayRepo, NetKomponentenStrukturRepository $komponnetenStrukturReposetory, NetKomponentenRepository $komponentenRepo, Request $request, EntityManagerInterface $em): Response
+    public function bearbeiten(int $id, NetShipdataRepository $shipdataReposetory, Request $request, EntityManagerInterface $em): Response
     {
         $shipdataObject = $shipdataReposetory->find($id);
-        $bayRange       = $bayRepo->findMainBaysByShip($id);
-        $allBays        = $komponnetenStrukturReposetory->findAllOccupiedBays($id);
-        $orphanedBays   = $komponentenRepo->findOrphanedBays($id);
-        $autoAddBay     = $request->query->get( 'autoadd' );
-
-        if ( $autoAddBay )
-        {
-            // Prüfen ob Bay schon existiert (Sicherheit)
-            $exists = $bayRepo->findOneBy( [ 'shipdata' => $id, 'bay_number' => $autoAddBay ] );
-
-            if ( ! $exists )
-            {
-                $newBay = new NetBayStructure();
-                $newBay->setBayNumber( (int)$autoAddBay );
-                $newBay->setShipdata( $shipdataObject ); // Das Schiff-Objekt deiner Methode
-                $newBay->setIsEven( true );
-                $em->persist( $newBay );
-
-                // Optional: 20' Kinder direkt mit anlegen
-                foreach ( [ (int)$autoAddBay - 1, (int)$autoAddBay + 1 ] as $sub )
-                {
-                    $child = new NetBayStructure();
-                    $child->setBayNumber( $sub );
-                    $child->setShipdata( $shipdataObject );
-                    $child->setParentBay( $newBay );
-                    $child->setIsEven( false );
-                    $em->persist( $child );
-                }
-
-                $em->flush();
-                $this->addFlash( 'success', "Bay $autoAddBay wurde automatisch generiert." );
-            }
-
-            // Parameter aus URL entfernen durch Redirect auf die saubere Seite
-            return $this->redirectToRoute( 'projekt_bearbeiten', [ 'id' => $id ] );
-        }
 
         $form = $this->createForm(NetShipdataModType::class, $shipdataObject);
         $form->handleRequest($request);
@@ -282,10 +246,6 @@ class ProjekteUebersichtController extends GalerieService
             'projekt_id' => $id,
             'breadcrumb' => $breadcrumb,
             'shipdata'   => $shipdataObject,
-            'mainBays'   => $bayRange,
-            'bayRange'   => $bayRange,
-            'allBays'    => $allBays,
-            'orphanedBays' => $orphanedBays
 
         ]);
     }
@@ -865,13 +825,6 @@ class ProjekteUebersichtController extends GalerieService
     public function updateStatus(NetShipdata $schiff, NetProjektStatus $newStatus, EntityManagerInterface $em)
     {
         $schiff->setStatus($newStatus);
-
-        foreach ($schiff->getNetKomponentens() as $komponente)
-        {
-            $komponente->berechneNaechsteWartung();
-
-            $em->persist($komponente);
-        }
 
         $em->flush();
     }
