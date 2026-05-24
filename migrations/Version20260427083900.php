@@ -24,9 +24,9 @@ final class Version20260427083900 extends
         // this up() migration is auto-generated, please modify it to your needs
         $this->addSql( "INSERT INTO `net_seiten_parameter` ( `name`, `wert`, `beschreibung`) VALUES
 ( 'lte.distance', '20', 'Maximale Distanz für LTE-Berechnungen in Kilometern'),
-( 'system.locale', 'de', 'Standardsprache für E-Mails und Benachrichtigungen (z.B. de, en, fr, cn)'),
-( 'url.back', 'https://df399c15-32cb-48ae-b084-895d05aec85e.mock.pstmn.io', 'Backup'),
-( 'aisstream.api.key', 'bc41072d5de480f977db6501493b7bd9cf103548', 'API Key für den aisstream.io Dienst');" );
+( 'system.locale', 'de', 'Standardsprache für E-Mails und Benachrichtigungen (z.B. de, en)'),
+( 'aisstream.api.key', 'bc41072d5de480f977db6501493b7bd9cf103548', 'API Key für den aisstream.io Dienst'),
+( 'aisstream.api.BoundingBoxes', '[ [ [ 30.221673, 47.364529 ], [ 24.543676, 60.750419 ] ] ]', 'Seegebiet');" );
 
         //$this->addSql( "" );
     }

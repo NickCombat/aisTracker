@@ -13,6 +13,10 @@ class GalerieService extends AbstractController
         $quality  = 90;
 
         // 1. Bild-Infos holen
+        if (!is_file($sourcePath))
+        {
+            return;
+        }
         list( $width, $height, $type ) = getimagesize( $sourcePath );
 
         // 2. Neue Maße berechnen (Proportionen erhalten)

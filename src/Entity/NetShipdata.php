@@ -141,7 +141,7 @@ class NetShipdata
         return $this->imo;
     }
 
-    public function setImo(int $imo): static
+    public function setImo( $imo): static
     {
         $this->imo = $imo;
 

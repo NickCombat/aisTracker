@@ -353,7 +353,6 @@ class ProjekteUebersichtController extends GalerieService
         {
             /** @var UploadedFile $anlage */
             $anlage = $form->get('Schiffsbild')->getData();
-
             if($anlage)
             {
                 $destination = $this->getParameter( 'anlagenShipOrdner' );
@@ -366,7 +365,8 @@ class ProjekteUebersichtController extends GalerieService
                 $this->compressAndScaleImage($tempPath, $finalPath);
                 $shipdataObject->setPic($dateiname);
             }
-            $shipdataObject->setAisUpdate(0);
+            $shipdataObject->setAisUpdate( 0 )
+                           ->setStatus( $this->fetchStatusAktiv() );
 
             $em->persist($shipdataObject);
             $em->flush();
@@ -827,5 +827,11 @@ class ProjekteUebersichtController extends GalerieService
         $schiff->setStatus($newStatus);
 
         $em->flush();
+    }
+
+    private function fetchStatusAktiv():NetProjektStatus
+    {
+        return $this->em->getRepository( NetProjektStatus::class )
+                        ->findOneBy( [ 'bezeichnung' => 'aktiv' ] );
     }
 }

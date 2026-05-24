@@ -16,7 +16,6 @@ final class ShipAisController  extends _extensController
         $projectDir = $this->getParameter( 'kernel.project_dir' );
         $lockFile   = $projectDir . '/var/log/ais_stream.lock';
 
-        //$cmdCheck   = "ps aux | grep 'app:ais-listen' | grep -v grep | awk '{print $2}'";
         $cmdCheck   = "ps aux | grep '[a]pp:ais-listen' | awk '{print $2}'";
         exec($cmdCheck, $output);
 
@@ -26,6 +25,11 @@ final class ShipAisController  extends _extensController
         $mainPid   = $isRunning ? $pids[0] : null;
 
         $action = $request->query->get( 'action' );
+
+        if (PHP_OS_FAMILY === 'Windows') {
+            $this->addFlash('warning', 'Prozess-Steuerung wird lokal unter Windows nicht unterstützt. Bitte starte "php bin/console app:ais-listen" manuell im Terminal.');
+            // Die Linux exec() Befehle hier überspringen
+        }
 
         if ( $action === 'start' )
         {
