@@ -106,25 +106,29 @@
 <div class="card w-100">
     <div class="row g-0">
         <div class="col-md-4" >
-        {% if(shipdata.imo) %}
-            <script type="text/javascript">
-                // Map appearance
-                var width  = "100%";         // width in pixels or percentage
-                var height = "200";         // height in pixels
-                var names  = false;           // always show ship names (defaults to false)
+            {% if shipdata.imo or shipdata.mmsi %}
+                <script type="text/javascript">
+                    // Map appearance
+                    var width = "100%";        // width in pixels or percentage
+                    var height = "200";         // height in pixels
+                    var names = false;         // always show ship names (defaults to false)
+                    var show_track = true;     // display track line (last 24 hours)
 
-                // Single ship tracking
-                var imo = "{{ shipdata.imo }}";        // display latest position (by IMO, overrides MMSI)
-                var show_track = true;      // display track line (last 24 hours)
-            </script>
-            <script type="text/javascript" src="https://www.vesselfinder.com/aismap.js"></script>
-        {% else %}
-            {% if(shipdata.pic) %}
-                <img src="/img/projekte/{{ shipdata.pic }}" class="card-img" alt="{{ shipdata.name }}">
+                    // Single ship tracking: IMO hat Priorität, Fallback auf MMSI
+                    {% if shipdata.imo %}
+                    var imo = "{{ shipdata.imo }}";
+                    {% else %}
+                    var mmsi = "{{ shipdata.mmsi }}";
+                    {% endif %}
+                </script>
+                <script type="text/javascript" src="https://www.vesselfinder.com/aismap.js"></script>
             {% else %}
-                <img src="{{ asset('images/no-image-found.png') }}" class="card-img" alt="{{ shipdata.name }}">
+            {% if shipdata.pic %}
+            <img src="/img/projekte/{{ shipdata.pic }}" class="card-img" alt="{{ shipdata.name }}">
+            {% else %}
+            <img src="{{ asset('images/no-image-found.png') }}" class="card-img" alt="{{ shipdata.name }}">
             {% endif %}
-        {% endif %}
+            {% endif %}
             <div class="card-text">
             {% import "_macros/_berechnungen.html.twig" as berechnungen %}
             <div class="card-text">
