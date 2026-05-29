@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+    <file source-language="en" target-language="es" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="zh5oKD9" resname="This value should be false.">
+                <source>This value should be false.</source>
+                <target>Este valor debería ser falso.</target>
+            </trans-unit>
+            <trans-unit id="NN2_iru" resname="This value should be true.">
+                <source>This value should be true.</source>
+                <target>Este valor debería ser verdadero.</target>
+            </trans-unit>
+            <trans-unit id="OjM_kpf" resname="This value should be of type {{ type }}.">
+                <source>This value should be of type {{ type }}.</source>
+                <target>Este valor debería ser de tipo {{ type }}.</target>
+            </trans-unit>
+            <trans-unit id="f0P5pBD" resname="This value should be blank.">
+                <source>This value should be blank.</source>
+                <target>Este valor debería estar vacío.</target>
+            </trans-unit>
+            <trans-unit id="ih.4TRN" resname="The value you selected is not a valid choice.">
+                <source>The value you selected is not a valid choice.</source>
+                <target>El valor seleccionado no es una opción válida.</target>
+            </trans-unit>
+            <trans-unit id="u81CkP8"
+                        resname="You must select at least {{ limit }} choice.|You must select at least {{ limit }} choices.">
+                <source>You must select at least {{ limit }} choice.|You must select at least {{ limit }} choices.
+                </source>
+                <target>Debe seleccionar al menos {{ limit }} opción.|Debe seleccionar al menos {{ limit }} opciones.
+                </target>
+            </trans-unit>
+            <trans-unit id="nIvOQ_o"
+                        resname="You must select at most {{ limit }} choice.|You must select at most {{ limit }} choices.">
+                <source>You must select at most {{ limit }} choice.|You must select at most {{ limit }} choices.
+                </source>
+                <target>Debe seleccionar como máximo {{ limit }} opción.|Debe seleccionar como máximo {{ limit }}
+                    opciones.
+                </target>
+            </trans-unit>
+            <trans-unit id="LO2vFKN" resname="This value is not a valid date.">
+                <source>This value is not a valid date.</source>
+                <target>Este valor no es una fecha válida.</target>
+            </trans-unit>
+            <trans-unit id="PSvNXdi" resname="This value is not a valid email address.">
+                <source>This value is not a valid email address.</source>
+                <target>Este valor no es una dirección de correo electrónico válida.</target>
+            </trans-unit>
+            <trans-unit id="3KeHbZy" resname="The file could not be found.">
+                <source>The file could not be found.</source>
+                <target>No se pudo encontrar el archivo.</target>
+            </trans-unit>
+            <trans-unit id="NubOmrs" resname="This value should be {{ limit }} or less.">
+                <source>This value should be {{ limit }} or less.</source>
+                <target>Este valor debería ser {{ limit }} o menos.</target>
+            </trans-unit>
+            <trans-unit id="qgR8M_U" resname="This value should be {{ limit }} or more.">
+                <source>This value should be {{ limit }} or more.</source>
+                <target>Este valor debería ser {{ limit }} o más.</target>
+            </trans-unit>
+            <trans-unit id="zKzWejA" resname="This value is not valid.">
+                <source>This value is not valid.</source>
+                <target>Este valor no es válido.</target>
+            </trans-unit>
+            <trans-unit id="VKDowX6" resname="Error">
+                <source>Error</source>
+                <target>Error</target>
+            </trans-unit>
+            <trans-unit id="b.wpOrM" resname="Diese Seriennummer ist bereits im System hinterlegt.">
+                <source>Diese Seriennummer ist bereits im System hinterlegt.</source>
+                <target>Este número de serie ya está registrado en el sistema.</target>
+            </trans-unit>
+            <trans-unit id="WBPwBkR" resname="Bitte geben Sie eine gültige IP-Adresse ein.">
+                <source>Bitte geben Sie eine gültige IP-Adresse ein.</source>
+                <target>Por favor, introduzca una dirección IP válida.</target>
+            </trans-unit>
+            <trans-unit id="jrj4ZjU" resname="Die IMO Nummer ist immer eindeutig.">
+                <source>Die IMO Nummer ist immer eindeutig.</source>
+                <target>El número IMO es siempre único.</target>
+            </trans-unit>
+            <trans-unit id="zeCdkQ4" resname="Die IMO-Nummer darf nicht leer sein.">
+                <source>Die IMO-Nummer darf nicht leer sein.</source>
+                <target>El número IMO no puede estar vacío.</target>
+            </trans-unit>
+            <trans-unit id="ANGnsUF" resname="Das Passwort muss mindestens {{ limit }} Zeichen lang sein.">
+                <source>Das Passwort muss mindestens {{ limit }} Zeichen lang sein.</source>
+                <target>La contraseña debe tener al menos {{ limit }} caracteres.</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

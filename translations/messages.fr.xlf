@@ -1,0 +1,2751 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+    <file source-language="de" target-language="fr" datatype="plaintext" original="file.ext">
+        <header>
+            <tool tool-id="symfony" tool-name="Symfony"/>
+        </header>
+        <body>
+            <trans-unit id="l9HmhSa" resname="Bezeichnung">
+                <source>Bezeichnung</source>
+                <target>Désignation</target>
+            </trans-unit>
+            <trans-unit id="RDX8wud" resname="Artikel">
+                <source>Artikel</source>
+                <target>Article</target>
+            </trans-unit>
+            <trans-unit id="MqRquV7" resname="-- Bitte wählen --">
+                <source>-- Bitte wählen --</source>
+                <target>-- Veuillez choisir --</target>
+            </trans-unit>
+            <trans-unit id="oSWv.aI" resname="D4100-E Network Strobe Siren">
+                <source>D4100-E Network Strobe Siren</source>
+                <target>D4100-E Sirène stroboscopique réseau</target>
+            </trans-unit>
+            <trans-unit id="KlTTvRv" resname="CorivaSat RTLS">
+                <source>CorivaSat RTLS</source>
+                <target>CorivaSat RTLS</target>
+            </trans-unit>
+            <trans-unit id="dKZhes0" resname="CorivaSat Roro">
+                <source>CorivaSat Roro</source>
+                <target>CorivaSat Roro</target>
+            </trans-unit>
+            <trans-unit id="T0secJp" resname="USW-Flex-Utility (46W)">
+                <source>USW-Flex-Utility (46W)</source>
+                <target>USW-Flex-Utility (46W)</target>
+            </trans-unit>
+            <trans-unit id="DPzK7X6" resname="UniFi Switch Pro 8 PoE - USW-Pro-8-PoE">
+                <source>UniFi Switch Pro 8 PoE - USW-Pro-8-PoE</source>
+                <target>Commutateur UniFi Pro 8 PoE - USW-Pro-8-PoE</target>
+            </trans-unit>
+            <trans-unit id="6aOX2uT" resname="IDS-710HP">
+                <source>IDS-710HP</source>
+                <target>IDS-710HP</target>
+            </trans-unit>
+            <trans-unit id="HWOT7Gn" resname="IRG5140+ LTE Router">
+                <source>IRG5140+ LTE Router</source>
+                <target>Routeur LTE IRG5140+</target>
+            </trans-unit>
+            <trans-unit id="f2H0.ov" resname="UPSI-2412DP3">
+                <source>UPSI-2412DP3</source>
+                <target>UPSI-2412DP3</target>
+            </trans-unit>
+            <trans-unit id="dH80Rve" resname="EMPEC-1750">
+                <source>EMPEC-1750</source>
+                <target>EMPEC-1750</target>
+            </trans-unit>
+            <trans-unit id="nDsJji3" resname="QUINT4-PS/1AC/48DC/10">
+                <source>QUINT4-PS/1AC/48DC/10</source>
+                <target>QUINT4-PS/1AC/48DC/10</target>
+            </trans-unit>
+            <trans-unit id="ca1Kaeh" resname="DRL-24V480W1EN">
+                <source>DRL-24V480W1EN</source>
+                <target>DRL-24V480W1EN</target>
+            </trans-unit>
+            <trans-unit id="MFhtgYl" resname="DRL-48V480W1EN">
+                <source>DRL-48V480W1EN</source>
+                <target>DRL-48V480W1EN</target>
+            </trans-unit>
+            <trans-unit id="B0i7aOA" resname="Leitungsschutzschalter Typ B, 1-polig 10A">
+                <source>Leitungsschutzschalter Typ B, 1-polig 10A</source>
+                <target>Disjoncteur Type B, 1-pôle 10A</target>
+            </trans-unit>
+            <trans-unit id="7gzNpyI" resname="HYDRA 466">
+                <source>HYDRA 466</source>
+                <target>HYDRA 466</target>
+            </trans-unit>
+            <trans-unit id="k64Ubg1" resname="Hydra 346">
+                <source>Hydra 346</source>
+                <target>Hydra 346</target>
+            </trans-unit>
+            <trans-unit id="NRGQLhe" resname="Kabelverschraubung V-TEC TB25 07-10 teilbar mit Gegenmutter">
+                <source>Kabelverschraubung V-TEC TB25 07-10 teilbar mit Gegenmutter</source>
+                <target>Presse-étoupe V-TEC TB25 07-10 sécable avec contre-écrou</target>
+            </trans-unit>
+            <trans-unit id="O1QJv1q" resname="Kabelverschraubung M25 mit Gegenmutter">
+                <source>Kabelverschraubung M25 mit Gegenmutter</source>
+                <target>Presse-étoupe M25 avec contre-écrou</target>
+            </trans-unit>
+            <trans-unit id="DrBf6Ux" resname="Stationsrechner">
+                <source>Stationsrechner</source>
+                <target>Ordinateur de station</target>
+            </trans-unit>
+            <trans-unit id="Wkx1S80" resname="RUT9-series LTE/GPS Antenne">
+                <source>RUT9-series LTE/GPS Antenne</source>
+                <target>Antenne GPS/LTE série RUT9</target>
+            </trans-unit>
+            <trans-unit id="PE__Q.U" resname="Sirius 110V Online USV 1 - 3 kVA">
+                <source>Sirius 110V Online USV 1 - 3 kVA</source>
+                <target>Onduleur en ligne Sirius 110V 1 - 3 kVA</target>
+            </trans-unit>
+            <trans-unit id="POMPXLk" resname="1U AMD single-CPU RA1104-SMEPH">
+                <source>1U AMD single-CPU RA1104-SMEPH</source>
+                <target>1U AMD single-CPU RA1104-SMEPH</target>
+            </trans-unit>
+            <trans-unit id="QpR8BCk" resname="Rittal Wandverteilergehäuse 9HE mit Glastüre 600x478x473mm">
+                <source>Rittal Wandverteilergehäuse 9HE mit Glastüre 600x478x473mm</source>
+                <target>Armoire murale Rittal 9U avec porte vitrée 600x478x473mm</target>
+            </trans-unit>
+            <trans-unit id="KeTP9Ze" resname="DIGITUS Patchpanel – Modular – 19-Zoll – 24-Port">
+                <source>DIGITUS Patchpanel – Modular – 19-Zoll – 24-Port</source>
+                <target>Panneau de brassage DIGITUS – Modulaire – 19 pouces – 24 ports</target>
+            </trans-unit>
+            <trans-unit id="OdK9sgc" resname="DIGITUS LWL-Keystone-Modul – LC/LC-Duplex">
+                <source>DIGITUS LWL-Keystone-Modul – LC/LC-Duplex</source>
+                <target>Module Keystone fibre optique DIGITUS – LC/LC-Duplex</target>
+            </trans-unit>
+            <trans-unit id="SClRLcb" resname="Schuko Steckdose [GS16] für Hutschiene 16A 230V 2P+E">
+                <source>Schuko Steckdose [GS16] für Hutschiene 16A 230V 2P+E</source>
+                <target>Prise Schuko [GS16] pour rail DIN 16A 230V 2P+T</target>
+            </trans-unit>
+            <trans-unit id="l_ZSXP8" resname="4 Stk DIN Schiene">
+                <source>4 Stk DIN Schiene</source>
+                <target>4 Pcs Rail DIN</target>
+            </trans-unit>
+            <trans-unit id="xPCwu1z" resname="Schutzleiter-Reihenklemme, PT 2,5-PE/L/N">
+                <source>Schutzleiter-Reihenklemme, PT 2,5-PE/L/N</source>
+                <target>Bornier de terre, PT 2,5-PE/L/N</target>
+            </trans-unit>
+            <trans-unit id="wEsahYd" resname="Abschlussdeckel - D-PTI/3">
+                <source>Abschlussdeckel - D-PTI/3</source>
+                <target>Cache d'extrémité - D-PTI/3</target>
+            </trans-unit>
+            <trans-unit id="zpzQ8Aj" resname="Endhalter für Hutschiene">
+                <source>Endhalter für Hutschiene</source>
+                <target>Support d'extrémité pour rail DIN</target>
+            </trans-unit>
+            <trans-unit id="C.KbVVG" resname="Keystone-Modul Cat-6A Geschirmt - 1 Stück">
+                <source>Keystone-Modul Cat-6A Geschirmt - 1 Stück</source>
+                <target>Module Keystone Cat-6A Blindé - 1 pièce</target>
+            </trans-unit>
+            <trans-unit id="_JzIS.w" resname="PoE Switch">
+                <source>PoE Switch</source>
+                <target>Commutateur PoE</target>
+            </trans-unit>
+            <trans-unit id="Ul9IbuN" resname="Switch, 5-Port, Gigabit Ethernet, PoE+, outdoor">
+                <source>Switch, 5-Port, Gigabit Ethernet, PoE+, outdoor</source>
+                <target>Commutateur, 5 ports, Gigabit Ethernet, PoE+, extérieur</target>
+            </trans-unit>
+            <trans-unit id="k2lRHMK" resname="TI-CA2 Steel housing, outdoor">
+                <source>TI-CA2 Steel housing, outdoor</source>
+                <target>Boîtier en acier TI-CA2, extérieur</target>
+            </trans-unit>
+            <trans-unit id="zL4oPt0" resname="8-Port Gigabit Ethernet Switch">
+                <source>8-Port Gigabit Ethernet Switch</source>
+                <target>Commutateur Gigabit Ethernet 8 ports</target>
+            </trans-unit>
+            <trans-unit id="6iytB.i" resname="TSW202 MANAGED PoE+ ETHERNET SWITCH">
+                <source>TSW202 MANAGED PoE+ ETHERNET SWITCH</source>
+                <target>COMMUTATEUR ETHERNET TSW202 GÉRÉ PoE+</target>
+            </trans-unit>
+            <trans-unit id="jIgWGa5" resname="FlatBox Plus 12 HE">
+                <source>FlatBox Plus 12 HE</source>
+                <target>FlatBox Plus 12 U</target>
+            </trans-unit>
+            <trans-unit id="zEGcagG" resname="Patchpanel Modular -12 Ports -10-Zoll">
+                <source>Patchpanel Modular -12 Ports -10-Zoll</source>
+                <target>Panneau de brassage modulaire -12 ports -10 pouces</target>
+            </trans-unit>
+            <trans-unit id="7ovdZKW" resname="SFP Netzwerkkarte">
+                <source>SFP Netzwerkkarte</source>
+                <target>Carte réseau SFP</target>
+            </trans-unit>
+            <trans-unit id="VqS97cw" resname="IP68 RJ-45-Steckeradapter">
+                <source>IP68 RJ-45-Steckeradapter</source>
+                <target>Adaptateur de prise RJ-45 IP68</target>
+            </trans-unit>
+            <trans-unit id="Oo.obN1" resname="USW-Flex (46W)">
+                <source>USW-Flex (46W)</source>
+                <target>USW-Flex (46W)</target>
+            </trans-unit>
+            <trans-unit id="rlS95A0" resname="USW-FLEX-UTILITY">
+                <source>USW-FLEX-UTILITY</source>
+                <target>USW-FLEX-UTILITY</target>
+            </trans-unit>
+            <trans-unit id="QemPT3W" resname="Peltier-Kühlgerät PK 150">
+                <source>Peltier-Kühlgerät PK 150</source>
+                <target>Unité de refroidissement Peltier PK 150</target>
+            </trans-unit>
+            <trans-unit id="3R7rPM_" resname="Thermostat">
+                <source>Thermostat</source>
+                <target>Thermostat</target>
+            </trans-unit>
+            <trans-unit id="EreyvSb" resname="Schließzylinder">
+                <source>Schließzylinder</source>
+                <target>Cylindre de serrure</target>
+            </trans-unit>
+            <trans-unit id="komLKRz" resname="USB-B Kabel">
+                <source>USB-B Kabel</source>
+                <target>Câble USB-B</target>
+            </trans-unit>
+            <trans-unit id="LMrhuT6" resname="USB auf RS232">
+                <source>USB auf RS232</source>
+                <target>USB vers RS232</target>
+            </trans-unit>
+            <trans-unit id="9N7X5Hz" resname="LTE Router">
+                <source>LTE Router</source>
+                <target>Routeur LTE</target>
+            </trans-unit>
+            <trans-unit id="UmYOy8X" resname="POE Injektor INJ-IG02-PH">
+                <source>POE Injektor INJ-IG02-PH</source>
+                <target>Injecteur PoE INJ-IG02-PH</target>
+            </trans-unit>
+            <trans-unit id="mPdZar6" resname="DC-Kabel">
+                <source>DC-Kabel</source>
+                <target>Câble CC</target>
+            </trans-unit>
+            <trans-unit id="YZDz1HK" resname="Kabel 16 AWG">
+                <source>Kabel 16 AWG</source>
+                <target>Câble 16 AWG</target>
+            </trans-unit>
+            <trans-unit id="f9X54Ia" resname="RS232 Winkeladapter">
+                <source>RS232 Winkeladapter</source>
+                <target>Adaptateur d'angle RS232</target>
+            </trans-unit>
+            <trans-unit id="N1EnAC3" resname="Zangen Montage-Paket">
+                <source>Zangen Montage-Paket</source>
+                <target>Kit de montage de pinces</target>
+            </trans-unit>
+            <trans-unit id="woGawZc" resname="Schraubendreher">
+                <source>Schraubendreher</source>
+                <target>Tournevis</target>
+            </trans-unit>
+            <trans-unit id="QcaNpkx" resname="Sechskant-Steckschlüssel 5-tlg">
+                <source>Sechskant-Steckschlüssel 5-tlg</source>
+                <target>Clé à douille hexagonale 5 pièces</target>
+            </trans-unit>
+            <trans-unit id="hEMxmeS" resname="Schlosserhammer 500 g">
+                <source>Schlosserhammer 500 g</source>
+                <target>Marteau de serrurier 500 g</target>
+            </trans-unit>
+            <trans-unit id="aAIf.IR" resname="Netzwerkdose Aufputz CAT 6a 1 Port Schwarz">
+                <source>Netzwerkdose Aufputz CAT 6a 1 Port Schwarz</source>
+                <target>Prise réseau en saillie CAT 6a 1 port noir</target>
+            </trans-unit>
+            <trans-unit id="ji_BYRX" resname="Tüllengehäuse Schwarz Industry IP67 V1 1401025002KE">
+                <source>Tüllengehäuse Schwarz Industry IP67 V1 1401025002KE</source>
+                <target>Boîtier à œillet noir Industry IP67 V1 1401025002KE</target>
+            </trans-unit>
+            <trans-unit id="N3XitiV" resname="OnLogic Karbon 803">
+                <source>OnLogic Karbon 803</source>
+                <target>OnLogic Karbon 803</target>
+            </trans-unit>
+            <trans-unit id="SB9w0Gf" resname="Abox 250">
+                <source>Abox 250</source>
+                <target>Abox 250</target>
+            </trans-unit>
+            <trans-unit id="iY4yICs" resname="Wasserdichter RJ45 Koppler">
+                <source>Wasserdichter RJ45 Koppler</source>
+                <target>Coupleur RJ45 étanche</target>
+            </trans-unit>
+            <trans-unit id="6XkC7ih" resname="USW-Ultra">
+                <source>USW-Ultra</source>
+                <target>USW-Ultra</target>
+            </trans-unit>
+            <trans-unit id="PpfyXVt" resname="RJ45 IP68 Wasserdichter Stecker, Stecker zu Buchse">
+                <source>RJ45 IP68 Wasserdichter Stecker, Stecker zu Buchse</source>
+                <target>Connecteur RJ45 IP68 étanche, mâle vers femelle</target>
+            </trans-unit>
+            <trans-unit id="5GXNIYG" resname="Installations-Etagenklemme, PTI 2,5-PE/L/N">
+                <source>Installations-Etagenklemme, PTI 2,5-PE/L/N</source>
+                <target>Bornier d'étage d'installation, PTI 2,5-PE/L/N</target>
+            </trans-unit>
+            <trans-unit id="sClH3KV" resname="PCB-Montage Schraubklemme">
+                <source>PCB-Montage Schraubklemme</source>
+                <target>Bornier à vis pour montage sur PCB</target>
+            </trans-unit>
+            <trans-unit id="9NmecKn" resname="Hutschiene">
+                <source>Hutschiene</source>
+                <target>Rail DIN</target>
+            </trans-unit>
+            <trans-unit id="AL_3aHU" resname="USB Kameramodul 120 Grad">
+                <source>USB Kameramodul 120 Grad</source>
+                <target>Module de caméra USB 120 degrés</target>
+            </trans-unit>
+            <trans-unit id="yOJ5xYH" resname="Netzwerkkabel CAT 7 Kabel">
+                <source>Netzwerkkabel CAT 7 Kabel</source>
+                <target>Câble réseau CAT 7</target>
+            </trans-unit>
+            <trans-unit id="yqc.__D" resname="UPSI-2406DP3">
+                <source>UPSI-2406DP3</source>
+                <target>UPSI-2406DP3</target>
+            </trans-unit>
+            <trans-unit id="IFGNRNO" resname="D-Sub RS232-Stecker auf Buchse, abgewinkelt">
+                <source>D-Sub RS232-Stecker auf Buchse, abgewinkelt</source>
+                <target>Connecteur D-Sub RS232 mâle vers femelle, coudé</target>
+            </trans-unit>
+            <trans-unit id="ZtuBh00" resname="Steckbare Klemmenblock Stecker">
+                <source>Steckbare Klemmenblock Stecker</source>
+                <target>Connecteur de bornier enfichable</target>
+            </trans-unit>
+            <trans-unit id="0Ov3xDq" resname="Druckluftspray/Druckluftreiniger">
+                <source>Druckluftspray/Druckluftreiniger</source>
+                <target>Spray/nettoyant à air comprimé</target>
+            </trans-unit>
+            <trans-unit id="A_Q.rrt" resname="Vierkantmutter Quadratmutter Edelstahl A2 / V2A DIN 562 M5">
+                <source>Vierkantmutter Quadratmutter Edelstahl A2 / V2A DIN 562 M5</source>
+                <target>Écrou carré Acier inoxydable A2 / V2A DIN 562 M5</target>
+            </trans-unit>
+            <trans-unit id="rSXkQgK" resname="M21-750-499 Etikettenklebeband">
+                <source>M21-750-499 Etikettenklebeband</source>
+                <target>Ruban adhésif d'étiquetage M21-750-499</target>
+            </trans-unit>
+            <trans-unit id="HLUUwEg" resname="Sechskant Bohrschrauben 4,2x16mm">
+                <source>Sechskant Bohrschrauben 4,2x16mm</source>
+                <target>Vis autoperceuses à tête hexagonale 4,2x16mm</target>
+            </trans-unit>
+            <trans-unit id="sdL7QGv" resname="Montageschiene 41x41 verzinkt">
+                <source>Montageschiene 41x41 verzinkt</source>
+                <target>Rail de montage 41x41 galvanisé</target>
+            </trans-unit>
+            <trans-unit id="1ZpWN3f" resname="Montageschiene 41x21 verzinkt">
+                <source>Montageschiene 41x21 verzinkt</source>
+                <target>Rail de montage 41x21 galvanisé</target>
+            </trans-unit>
+            <trans-unit id="kpMiU84" resname="Montagewinkel 41x41">
+                <source>Montagewinkel 41x41</source>
+                <target>Support de montage 41x41</target>
+            </trans-unit>
+            <trans-unit id="VQ5Xtoc" resname="Sicherungsklammer M12 41x41">
+                <source>Sicherungsklammer M12 41x41</source>
+                <target>Clip de retenue M12 41x41</target>
+            </trans-unit>
+            <trans-unit id="Ej9oOwU" resname="Trägerkralle 41x41 M8">
+                <source>Trägerkralle 41x41 M8</source>
+                <target>Griffe de support 41x41 M8</target>
+            </trans-unit>
+            <trans-unit id="KzBjvid" resname="Gegenplatte">
+                <source>Gegenplatte</source>
+                <target>Contre-plaque</target>
+            </trans-unit>
+            <trans-unit id="84oXEEu" resname="Zylinderschraube M12x90">
+                <source>Zylinderschraube M12x90</source>
+                <target>Vis cylindrique M12x90</target>
+            </trans-unit>
+            <trans-unit id="1RB0SIA" resname="Unterlegscheibe DIN9021M12 (D 9021 A 2 13 S)">
+                <source>Unterlegscheibe DIN9021M12 (D 9021 A 2 13 S)</source>
+                <target>Rondelle DIN9021M12 (D 9021 A 2 13 S)</target>
+            </trans-unit>
+            <trans-unit id="E9Nytru" resname="Unterlegscheibe DIN9021 M8">
+                <source>Unterlegscheibe DIN9021 M8</source>
+                <target>Rondelle DIN9021 M8</target>
+            </trans-unit>
+            <trans-unit id="CKRKosE" resname="Mutter selbsts. M8">
+                <source>Mutter selbsts. M8</source>
+                <target>Écrou auto-freinant M8</target>
+            </trans-unit>
+            <trans-unit id="acVHqcU" resname="Zylinderschraube M6x40">
+                <source>Zylinderschraube M6x40</source>
+                <target>Vis cylindrique M6x40</target>
+            </trans-unit>
+            <trans-unit id="ZeoYIGX" resname="Unterlegscheibe DIN9021 M6">
+                <source>Unterlegscheibe DIN9021 M6</source>
+                <target>Rondelle DIN9021 M6</target>
+            </trans-unit>
+            <trans-unit id="kQUIChP" resname="Mutter selbsts. M6">
+                <source>Mutter selbsts. M6</source>
+                <target>Écrou auto-freinant M6</target>
+            </trans-unit>
+            <trans-unit id="cSeNIVE" resname="Zylinderschraube M8x30">
+                <source>Zylinderschraube M8x30</source>
+                <target>Vis cylindrique M8x30</target>
+            </trans-unit>
+            <trans-unit id="u40diWS" resname="Distanzhülsen D12 D6 L 5mm">
+                <source>Distanzhülsen D12 D6 L 5mm</source>
+                <target>Entretoises D12 D6 L 5mm</target>
+            </trans-unit>
+            <trans-unit id="QwmotVH" resname="Metallverbinder L=200mm">
+                <source>Metallverbinder L=200mm</source>
+                <target>Connecteur métallique L=200mm</target>
+            </trans-unit>
+            <trans-unit id="HhRI5YA" resname="Metallverbinder L=250mm">
+                <source>Metallverbinder L=250mm</source>
+                <target>Connecteur métallique L=250mm</target>
+            </trans-unit>
+            <trans-unit id="3iOrp81" resname="Buchse zu Buchse - RS-232 Adapter">
+                <source>Buchse zu Buchse - RS-232 Adapter</source>
+                <target>Adaptateur Femelle vers Femelle - RS-232</target>
+            </trans-unit>
+            <trans-unit id="6PVaQOz" resname="Stecker zu Stecker - RS-232 Adapter">
+                <source>Stecker zu Stecker - RS-232 Adapter</source>
+                <target>Adaptateur Mâle vers Mâle - RS-232</target>
+            </trans-unit>
+            <trans-unit id=".yzv5f8" resname="USB auf RS232 Seriell Kabel">
+                <source>USB auf RS232 Seriell Kabel</source>
+                <target>Câble série USB vers RS232</target>
+            </trans-unit>
+            <trans-unit id="CMeNlaW" resname="FTDI USB zu Seriell Adapter kabel">
+                <source>FTDI USB zu Seriell Adapter kabel</source>
+                <target>Câble adaptateur série USB FTDI</target>
+            </trans-unit>
+            <trans-unit id="PNL3MkU" resname="Schiebelehre">
+                <source>Schiebelehre</source>
+                <target>Pied à coulisse</target>
+            </trans-unit>
+            <trans-unit id="PmfGgzO" resname="Montagewinkel 95x95">
+                <source>Montagewinkel 95x95</source>
+                <target>Support de montage 95x95</target>
+            </trans-unit>
+            <trans-unit id="D7X2uqs" resname="Mutter selbsts. M12">
+                <source>Mutter selbsts. M12</source>
+                <target>Écrou auto-freinant M12</target>
+            </trans-unit>
+            <trans-unit id="6dpHXm2" resname="Schlossschraube M10x35">
+                <source>Schlossschraube M10x35</source>
+                <target>Boulon de carrosserie M10x35</target>
+            </trans-unit>
+            <trans-unit id="B3Ih_I." resname="Mutter selbsts. M10">
+                <source>Mutter selbsts. M10</source>
+                <target>Écrou auto-freinant M10</target>
+            </trans-unit>
+            <trans-unit id="16RFdlH" resname="Unterlegscheibe DIN9021 M10">
+                <source>Unterlegscheibe DIN9021 M10</source>
+                <target>Rondelle DIN9021 M10</target>
+            </trans-unit>
+            <trans-unit id="EXFlAII" resname="Sicherungsklammer M8 41x41">
+                <source>Sicherungsklammer M8 41x41</source>
+                <target>Clip de retenue M8 41x41</target>
+            </trans-unit>
+            <trans-unit id="szkZpZp" resname="Zylinderschraube M8x50">
+                <source>Zylinderschraube M8x50</source>
+                <target>Vis cylindrique M8x50</target>
+            </trans-unit>
+            <trans-unit id="w7GBJau" resname="Trägerklammer Leitungsrohr">
+                <source>Trägerklammer Leitungsrohr</source>
+                <target>Collier de support de conduit</target>
+            </trans-unit>
+            <trans-unit id="q35VCFd" resname="IR Sensor">
+                <source>IR Sensor</source>
+                <target>Capteur IR</target>
+            </trans-unit>
+            <trans-unit id=".SSi2yw" resname="Funktionsstecker mit Trennklemmen">
+                <source>Funktionsstecker mit Trennklemmen</source>
+                <target>Fiche fonctionnelle avec bornes de déconnexion</target>
+            </trans-unit>
+            <trans-unit id="cZsaXHN" resname="Einzelader flexibel 1,5 mm2 braun">
+                <source>Einzelader flexibel 1,5 mm2 braun</source>
+                <target>Fil souple unipolaire 1,5 mm2 marron</target>
+            </trans-unit>
+            <trans-unit id="sd.buXw" resname="Einzelader flexibel 1,5 mm2 blau">
+                <source>Einzelader flexibel 1,5 mm2 blau</source>
+                <target>Fil souple unipolaire 1,5 mm2 bleu</target>
+            </trans-unit>
+            <trans-unit id="rLdLNvT" resname="CorivaSat Roro II">
+                <source>CorivaSat Roro II</source>
+                <target>CorivaSat Roro II</target>
+            </trans-unit>
+            <trans-unit id="wBwsJbb" resname="Kabelschlauch, 12-20mm">
+                <source>Kabelschlauch, 12-20mm</source>
+                <target>Gaine de câble, 12-20mm</target>
+            </trans-unit>
+            <trans-unit id="hC6ScBK" resname="Steckbare Klemmen 2,5mm">
+                <source>Steckbare Klemmen 2,5mm</source>
+                <target>Bornes enfichables 2,5mm</target>
+            </trans-unit>
+            <trans-unit id="Wg8l8GA" resname="LED Leuchtkappe">
+                <source>LED Leuchtkappe</source>
+                <target>Capuchon lumineux LED</target>
+            </trans-unit>
+            <trans-unit id="BaxCVvT" resname="Linsenschrauben M5x10">
+                <source>Linsenschrauben M5x10</source>
+                <target>Vis à tête bombée M5x10</target>
+            </trans-unit>
+            <trans-unit id="osEt0se" resname="Senkkopfschrauben M5x12">
+                <source>Senkkopfschrauben M5x12</source>
+                <target>Vis à tête fraisée M5x12</target>
+            </trans-unit>
+            <trans-unit id="_mvSKce" resname="O-Ringe 1mm">
+                <source>O-Ringe 1mm</source>
+                <target>Joints toriques 1mm</target>
+            </trans-unit>
+            <trans-unit id=".4EPWZZ" resname="Schuko Steckdose [GS16] Hutschiene">
+                <source>Schuko Steckdose [GS16] Hutschiene</source>
+                <target>Prise Schuko [GS16] Rail DIN</target>
+            </trans-unit>
+            <trans-unit id="q1VGVH5" resname="Lichtleiter LED; 5mmx8.5mm">
+                <source>Lichtleiter LED; 5mmx8.5mm</source>
+                <target>Guide de lumière LED; 5mmx8.5mm</target>
+            </trans-unit>
+            <trans-unit id="BsxFaOC" resname="Distributionsbehälter">
+                <source>Distributionsbehälter</source>
+                <target>Conteneur de distribution</target>
+            </trans-unit>
+            <trans-unit id="qZFc.5Q" resname="Kabelbinder 4.8x250mm">
+                <source>Kabelbinder 4.8x250mm</source>
+                <target>Collier de serrage 4.8x250mm</target>
+            </trans-unit>
+            <trans-unit id="aopZNJL" resname="Kabelbinder 4.8x300mm">
+                <source>Kabelbinder 4.8x300mm</source>
+                <target>Collier de serrage 4.8x300mm</target>
+            </trans-unit>
+            <trans-unit id="e4LkknQ" resname="Kabelbinder 7.6x400mm">
+                <source>Kabelbinder 7.6x400mm</source>
+                <target>Collier de serrage 7.6x400mm</target>
+            </trans-unit>
+            <trans-unit id="bReLdSi" resname="Netzwerkstecker Pass Through">
+                <source>Netzwerkstecker Pass Through</source>
+                <target>Connecteur réseau traversant</target>
+            </trans-unit>
+            <trans-unit id="F7GzHnZ" resname="Ethernet Cat7 Crimpzange">
+                <source>Ethernet Cat7 Crimpzange</source>
+                <target>Pince à sertir Ethernet Cat7</target>
+            </trans-unit>
+            <trans-unit id=".mScI38" resname="Kabel 14 AWG">
+                <source>Kabel 14 AWG</source>
+                <target>Câble 14 AWG</target>
+            </trans-unit>
+            <trans-unit id="HH4Mdg_" resname="Kabel 18 AWG">
+                <source>Kabel 18 AWG</source>
+                <target>Câble 18 AWG</target>
+            </trans-unit>
+            <trans-unit id="8cmvmf3" resname="Magnethaken">
+                <source>Magnethaken</source>
+                <target>Crochet magnétique</target>
+            </trans-unit>
+            <trans-unit id="khsVRa8" resname="Gurtband">
+                <source>Gurtband</source>
+                <target>Sangle</target>
+            </trans-unit>
+            <trans-unit id="yYWbiSR" resname="Lochwerkzeug">
+                <source>Lochwerkzeug</source>
+                <target>Outil de poinçonnage</target>
+            </trans-unit>
+            <trans-unit id="aw65oxw" resname="Entfernungsmesser">
+                <source>Entfernungsmesser</source>
+                <target>Télémètre</target>
+            </trans-unit>
+            <trans-unit id="VZdwIP3" resname="Akku-Bohrschrauber DDF482RFJ">
+                <source>Akku-Bohrschrauber DDF482RFJ</source>
+                <target>Visseuse sans fil DDF482RFJ</target>
+            </trans-unit>
+            <trans-unit id="1foYXeQ" resname="Kabelabroller">
+                <source>Kabelabroller</source>
+                <target>Dérouleur de câble</target>
+            </trans-unit>
+            <trans-unit id="IzHFbb6" resname="Steckschlüsselsatz">
+                <source>Steckschlüsselsatz</source>
+                <target>Jeu de clés à douille</target>
+            </trans-unit>
+            <trans-unit id="8FdWghY" resname="Trittleiter">
+                <source>Trittleiter</source>
+                <target>Escabeau</target>
+            </trans-unit>
+            <trans-unit id="fatm0gY" resname="Steckschlüsselsatz PROXXON">
+                <source>Steckschlüsselsatz PROXXON</source>
+                <target>Jeu de clés à douille PROXXON</target>
+            </trans-unit>
+            <trans-unit id="DVtSMlu" resname="Sägeblätter">
+                <source>Sägeblätter</source>
+                <target>Lames de scie</target>
+            </trans-unit>
+            <trans-unit id="ZA_9Lys" resname="Raspberry Pi 5 8 GB">
+                <source>Raspberry Pi 5 8 GB</source>
+                <target>Raspberry Pi 5 8 Go</target>
+            </trans-unit>
+            <trans-unit id="WPtS2sh" resname="Netzwerkkabel-Tester">
+                <source>Netzwerkkabel-Tester</source>
+                <target>Testeur de câble réseau</target>
+            </trans-unit>
+            <trans-unit id="361xHZ9" resname="PanelSeT PLM Polyestergehäuse">
+                <source>PanelSeT PLM Polyestergehäuse</source>
+                <target>Boîtier polyester PanelSeT PLM</target>
+            </trans-unit>
+            <trans-unit id="SPjq2q_" resname="Montagesatz PLM Polyestergehäuse">
+                <source>Montagesatz PLM Polyestergehäuse</source>
+                <target>Kit de montage boîtier polyester PLM</target>
+            </trans-unit>
+            <trans-unit id="nA_8FBe" resname="Montageplatte für PLM32">
+                <source>Montageplatte für PLM32</source>
+                <target>Plaque de montage pour PLM32</target>
+            </trans-unit>
+            <trans-unit id="XycdYf." resname="LED-Mehrfachbefestigungslampe">
+                <source>LED-Mehrfachbefestigungslampe</source>
+                <target>Lampe de fixation multiple LED</target>
+            </trans-unit>
+            <trans-unit id="zDYpA_F" resname="Ausgangsgitter-Ausschnitt">
+                <source>Ausgangsgitter-Ausschnitt</source>
+                <target>Découpe de la grille de sortie</target>
+            </trans-unit>
+            <trans-unit id="pEgeQs5" resname="MBP 252512">
+                <source>MBP 252512</source>
+                <target>MBP 252512</target>
+            </trans-unit>
+            <trans-unit id="llT.O_W" resname="IP-Adresse">
+                <source>IP-Adresse</source>
+                <target>Adresse IP</target>
+            </trans-unit>
+            <trans-unit id="dgq8Pbv" resname="Seriennummer">
+                <source>Seriennummer</source>
+                <target>Numéro de série</target>
+            </trans-unit>
+            <trans-unit id="uq3fcPt" resname="Type">
+                <source>Type</source>
+                <target>Type</target>
+            </trans-unit>
+            <trans-unit id="OZIadAv" resname="Switch">
+                <source>Switch</source>
+                <target>Commutateur</target>
+            </trans-unit>
+            <trans-unit id="qvTghe6" resname="Antenne">
+                <source>Antenne</source>
+                <target>Antenne</target>
+            </trans-unit>
+            <trans-unit id="80jC1Vh" resname="Signalgeber">
+                <source>Signalgeber</source>
+                <target>Générateur de signaux</target>
+            </trans-unit>
+            <trans-unit id="Bl2ObAv" resname="Router">
+                <source>Router</source>
+                <target>Routeur</target>
+            </trans-unit>
+            <trans-unit id="7OuQHRZ" resname="Kabel">
+                <source>Kabel</source>
+                <target>Câble</target>
+            </trans-unit>
+            <trans-unit id="H4C5sCn" resname="Montagematerial">
+                <source>Montagematerial</source>
+                <target>Matériel de montage</target>
+            </trans-unit>
+            <trans-unit id="POaYZuA" resname="Kleinmaterial">
+                <source>Kleinmaterial</source>
+                <target>Petit matériel</target>
+            </trans-unit>
+            <trans-unit id="du1C0iE" resname="Computer">
+                <source>Computer</source>
+                <target>Ordinateur</target>
+            </trans-unit>
+            <trans-unit id="LfPkWNZ" resname="Stromversorgung">
+                <source>Stromversorgung</source>
+                <target>Alimentation électrique</target>
+            </trans-unit>
+            <trans-unit id="mzKJo4W" resname="Software">
+                <source>Software</source>
+                <target>Logiciel</target>
+            </trans-unit>
+            <trans-unit id="FHu_JfP" resname="Hausing">
+                <source>Hausing</source>
+                <target>Boîtier</target>
+            </trans-unit>
+            <trans-unit id="eDHAQSS" resname="Netzwerk">
+                <source>Netzwerk</source>
+                <target>Réseau</target>
+            </trans-unit>
+            <trans-unit id="Mgc3nH2" resname="sonst">
+                <source>sonst</source>
+                <target>Autre</target>
+            </trans-unit>
+            <trans-unit id="fMO2QIW" resname="Baugruppe">
+                <source>Baugruppe</source>
+                <target>Assemblage</target>
+            </trans-unit>
+            <trans-unit id="QOv5Ovj" resname="Projekt">
+                <source>Projekt</source>
+                <target>Projet</target>
+            </trans-unit>
+            <trans-unit id="hAzip0b" resname="CMA CGM CHAMPS ELYSEES">
+                <source>CMA CGM CHAMPS ELYSEES</source>
+                <target>CMA CGM CHAMPS ELYSEES</target>
+            </trans-unit>
+            <trans-unit id="B4xBlif" resname="LYDDEN">
+                <source>LYDDEN</source>
+                <target>LYDDEN</target>
+            </trans-unit>
+            <trans-unit id="ZDOI.bu" resname="DONINGTON">
+                <source>DONINGTON</source>
+                <target>DONINGTON</target>
+            </trans-unit>
+            <trans-unit id="9gKVk8A" resname="IT-Werkstatt">
+                <source>IT-Werkstatt</source>
+                <target>Atelier IT</target>
+            </trans-unit>
+            <trans-unit id="lqq8asg" resname="TEST 19&quot;">
+                <source>TEST 19"</source>
+                <target>TEST 19"</target>
+            </trans-unit>
+            <trans-unit id="nvEjwuY" resname="EMDEN">
+                <source>EMDEN</source>
+                <target>EMDEN</target>
+            </trans-unit>
+            <trans-unit id="YlpSnM5" resname="Werkzeugsatz">
+                <source>Werkzeugsatz</source>
+                <target>Jeu d'outils</target>
+            </trans-unit>
+            <trans-unit id="NTQrs3N" resname="Neptune Horizon">
+                <source>Neptune Horizon</source>
+                <target>Neptune Horizon</target>
+            </trans-unit>
+            <trans-unit id="N4FojZ5" resname="Lager">
+                <source>Lager</source>
+                <target>Entrepôt</target>
+            </trans-unit>
+            <trans-unit id="J6v0VcS" resname="TestStrecke">
+                <source>TestStrecke</source>
+                <target>Piste d'essai</target>
+            </trans-unit>
+            <trans-unit id="GYkPZRr" resname="Neptune Hellas">
+                <source>Neptune Hellas</source>
+                <target>Neptune Hellas</target>
+            </trans-unit>
+            <trans-unit id="RCmu2Hd" resname="Tüv">
+                <source>Tüv</source>
+                <target>TÜV</target>
+            </trans-unit>
+            <trans-unit id="bQMa8Q2" resname="Position">
+                <source>Position</source>
+                <target>Position</target>
+            </trans-unit>
+            <trans-unit id="G_zoE_x" resname="Menge">
+                <source>Menge</source>
+                <target>Quantité</target>
+            </trans-unit>
+            <trans-unit id="9rL.OfV" resname="Speichern">
+                <source>Speichern</source>
+                <target>Enregistrer</target>
+            </trans-unit>
+            <trans-unit id="BdM83yM" resname="Anschluss">
+                <source>Anschluss</source>
+                <target>Connexion</target>
+            </trans-unit>
+            <trans-unit id="OJ4zJMx" resname="Komponente">
+                <source>Komponente</source>
+                <target>Composant</target>
+            </trans-unit>
+            <trans-unit id="q07_Aqg" resname="Abgang nach:">
+                <source>Abgang nach:</source>
+                <target>Départ vers:</target>
+            </trans-unit>
+            <trans-unit id="3NHVIj9" resname="Name">
+                <source>Name</source>
+                <target>Nom</target>
+            </trans-unit>
+            <trans-unit id="jjeVPSP" resname="Value">
+                <source>Value</source>
+                <target>Valeur</target>
+            </trans-unit>
+            <trans-unit id="34e.p1G" resname="Projekte">
+                <source>Projekte</source>
+                <target>Projets</target>
+            </trans-unit>
+            <trans-unit id="TSuzaPk" resname="Übersicht">
+                <source>Übersicht</source>
+                <target>Aperçu</target>
+            </trans-unit>
+            <trans-unit id=".wZUMTd" resname="neu anlegen">
+                <source>neu anlegen</source>
+                <target>Créer nouveau</target>
+            </trans-unit>
+            <trans-unit id="gGtWGW7" resname="Liste aller Komponenten">
+                <source>Liste aller Komponenten</source>
+                <target>Liste de toutes les composants</target>
+            </trans-unit>
+            <trans-unit id="ef8_xq0" resname="Archivierte Projekte">
+                <source>Archivierte Projekte</source>
+                <target>Projets archivés</target>
+            </trans-unit>
+            <trans-unit id="r_1M0vw" resname="Baugruppen">
+                <source>Baugruppen</source>
+                <target>Assemblages</target>
+            </trans-unit>
+            <trans-unit id="c0OEHnJ" resname="Liste">
+                <source>Liste</source>
+                <target>Liste</target>
+            </trans-unit>
+            <trans-unit id="r4j56o1" resname="erstellen">
+                <source>erstellen</source>
+                <target>Créer</target>
+            </trans-unit>
+            <trans-unit id="LP_bqr9" resname="Import">
+                <source>Import</source>
+                <target>Importer</target>
+            </trans-unit>
+            <trans-unit id="NmSJVXn" resname="Export">
+                <source>Export</source>
+                <target>Exporter</target>
+            </trans-unit>
+            <trans-unit id="x.gOJGQ" resname="Bestellungen">
+                <source>Bestellungen</source>
+                <target>Commandes</target>
+            </trans-unit>
+            <trans-unit id="EVX8ZvT" resname="Erstellt">
+                <source>Erstellt</source>
+                <target>Créées</target>
+            </trans-unit>
+            <trans-unit id="U7Kq68C" resname="Offen nach Lieferant">
+                <source>Offen nach Lieferant</source>
+                <target>Ouvert par fournisseur</target>
+            </trans-unit>
+            <trans-unit id="vy79yWb" resname="Bestellt">
+                <source>Bestellt</source>
+                <target>Commandées</target>
+            </trans-unit>
+            <trans-unit id="cX_MCMH" resname="Geliefert">
+                <source>Geliefert</source>
+                <target>Livré</target>
+            </trans-unit>
+            <trans-unit id="TqqAaJn" resname="Historie">
+                <source>Historie</source>
+                <target>Historique</target>
+            </trans-unit>
+            <trans-unit id="9XUKXXI" resname="Einstellungen">
+                <source>Einstellungen</source>
+                <target>Paramètres</target>
+            </trans-unit>
+            <trans-unit id="Iq409_Q" resname="Komponententype">
+                <source>Komponententype</source>
+                <target>Type de composant</target>
+            </trans-unit>
+            <trans-unit id="ee4X.0j" resname="Mengeneinheiten">
+                <source>Mengeneinheiten</source>
+                <target>Unités de mesure</target>
+            </trans-unit>
+            <trans-unit id="bQcCGwk" resname="Schiffstypen">
+                <source>Schiffstypen</source>
+                <target>Types de navires</target>
+            </trans-unit>
+            <trans-unit id="W0WbeB." resname="Hafenliste">
+                <source>Hafenliste</source>
+                <target>Liste des ports</target>
+            </trans-unit>
+            <trans-unit id="x45KcRi" resname="Kostenstellen">
+                <source>Kostenstellen</source>
+                <target>Centres de coûts</target>
+            </trans-unit>
+            <trans-unit id="qvbVj_e" resname="Suchbegriff">
+                <source>Suchbegriff</source>
+                <target>Terme recherché</target>
+            </trans-unit>
+            <trans-unit id="pPKSLi2" resname="Suche">
+                <source>Suche</source>
+                <target>Recherche</target>
+            </trans-unit>
+            <trans-unit id="t.39v_p" resname="Projektdaten">
+                <source>Projektdaten</source>
+                <target>Données du projet</target>
+            </trans-unit>
+            <trans-unit id="weGqmCy" resname="Projekt bearbeiten">
+                <source>Projekt bearbeiten</source>
+                <target>Modifier le projet</target>
+            </trans-unit>
+            <trans-unit id="A11k7Wq" resname="Komponentenliste">
+                <source>Komponentenliste</source>
+                <target>Liste des composants</target>
+            </trans-unit>
+            <trans-unit id="cXbwRdz" resname="Projekt Mengen">
+                <source>Projekt Mengen</source>
+                <target>Quantités du projet</target>
+            </trans-unit>
+            <trans-unit id="P3MB.EM" resname="Anlagen">
+                <source>Anlagen</source>
+                <target>Annexes</target>
+            </trans-unit>
+            <trans-unit id="HNFYrhC" resname="IP Adressen">
+                <source>IP Adressen</source>
+                <target>Adresses IP</target>
+            </trans-unit>
+            <trans-unit id="2TZ6YjW" resname="Netzwerk Struktur">
+                <source>Netzwerk Struktur</source>
+                <target>Structure du réseau</target>
+            </trans-unit>
+            <trans-unit id="K0zCwzR" resname="Export Excel">
+                <source>Export Excel</source>
+                <target>Exporter vers Excel</target>
+            </trans-unit>
+            <trans-unit id="G8mpPQ." resname="Komponenten bestellen">
+                <source>Komponenten bestellen</source>
+                <target>Commander des composants</target>
+            </trans-unit>
+            <trans-unit id="XoH0KXH" resname="Projekt Galerie">
+                <source>Projekt Galerie</source>
+                <target>Galerie du projet</target>
+            </trans-unit>
+            <trans-unit id="u0.ddJR" resname="Polyestergehäuse H647xB436xT250mm">
+                <source>Polyestergehäuse H647xB436xT250mm</source>
+                <target>Boîtier polyester H647xL436xP250mm</target>
+            </trans-unit>
+            <trans-unit id="IRJBoCz" resname="Wechselstrombuchse">
+                <source>Wechselstrombuchse</source>
+                <target>Prise AC</target>
+            </trans-unit>
+            <trans-unit id="aKv9bsT" resname="Netzkabel 3 m">
+                <source>Netzkabel 3 m</source>
+                <target>Câble d'alimentation 3 m</target>
+            </trans-unit>
+            <trans-unit id="NqAmR81" resname="SFP Module">
+                <source>SFP Module</source>
+                <target>Modules SFP</target>
+            </trans-unit>
+            <trans-unit id="b1XBGPo" resname="Polyestergehäuse H430xB330xT200mm">
+                <source>Polyestergehäuse H430xB330xT200mm</source>
+                <target>Boîtier polyester H430xL330xP200mm</target>
+            </trans-unit>
+            <trans-unit id="kXj.jgT" resname="Fehler - Seite nicht gefunden.">
+                <source>Fehler - Seite nicht gefunden.</source>
+                <target>Erreur - page non trouvée.</target>
+            </trans-unit>
+            <trans-unit id="FuisNj4" resname="Komponente hinzufügen">
+                <source>Komponente hinzufügen</source>
+                <target>Ajouter un composant</target>
+            </trans-unit>
+            <trans-unit id="aTN.bek" resname="Vorschau">
+                <source>Vorschau</source>
+                <target>Aperçu</target>
+            </trans-unit>
+            <trans-unit id="vBKlSoa" resname="Keine Artikel Anlagen vorhanden.">
+                <source>Keine Artikel Anlagen vorhanden.</source>
+                <target>Aucune installation disponible.</target>
+            </trans-unit>
+            <trans-unit id="MGXd9bK" resname="Artikel Montage Galerie">
+                <source>Artikel Montage Galerie</source>
+                <target>Galerie de montage de l'article</target>
+            </trans-unit>
+            <trans-unit id="jNvCE8O" resname="Netzwerk verbunden mit">
+                <source>Netzwerk verbunden mit</source>
+                <target>Réseau connecté à</target>
+            </trans-unit>
+            <trans-unit id="6l40F6q" resname="Ändern">
+                <source>Ändern</source>
+                <target>Modifier</target>
+            </trans-unit>
+            <trans-unit id="QvpN1H0" resname="Baugruppe Entfernen">
+                <source>Baugruppe Entfernen</source>
+                <target>Retirer l'assemblage</target>
+            </trans-unit>
+            <trans-unit id="bC01IWH" resname="Löschen">
+                <source>Löschen</source>
+                <target>Supprimer</target>
+            </trans-unit>
+            <trans-unit id="rqsyjhB" resname="Artikel Bearbeiten">
+                <source>Artikel Bearbeiten</source>
+                <target>Édition d'articles</target>
+            </trans-unit>
+            <trans-unit id="5nizzH4" resname="Der Artikel wurde erfolgreich geändert.">
+                <source>Der Artikel wurde erfolgreich geändert.</source>
+                <target>L'article a été modifié avec succès.</target>
+            </trans-unit>
+            <trans-unit id="HejHqFS" resname="Der Artikel wurde erfolgreich angelegt.">
+                <source>Der Artikel wurde erfolgreich angelegt.</source>
+                <target>L'article a été créé avec succès.</target>
+            </trans-unit>
+            <trans-unit id="w2EE05O" resname="Artikel Liste">
+                <source>Artikel Liste</source>
+                <target>Liste des articles</target>
+            </trans-unit>
+            <trans-unit id="UnrqYy5" resname="Artikel nicht gefunden">
+                <source>Artikel nicht gefunden</source>
+                <target>Article introuvable</target>
+            </trans-unit>
+            <trans-unit id="qrGmUIL" resname="Ungültige Anfrage.">
+                <source>Ungültige Anfrage.</source>
+                <target>Demande non valide.</target>
+            </trans-unit>
+            <trans-unit id="TVMIe7V" resname="Ungültiger CSRF-Token.">
+                <source>Ungültiger CSRF-Token.</source>
+                <target>Jeton CSRF non valide.</target>
+            </trans-unit>
+            <trans-unit id="jCoQt4Z" resname="Anlage nicht gefunden.">
+                <source>Anlage nicht gefunden.</source>
+                <target>Installation non trouvée.</target>
+            </trans-unit>
+            <trans-unit id="GXe2o29" resname="Möchtest du dieses Bild wirklich löschen?">
+                <source>Möchtest du dieses Bild wirklich löschen?</source>
+                <target>Tu veux vraiment supprimer cette image ?</target>
+            </trans-unit>
+            <trans-unit id="_WxF0ny" resname="Fehler beim Löschen des Bildes.">
+                <source>Fehler beim Löschen des Bildes.</source>
+                <target>Erreur lors de la suppression de l'image.</target>
+            </trans-unit>
+            <trans-unit id="pEQ1hRQ" resname="Fehler beim Löschen (Netzwerk oder Serverproblem).">
+                <source>Fehler beim Löschen (Netzwerk oder Serverproblem).</source>
+                <target>Erreur lors de la suppression (problème de réseau ou de serveur).</target>
+            </trans-unit>
+            <trans-unit id="9ZJ42NX" resname="Fehler beim Laden.">
+                <source>Fehler beim Laden.</source>
+                <target>Erreur lors du chargement.</target>
+            </trans-unit>
+            <trans-unit id="IjzTjJq" resname="Artikel anlegen">
+                <source>Artikel anlegen</source>
+                <target>Créer un article</target>
+            </trans-unit>
+            <trans-unit id="sFMZYun" resname="Anlagen zum Artikel">
+                <source>Anlagen zum Artikel</source>
+                <target>Annexes à l'article</target>
+            </trans-unit>
+            <trans-unit id="JpiYE0I" resname="Hier können z. B. Anleitungen, Zertifikate etc. hochladen werden.">
+                <source>Hier können z. B. Anleitungen, Zertifikate etc. hochladen werden.</source>
+                <target>Ici, il est possible de télécharger par exemple des instructions, des certificats, etc.</target>
+            </trans-unit>
+            <trans-unit id="NZf9LN1" resname="Dateien hierher ziehen oder klicken">
+                <source>Dateien hierher ziehen oder klicken</source>
+                <target>Faire glisser ou cliquer des fichiers ici</target>
+            </trans-unit>
+            <trans-unit id="ClG.8Oi" resname="Fehler beim Löschen">
+                <source>Fehler beim Löschen</source>
+                <target>Erreur lors de la suppression</target>
+            </trans-unit>
+            <trans-unit id="ClG.8O2" resname="Herkunft">
+                <source>Herkunft</source>
+                <target>Origine</target>
+            </trans-unit>
+            <trans-unit id="ClG.8O3" resname="Hersteller">
+                <source>Hersteller</source>
+                <target>Fabricant</target>
+            </trans-unit>
+            <trans-unit id="ClG.8O4" resname="BestellNr.">
+                <source>BestellNr.</source>
+                <target>N° de commande</target>
+            </trans-unit>
+            <trans-unit id="ClG.8O5" resname="Artikel Kopieren">
+                <source>Artikel Kopieren</source>
+                <target>Copier l'article</target>
+            </trans-unit>
+            <trans-unit id="ClG.8O6" resname="aktive Artikel">
+                <source>aktive Artikel</source>
+                <target>articles actifs</target>
+            </trans-unit>
+            <trans-unit id="ClG.8O7" resname="entfernte Artikel">
+                <source>entfernte Artikel</source>
+                <target>articles supprimés</target>
+            </trans-unit>
+            <trans-unit id="ClG.8O8" resname="-- Optional --">
+                <source>-- Optional --</source>
+                <target>-- En option --</target>
+            </trans-unit>
+            <trans-unit id="v7WL2GB" resname="Der Artikel wurde erfolgreich KOPIERT.">
+                <source>Der Artikel wurde erfolgreich KOPIERT.</source>
+                <target>L'article a été COPIÉ avec succès.</target>
+            </trans-unit>
+            <trans-unit id="8l8HhTM" resname="Die Bestellung wurde erfolgreich geändert">
+                <source>Die Bestellung wurde erfolgreich geändert</source>
+                <target>La commande a été modifiée avec succès.</target>
+            </trans-unit>
+            <trans-unit id="WKwSprq" resname="FEHLER: beim Ändern der Bestellung ist ein Fehler aufgetreten.">
+                <source>FEHLER: beim Ändern der Bestellung ist ein Fehler aufgetreten.</source>
+                <target>ERREUR : une erreur est survenue lors de la modification de la commande.</target>
+            </trans-unit>
+            <trans-unit id="bKeMKx2" resname="Bestellung">
+                <source>Bestellung</source>
+                <target>Commande</target>
+            </trans-unit>
+            <trans-unit id="V6MyArI" resname="Die Angegebene Komponente wurde nicht gefunden.">
+                <source>Die Angegebene Komponente wurde nicht gefunden.</source>
+                <target>Le composant spécifié n'a pas été trouvé.</target>
+            </trans-unit>
+            <trans-unit id="hORe5zQ" resname="Bearbeiten">
+                <source>Bearbeiten</source>
+                <target>Modifier</target>
+            </trans-unit>
+            <trans-unit id="Z6UE2lx" resname="Aus Baugruppe entfernen.">
+                <source>Aus Baugruppe entfernen.</source>
+                <target>Retirer de l'assemblage.</target>
+            </trans-unit>
+            <trans-unit id="10" resname="Bestellnummer">
+                <source>Bestellnummer</source>
+                <target>Numéro de commande</target>
+            </trans-unit>
+            <trans-unit id="11" resname="ek Brutto">
+                <source>ek Brutto</source>
+                <target>PA Brut</target>
+            </trans-unit>
+            <trans-unit id="12" resname="Bestell Faktor">
+                <source>Bestell Faktor</source>
+                <target>Facteur de commande</target>
+            </trans-unit>
+            <trans-unit id="13" resname="Gebinde grösse">
+                <source>Gebinde grösse</source>
+                <target>Taille du conditionnement</target>
+            </trans-unit>
+            <trans-unit id="14" resname="Mengeneinheit">
+                <source>Mengeneinheit</source>
+                <target>Unité de mesure</target>
+            </trans-unit>
+            <trans-unit id="15" resname="Gewicht in g">
+                <source>Gewicht in g</source>
+                <target>Poids en g</target>
+            </trans-unit>
+            <trans-unit id="16" resname="Link">
+                <source>Link</source>
+                <target>Lien</target>
+            </trans-unit>
+            <trans-unit id="17" resname="Produktbild">
+                <source>Produktbild</source>
+                <target>Image du produit</target>
+            </trans-unit>
+            <trans-unit id="18" resname="Beschreibung">
+                <source>Beschreibung</source>
+                <target>Description</target>
+            </trans-unit>
+            <trans-unit id="19" resname="angefragt">
+                <source>angefragt</source>
+                <target>Demandé</target>
+            </trans-unit>
+            <trans-unit id="20" resname="aktive">
+                <source>aktive</source>
+                <target>Actif</target>
+            </trans-unit>
+            <trans-unit id="21" resname="auslauf">
+                <source>auslauf</source>
+                <target>En fin de vie</target>
+            </trans-unit>
+            <trans-unit id="22" resname="deprecated">
+                <source>deprecated</source>
+                <target>Obsolète</target>
+            </trans-unit>
+            <trans-unit id="23" resname="geloescht">
+                <source>geloescht</source>
+                <target>Supprimé</target>
+            </trans-unit>
+            <trans-unit id="24" resname="Angebotspflicht">
+                <source>Angebotspflicht</source>
+                <target>Offre obligatoire</target>
+            </trans-unit>
+            <trans-unit id="25" resname="Hinzufügen">
+                <source>Hinzufügen</source>
+                <target>Ajouter</target>
+            </trans-unit>
+            <trans-unit id="26" resname="Seebebiet">
+                <source>Seebebiet</source>
+                <target>Zone</target>
+            </trans-unit>
+            <trans-unit id="30" resname="At anchor">
+                <source>At anchor</source>
+                <target>At anchor</target>
+            </trans-unit>
+            <trans-unit id="31" resname="Under way using engine">
+                <source>Under way using engine</source>
+                <target>En cours d'utilisation avec engine</target>
+            </trans-unit>
+            <trans-unit id="32" resname="Moored">
+                <source>Moored</source>
+                <target>Amarré</target>
+            </trans-unit>
+            <trans-unit id="33" resname="Anlegen">
+                <source>Anlegen</source>
+                <target>Créer</target>
+            </trans-unit>
+            <trans-unit id="Restricted manoeuverability" resname="Restricted manoeuverability">
+                <source>Restricted manoeuverability</source>
+                <target>Manœuvrabilité restreinte</target>
+            </trans-unit>
+            <trans-unit id="34" resname="Parameter">
+                <source>Parameter</source>
+                <target>Paramètres</target>
+            </trans-unit>
+            <trans-unit id="35" resname="Wert">
+                <source>Wert</source>
+                <target>Valeur</target>
+            </trans-unit>
+            <trans-unit id="36" resname="Bitte wählen">
+                <source>Bitte wählen</source>
+                <target>Veuillez sélectionner</target>
+            </trans-unit>
+            <trans-unit id="40" resname="Nächstes Ziel">
+                <source>Nächstes Ziel</source>
+                <target>Prochaine destination</target>
+            </trans-unit>
+            <trans-unit id="41" resname="Entfernung">
+                <source>Entfernung</source>
+                <target>Distance</target>
+            </trans-unit>
+            <trans-unit id="42" resname="Länge">
+                <source>Länge</source>
+                <target>Longueur</target>
+            </trans-unit>
+            <trans-unit id="43" resname="Breite">
+                <source>Breite</source>
+                <target>Largeur</target>
+            </trans-unit>
+            <trans-unit id="44" resname="Tiefgang">
+                <source>Tiefgang</source>
+                <target>Tirant d'eau</target>
+            </trans-unit>
+            <trans-unit id="lte.alarm.body.line1" resname="lte.alarm.body.line1">
+                <source>lte.alarm.body.line1</source>
+                <target>
+                    <![CDATA[Le navire <strong>{{ shipName }}</strong> a franchi la limite de {{ distanceLimit }} kilomètres et se trouve désormais dans la zone de couverture potentielle du réseau LTE.]]></target>
+            </trans-unit>
+            <trans-unit id="lte.alarm.body.line2" resname="lte.alarm.body.line2">
+                <source>lte.alarm.body.line2</source>
+                <target>
+                    <![CDATA[Distance actuelle jusqu'à la côte : <strong>{{ currentDistance }} kilomètres</strong>.]]></target>
+            </trans-unit>
+            <trans-unit id="lte.alarm.body.line3" resname="lte.alarm.body.line3">
+                <source>lte.alarm.body.line3</source>
+                <target>Veuillez vérifier si la connexion LTE manuelle doit être établie.</target>
+            </trans-unit>
+            <trans-unit id="vorherige Häfen" resname="vorherige Häfen">
+                <source>vorherige Häfen</source>
+                <target>ports précédents</target>
+            </trans-unit>
+            <trans-unit id="Aktuell in" resname="Aktuell in">
+                <source>Aktuell in</source>
+                <target>Actuellement dans</target>
+            </trans-unit>
+            <trans-unit id="flash.invalid_request" resname="flash.invalid_request">
+                <source>flash.invalid_request</source>
+                <target>Demande non valide. Veuillez réessayer.</target>
+            </trans-unit>
+            <trans-unit id="flash.error_occurred" resname="flash.error_occurred">
+                <source>flash.error_occurred</source>
+                <target>Une erreur est survenue : %error%</target>
+            </trans-unit>
+            <trans-unit id="flash.port_update.date_in_future" resname="flash.port_update.date_in_future">
+                <source>flash.port_update.date_in_future</source>
+                <target>La date "Jusqu'au" ne peut pas être dans le futur.</target>
+            </trans-unit>
+            <trans-unit id="flash.port_update.date_order_invalid" resname="flash.port_update.date_order_invalid">
+                <source>flash.port_update.date_order_invalid</source>
+                <target>La date "Du" ne peut pas être postérieure à la date "Jusqu'au".</target>
+            </trans-unit>
+            <trans-unit id="flash.port_update.success" resname="flash.port_update.success">
+                <source>flash.port_update.success</source>
+                <target>Les informations portuaires ont été mises à jour avec succès.</target>
+            </trans-unit>
+            <trans-unit id="flash.port_update.invalid_period" resname="flash.port_update.invalid_period">
+                <source>flash.port_update.invalid_period</source>
+                <target>Veuillez indiquer une période valide.</target>
+            </trans-unit>
+            <trans-unit id="flash.port_update.start_fetch" resname="flash.port_update.start_fetch">
+                <source>flash.port_update.start_fetch</source>
+                <target>Début de la récupération des données portuaires pour %ship%...</target>
+            </trans-unit>
+            <trans-unit id="flash.port_update.no_data" resname="flash.port_update.no_data">
+                <source>flash.port_update.no_data</source>
+                <target>Aucune donnée portuaire trouvée pour la période spécifiée.</target>
+            </trans-unit>
+            <trans-unit id="flash.port_update.process_success" resname="flash.port_update.process_success">
+                <source>flash.port_update.process_success</source>
+                <target>%count% entrées portuaires pour %ship% traitées avec succès.</target>
+            </trans-unit>
+            <trans-unit id="flash.port_update.fetch_error" resname="flash.port_update.fetch_error">
+                <source>flash.port_update.fetch_error</source>
+                <target>Erreur lors de la récupération des données portuaires : %error%</target>
+            </trans-unit>
+            <trans-unit id="Home" resname="Home">
+                <source>Home</source>
+                <target>Accueil</target>
+            </trans-unit>
+            <trans-unit id="ais Status" resname="ais Status">
+                <source>ais Status</source>
+                <target>Statut AIS</target>
+            </trans-unit>
+            <trans-unit id="lte Entfernung" resname="lte Entfernung">
+                <source>lte Entfernung</source>
+                <target>lte distance</target>
+            </trans-unit>
+            <trans-unit id="South America East" resname="Südamerika Ostküste">
+                <source>South America East</source>
+                <target>Côte Est de l'Amérique du Sud</target>
+            </trans-unit>
+            <trans-unit id="North Sea" resname="North Sea">
+                <source>North Sea</source>
+                <target>Mer du Nord</target>
+            </trans-unit>
+            <trans-unit id="Betrieb" resname="Betrieb">
+                <source>Betrieb</source>
+                <target>Fonctionnement</target>
+            </trans-unit>
+            <trans-unit id="AKTIV" resname="AKTIV">
+                <source>AKTIV</source>
+                <target>ACTIF</target>
+            </trans-unit>
+            <trans-unit id="breadcrumb.home" resname="breadcrumb.home">
+                <source>Startseite</source>
+                <target>Accueil</target>
+            </trans-unit>
+            <trans-unit id="breadcrumb.projects_overview" resname="breadcrumb.projects_overview">
+                <source>Projekte Übersicht</source>
+                <target>Aperçu des projets</target>
+            </trans-unit>
+            <trans-unit id="breadcrumb.project_detail" resname="breadcrumb.project_detail">
+                <source>Projekt %name%</source>
+                <target>Projet %name%</target>
+            </trans-unit>
+            <trans-unit id="breadcrumb.project_components" resname="breadcrumb.project_components">
+                <source>Projekt Komponenten</source>
+                <target>Composants du projet</target>
+            </trans-unit>
+            <trans-unit id="breadcrumb.net_einstellungen" resname="breadcrumb.net_einstellungen">
+                <source>breadcrumb.net_einstellungen</source>
+                <target>paramètres</target>
+            </trans-unit>
+            <trans-unit id="breadcrumb.seitenparameter" resname="breadcrumb.seitenparameter">
+                <source>breadcrumb.seitenparameter</source>
+                <target>Paramètres de page</target>
+            </trans-unit>
+
+            <trans-unit id="Flaggenstaaten" resname="Flaggenstaaten">
+                <source>Flaggenstaaten</source>
+                <target>États du pavillon</target>
+            </trans-unit>
+            <trans-unit id="hafenliste" resname="hafenliste">
+                <source>Hafenliste</source>
+                <target>Liste des ports</target>
+            </trans-unit>
+            <trans-unit id="South Africa" resname="South Africa">
+                <source>South Africa</source>
+                <target>Afrique du Sud</target>
+            </trans-unit>
+            <trans-unit id="suedamerika_ostkueste" resname="suedamerika_ostkueste">
+                <source>Südamerika Ostküste</source>
+                <target>Côte Est de l'Amérique du Sud</target>
+            </trans-unit>
+            <trans-unit id="in Vorbereitung" resname="in Vorbereitung">
+                <source>in Vorbereitung</source>
+                <target>en préparation</target>
+            </trans-unit>
+            <trans-unit id="INAKTIV" resname="INAKTIV">
+                <source>INAKTIV</source>
+                <target>INACTIF</target>
+            </trans-unit>
+            <trans-unit id="hinzufuegen" resname="hinzufuegen">
+                <source>Hinzufügen</source>
+                <target>Ajouter</target>
+            </trans-unit>
+            <trans-unit id="anlagen_hinzufuegen" resname="anlagen_hinzufuegen">
+                <source>Anlagen hinzufügen</source>
+                <target>Ajouter des pièces jointes</target>
+            </trans-unit>
+            <trans-unit id="bild" resname="bild">
+                <source>Bild</source>
+                <target>Image</target>
+            </trans-unit>
+            <trans-unit id="link_kostenstelle" resname="link_kostenstelle">
+                <source>Link Kostenstelle</source>
+                <target>Lien Centre de coûts</target>
+            </trans-unit>
+            <trans-unit id="aktion" resname="aktion">
+                <source>Aktion</source>
+                <target>Action</target>
+            </trans-unit>
+            <trans-unit id="TEST">
+                <source>TEST</source>
+                <target>TEST</target>
+            </trans-unit>
+            <trans-unit id="TEST2">
+                <source>test</source>
+                <target>test</target>
+            </trans-unit>
+            <trans-unit id="aktiv" resname="aktiv">
+                <source>aktiv</source>
+                <target>actif</target>
+            </trans-unit>
+            <trans-unit id="calendar.week_short" resname="calendar.week_short">
+                <source>KW %weekNumber%</source>
+                <target>S%weekNumber%</target>
+            </trans-unit>
+            <trans-unit id="days.sun" resname="days.sun">
+                <source>So</source>
+                <target>Di</target>
+            </trans-unit>
+            <trans-unit id="days.mon" resname="days.mon">
+                <source>Mo</source>
+                <target>Lu</target>
+            </trans-unit>
+            <trans-unit id="days.tue" resname="days.tue">
+                <source>Di</source>
+                <target>Ma</target>
+            </trans-unit>
+            <trans-unit id="days.wed" resname="days.wed">
+                <source>Mi</source>
+                <target>Me</target>
+            </trans-unit>
+            <trans-unit id="days.thu" resname="days.thu">
+                <source>Do</source>
+                <target>Je</target>
+            </trans-unit>
+            <trans-unit id="days.fri" resname="days.fri">
+                <source>Fr</source>
+                <target>Ve</target>
+            </trans-unit>
+            <trans-unit id="days.sat" resname="days.sat">
+                <source>Sa</source>
+                <target>Sa</target>
+            </trans-unit>
+            <trans-unit id="hafenlog.edit" resname="hafenlog.edit">
+                <source>Bitte geben Sie den Zeitraum an, für den die Hafendaten von der AIS-API abgerufen werden
+                    sollen.
+                </source>
+                <target>DistanceVeuillez indiquer la période pour laquelle les données portuaires doivent être
+                    récupérées à partir de l'API AIS.
+                </target>
+            </trans-unit>
+            <trans-unit id="action.cancel" resname="action.cancel">
+                <source>Abbrechen</source>
+                <target>Annuler</target>
+            </trans-unit>
+            <trans-unit id="port.departure" resname="port.departure">
+                <source>Abfahrt</source>
+                <target>Départ</target>
+            </trans-unit>
+            <trans-unit id="action.add" resname="action.add">
+                <source>Hinzufügen</source>
+                <target>Ajouter</target>
+            </trans-unit>
+            <trans-unit id="table.action" resname="table.action">
+                <source>Aktion</source>
+                <target>Action</target>
+            </trans-unit>
+            <trans-unit id="port.arrival" resname="port.arrival">
+                <source>Ankunft</source>
+                <target>Arrivée</target>
+            </trans-unit>
+            <trans-unit id="action.add_attachment" resname="action.add_attachment">
+                <source>Anlagen hinzufügen</source>
+                <target>Ajouter des pièces jointes</target>
+            </trans-unit>
+            <trans-unit id="article.list" resname="article.list">
+                <source>Artikelliste</source>
+                <target>Liste des articles</target>
+            </trans-unit>
+            <trans-unit id="order.list_overview" resname="order.list_overview">
+                <source>Bestellliste Übersicht</source>
+                <target>Aperçu de la liste de commande</target>
+            </trans-unit>
+            <trans-unit id="common.image" resname="common.image">
+                <source>Bild</source>
+                <target>Image</target>
+            </trans-unit>
+            <trans-unit id="form.date_to" resname="form.date_to">
+                <source>Bis Datum</source>
+                <target>Date de fin</target>
+            </trans-unit>
+            <trans-unit id="action.fetch_data" resname="action.fetch_data">
+                <source>Daten abrufen</source>
+                <target>Récupérer les données</target>
+            </trans-unit>
+            <trans-unit id="ship.flag_states" resname="ship.flag_states">
+                <source>Flaggenstaaten</source>
+                <target>États du pavillon</target>
+            </trans-unit>
+            <trans-unit id="common.port" resname="common.port">
+                <source>Hafen</source>
+                <target>Port</target>
+            </trans-unit>
+            <trans-unit id="port.edit_stay" resname="port.edit_stay">
+                <source>Hafenaufenthalt bearbeiten</source>
+                <target>Modifier l'escale</target>
+            </trans-unit>
+            <trans-unit id="port.list" resname="port.list">
+                <source>Hafenliste</source>
+                <target>Liste des ports</target>
+            </trans-unit>
+            <trans-unit id="port.update_logbook" resname="port.update_logbook">
+                <source>Hafen-Logbuch aktualisieren</source>
+                <target>Mettre à jour le journal de port</target>
+            </trans-unit>
+            <trans-unit id="status.in_preparation" resname="status.in_preparation">
+                <source>in Vorbereitung</source>
+                <target>en préparation</target>
+            </trans-unit>
+            <trans-unit id="status.inactive" resname="status.inactive">
+                <source>INAKTIV</source>
+                <target>INACTIF</target>
+            </trans-unit>
+            <trans-unit id="common.link_cost_center" resname="common.link_cost_center">
+                <source>Link Kostenstelle</source>
+                <target>Lien Centre de coûts</target>
+            </trans-unit>
+            <trans-unit id="project.overview" resname="project.overview">
+                <source>Projekte Übersicht</source>
+                <target>Aperçu des projets</target>
+            </trans-unit>
+            <trans-unit id="region.south_africa" resname="region.south_africa">
+                <source>South Africa</source>
+                <target>Afrique du Sud</target>
+            </trans-unit>
+            <trans-unit id="South America East Coast" resname="South America East Coast">
+                <source>South America East Coast</source>
+                <target>Côte Est de l'Amérique du Sud</target>
+            </trans-unit>
+            <trans-unit id="region.south_east_coast" resname="region.south_east_coast">
+                <source>South East Coast</source>
+                <target>Côte Sud-Est</target>
+            </trans-unit>
+            <trans-unit id="common.test" resname="common.test">
+                <source>TEST</source>
+                <target>TEST</target>
+            </trans-unit>
+            <trans-unit id="Unbekannt" resname="Unbekannt">
+                <source>Unbekannt</source>
+                <target>Inconnu</target>
+            </trans-unit>
+            <trans-unit id="form.date_from" resname="form.date_from">
+                <source>Von Datum</source>
+                <target>Date de début</target>
+            </trans-unit>
+            <trans-unit id="Containerschiff" resname="Containerschiff">
+                <source>Containerschiff</source>
+                <target>porte-conteneurs</target>
+            </trans-unit>
+            <trans-unit id="Vehicles Carrier" resname="Vehicles Carrier">
+                <source>Vehicles Carrier</source>
+                <target>Transporteur de véhicules</target>
+            </trans-unit>
+            <trans-unit id="Planung" resname="Planung">
+                <source>Planung</source>
+                <target>planification</target>
+            </trans-unit>
+            <trans-unit id="Werkstatt" resname="Werkstatt">
+                <source>Werkstatt</source>
+                <target>atelier</target>
+            </trans-unit>
+            <trans-unit id="Kein Status" resname="Kein Status">
+                <source>Kein Status</source>
+                <target>Pas de statut</target>
+            </trans-unit>
+            <trans-unit id="Speed" resname="Speed">
+                <source>Vitesse</source>
+                <target>Speed</target>
+            </trans-unit>
+            <trans-unit id="Course" resname="Course">
+                <source>Course</source>
+                <target>Parcours</target>
+            </trans-unit>
+            <trans-unit id="flash.position_update.success" resname="flash.position_update.success">
+                <source>flash.position_update.successel</source>
+                <target>Position %ship% mise à jour avec succès.</target>
+            </trans-unit>
+            <trans-unit id="flash.position_update.no_change" resname="flash.position_update.no_change">
+                <source>flash.position_update.no_change</source>
+                <target>Position %ship% étaient déjà d'actualité..</target>
+            </trans-unit>
+            <trans-unit id="button.update_position.label" resname="button.update_position.label">
+                <source>button.update_position.label</source>
+                <target>Actualiser la position</target>
+            </trans-unit>
+            <trans-unit id="button.update_position.title" resname="button.update_position.title">
+                <source>button.update_position.title</source>
+                <target>Récupère la position actuelle à partir de l'API AIS.</target>
+            </trans-unit>
+            <trans-unit id="age.days_hours">
+                <source>age.days_hours</source>
+                <target>{days, plural, =1 {1 jour} other {# jours}}, {hours, plural, =1 {1 heure} other {# heures}}
+                </target>
+            </trans-unit>
+            <trans-unit id="age.hours_minutes">
+                <source>age.hours_minutes</source>
+                <target>{hours, plural, =1 {1 heure} other {# heures}}, {minutes, plural, =1 {1 min.} other {# min.}}
+                </target>
+            </trans-unit>
+            <trans-unit id="age.minutes">
+                <source>age.minutes</source>
+                <target>{minutes, plural, =1 {1 min.} other {# min.}}</target>
+            </trans-unit>
+            <trans-unit id="timestamp.with_age">
+                <source>timestamp.with_age</source>
+                <target>%datetime% h (%age%)</target>
+            </trans-unit>
+            <trans-unit id="Constrained by her draught">
+                <source>Constrained by her draught</source>
+                <target>Limité par le type de construction</target>
+            </trans-unit>
+            <trans-unit id="Keine Positionsdaten verfügbar">
+                <source>Keine Positionsdaten verfügbar</source>
+                <target>Aucune donnée de position disponible</target>
+            </trans-unit>
+            <trans-unit id="unit.days">
+                <source>unit.days</source>
+                <target>jour(s)</target>
+            </trans-unit>
+            <trans-unit id="unit.hours">
+                <source>unit.hours</source>
+                <target>h</target>
+            </trans-unit>
+            <trans-unit id="unit.minutes">
+                <source>unit.minutes</source>
+                <target>min</target>
+            </trans-unit>
+            <trans-unit id="timestamp.with_age.format">
+                <source>timestamp.with_age.format</source>
+                <target>%datetime% h (%age%)</target>
+            </trans-unit>
+            <trans-unit id="North East Atlantic Ocean">
+                <source>North East Atlantic Ocean</source>
+                <target>Océan Atlantique Nord-Est</target>
+            </trans-unit>
+            <trans-unit id="Tage">
+                <source>Tage</source>
+                <target>jours</target>
+            </trans-unit>
+            <trans-unit id="breadcrumb.hafen_liste" resname="breadcrumb.hafen_liste">
+                <source>Liste der Häfen</source>
+                <target>Liste des ports</target>
+            </trans-unit>
+            <trans-unit id="Häfen von">
+                <source>Häfen von</source>
+                <target>Ports de</target>
+            </trans-unit>
+            <trans-unit id="Einstellungen Seiten Parameter">
+                <source>Einstellungen Seiten Parameter</source>
+                <target>Paramètres Pages Paramètres</target>
+            </trans-unit>
+            <trans-unit id="Offen nach Lieferant">
+                <source>Offen nach Lieferant</source>
+                <target>Ouvert selon le fournisseur</target>
+            </trans-unit>
+            <trans-unit id="Projekt Status">
+                <source>Projekt Status</source>
+                <target>Statut du projet</target>
+            </trans-unit>
+            <trans-unit id="Gültig bis">
+                <source>Gültig bis</source>
+                <target>Valable jusqu'au</target>
+            </trans-unit>
+            <trans-unit id="Aktionen">
+                <source>Aktionen</source>
+                <target>actions</target>
+            </trans-unit>
+            <!--      <trans-unit id="button.delete">-->
+            <!--        <source><i class="fas fa-trash-alt" title="Löschen"></i></source>-->
+            <!--        <target><i class="fas fa-trash-alt" title="Löschen"></i></target>-->
+            <!--      </trans-unit>-->
+            <trans-unit id="Neuen Parameter hinzufügen">
+                <source>Neuen Parameter hinzufügen</source>
+                <target>Ajouter un nouveau paramètre</target>
+            </trans-unit>
+            <trans-unit id="Einstellungen AIS Recover">
+                <source>Einstellungen AIS Recover</source>
+                <target>Paramètres AIS Recover</target>
+            </trans-unit>
+            <trans-unit id="Recover AIS">
+                <source>Recover AIS</source>
+                <target>Recover AIS</target>
+            </trans-unit>
+            <trans-unit id="breadcrumb.ais.recover">
+                <source>breadcrumb.ais.recover</source>
+                <target>AIS Recover</target>
+            </trans-unit>
+            <trans-unit id="Bitte ein Schiff wählen">
+                <source>Bitte ein Schiff wählen</source>
+                <target>Veuillez sélectionner un navire</target>
+            </trans-unit>
+            <trans-unit id="Auswahl erneut verarbeiten">
+                <source>Auswahl erneut verarbeiten</source>
+                <target>Retraiter la sélection</target>
+            </trans-unit>
+            <trans-unit id="Funktionen">
+                <source>Funktionen</source>
+                <target>fonctions</target>
+            </trans-unit>
+            <trans-unit id="Baugruppen Summen">
+                <source>Baugruppen Summen</source>
+                <target>Somme des modules</target>
+            </trans-unit>
+            <trans-unit id="breadcrumb.project_componentsgoups">
+                <source>breadcrumb.project_componentsgoups</source>
+                <target>Projet Assemblages Totaux</target>
+            </trans-unit>
+            <trans-unit id="Gesamtpreis">
+                <source>Gesamtpreis</source>
+                <target>prix total</target>
+            </trans-unit>
+            <trans-unit id="Gesamtgewicht">
+                <source>Gesamtgewicht</source>
+                <target>poids total</target>
+            </trans-unit>
+            <trans-unit id="Häfen">
+                <source>Häfen</source>
+                <target>ports</target>
+            </trans-unit>
+            <trans-unit id="Anzahl">
+                <source>Anzahl</source>
+                <target>Nombre</target>
+            </trans-unit>
+            <trans-unit id="Preis Baugruppe">
+                <source>Preis Baugruppe</source>
+                <target>Prix du module</target>
+            </trans-unit>
+            <trans-unit id="Gewicht Baugruppe">
+                <source>Gewicht Baugruppe</source>
+                <target>Poids de l'ensemble</target>
+            </trans-unit>
+            <trans-unit id="Destination">
+                <source>Destination</source>
+                <target>Destination</target>
+            </trans-unit>
+            <trans-unit id="Not available">
+                <source>Not available</source>
+                <target>Non disponible</target>
+            </trans-unit>
+            <trans-unit id="letzer Check">
+                <source>letzer Check</source>
+                <target>dernière vérification</target>
+            </trans-unit>
+            <trans-unit id="Navpunkte">
+                <source>Navpunkte</source>
+                <target>Points de navigation</target>
+            </trans-unit>
+            <trans-unit id="Netzwerk Raw">
+                <source>Netzwerk Raw</source>
+                <target>Code réseau</target>
+            </trans-unit>
+            <trans-unit id="Close">
+                <source>Close</source>
+                <target>Fermer</target>
+            </trans-unit>
+            <trans-unit id="Artikelliste">
+                <source>Artikelliste</source>
+                <target>liste des articles</target>
+            </trans-unit>
+            <trans-unit id="Preis">
+                <source>Preis</source>
+                <target>Prix</target>
+            </trans-unit>
+            <trans-unit id="Bestand">
+                <source>Bestand</source>
+                <target>stock</target>
+            </trans-unit>
+            <trans-unit id="Projekte Übersicht">
+                <source>Projekte Übersicht</source>
+                <target>Aperçu des projets</target>
+            </trans-unit>
+            <trans-unit id="check">
+                <source>check</source>
+                <target>check</target>
+            </trans-unit>
+            <trans-unit id="West Africa">
+                <source>West Africa</source>
+                <target>West Africa</target>
+            </trans-unit>
+            <trans-unit id="monitoring">
+                <source>monitoring</source>
+                <target>monitoring</target>
+            </trans-unit>
+            <trans-unit id="Verbaut">
+                <source>Verbaut</source>
+                <target>Intégré</target>
+            </trans-unit>
+            <trans-unit id="breadcrumb.deck_plan">
+                <source>breadcrumb.deck_plan</source>
+                <target>Plan de pont Baies</target>
+            </trans-unit>
+            <trans-unit id="Komponenten Wartung">
+                <source>Komponenten Wartung</source>
+                <target>Maintenance des composants</target>
+            </trans-unit>
+            <trans-unit id="Bays Oberdeck">
+                <source>Bays Oberdeck</source>
+                <target>Pont supérieur de la baie</target>
+            </trans-unit>
+            <trans-unit id="breadcrumb.ship.dashboard">
+                <source>breadcrumb.ship.dashboard</source>
+                <target>tableau de bord de maintenance</target>
+            </trans-unit>
+            <trans-unit id="ship.component.details">
+                <source>Komponente Details</source>
+                <target>Détails des composants</target>
+            </trans-unit>
+            <trans-unit id="ship.master.data">
+                <source>Stammdaten</source>
+                <target>Données de base</target>
+            </trans-unit>
+            <trans-unit id="ship.mac.address">
+                <source>MAC Adresse</source>
+                <target>Adresse MAC</target>
+            </trans-unit>
+            <trans-unit id="ship.log.maintenance">
+                <source>Wartung protokollieren</source>
+                <target>Journaliser la maintenance</target>
+            </trans-unit>
+            <trans-unit id="ship.inspection">
+                <source>Inspektion / Prüfung</source>
+                <target>Inspection / Contrôle</target>
+            </trans-unit>
+            <trans-unit id="ship.defect.found">
+                <source>Defekt gefunden</source>
+                <target>Défaut constaté</target>
+            </trans-unit>
+            <trans-unit id="ship.battery.replacement">
+                <source>Batteriewechsel</source>
+                <target>Remplacement de la batterie</target>
+            </trans-unit>
+            <trans-unit id="ship.report.damage">
+                <source>Schaden melden</source>
+                <target>Signaler un dommage</target>
+            </trans-unit>
+            <trans-unit id="ship.repair.done">
+                <source>Reparatur durchgeführt</source>
+                <target>Réparation effectuée</target>
+            </trans-unit>
+            <trans-unit id="ship.note">
+                <source>Notiz</source>
+                <target>Note</target>
+            </trans-unit>
+            <trans-unit id="ship.comment">
+                <source>Kommentar / Befund</source>
+                <target>Commentaire / Constat</target>
+            </trans-unit>
+            <trans-unit id="ship.history">
+                <source>Verlauf</source>
+                <target>Historique</target>
+            </trans-unit>
+            <trans-unit id="ship.loading">
+                <source>Lade Daten...</source>
+                <target>Chargement des données...</target>
+            </trans-unit>
+            <trans-unit id="ship.cancel">
+                <source>Abbrechen</source>
+                <target>Annuler</target>
+            </trans-unit>
+            <trans-unit id="ship.action.add">
+                <source>Add</source>
+                <target>Ajouter</target>
+            </trans-unit>
+            <trans-unit id="ship.port.edit">
+                <source>Hafenaufenthalt bearbeiten</source>
+                <target>Modifier l'escale au port</target>
+            </trans-unit>
+            <trans-unit id="ship.arrival">
+                <source>Ankunft</source>
+                <target>Arrivée</target>
+            </trans-unit>
+            <trans-unit id="ship.departure">
+                <source>Abfahrt</source>
+                <target>Départ</target>
+            </trans-unit>
+            <trans-unit id="ship.add.attachments">
+                <source>Anlagen hinzufügen</source>
+                <target>Ajouter des pièces jointes</target>
+            </trans-unit>
+            <trans-unit id="ship.project.attachments">
+                <source>Projekt Anlagen</source>
+                <target>Pièces jointes du projet</target>
+            </trans-unit>
+            <trans-unit id="ship.filename">
+                <source>Dateiname</source>
+                <target>Nom du fichier</target>
+            </trans-unit>
+            <trans-unit id="ship.filename.optional">
+                <source>Dateiname (Optional)</source>
+                <target>Nom du fichier (optionnel)</target>
+            </trans-unit>
+            <trans-unit id="ship.revision">
+                <source>Revision</source>
+                <target>Révision</target>
+            </trans-unit>
+            <trans-unit id="ship.label.optional">
+                <source>(Optional)</source>
+                <target>(Optionnel)</target>
+            </trans-unit>
+            <trans-unit id="ship.menu.main">
+                <source>Benutzer</source>
+                <target>Utilisateurs</target>
+            </trans-unit>
+            <trans-unit id="ship.komponente">
+                <source>Projekt Komponenten</source>
+                <target>Composants du projet</target>
+            </trans-unit>
+            <trans-unit id="ship.komponente.dashboard">
+                <source>Dashboard</source>
+                <target>Tableau de bord</target>
+            </trans-unit>
+            <trans-unit id="ship.komponente.status">
+                <source>Aktueller technischer Status</source>
+                <target>État technique actuel</target>
+            </trans-unit>
+            <trans-unit id="ship.komponente.log">
+                <source>Wartungslog</source>
+                <target>Journal de maintenance</target>
+            </trans-unit>
+            <trans-unit id="ship.komponente.checkkomplid">
+                <source>Wartung durchgeführt</source>
+                <target>Maintenance effectuée</target>
+            </trans-unit>
+            <trans-unit id="ship.komponente.summewartung">
+                <source>Komponenten Gesamt</source>
+                <target>Total des composants</target>
+            </trans-unit>
+            <trans-unit id="ship.einstellungen.flaggenstaaten">
+                <source>Einstellungen Flaggenstaaten</source>
+                <target>Paramètres des États du pavillon</target>
+            </trans-unit>
+            <trans-unit id="ship.einstellungen.flaggehochladen">
+                <source>Flagge hochladen</source>
+                <target>Télécharger le pavillon</target>
+            </trans-unit>
+            <trans-unit id="menge">
+                <source>menge</source>
+                <target>_menge</target>
+            </trans-unit>
+            <trans-unit id="ges.Preis">
+                <source>ges. Preis</source>
+                <target>_ges. Preis</target>
+            </trans-unit>
+            <trans-unit id="Masse">
+                <source>Masse</source>
+                <target>masse</target>
+            </trans-unit>
+            <trans-unit id="Inventur">
+                <source>Inventur</source>
+                <target>Inventaire</target>
+            </trans-unit>
+            <trans-unit id="Inventur_starten">
+                <source>Inventur starten</source>
+                <target>Démarrer l'inventaire</target>
+            </trans-unit>
+            <trans-unit id="Lagerort1">
+                <source>Lagerort:</source>
+                <target>Lieu de stockage :</target>
+            </trans-unit>
+            <trans-unit id="Lagerort2">
+                <source>Lagerort</source>
+                <target>Lieu de stockage</target>
+            </trans-unit>
+            <trans-unit id="alle Bestellungen">
+                <source>alle Bestellungen</source>
+                <target>Toutes les commandes</target>
+            </trans-unit>
+            <trans-unit id="Lager Übersicht">
+                <source>Lager Übersicht</source>
+                <target>Aperçu de l'entrepôt</target>
+            </trans-unit>
+            <trans-unit id="SerienNr1">
+                <source>SerienNr.</source>
+                <target>N° de série</target>
+            </trans-unit>
+            <trans-unit id="Artikel ins Lager">
+                <source>Artikel ins Lager</source>
+                <target>Articles en stock</target>
+            </trans-unit>
+            <trans-unit id="Komponenten verbauen">
+                <source>Komponenten verbauen</source>
+                <target>Installer des composants</target>
+            </trans-unit>
+            <trans-unit id="Komponenten ausbauen">
+                <source>Komponenten ausbauen</source>
+                <target>Démonter les composants</target>
+            </trans-unit>
+            <trans-unit id="ship.komponente.kallibriet">
+                <source>Kallibriet</source>
+                <target>calibrate</target>
+            </trans-unit>
+            <trans-unit id="SEC Artikel">
+                <source>SEC Artikel</source>
+                <target>Article SEC</target>
+            </trans-unit>
+            <trans-unit id="label.description">
+                <source>label.description</source>
+                <target>Beschreibung</target>
+            </trans-unit>
+            <trans-unit id="error.beschreibung_zu_lang">
+                <source>error.beschreibung_zu_lang</source>
+                <target>The description must not exceed %limit% characters.</target>
+            </trans-unit>
+            <trans-unit id="Login">
+                <source>Login</source>
+                <target>Connexion</target>
+            </trans-unit>
+            <trans-unit id="Logout">
+                <source>Logout</source>
+                <target>Déconnexion</target>
+            </trans-unit>
+            <trans-unit id="bearbeiten">
+                <source>bearbeiten</source>
+                <target>modifier</target>
+            </trans-unit>
+            <trans-unit id="Gebindegrösse">
+                <source>Gebindegrösse</source>
+                <target>Taille du conditionnement</target>
+            </trans-unit>
+            <trans-unit id="offen zum bestellen">
+                <source>offen zum bestellen</source>
+                <target>Disponible à la commande</target>
+            </trans-unit>
+            <trans-unit id="Netzwerktool Login">
+                <source>Netzwerktool Login</source>
+                <target>Outil réseau Connexion</target>
+            </trans-unit>
+            <trans-unit id="Letzter Log">
+                <source>Letzter Log</source>
+                <target>Dernier journal</target>
+            </trans-unit>
+            <trans-unit id="Kalibriert">
+                <source>Kalibriert</source>
+                <target>Calibré</target>
+            </trans-unit>
+            <trans-unit id="Foto hinzufügen">
+                <source>Foto hinzufügen</source>
+                <target>Ajouter une photo</target>
+            </trans-unit>
+            <trans-unit id="Optional">
+                <source>Optional</source>
+                <target>Optionnel</target>
+            </trans-unit>
+            <trans-unit id="Benutzerliste">
+                <source>Benutzerliste</source>
+                <target>Liste des utilisateurs</target>
+            </trans-unit>
+            <trans-unit id="E-Mail Adresse">
+                <source>E-Mail Adresse</source>
+                <target>Adresse e-mail</target>
+            </trans-unit>
+            <trans-unit id="Vorname">
+                <source>Vorname</source>
+                <target>Prénom</target>
+            </trans-unit>
+            <trans-unit id="Nachname">
+                <source>Nachname</source>
+                <target>Nom de famille</target>
+            </trans-unit>
+            <trans-unit id="Berechtigungen">
+                <source>Berechtigungen</source>
+                <target>Autorisations</target>
+            </trans-unit>
+            <trans-unit id="Administrator">
+                <source>Administrator</source>
+                <target>Administrateur</target>
+            </trans-unit>
+            <trans-unit id="Tealleiter">
+                <source>Tealleiter</source>
+                <target>Chef d'équipe</target>
+            </trans-unit>
+            <trans-unit id="Benutzer (Standard)">
+                <source>Benutzer (Standard)</source>
+                <target>Utilisateur (Standard)</target>
+            </trans-unit>
+            <trans-unit id="Techniker">
+                <source>Techniker</source>
+                <target>Technicien</target>
+            </trans-unit>
+            <trans-unit id="Bestelllung">
+                <source>Bestelllung</source>
+                <target>Commande</target>
+            </trans-unit>
+            <trans-unit id="Passwort (leer lassen, wenn unverändert)">
+                <source>Passwort (leer lassen, wenn unverändert)</source>
+                <target>Mot de passe (laisser vide si inchangé)</target>
+            </trans-unit>
+            <trans-unit id="Neuer Benutzer">
+                <source>Neuer Benutzer</source>
+                <target>Nouvel utilisateur</target>
+            </trans-unit>
+            <trans-unit id="Keine Benutzer gefunden">
+                <source>Keine Benutzer gefunden</source>
+                <target>Aucun utilisateur trouvé</target>
+            </trans-unit>
+            <trans-unit id="ID">
+                <source>ID</source>
+                <target>ID</target>
+            </trans-unit>
+            <trans-unit id="E-Mail">
+                <source>E-Mail</source>
+                <target>E-mail</target>
+            </trans-unit>
+            <trans-unit id="Rollen">
+                <source>Rollen</source>
+                <target>Rôles</target>
+            </trans-unit>
+            <trans-unit id="Admin">
+                <source>Admin</source>
+                <target>Admin</target>
+            </trans-unit>
+            <trans-unit id="User">
+                <source>User</source>
+                <target>Utilisateur</target>
+            </trans-unit>
+            <trans-unit id="Benutzerverwaltung">
+                <source>Benutzerverwaltung</source>
+                <target>gestion des utilisateurs</target>
+            </trans-unit>
+            <trans-unit id="Benutzer Liste">
+                <source>Benutzer Liste</source>
+                <target>Liste des utilisateurs</target>
+            </trans-unit>
+            <trans-unit id="Einstellungen Mengeneinheiten">
+                <source>Einstellungen Mengeneinheiten</source>
+                <target>Paramètres des unités de mesure</target>
+            </trans-unit>
+            <trans-unit id="Einstellungen Schiffstypen">
+                <source>Einstellungen Schiffstypen</source>
+                <target>Paramètres des types de navires</target>
+            </trans-unit>
+            <trans-unit id="Status Bezeichnung">
+                <source>Status Bezeichnung</source>
+                <target>Désignation du statut</target>
+            </trans-unit>
+            <trans-unit id="css Klasse für Hintergrund">
+                <source>css Klasse für Hintergrund</source>
+                <target>Classe CSS pour l'arrière-plan</target>
+            </trans-unit>
+            <trans-unit id="Einstellungen Hafenliste">
+                <source>Einstellungen Hafenliste</source>
+                <target>Paramètres de la liste des ports</target>
+            </trans-unit>
+            <trans-unit id="Bestellungen Kostenstellen">
+                <source>Bestellungen Kostenstellen</source>
+                <target>Centres de coûts des commandes</target>
+            </trans-unit>
+            <trans-unit id="Nummer">
+                <source>Nummer</source>
+                <target>Numéro</target>
+            </trans-unit>
+            <trans-unit id="log.duplicate_sn">
+                <source>log.duplicate_sn</source>
+                <target>Le numéro de série "%sn%" est déjà enregistré pour le composant à la position %pos%. Veuillez
+                    vérifier !
+                </target>
+            </trans-unit>
+            <trans-unit id="Die Komponente wurde erfolgreich geändert.">
+                <source>Die Komponente wurde erfolgreich geändert.</source>
+                <target>Le composant a été modifié avec succès.</target>
+            </trans-unit>
+            <trans-unit id="mordal.maintance">
+                <source>Hinweis: Änderung nur mit Techniker-Rechten möglich.</source>
+                <target>Remarque : cette modification ne peut être effectuée que par une personne disposant des droits
+                    d'administrateur.
+                </target>
+            </trans-unit>
+            <trans-unit id="Stueck">
+                <source>Stueck</source>
+                <target>Pièce</target>
+            </trans-unit>
+            <trans-unit id="Stück">
+                <source>Stück</source>
+                <target>Pièce</target>
+            </trans-unit>
+            <trans-unit id="Offen Bestellungen">
+                <source>Offen Bestellungen</source>
+                <target>Commandes en cours</target>
+            </trans-unit>
+            <trans-unit id="Der Lagerbestand wurde aktualisiert.">
+                <source>Der Lagerbestand wurde aktualisiert.</source>
+                <target>Le stock a été mis à jour.</target>
+            </trans-unit>
+            <trans-unit id="Fehler beim Lager abgleich.">
+                <source>Fehler beim Lager abgleich.</source>
+                <target>Erreur lors de la synchronisation des stocks.</target>
+            </trans-unit>
+            <trans-unit id="Die angegebene Bestellung ist erledigt.">
+                <source>Die angegebene Bestellung ist erledigt.</source>
+                <target>La commande spécifiée est terminée.</target>
+            </trans-unit>
+            <trans-unit id="Die angegebene Bestellung wurde nur zum Teil geliefert.">
+                <source>Die angegebene Bestellung wurde nur zum Teil geliefert.</source>
+                <target>La commande spécifiée n'a été livrée que partiellement.</target>
+            </trans-unit>
+            <trans-unit id="Der Artikel wurde aus der Bestellung entfernt.">
+                <source>Der Artikel wurde aus der Bestellung entfernt.</source>
+                <target>L'article a été retiré de la commande.</target>
+            </trans-unit>
+            <trans-unit id="artikel.suche">
+                <source>artikel.suche</source>
+                <target>Filtrer la recherche pour %suche%</target>
+            </trans-unit>
+            <trans-unit id="baugruppe.add.fehler1">
+                <source>baugruppe.add.fehler1</source>
+                <target>Le projet avec l'ID %projektid% n'a pas pu être chargé.</target>
+            </trans-unit>
+            <trans-unit id="baugruppe.add.fehler2">
+                <source>baugruppe.add.fehler2</source>
+                <target>Une quantité doit être spécifiée.</target>
+            </trans-unit>
+            <trans-unit id="baugruppe.add">
+                <source>baugruppe.add</source>
+                <target>Le composant "%bezeichnung%" a été ajouté avec succès %count% fois à %projektName%.</target>
+            </trans-unit>
+            <trans-unit id="dem Projekt">
+                <source>dem Projekt</source>
+                <target>le projet</target>
+            </trans-unit>
+            <trans-unit id="baugruppe.bearbeitet">
+                <source>baugruppe.bearbeitet</source>
+                <target>L'assemblage a été modifié avec succès.</target>
+            </trans-unit>
+            <trans-unit id="Baugruppen Liste">
+                <source>Baugruppen Liste</source>
+                <target>Liste des assemblages</target>
+            </trans-unit>
+            <trans-unit id="Baugruppe Details">
+                <source>Baugruppe Details</source>
+                <target>Détails de l'assemblage</target>
+            </trans-unit>
+            <trans-unit id="Baugruppe bearbeiten">
+                <source>Baugruppe bearbeiten</source>
+                <target>Modifier l'assemblage</target>
+            </trans-unit>
+            <trans-unit id="Baugruppe anlegen">
+                <source>Baugruppe anlegen</source>
+                <target>Créer un assemblage</target>
+            </trans-unit>
+            <trans-unit id="Die Baugruppe wurde erfolgreich angelegt.">
+                <source>Die Baugruppe wurde erfolgreich angelegt.</source>
+                <target>L'assemblage a été créé avec succès.</target>
+            </trans-unit>
+            <trans-unit id="Die Baugruppe wurde erfolgreich KOPIERT.">
+                <source>Die Baugruppe wurde erfolgreich KOPIERT.</source>
+                <target>L'assemblage a été COPIÉ avec succès.</target>
+            </trans-unit>
+            <trans-unit id="Kopie">
+                <source>Kopie</source>
+                <target>Copie</target>
+            </trans-unit>
+            <trans-unit id="baugruppe.delete">
+                <source>baugruppe.delete</source>
+                <target>L'assemblage a été supprimé avec succès.</target>
+            </trans-unit>
+            <trans-unit id="baugruppe.lock">
+                <source>baugruppe.lock</source>
+                <target>L'assemblage a été verrouillé avec succès.</target>
+            </trans-unit>
+            <trans-unit id="baugruppe.delock">
+                <source>baugruppe.delock</source>
+                <target>L'assemblage a été déverrouillé avec succès.</target>
+            </trans-unit>
+            <trans-unit id="baugruppe.removed.notfound">
+                <source>baugruppe.removed.notfound</source>
+                <target>L'article spécifié n'a pas pu être trouvé dans la liste des articles.</target>
+            </trans-unit>
+            <trans-unit id="baugruppe.error1">
+                <source>baugruppe.removed.error1</source>
+                <target>Erreur lors du chargement des articles de l'assemblage : (%error%)</target>
+            </trans-unit>
+            <trans-unit id="baugruppe.removed.success">
+                <source>baugruppe.removed.success</source>
+                <target>L'article a été retiré avec succès de l'assemblage.</target>
+            </trans-unit>
+            <trans-unit id="baugruppe.artikelexport.success">
+                <source>baugruppe.artikelexport.success</source>
+                <target>%anzahl% articles ont été exportés.</target>
+            </trans-unit>
+            <trans-unit id="baugruppe.error2">
+                <source>baugruppe.error2</source>
+                <target>Erreur lors du chargement du centre de coûts : (%error%)</target>
+            </trans-unit>
+            <trans-unit id="baugruppe.bestellung.success">
+                <source>baugruppe.bestellung.success</source>
+                <target>%row% articles ont été ajoutés à la commande.</target>
+            </trans-unit>
+            <trans-unit id="anlage.delete.confirm">
+                <source>Möchtest du diese Anlage wirklich löschen?</source>
+                <target>Voulez-vous vraiment supprimer cette pièce jointe ?</target>
+            </trans-unit>
+            <trans-unit id="anlage.delete.error">
+                <source>Fehler beim Löschen der Anlage.</source>
+                <target>Erreur lors de la suppression de la pièce jointe.</target>
+            </trans-unit>
+            <trans-unit id="Anlage entfernen">
+                <source>Anlage entfernen</source>
+                <target>Supprimer la pièce jointe</target>
+            </trans-unit>
+            <trans-unit id="baugruppen.uebersicht">
+                <source>Baugruppen %projektname% Übersicht</source>
+                <target>Aperçu des assemblages %projektname%</target>
+            </trans-unit>
+            <trans-unit id="Artikel hinzufügen">
+                <source>Artikel hinzufügen</source>
+                <target>Ajouter un article</target>
+            </trans-unit>
+            <trans-unit id="Komponentenliste">
+                <source>Komponentenliste</source>
+                <target>Liste des composants</target>
+            </trans-unit>
+            <trans-unit id="Artikel Info">
+                <source>Artikel Info</source>
+                <target>Infos sur l'article</target>
+            </trans-unit>
+            <trans-unit id="projekt.bearbeiten">
+                <source>projekt.bearbeiten</source>
+                <target>Modifier le projet %projektname%</target>
+            </trans-unit>
+            <trans-unit id="Projektname">
+                <source>Projektname</source>
+                <target>Nom du projet</target>
+            </trans-unit>
+            <trans-unit id="Flagge">
+                <source>Flagge</source>
+                <target>Pavillon</target>
+            </trans-unit>
+            <trans-unit id="Schiffstyp">
+                <source>Schiffstyp</source>
+                <target>Type de navire</target>
+            </trans-unit>
+            <trans-unit id="Schiffsbild">
+                <source>Schiffsbild</source>
+                <target>Image du navire</target>
+            </trans-unit>
+            <trans-unit id="Projektstatus">
+                <source>Projektstatus</source>
+                <target>Statut du projet</target>
+            </trans-unit>
+            <trans-unit id="bitte.waehlen">
+                <source>bitte.waehlen</source>
+                <target>--- Veuillez choisir ---</target>
+            </trans-unit>
+            <trans-unit id="Benutzer Bearbeiten">
+                <source>Benutzer Bearbeiten</source>
+                <target>Modifier l'utilisateur</target>
+            </trans-unit>
+            <trans-unit id="Neues Passwort (leer lassen zum Behalten)">
+                <source>Neues Passwort (leer lassen zum Behalten)</source>
+                <target>Nouveau mot de passe (laisser vide pour conserver l'actuel)</target>
+            </trans-unit>
+            <trans-unit id="rdowzqn" resname="Projekt Eigenschaften">
+                <source>Projekt Eigenschaften</source>
+                <target>Propriétés du projet</target>
+            </trans-unit>
+            <trans-unit id="dEf9NlH" resname="Projekt ins Archiv">
+                <source>Projekt ins Archiv</source>
+                <target>Archiver le projet</target>
+            </trans-unit>
+            <trans-unit id="l2qluFv" resname="Projekt vollständig löschen">
+                <source>Projekt vollständig löschen</source>
+                <target>Supprimer complètement le projet</target>
+            </trans-unit>
+            <trans-unit id="hlV1hmW" resname="breadcrumb.deck_plan_bay">
+                <source>breadcrumb.deck_plan_bay</source>
+                <target>Baie %name%</target>
+            </trans-unit>
+            <trans-unit id="h9a7QZM" resname="Die Baugruppe wurde nicht gefunden.">
+                <source>Die Baugruppe wurde nicht gefunden.</source>
+                <target>L'assemblage n'a pas été trouvé.</target>
+            </trans-unit>
+            <trans-unit id="f8dwqno" resname="baugruppe.error1">
+                <source>baugruppe.error1</source>
+                <target>Erreur d'assemblage 1</target>
+            </trans-unit>
+            <trans-unit id="ceXGmEG" resname="Bestellliste Übersicht">
+                <source>Bestellliste Übersicht</source>
+                <target>Aperçu de la liste de commande</target>
+            </trans-unit>
+            <trans-unit id="4vJbvs6" resname="Der Komponenten-Type wurde erfolgreich geändert.">
+                <source>Der Komponenten-Type wurde erfolgreich geändert.</source>
+                <target>Le type de composant a été modifié avec succès.</target>
+            </trans-unit>
+            <trans-unit id="Jn8lb8." resname="Der Komponenten-Type wurde erfolgreich hinzugefügt.">
+                <source>Der Komponenten-Type wurde erfolgreich hinzugefügt.</source>
+                <target>Le type de composant a été ajouté avec succès.</target>
+            </trans-unit>
+            <trans-unit id="9udiJFd" resname="Einstellungen Komponententypen">
+                <source>Einstellungen Komponententypen</source>
+                <target>Réglages des types de composants</target>
+            </trans-unit>
+            <trans-unit id="DeeTl1d" resname="Der Seiten Parameter wurde erfolgreich hinzugefügt.">
+                <source>Der Seiten Parameter wurde erfolgreich hinzugefügt.</source>
+                <target>Le paramètre de page a été ajouté avec succès.</target>
+            </trans-unit>
+            <trans-unit id="Oh07HNQ" resname="Der Seiten Parameter wurde erfolgreich geändert.">
+                <source>Der Seiten Parameter wurde erfolgreich geändert.</source>
+                <target>Le paramètre de page a été modifié avec succès.</target>
+            </trans-unit>
+            <trans-unit id="4fvc2lw" resname="Der Seiten Parameter wurde gelöscht.">
+                <source>Der Seiten Parameter wurde gelöscht.</source>
+                <target>Le paramètre de page a été supprimé.</target>
+            </trans-unit>
+            <trans-unit id="xYyCTda" resname="Der Eintrag">
+                <source>Der Eintrag</source>
+                <target>L'entrée</target>
+            </trans-unit>
+            <trans-unit id="PRhuHJB" resname="wurde erfolgreich gespeichert.">
+                <source>wurde erfolgreich gespeichert.</source>
+                <target>a été enregistrée avec succès.</target>
+            </trans-unit>
+            <trans-unit id="pdCK6CH" resname="Die neue Einheit wurde erfolgreich hinzugefügt.">
+                <source>Die neue Einheit wurde erfolgreich hinzugefügt.</source>
+                <target>La nouvelle unité a été ajoutée avec succès.</target>
+            </trans-unit>
+            <trans-unit id="xR3fUlt" resname="SN bereits vergeben an Position">
+                <source>SN bereits vergeben an Position</source>
+                <target>N° de série déjà attribué à la position</target>
+            </trans-unit>
+            <trans-unit id="96T1d5q" resname="Hafen-Logbuch aktualisieren">
+                <source>Hafen-Logbuch aktualisieren</source>
+                <target>Mettre à jour le journal du port</target>
+            </trans-unit>
+            <trans-unit id="8IsObaj" resname="Von Datum">
+                <source>Von Datum</source>
+                <target>De la date</target>
+            </trans-unit>
+            <trans-unit id="rarWeXX" resname="Bis Datum">
+                <source>Bis Datum</source>
+                <target>Jusqu'à la date</target>
+            </trans-unit>
+            <trans-unit id="A4EmE1C" resname="Daten abrufen">
+                <source>Daten abrufen</source>
+                <target>Récupérer les données</target>
+            </trans-unit>
+            <trans-unit id="VnGDlfn" resname="Baugruppen Übersicht">
+                <source>Baugruppen Übersicht</source>
+                <target>Aperçu des assemblages</target>
+            </trans-unit>
+            <trans-unit id="g1Zf3iz" resname="Nach Lagerort">
+                <source>Nach Lagerort</source>
+                <target>Par lieu de stockage</target>
+            </trans-unit>
+            <trans-unit id="ScZphMY" resname="Nach Kostenstelle">
+                <source>Nach Kostenstelle</source>
+                <target>Par centre de coûts</target>
+            </trans-unit>
+            <trans-unit id="vxNJqGY" resname="Werkzeug">
+                <source>Werkzeug</source>
+                <target>Outil</target>
+            </trans-unit>
+            <trans-unit id="G0yCbag" resname="Ges. Liste Drucken">
+                <source>Ges. Liste Drucken</source>
+                <target>Imprimer la liste complète</target>
+            </trans-unit>
+            <trans-unit id="oIQYgFj" resname="Ges. Abgleich/Eingabe">
+                <source>Ges. Abgleich/Eingabe</source>
+                <target>Synchronisation/Saisie totale</target>
+            </trans-unit>
+            <trans-unit id="LeJR4MT" resname="Stand">
+                <source>Stand</source>
+                <target>État au</target>
+            </trans-unit>
+            <trans-unit id="YAOmCUb" resname="Ser.Nr.">
+                <source>Ser.Nr.</source>
+                <target>N° de série</target>
+            </trans-unit>
+            <trans-unit id="hLtrSTK" resname="Konto / Kto">
+                <source>Konto / Kto</source>
+                <target>Compte</target>
+            </trans-unit>
+            <trans-unit id="itip0lz" resname="Keine Bestellungen vorhanden">
+                <source>Keine Bestellungen vorhanden</source>
+                <target>Aucune commande disponible</target>
+            </trans-unit>
+            <trans-unit id="5dAWxY2" resname="Fehler: Keine Artikel vorhanden.">
+                <source>Fehler: Keine Artikel vorhanden.</source>
+                <target>Erreur : Aucun article disponible.</target>
+            </trans-unit>
+            <trans-unit id="2i2d_m0" resname="Artikel bestellen">
+                <source>Artikel bestellen</source>
+                <target>Commander des articles</target>
+            </trans-unit>
+            <trans-unit id="uAj26XB" resname="Schließen">
+                <source>Schließen</source>
+                <target>Fermer</target>
+            </trans-unit>
+            <trans-unit id="l0q3sYr" resname="Auswahl der Kostenstelle">
+                <source>Auswahl der Kostenstelle</source>
+                <target>Sélection du centre de coûts</target>
+            </trans-unit>
+            <trans-unit id="M1jrovT" resname="Bestellen">
+                <source>Bestellen</source>
+                <target>Commander</target>
+            </trans-unit>
+            <trans-unit id="1RElbax" resname="Keine Artikel gefunden.">
+                <source>Keine Artikel gefunden.</source>
+                <target>Aucun article trouvé.</target>
+            </trans-unit>
+            <trans-unit id="VIYRzlj" resname="Zurück">
+                <source>Zurück</source>
+                <target>Retour</target>
+            </trans-unit>
+            <trans-unit id="Ta2b7tg" resname="Bay Nummer">
+                <source>Bay Nummer</source>
+                <target>Numéro de baie</target>
+            </trans-unit>
+            <trans-unit id="XVBreOd" resname="Aktuelle Struktur">
+                <source>Aktuelle Struktur</source>
+                <target>Structure actuelle</target>
+            </trans-unit>
+            <trans-unit id="IwLdwTY" resname="Bay">
+                <source>Bay</source>
+                <target>Baie</target>
+            </trans-unit>
+            <trans-unit id="GwJBg8s" resname="Typ">
+                <source>Typ</source>
+                <target>Type</target>
+            </trans-unit>
+            <trans-unit id="ImUAZkt" resname="Struktur">
+                <source>Struktur</source>
+                <target>Structure</target>
+            </trans-unit>
+            <trans-unit id="pK0lnnH" resname="Aktion">
+                <source>Aktion</source>
+                <target>Action</target>
+            </trans-unit>
+            <trans-unit id="vYgUVLJ" resname="Keine Bays konfiguriert">
+                <source>Keine Bays konfiguriert</source>
+                <target>Aucune baie configurée</target>
+            </trans-unit>
+            <trans-unit id="Tib9IUF" resname="Schiffs-Übersicht">
+                <source>Schiffs-Übersicht</source>
+                <target>Aperçu du navire</target>
+            </trans-unit>
+            <trans-unit id="HVKbXiQ" resname="Bays">
+                <source>Bays</source>
+                <target>Baies</target>
+            </trans-unit>
+            <trans-unit id="2gOTeX0" resname="Fehlende Bay-Strukturen">
+                <source>Fehlende Bay-Strukturen</source>
+                <target>Structures de baies manquantes</target>
+            </trans-unit>
+            <trans-unit id="yDAsnzy" resname="Für diese Bays existiert Hardware im Plan-Format">
+                <source>Für diese Bays existiert Hardware im Plan-Format</source>
+                <target>Le matériel existe au format plan pour ces baies</target>
+            </trans-unit>
+            <trans-unit id="ZU60wKO" resname="Zahl">
+                <source>Zahl</source>
+                <target>Nombre</target>
+            </trans-unit>
+            <trans-unit id="cXuxW7S" resname="aber sie sind nicht in der Struktur angelegt">
+                <source>aber sie sind nicht in der Struktur angelegt</source>
+                <target>mais elles ne sont pas créées dans la structure</target>
+            </trans-unit>
+            <trans-unit id="XBBYrqa" resname="anlegen">
+                <source>anlegen</source>
+                <target>Créer</target>
+            </trans-unit>
+            <trans-unit id="2qMIEX4" resname="Projekt zurück aus Archiv">
+                <source>Projekt zurück aus Archiv</source>
+                <target>Restaurer le projet de l'archive</target>
+            </trans-unit>
+            <trans-unit id="f88VN2q" resname="Hafenzeiten">
+                <source>Hafenzeiten</source>
+                <target>Temps au port</target>
+            </trans-unit>
+            <trans-unit id="Mw6pjfK" resname="Neuer Parameter">
+                <source>Neuer Parameter</source>
+                <target>Nouveau paramètre</target>
+            </trans-unit>
+            <trans-unit id="N6B3RV3" resname="Artikel Bearbeiten">
+                <source>Artikel Bearbeiten</source>
+                <target>Modifier l'article</target>
+            </trans-unit>
+            <trans-unit id="MCXsm1f" resname="Komponente hinzufügen">
+                <source>Komponente hinzufügen</source>
+                <target>Ajouter un composant</target>
+            </trans-unit>
+            <trans-unit id="qBdXJLd" resname="Komponente suchen">
+                <source>Komponente suchen</source>
+                <target>Rechercher un composant</target>
+            </trans-unit>
+            <trans-unit id="vf50w3m" resname="für alle">
+                <source>für alle</source>
+                <target>pour tous</target>
+            </trans-unit>
+            <trans-unit id="48XkiAM" resname="Komponente Bestellen">
+                <source>Komponente Bestellen</source>
+                <target>Commander le composant</target>
+            </trans-unit>
+            <trans-unit id="z8XjdLO" resname="Bildinformationen bearbeiten">
+                <source>Bildinformationen bearbeiten</source>
+                <target>Modifier les infos de l'image</target>
+            </trans-unit>
+            <trans-unit id="q8r8gtq" resname="Titel">
+                <source>Titel</source>
+                <target>Titre</target>
+            </trans-unit>
+            <trans-unit id="h86UXTd" resname="Komponente einer Baugruppe zuweisen">
+                <source>Komponente einer Baugruppe zuweisen</source>
+                <target>Assigner le composant à un assemblage</target>
+            </trans-unit>
+            <trans-unit id="tMnUAEo" resname="Wähle eine Baugruppe im Projekt">
+                <source>Wähle eine Baugruppe im Projekt</source>
+                <target>Choisir un assemblage dans le projet</target>
+            </trans-unit>
+            <trans-unit id="cKw28tf" resname="Lade Baugruppen">
+                <source>Lade Baugruppen</source>
+                <target>Chargement des assemblages</target>
+            </trans-unit>
+            <trans-unit id="Os_bt5g" resname="Zuweisen">
+                <source>Zuweisen</source>
+                <target>Assigner</target>
+            </trans-unit>
+            <trans-unit id="CmINSSR" resname="Wartungshistorie">
+                <source>Wartungshistorie</source>
+                <target>Historique de maintenance</target>
+            </trans-unit>
+            <trans-unit id="TIDMGS6" resname="Lade Daten">
+                <source>Lade Daten</source>
+                <target>Chargement des données</target>
+            </trans-unit>
+            <trans-unit id="YtGlldl" resname="Komponentengalerie">
+                <source>Komponentengalerie</source>
+                <target>Galerie de composants</target>
+            </trans-unit>
+            <trans-unit id="qtp3CRP" resname="Artikel-Dokumentation">
+                <source>Artikel-Dokumentation</source>
+                <target>Documentation de l'article</target>
+            </trans-unit>
+            <trans-unit id="MPVYxTd" resname="Wartungs-Medien">
+                <source>Wartungs-Medien</source>
+                <target>Médias de maintenance</target>
+            </trans-unit>
+            <trans-unit id="p._dcp." resname="Alles erledigt! Keine offenen Wartungen.">
+                <source>Alles erledigt! Keine offenen Wartungen.</source>
+                <target>Tout est fait ! Aucune maintenance en cours.</target>
+            </trans-unit>
+            <trans-unit id="gFCzUAB" resname="Deck Plan">
+                <source>Deck Plan</source>
+                <target>Plan de pont</target>
+            </trans-unit>
+            <trans-unit id="cDpQKDZ" resname="Bug">
+                <source>Bug</source>
+                <target>Proue</target>
+            </trans-unit>
+            <trans-unit id="xRks5ll" resname="CENTERLINE">
+                <source>CENTERLINE</source>
+                <target>AXE CENTRAL</target>
+            </trans-unit>
+            <trans-unit id="hmeOVgP" resname="Defekte Komponenten">
+                <source>Defekte Komponenten</source>
+                <target>Composants défectueux</target>
+            </trans-unit>
+            <trans-unit id="e0IJeHS" resname="Finden">
+                <source>Finden</source>
+                <target>Trouver</target>
+            </trans-unit>
+            <trans-unit id="o5IGs8K" resname="Zu Bay">
+                <source>Zu Bay</source>
+                <target>Aller à la baie</target>
+            </trans-unit>
+            <trans-unit id="QQxKaXH" resname="Klicken Sie auf eine Bay, um sie in der Konfiguration anzulegen:">
+                <source>Klicken Sie auf eine Bay, um sie in der Konfiguration anzulegen:</source>
+                <target>Cliquez sur une baie pour la créer dans la configuration :</target>
+            </trans-unit>
+            <trans-unit id="ROZdWDw" resname="Bitte wählen Sie eine Bay aus der Navigation oben aus.">
+                <source>Bitte wählen Sie eine Bay aus der Navigation oben aus.</source>
+                <target>Veuillez sélectionner une baie dans la navigation ci-dessus.</target>
+            </trans-unit>
+            <trans-unit id="Yvylz10" resname="In der Übersicht sehen Sie alle verfügbaren Sektionen des Schiffes.">
+                <source>In der Übersicht sehen Sie alle verfügbaren Sektionen des Schiffes.</source>
+                <target>Dans l'aperçu, vous voyez toutes les sections disponibles du navire.</target>
+            </trans-unit>
+            <trans-unit id="B5JR21t" resname="Hafen">
+                <source>Hafen</source>
+                <target>Port</target>
+            </trans-unit>
+            <trans-unit id="Struktur komplett leeren">
+                <source>Struktur komplett leeren</source>
+                <target>Vider complètement la structure</target>
+            </trans-unit>
+            <trans-unit id="Bay-Struktur Konfiguration">
+                <source>Bay-Struktur Konfiguration</source>
+                <target>Configuration de la structure des baies</target>
+            </trans-unit>
+            <trans-unit id="Bay hinzufügen">
+                <source>Bay hinzufügen</source>
+                <target>Ajouter une baie</target>
+            </trans-unit>
+            <trans-unit id="Fore/Aft">
+                <source>Fore/Aft</source>
+                <target>Avant/Arrière</target>
+            </trans-unit>
+            <trans-unit id="Inkl.">
+                <source>Inkl.</source>
+                <target>Incl.</target>
+            </trans-unit>
+            <trans-unit id="Login Log">
+                <source>Login Log</source>
+                <target>Journal des connexions</target>
+            </trans-unit>
+            <trans-unit id="System-Status">
+                <source>System-Status</source>
+                <target>État du système</target>
+            </trans-unit>
+            <trans-unit id="Defekt">
+                <source>Defekt</source>
+                <target>Défectueux</target>
+            </trans-unit>
+            <trans-unit id="OK">
+                <source>OK</source>
+                <target>OK</target>
+            </trans-unit>
+            <trans-unit id="Gefahrene Strecke">
+                <source>Gefahrene Strecke</source>
+                <target>Distance parcourue</target>
+            </trans-unit>
+            <trans-unit id="Wegpunkte gefunden">
+                <source>Wegpunkte gefunden</source>
+                <target>Waypoints trouvés</target>
+            </trans-unit>
+            <trans-unit id="Status-Details">
+                <source>Status-Details</source>
+                <target>Détails du statut</target>
+            </trans-unit>
+            <trans-unit id="Einsatzbereit">
+                <source>Einsatzbereit</source>
+                <target>Opérationnel</target>
+            </trans-unit>
+            <trans-unit id="Prüfen">
+                <source>Prüfen</source>
+                <target>Vérifier</target>
+            </trans-unit>
+            <trans-unit id="Letzte Wartung">
+                <source>Letzte Wartung</source>
+                <target>Dernière maintenance</target>
+            </trans-unit>
+            <trans-unit id="l8AEPm4" resname="Ankunfts-Ereignis nicht gefunden.">
+                <source>Ankunfts-Ereignis nicht gefunden.</source>
+                <target>Événement d'arrivée non trouvé.</target>
+            </trans-unit>
+            <trans-unit id="wGV8ZvW" resname="Hafenaufenthalt erfolgreich aktualisiert.">
+                <source>Hafenaufenthalt erfolgreich aktualisiert.</source>
+                <target>Séjour au port mis à jour avec succès.</target>
+            </trans-unit>
+            <trans-unit id="gWNFTze" resname="Aktiv">
+                <source>Aktiv</source>
+                <target>Actif</target>
+            </trans-unit>
+            <trans-unit id="v3yRcct" resname="Inaktiv">
+                <source>Inaktiv</source>
+                <target>Inactif</target>
+            </trans-unit>
+            <trans-unit id="wfZ.pe." resname="Der Dienst wird aktuell nicht ausgeführt.">
+                <source>Der Dienst wird aktuell nicht ausgeführt.</source>
+                <target>Le service n'est pas en cours d'exécution.</target>
+            </trans-unit>
+            <trans-unit id="ry9e00S" resname="ais.streem">
+                <source>Der AIS-Stream verbindet sich per WebSocket mit &lt;code&gt;aisstream.io&lt;/code&gt;.
+                    Eingehende Daten werden gefiltert und nur gespeichert, wenn die MMSI einem Schiff in Ihrer Datenbank
+                    zugeordnet werden kann.
+                </source>
+                <target>
+                    <![CDATA[Le flux AIS se connecte via WebSocket à <code>aisstream.io</code>. Les données entrantes sont filtrées et enregistrées uniquement si l'MMSI peut être associé à un navire dans votre base de données.]]></target>
+            </trans-unit>
+            <trans-unit id="bDssb6l" resname="aisstream.Cronjob.neu">
+                <source>Ein Cronjob prüft alle 5 Minuten, ob dieser Prozess läuft und startet ihn bei Bedarf automatisch
+                    neu.
+                </source>
+                <target>Un cronjob vérifie toutes les 5 minutes si ce processus est en cours et le redémarre
+                    automatiquement si nécessaire.
+                </target>
+            </trans-unit>
+            <trans-unit id="uAj26XB" resname="Schließen">
+                <source>Schließen</source>
+                <target>Fermer</target>
+            </trans-unit>
+            <trans-unit id="Übersicht Karte">
+                <source>Übersicht Karte</source>
+                <target>Aperçu de la carte</target>
+            </trans-unit>
+            <trans-unit id="Military ops">
+                <source>Military ops</source>
+                <target>Opérations militaires</target>
+            </trans-unit>
+            <trans-unit id="Projektübersicht Karte">
+                <source>Projektübersicht Karte</source>
+                <target>Carte d'aperçu du projet</target>
+            </trans-unit>
+            <trans-unit id="projekt.map.count">
+                <source>In der Karte werden %count% Schiffe angezeigt.</source>
+                <target>%count% navires sont affichés sur la carte.</target>
+            </trans-unit>
+            <trans-unit id="Project Overview Map">
+                <source>Project Overview Map</source>
+                <target>Carte d'aperçu du projet</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

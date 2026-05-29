@@ -1,0 +1,2864 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+    <file source-language="en" target-language="de" datatype="plaintext" original="file.ext">
+        <header>
+            <tool tool-id="symfony" tool-name="Symfony"/>
+        </header>
+        <body>
+            <trans-unit id="l9HmhSa" resname="Bezeichnung">
+                <source>Bezeichnung</source>
+                <target>Bezeichnung</target>
+            </trans-unit>
+            <trans-unit id="RDX8wud" resname="Artikel">
+                <source>Artikel</source>
+                <target>Artikel</target>
+            </trans-unit>
+            <trans-unit id="MqRquV7" resname="-- Bitte wählen --">
+                <source>-- Bitte wählen --</source>
+                <target>-- Bitte wählen --</target>
+            </trans-unit>
+            <trans-unit id="oSWv.aI" resname="D4100-E Network Strobe Siren">
+                <source>D4100-E Network Strobe Siren</source>
+                <target>D4100-E Network Strobe Siren</target>
+            </trans-unit>
+            <trans-unit id="KlTTvRv" resname="CorivaSat RTLS">
+                <source>CorivaSat RTLS</source>
+                <target>CorivaSat RTLS</target>
+            </trans-unit>
+            <trans-unit id="dKZhes0" resname="CorivaSat Roro">
+                <source>CorivaSat Roro</source>
+                <target>CorivaSat Roro</target>
+            </trans-unit>
+            <trans-unit id="T0secJp" resname="USW-Flex-Utility (46W)">
+                <source>USW-Flex-Utility (46W)</source>
+                <target>USW-Flex-Utility (46W)</target>
+            </trans-unit>
+            <trans-unit id="DPzK7X6" resname="UniFi Switch Pro 8 PoE - USW-Pro-8-PoE">
+                <source>UniFi Switch Pro 8 PoE - USW-Pro-8-PoE</source>
+                <target>UniFi Switch Pro 8 PoE - USW-Pro-8-PoE</target>
+            </trans-unit>
+            <trans-unit id="6aOX2uT" resname="IDS-710HP">
+                <source>IDS-710HP</source>
+                <target>IDS-710HP</target>
+            </trans-unit>
+            <trans-unit id="HWOT7Gn" resname="IRG5140+ LTE Router">
+                <source>IRG5140+ LTE Router</source>
+                <target>IRG5140+ LTE Router</target>
+            </trans-unit>
+            <trans-unit id="f2H0.ov" resname="UPSI-2412DP3">
+                <source>UPSI-2412DP3</source>
+                <target>UPSI-2412DP3</target>
+            </trans-unit>
+            <trans-unit id="dH80Rve" resname="EMPEC-1750">
+                <source>EMPEC-1750</source>
+                <target>EMPEC-1750</target>
+            </trans-unit>
+            <trans-unit id="nDsJji3" resname="QUINT4-PS/1AC/48DC/10">
+                <source>QUINT4-PS/1AC/48DC/10</source>
+                <target>QUINT4-PS/1AC/48DC/10</target>
+            </trans-unit>
+            <trans-unit id="ca1Kaeh" resname="DRL-24V480W1EN">
+                <source>DRL-24V480W1EN</source>
+                <target>DRL-24V480W1EN</target>
+            </trans-unit>
+            <trans-unit id="MFhtgYl" resname="DRL-48V480W1EN">
+                <source>DRL-48V480W1EN</source>
+                <target>DRL-48V480W1EN</target>
+            </trans-unit>
+            <trans-unit id="B0i7aOA" resname="Leitungsschutzschalter Typ B, 1-polig 10A">
+                <source>Leitungsschutzschalter Typ B, 1-polig 10A</source>
+                <target>Leitungsschutzschalter Typ B, 1-polig 10A</target>
+            </trans-unit>
+            <trans-unit id="7gzNpyI" resname="HYDRA 466">
+                <source>HYDRA 466</source>
+                <target>HYDRA 466</target>
+            </trans-unit>
+            <trans-unit id="k64Ubg1" resname="Hydra 346">
+                <source>Hydra 346</source>
+                <target>Hydra 346</target>
+            </trans-unit>
+            <trans-unit id="NRGQLhe" resname="Kabelverschraubung V-TEC TB25 07-10 teilbar mit Gegenmutter">
+                <source>Kabelverschraubung V-TEC TB25 07-10 teilbar mit Gegenmutter</source>
+                <target>Kabelverschraubung V-TEC TB25 07-10 teilbar mit Gegenmutter</target>
+            </trans-unit>
+            <trans-unit id="O1QJv1q" resname="Kabelverschraubung M25 mit Gegenmutter">
+                <source>Kabelverschraubung M25 mit Gegenmutter</source>
+                <target>Kabelverschraubung M25 mit Gegenmutter</target>
+            </trans-unit>
+            <trans-unit id="DrBf6Ux" resname="Stationsrechner">
+                <source>Stationsrechner</source>
+                <target>Stationsrechner</target>
+            </trans-unit>
+            <trans-unit id="Wkx1S80" resname="RUT9-series LTE/GPS Antenne">
+                <source>RUT9-series LTE/GPS Antenne</source>
+                <target>RUT9-series LTE/GPS Antenne</target>
+            </trans-unit>
+            <trans-unit id="PEQ.U" resname="Sirius 110V Online USV 1 - 3 kVA">
+                <source>Sirius 110V Online USV 1 - 3 kVA</source>
+                <target>Sirius 110V Online USV 1 - 3 kVA</target>
+            </trans-unit>
+            <trans-unit id="POMPXLk" resname="1U AMD single-CPU RA1104-SMEPH">
+                <source>1U AMD single-CPU RA1104-SMEPH</source>
+                <target>1U AMD single-CPU RA1104-SMEPH</target>
+            </trans-unit>
+            <trans-unit id="QpR8BCk" resname="Rittal Wandverteilergehäuse 9HE mit Glastüre 600x478x473mm">
+                <source>Rittal Wandverteilergehäuse 9HE mit Glastüre 600x478x473mm</source>
+                <target>Rittal Wandverteilergehäuse 9HE mit Glastüre 600x478x473mm</target>
+            </trans-unit>
+            <trans-unit id="KeTP9Ze" resname="DIGITUS Patchpanel – Modular – 19-Zoll – 24-Port">
+                <source>DIGITUS Patchpanel – Modular – 19-Zoll – 24-Port</source>
+                <target>DIGITUS Patchpanel – Modular – 19-Zoll – 24-Port</target>
+            </trans-unit>
+            <trans-unit id="OdK9sgc" resname="DIGITUS LWL-Keystone-Modul – LC/LC-Duplex">
+                <source>DIGITUS LWL-Keystone-Modul – LC/LC-Duplex</source>
+                <target>DIGITUS LWL-Keystone-Modul – LC/LC-Duplex</target>
+            </trans-unit>
+            <trans-unit id="SClRLcb" resname="Schuko Steckdose [GS16] für Hutschiene 16A 230V 2P+E">
+                <source>Schuko Steckdose [GS16] für Hutschiene 16A 230V 2P+E</source>
+                <target>Schuko Steckdose [GS16] für Hutschiene 16A 230V 2P+E</target>
+            </trans-unit>
+            <trans-unit id="l_ZSXP8" resname="4 Stk DIN Schiene">
+                <source>4 Stk DIN Schiene</source>
+                <target>4 Stk DIN Schiene</target>
+            </trans-unit>
+            <trans-unit id="xPCwu1z" resname="Schutzleiter-Reihenklemme, PT 2,5-PE/L/N">
+                <source>Schutzleiter-Reihenklemme, PT 2,5-PE/L/N</source>
+                <target>Schutzleiter-Reihenklemme, PT 2,5-PE/L/N</target>
+            </trans-unit>
+            <trans-unit id="wEsahYd" resname="Abschlussdeckel - D-PTI/3">
+                <source>Abschlussdeckel - D-PTI/3</source>
+                <target>Abschlussdeckel - D-PTI/3</target>
+            </trans-unit>
+            <trans-unit id="zpzQ8Aj" resname="Endhalter für Hutschiene">
+                <source>Endhalter für Hutschiene</source>
+                <target>Endhalter für Hutschiene</target>
+            </trans-unit>
+            <trans-unit id="_JzIS.w" resname="PoE Switch">
+                <source>PoE Switch</source>
+                <target>PoE Switch</target>
+            </trans-unit>
+            <trans-unit id="Ul9IbuN" resname="Switch, 5-Port, Gigabit Ethernet, PoE+, outdoor">
+                <source>Switch, 5-Port, Gigabit Ethernet, PoE+, outdoor</source>
+                <target>Switch, 5-Port, Gigabit Ethernet, PoE+, outdoor</target>
+            </trans-unit>
+            <trans-unit id="k2lRHMK" resname="TI-CA2 Steel housing, outdoor">
+                <source>TI-CA2 Steel housing, outdoor</source>
+                <target>TI-CA2 Steel housing, outdoor</target>
+            </trans-unit>
+            <trans-unit id="zL4oPt0" resname="8-Port Gigabit Ethernet Switch">
+                <source>8-Port Gigabit Ethernet Switch</source>
+                <target>8-Port Gigabit Ethernet Switch</target>
+            </trans-unit>
+            <trans-unit id="6iytB.i" resname="TSW202 MANAGED PoE+ ETHERNET SWITCH">
+                <source>TSW202 MANAGED PoE+ ETHERNET SWITCH</source>
+                <target>TSW202 MANAGED PoE+ ETHERNET SWITCH</target>
+            </trans-unit>
+            <trans-unit id="jIgWGa5" resname="FlatBox Plus 12 HE">
+                <source>FlatBox Plus 12 HE</source>
+                <target>FlatBox Plus 12 HE</target>
+            </trans-unit>
+            <trans-unit id="zEGcagG" resname="Patchpanel Modular -12 Ports -10-Zoll">
+                <source>Patchpanel Modular -12 Ports -10-Zoll</source>
+                <target>Patchpanel Modular -12 Ports -10-Zoll</target>
+            </trans-unit>
+            <trans-unit id="7ovdZKW" resname="SFP Netzwerkkarte">
+                <source>SFP Netzwerkkarte</source>
+                <target>SFP Netzwerkkarte</target>
+            </trans-unit>
+            <trans-unit id="VqS97cw" resname="IP68 RJ-45-Steckeradapter">
+                <source>IP68 RJ-45-Steckeradapter</source>
+                <target>IP68 RJ-45-Steckeradapter</target>
+            </trans-unit>
+            <trans-unit id="Oo.obN1" resname="USW-Flex (46W)">
+                <source>USW-Flex (46W)</source>
+                <target>USW-Flex (46W)</target>
+            </trans-unit>
+            <trans-unit id="rlS95A0" resname="USW-FLEX-UTILITY">
+                <source>USW-FLEX-UTILITY</source>
+                <target>USW-FLEX-UTILITY</target>
+            </trans-unit>
+            <trans-unit id="QemPT3W" resname="Peltier-Kühlgerät PK 150">
+                <source>Peltier-Kühlgerät PK 150</source>
+                <target>Peltier-Kühlgerät PK 150</target>
+            </trans-unit>
+            <trans-unit id="3R7rPM_" resname="Thermostat">
+                <source>Thermostat</source>
+                <target>Thermostat</target>
+            </trans-unit>
+            <trans-unit id="EreyvSb" resname="Schließzylinder">
+                <source>Schließzylinder</source>
+                <target>Schließzylinder</target>
+            </trans-unit>
+            <trans-unit id="komLKRz" resname="USB-B Kabel">
+                <source>USB-B Kabel</source>
+                <target>USB-B Kabel</target>
+            </trans-unit>
+            <trans-unit id="LMrhuT6" resname="USB auf RS232">
+                <source>USB auf RS232</source>
+                <target>USB auf RS232</target>
+            </trans-unit>
+            <trans-unit id="9N7X5Hz" resname="LTE Router">
+                <source>LTE Router</source>
+                <target>LTE Router</target>
+            </trans-unit>
+            <trans-unit id="UmYOy8X" resname="POE Injektor INJ-IG02-PH">
+                <source>POE Injektor INJ-IG02-PH</source>
+                <target>POE Injektor INJ-IG02-PH</target>
+            </trans-unit>
+            <trans-unit id="mPdZar6" resname="DC-Kabel">
+                <source>DC-Kabel</source>
+                <target>DC-Kabel</target>
+            </trans-unit>
+            <trans-unit id="YZDz1HK" resname="Kabel 16 AWG">
+                <source>Kabel 16 AWG</source>
+                <target>Kabel 16 AWG</target>
+            </trans-unit>
+            <trans-unit id="f9X54Ia" resname="RS232 Winkeladapter">
+                <source>RS232 Winkeladapter</source>
+                <target>RS232 Winkeladapter</target>
+            </trans-unit>
+            <trans-unit id="N1EnAC3" resname="Zangen Montage-Paket">
+                <source>Zangen Montage-Paket</source>
+                <target>Zangen Montage-Paket</target>
+            </trans-unit>
+            <trans-unit id="woGawZc" resname="Schraubendreher">
+                <source>Schraubendreher</source>
+                <target>Schraubendreher</target>
+            </trans-unit>
+            <trans-unit id="QcaNpkx" resname="Sechskant-Steckschlüssel 5-tlg">
+                <source>Sechskant-Steckschlüssel 5-tlg</source>
+                <target>Sechskant-Steckschlüssel 5-tlg</target>
+            </trans-unit>
+            <trans-unit id="hEMxmeS" resname="Schlosserhammer 500 g">
+                <source>Schlosserhammer 500 g</source>
+                <target>Schlosserhammer 500 g</target>
+            </trans-unit>
+            <trans-unit id="aAIf.IR" resname="Netzwerkdose Aufputz CAT 6a 1 Port Schwarz">
+                <source>Netzwerkdose Aufputz CAT 6a 1 Port Schwarz</source>
+                <target>Netzwerkdose Aufputz CAT 6a 1 Port Schwarz</target>
+            </trans-unit>
+            <trans-unit id="ji_BYRX" resname="Tüllengehäuse Schwarz Industry IP67 V1 1401025002KE">
+                <source>Tüllengehäuse Schwarz Industry IP67 V1 1401025002KE</source>
+                <target>Tüllengehäuse Schwarz Industry IP67 V1 1401025002KE</target>
+            </trans-unit>
+            <trans-unit id="N3XitiV" resname="OnLogic Karbon 803">
+                <source>OnLogic Karbon 803</source>
+                <target>OnLogic Karbon 803</target>
+            </trans-unit>
+            <trans-unit id="SB9w0Gf" resname="Abox 250">
+                <source>Abox 250</source>
+                <target>Abox 250</target>
+            </trans-unit>
+            <trans-unit id="iY4yICs" resname="Wasserdichter RJ45 Koppler">
+                <source>Wasserdichter RJ45 Koppler</source>
+                <target>Wasserdichter RJ45 Koppler</target>
+            </trans-unit>
+            <trans-unit id="6XkC7ih" resname="USW-Ultra">
+                <source>USW-Ultra</source>
+                <target>USW-Ultra</target>
+            </trans-unit>
+            <trans-unit id="PpfyXVt" resname="RJ45 IP68 Wasserdichter Stecker, Stecker zu Buchse">
+                <source>RJ45 IP68 Wasserdichter Stecker, Stecker zu Buchse</source>
+                <target>RJ45 IP68 Wasserdichter Stecker, Stecker zu Buchse</target>
+            </trans-unit>
+            <trans-unit id="5GXNIYG" resname="Installations-Etagenklemme, PTI 2,5-PE/L/N">
+                <source>Installations-Etagenklemme, PTI 2,5-PE/L/N</source>
+                <target>Installations-Etagenklemme, PTI 2,5-PE/L/N</target>
+            </trans-unit>
+            <trans-unit id="sClH3KV" resname="PCB-Montage Schraubklemme">
+                <source>PCB-Montage Schraubklemme</source>
+                <target>PCB-Montage Schraubklemme</target>
+            </trans-unit>
+            <trans-unit id="9NmecKn" resname="Hutschiene">
+                <source>Hutschiene</source>
+                <target>Hutschiene</target>
+            </trans-unit>
+            <trans-unit id="AL_3aHU" resname="USB Kameramodul 120 Grad">
+                <source>USB Kameramodul 120 Grad</source>
+                <target>USB Kameramodul 120 Grad</target>
+            </trans-unit>
+            <trans-unit id="yOJ5xYH" resname="Netzwerkkabel CAT 7 Kabel">
+                <source>Netzwerkkabel CAT 7 Kabel</source>
+                <target>Netzwerkkabel CAT 7 Kabel</target>
+            </trans-unit>
+            <trans-unit id="yqc.D" resname="UPSI-2406DP3">
+                <source>UPSI-2406DP3</source>
+                <target>UPSI-2406DP3</target>
+            </trans-unit>
+            <trans-unit id="IFGNRNO" resname="D-Sub RS232-Stecker auf Buchse, abgewinkelt">
+                <source>D-Sub RS232-Stecker auf Buchse, abgewinkelt</source>
+                <target>D-Sub RS232-Stecker auf Buchse, abgewinkelt</target>
+            </trans-unit>
+            <trans-unit id="ZtuBh00" resname="Steckbare Klemmenblock Stecker">
+                <source>Steckbare Klemmenblock Stecker</source>
+                <target>Steckbare Klemmenblock Stecker</target>
+            </trans-unit>
+            <trans-unit id="0Ov3xDq" resname="Druckluftspray/Druckluftreiniger">
+                <source>Druckluftspray/Druckluftreiniger</source>
+                <target>Druckluftspray/Druckluftreiniger</target>
+            </trans-unit>
+            <trans-unit id="A_Q.rrt" resname="Vierkantmutter Quadratmutter Edelstahl A2 / V2A DIN 562 M5">
+                <source>Vierkantmutter Quadratmutter Edelstahl A2 / V2A DIN 562 M5</source>
+                <target>Vierkantmutter Quadratmutter Edelstahl A2 / V2A DIN 562 M5</target>
+            </trans-unit>
+            <trans-unit id="rSXkQgK" resname="M21-750-499 Etikettenklebeband">
+                <source>M21-750-499 Etikettenklebeband</source>
+                <target>M21-750-499 Etikettenklebeband</target>
+            </trans-unit>
+            <trans-unit id="HLUUwEg" resname="Sechskant Bohrschrauben 4,2x16mm">
+                <source>Sechskant Bohrschrauben 4,2x16mm</source>
+                <target>Sechskant Bohrschrauben 4,2x16mm</target>
+            </trans-unit>
+            <trans-unit id="sdL7QGv" resname="Montageschiene 41x41 verzinkt">
+                <source>Montageschiene 41x41 verzinkt</source>
+                <target>Montageschiene 41x41 verzinkt</target>
+            </trans-unit>
+            <trans-unit id="1ZpWN3f" resname="Montageschiene 41x21 verzinkt">
+                <source>Montageschiene 41x21 verzinkt</source>
+                <target>Montageschiene 41x21 verzinkt</target>
+            </trans-unit>
+            <trans-unit id="kpMiU84" resname="Montagewinkel 41x41">
+                <source>Montagewinkel 41x41</source>
+                <target>Montagewinkel 41x41</target>
+            </trans-unit>
+            <trans-unit id="VQ5Xtoc" resname="Sicherungsklammer M12 41x41">
+                <source>Sicherungsklammer M12 41x41</source>
+                <target>Sicherungsklammer M12 41x41</target>
+            </trans-unit>
+            <trans-unit id="Ej9oOwU" resname="Trägerkralle 41x41 M8">
+                <source>Trägerkralle 41x41 M8</source>
+                <target>Trägerkralle 41x41 M8</target>
+            </trans-unit>
+            <trans-unit id="KzBjvid" resname="Gegenplatte">
+                <source>Gegenplatte</source>
+                <target>Gegenplatte</target>
+            </trans-unit>
+            <trans-unit id="84oXEEu" resname="Zylinderschraube M12x90">
+                <source>Zylinderschraube M12x90</source>
+                <target>Zylinderschraube M12x90</target>
+            </trans-unit>
+            <trans-unit id="1RB0SIA" resname="Unterlegscheibe DIN9021M12 (D 9021 A 2 13 S)">
+                <source>Unterlegscheibe DIN9021M12 (D 9021 A 2 13 S)</source>
+                <target>Unterlegscheibe DIN9021M12 (D 9021 A 2 13 S)</target>
+            </trans-unit>
+            <trans-unit id="E9Nytru" resname="Unterlegscheibe DIN9021 M8">
+                <source>Unterlegscheibe DIN9021 M8</source>
+                <target>Unterlegscheibe DIN9021 M8</target>
+            </trans-unit>
+            <trans-unit id="CKRKosE" resname="Mutter selbsts. M8">
+                <source>Mutter selbsts. M8</source>
+                <target>Mutter selbsts. M8</target>
+            </trans-unit>
+            <trans-unit id="acVHqcU" resname="Zylinderschraube M6x40">
+                <source>Zylinderschraube M6x40</source>
+                <target>Zylinderschraube M6x40</target>
+            </trans-unit>
+            <trans-unit id="ZeoYIGX" resname="Unterlegscheibe DIN9021 M6">
+                <source>Unterlegscheibe DIN9021 M6</source>
+                <target>Unterlegscheibe DIN9021 M6</target>
+            </trans-unit>
+            <trans-unit id="kQUIChP" resname="Mutter selbsts. M6">
+                <source>Mutter selbsts. M6</source>
+                <target>Mutter selbsts. M6</target>
+            </trans-unit>
+            <trans-unit id="cSeNIVE" resname="Zylinderschraube M8x30">
+                <source>Zylinderschraube M8x30</source>
+                <target>Zylinderschraube M8x30</target>
+            </trans-unit>
+            <trans-unit id="u40diWS" resname="Distanzhülsen D12 D6 L 5mm">
+                <source>Distanzhülsen D12 D6 L 5mm</source>
+                <target>Distanzhülsen D12 D6 L 5mm</target>
+            </trans-unit>
+            <trans-unit id="QwmotVH" resname="Metallverbinder L=200mm">
+                <source>Metallverbinder L=200mm</source>
+                <target>Metallverbinder L=200mm</target>
+            </trans-unit>
+            <trans-unit id="HhRI5YA" resname="Metallverbinder L=250mm">
+                <source>Metallverbinder L=250mm</source>
+                <target>Metallverbinder L=250mm</target>
+            </trans-unit>
+            <trans-unit id="3iOrp81" resname="Buchse zu Buchse - RS-232 Adapter">
+                <source>Buchse zu Buchse - RS-232 Adapter</source>
+                <target>Buchse zu Buchse - RS-232 Adapter</target>
+            </trans-unit>
+            <trans-unit id="6PVaQOz" resname="Stecker zu Stecker - RS-232 Adapter">
+                <source>Stecker zu Stecker - RS-232 Adapter</source>
+                <target>Stecker zu Stecker - RS-232 Adapter</target>
+            </trans-unit>
+            <trans-unit id=".yzv5f8" resname="USB auf RS232 Seriell Kabel">
+                <source>USB auf RS232 Seriell Kabel</source>
+                <target>USB auf RS232 Seriell Kabel</target>
+            </trans-unit>
+            <trans-unit id="CMeNlaW" resname="FTDI USB zu Seriell Adapter kabel">
+                <source>FTDI USB zu Seriell Adapter kabel</source>
+                <target>FTDI USB zu Seriell Adapter kabel</target>
+            </trans-unit>
+            <trans-unit id="PNL3MkU" resname="Schiebelehre">
+                <source>Schiebelehre</source>
+                <target>Schiebelehre</target>
+            </trans-unit>
+            <trans-unit id="PmfGgzO" resname="Montagewinkel 95x95">
+                <source>Montagewinkel 95x95</source>
+                <target>Montagewinkel 95x95</target>
+            </trans-unit>
+            <trans-unit id="D7X2uqs" resname="Mutter selbsts. M12">
+                <source>Mutter selbsts. M12</source>
+                <target>Mutter selbsts. M12</target>
+            </trans-unit>
+            <trans-unit id="6dpHXm2" resname="Schlossschraube M10x35">
+                <source>Schlossschraube M10x35</source>
+                <target>Schlossschraube M10x35</target>
+            </trans-unit>
+            <trans-unit id="B3Ih_I." resname="Mutter selbsts. M10">
+                <source>Mutter selbsts. M10</source>
+                <target>Mutter selbsts. M10</target>
+            </trans-unit>
+            <trans-unit id="16RFdlH" resname="Unterlegscheibe DIN9021 M10">
+                <source>Unterlegscheibe DIN9021 M10</source>
+                <target>Unterlegscheibe DIN9021 M10</target>
+            </trans-unit>
+            <trans-unit id="EXFlAII" resname="Sicherungsklammer M8 41x41">
+                <source>Sicherungsklammer M8 41x41</source>
+                <target>Sicherungsklammer M8 41x41</target>
+            </trans-unit>
+            <trans-unit id="szkZpZp" resname="Zylinderschraube M8x50">
+                <source>Zylinderschraube M8x50</source>
+                <target>Zylinderschraube M8x50</target>
+            </trans-unit>
+            <trans-unit id="w7GBJau" resname="Trägerklammer Leitungsrohr">
+                <source>Trägerklammer Leitungsrohr</source>
+                <target>Trägerklammer Leitungsrohr</target>
+            </trans-unit>
+            <trans-unit id="q35VCFd" resname="IR Sensor">
+                <source>IR Sensor</source>
+                <target>IR Sensor</target>
+            </trans-unit>
+            <trans-unit id=".SSi2yw" resname="Funktionsstecker mit Trennklemmen">
+                <source>Funktionsstecker mit Trennklemmen</source>
+                <target>Funktionsstecker mit Trennklemmen</target>
+            </trans-unit>
+            <trans-unit id="cZsaXHN" resname="Einzelader flexibel 1,5 mm2 braun">
+                <source>Einzelader flexibel 1,5 mm2 braun</source>
+                <target>Einzelader flexibel 1,5 mm2 braun</target>
+            </trans-unit>
+            <trans-unit id="sd.buXw" resname="Einzelader flexibel 1,5 mm2 blau">
+                <source>Einzelader flexibel 1,5 mm2 blau</source>
+                <target>Einzelader flexibel 1,5 mm2 blau</target>
+            </trans-unit>
+            <trans-unit id="rLdLNvT" resname="CorivaSat Roro II">
+                <source>CorivaSat Roro II</source>
+                <target>CorivaSat Roro II</target>
+            </trans-unit>
+            <trans-unit id="wBwsJbb" resname="Kabelschlauch, 12-20mm">
+                <source>Kabelschlauch, 12-20mm</source>
+                <target>Kabelschlauch, 12-20mm</target>
+            </trans-unit>
+            <trans-unit id="hC6ScBK" resname="Steckbare Klemmen 2,5mm">
+                <source>Steckbare Klemmen 2,5mm</source>
+                <target>Steckbare Klemmen 2,5mm</target>
+            </trans-unit>
+            <trans-unit id="Wg8l8GA" resname="LED Leuchtkappe">
+                <source>LED Leuchtkappe</source>
+                <target>LED Leuchtkappe</target>
+            </trans-unit>
+            <trans-unit id="BaxCVvT" resname="Linsenschrauben M5x10">
+                <source>Linsenschrauben M5x10</source>
+                <target>Linsenschrauben M5x10</target>
+            </trans-unit>
+            <trans-unit id="osEt0se" resname="Senkkopfschrauben M5x12">
+                <source>Senkkopfschrauben M5x12</source>
+                <target>Senkkopfschrauben M5x12</target>
+            </trans-unit>
+            <trans-unit id="_mvSKce" resname="O-Ringe 1mm">
+                <source>O-Ringe 1mm</source>
+                <target>O-Ringe 1mm</target>
+            </trans-unit>
+            <trans-unit id=".4EPWZZ" resname="Schuko Steckdose [GS16] Hutschiene">
+                <source>Schuko Steckdose [GS16] Hutschiene</source>
+                <target>Schuko Steckdose [GS16] Hutschiene</target>
+            </trans-unit>
+            <trans-unit id="q1VGVH5" resname="Lichtleiter LED; 5mmx8.5mm">
+                <source>Lichtleiter LED; 5mmx8.5mm</source>
+                <target>Lichtleiter LED; 5mmx8.5mm</target>
+            </trans-unit>
+            <trans-unit id="BsxFaOC" resname="Distributionsbehälter">
+                <source>Distributionsbehälter</source>
+                <target>Distributionsbehälter</target>
+            </trans-unit>
+            <trans-unit id="qZFc.5Q" resname="Kabelbinder 4.8x250mm">
+                <source>Kabelbinder 4.8x250mm</source>
+                <target>Kabelbinder 4.8x250mm</target>
+            </trans-unit>
+            <trans-unit id="aopZNJL" resname="Kabelbinder 4.8x300mm">
+                <source>Kabelbinder 4.8x300mm</source>
+                <target>Kabelbinder 4.8x300mm</target>
+            </trans-unit>
+            <trans-unit id="e4LkknQ" resname="Kabelbinder 7.6x400mm">
+                <source>Kabelbinder 7.6x400mm</source>
+                <target>Kabelbinder 7.6x400mm</target>
+            </trans-unit>
+            <trans-unit id="bReLdSi" resname="Netzwerkstecker Pass Through">
+                <source>Netzwerkstecker Pass Through</source>
+                <target>Netzwerkstecker Pass Through</target>
+            </trans-unit>
+            <trans-unit id="F7GzHnZ" resname="Ethernet Cat7 Crimpzange">
+                <source>Ethernet Cat7 Crimpzange</source>
+                <target>Ethernet Cat7 Crimpzange</target>
+            </trans-unit>
+            <trans-unit id=".mScI38" resname="Kabel 14 AWG">
+                <source>Kabel 14 AWG</source>
+                <target>Kabel 14 AWG</target>
+            </trans-unit>
+            <trans-unit id="HH4Mdg_" resname="Kabel 18 AWG">
+                <source>Kabel 18 AWG</source>
+                <target>Kabel 18 AWG</target>
+            </trans-unit>
+            <trans-unit id="8cmvmf3" resname="Magnethaken">
+                <source>Magnethaken</source>
+                <target>Magnethaken</target>
+            </trans-unit>
+            <trans-unit id="khsVRa8" resname="Gurtband">
+                <source>Gurtband</source>
+                <target>Gurtband</target>
+            </trans-unit>
+            <trans-unit id="yYWbiSR" resname="Lochwerkzeug">
+                <source>Lochwerkzeug</source>
+                <target>Lochwerkzeug</target>
+            </trans-unit>
+            <trans-unit id="aw65oxw" resname="Entfernungsmesser">
+                <source>Entfernungsmesser</source>
+                <target>Entfernungsmesser</target>
+            </trans-unit>
+            <trans-unit id="VZdwIP3" resname="Akku-Bohrschrauber DDF482RFJ">
+                <source>Akku-Bohrschrauber DDF482RFJ</source>
+                <target>Akku-Bohrschrauber DDF482RFJ</target>
+            </trans-unit>
+            <trans-unit id="1foYXeQ" resname="Kabelabroller">
+                <source>Kabelabroller</source>
+                <target>Kabelabroller</target>
+            </trans-unit>
+            <trans-unit id="IzHFbb6" resname="Steckschlüsselsatz">
+                <source>Steckschlüsselsatz</source>
+                <target>Steckschlüsselsatz</target>
+            </trans-unit>
+            <trans-unit id="8FdWghY" resname="Trittleiter">
+                <source>Trittleiter</source>
+                <target>Trittleiter</target>
+            </trans-unit>
+            <trans-unit id="fatm0gY" resname="Steckschlüsselsatz PROXXON">
+                <source>Steckschlüsselsatz PROXXON</source>
+                <target>Steckschlüsselsatz PROXXON</target>
+            </trans-unit>
+            <trans-unit id="DVtSMlu" resname="Sägeblätter">
+                <source>Sägeblätter</source>
+                <target>Sägeblätter</target>
+            </trans-unit>
+            <trans-unit id="ZA_9Lys" resname="Raspberry Pi 5 8 GB">
+                <source>Raspberry Pi 5 8 GB</source>
+                <target>Raspberry Pi 5 8 GB</target>
+            </trans-unit>
+            <trans-unit id="WPtS2sh" resname="Netzwerkkabel-Tester">
+                <source>Netzwerkkabel-Tester</source>
+                <target>Netzwerkkabel-Tester</target>
+            </trans-unit>
+            <trans-unit id="361xHZ9" resname="PanelSeT PLM Polyestergehäuse">
+                <source>PanelSeT PLM Polyestergehäuse</source>
+                <target>PanelSeT PLM Polyestergehäuse</target>
+            </trans-unit>
+            <trans-unit id="SPjq2q_" resname="Montagesatz PLM Polyestergehäuse">
+                <source>Montagesatz PLM Polyestergehäuse</source>
+                <target>Montagesatz PLM Polyestergehäuse</target>
+            </trans-unit>
+            <trans-unit id="nA_8FBe" resname="Montageplatte für PLM32">
+                <source>Montageplatte für PLM32</source>
+                <target>Montageplatte für PLM32</target>
+            </trans-unit>
+            <trans-unit id="XycdYf." resname="LED-Mehrfachbefestigungslampe">
+                <source>LED-Mehrfachbefestigungslampe</source>
+                <target>LED-Mehrfachbefestigungslampe</target>
+            </trans-unit>
+            <trans-unit id="zDYpA_F" resname="Ausgangsgitter-Ausschnitt">
+                <source>Ausgangsgitter-Ausschnitt</source>
+                <target>Ausgangsgitter-Ausschnitt</target>
+            </trans-unit>
+            <trans-unit id="pEgeQs5" resname="MBP 252512">
+                <source>MBP 252512</source>
+                <target>MBP 252512</target>
+            </trans-unit>
+            <trans-unit id="llT.O_W" resname="IP-Adresse">
+                <source>IP-Adresse</source>
+                <target>IP-Adresse</target>
+            </trans-unit>
+            <trans-unit id="dgq8Pbv" resname="Seriennummer">
+                <source>Seriennummer</source>
+                <target>Seriennummer</target>
+            </trans-unit>
+            <trans-unit id="uq3fcPt" resname="Type">
+                <source>Type</source>
+                <target>Type</target>
+            </trans-unit>
+            <trans-unit id="OZIadAv" resname="Switch">
+                <source>Switch</source>
+                <target>Switch</target>
+            </trans-unit>
+            <trans-unit id="qvTghe6" resname="Antenne">
+                <source>Antenne</source>
+                <target>Antenne</target>
+            </trans-unit>
+            <trans-unit id="80jC1Vh" resname="Signalgeber">
+                <source>Signalgeber</source>
+                <target>Signalgeber</target>
+            </trans-unit>
+            <trans-unit id="Bl2ObAv" resname="Router">
+                <source>Router</source>
+                <target>Router</target>
+            </trans-unit>
+            <trans-unit id="7OuQHRZ" resname="Kabel">
+                <source>Kabel</source>
+                <target>Kabel</target>
+            </trans-unit>
+            <trans-unit id="H4C5sCn" resname="Montagematerial">
+                <source>Montagematerial</source>
+                <target>Montagematerial</target>
+            </trans-unit>
+            <trans-unit id="POaYZuA" resname="Kleinmaterial">
+                <source>Kleinmaterial</source>
+                <target>Kleinmaterial</target>
+            </trans-unit>
+            <trans-unit id="du1C0iE" resname="Computer">
+                <source>Computer</source>
+                <target>Computer</target>
+            </trans-unit>
+            <trans-unit id="LfPkWNZ" resname="Stromversorgung">
+                <source>Stromversorgung</source>
+                <target>Stromversorgung</target>
+            </trans-unit>
+            <trans-unit id="mzKJo4W" resname="Software">
+                <source>Software</source>
+                <target>Software</target>
+            </trans-unit>
+            <trans-unit id="FHu_JfP" resname="Hausing">
+                <source>Hausing</source>
+                <target>Hausing</target>
+            </trans-unit>
+            <trans-unit id="eDHAQSS" resname="Netzwerk">
+                <source>Netzwerk</source>
+                <target>Netzwerk</target>
+            </trans-unit>
+            <trans-unit id="Mgc3nH2" resname="sonst">
+                <source>sonst</source>
+                <target>sonst</target>
+            </trans-unit>
+            <trans-unit id="fMO2QIW" resname="Baugruppe">
+                <source>Baugruppe</source>
+                <target>Baugruppe</target>
+            </trans-unit>
+            <trans-unit id="QOv5Ovj" resname="Projekt">
+                <source>Projekt</source>
+                <target>Projekt</target>
+            </trans-unit>
+            <trans-unit id="hAzip0b" resname="CMA CGM CHAMPS ELYSEES">
+                <source>CMA CGM CHAMPS ELYSEES</source>
+                <target>CMA CGM CHAMPS ELYSEES</target>
+            </trans-unit>
+            <trans-unit id="B4xBlif" resname="LYDDEN">
+                <source>LYDDEN</source>
+                <target>LYDDEN</target>
+            </trans-unit>
+            <trans-unit id="ZDOI.bu" resname="DONINGTON">
+                <source>DONINGTON</source>
+                <target>DONINGTON</target>
+            </trans-unit>
+            <trans-unit id="9gKVk8A" resname="IT-Werkstatt">
+                <source>IT-Werkstatt</source>
+                <target>IT-Werkstatt</target>
+            </trans-unit>
+            <trans-unit id="lqq8asg" resname="TEST 19&quot;">
+                <source>TEST 19"</source>
+                <target>TEST 19"</target>
+            </trans-unit>
+            <trans-unit id="nvEjwuY" resname="EMDEN">
+                <source>EMDEN</source>
+                <target>EMDEN</target>
+            </trans-unit>
+            <trans-unit id="YlpSnM5" resname="Werkzeugsatz">
+                <source>Werkzeugsatz</source>
+                <target>Werkzeugsatz</target>
+            </trans-unit>
+            <trans-unit id="NTQrs3N" resname="Neptune Horizon">
+                <source>Neptune Horizon</source>
+                <target>Neptune Horizon</target>
+            </trans-unit>
+            <trans-unit id="N4FojZ5" resname="Lager">
+                <source>Lager</source>
+                <target>Lager</target>
+            </trans-unit>
+            <trans-unit id="J6v0VcS" resname="TestStrecke">
+                <source>TestStrecke</source>
+                <target>TestStrecke</target>
+            </trans-unit>
+            <trans-unit id="GYkPZRr" resname="Neptune Hellas">
+                <source>Neptune Hellas</source>
+                <target>Neptune Hellas</target>
+            </trans-unit>
+            <trans-unit id="RCmu2Hd" resname="Tüv">
+                <source>Tüv</source>
+                <target>Tüv</target>
+            </trans-unit>
+            <trans-unit id="bQMa8Q2" resname="Position">
+                <source>Position</source>
+                <target>Position</target>
+            </trans-unit>
+            <trans-unit id="G_zoE_x" resname="Menge">
+                <source>Menge</source>
+                <target>Menge</target>
+            </trans-unit>
+            <trans-unit id="9rL.OfV" resname="Speichern">
+                <source>Speichern</source>
+                <target>Speichern</target>
+            </trans-unit>
+            <trans-unit id="BdM83yM" resname="Anschluss">
+                <source>Anschluss</source>
+                <target>Anschluss</target>
+            </trans-unit>
+            <trans-unit id="OJ4zJMx" resname="Komponente">
+                <source>Komponente</source>
+                <target>Komponente</target>
+            </trans-unit>
+            <trans-unit id="q07_Aqg" resname="Abgang nach:">
+                <source>Abgang nach:</source>
+                <target>Abgang nach:</target>
+            </trans-unit>
+            <trans-unit id="3NHVIj9" resname="Name">
+                <source>Name</source>
+                <target>Name</target>
+            </trans-unit>
+            <trans-unit id="jjeVPSP" resname="Value">
+                <source>Value</source>
+                <target>Value</target>
+            </trans-unit>
+            <trans-unit id="34e.p1G" resname="Projekte">
+                <source>Projekte</source>
+                <target>Projekte</target>
+            </trans-unit>
+            <trans-unit id="TSuzaPk" resname="Übersicht">
+                <source>Übersicht</source>
+                <target>Übersicht</target>
+            </trans-unit>
+            <trans-unit id=".wZUMTd" resname="neu anlegen">
+                <source>neu anlegen</source>
+                <target>neu anlegen</target>
+            </trans-unit>
+            <trans-unit id="gGtWGW7" resname="Liste aller Komponenten">
+                <source>Liste aller Komponenten</source>
+                <target>Liste aller Komponenten</target>
+            </trans-unit>
+            <trans-unit id="ef8_xq0" resname="Archivierte Projekte">
+                <source>Archivierte Projekte</source>
+                <target>Archivierte Projekte</target>
+            </trans-unit>
+            <trans-unit id="r_1M0vw" resname="Baugruppen">
+                <source>Baugruppen</source>
+                <target>Baugruppen</target>
+            </trans-unit>
+            <trans-unit id="c0OEHnJ" resname="Liste">
+                <source>Liste</source>
+                <target>Liste</target>
+            </trans-unit>
+            <trans-unit id="r4j56o1" resname="erstellen">
+                <source>erstellen</source>
+                <target>erstellen</target>
+            </trans-unit>
+            <trans-unit id="LP_bqr9" resname="Import">
+                <source>Import</source>
+                <target>Import</target>
+            </trans-unit>
+            <trans-unit id="NmSJVXn" resname="Export">
+                <source>Export</source>
+                <target>Export</target>
+            </trans-unit>
+            <trans-unit id="x.gOJGQ" resname="Bestellungen">
+                <source>Bestellungen</source>
+                <target>Bestellungen</target>
+            </trans-unit>
+            <trans-unit id="EVX8ZvT" resname="Erstellt">
+                <source>Erstellt</source>
+                <target>Erstellt</target>
+            </trans-unit>
+            <trans-unit id="ZTii6ju" resname="Offen_nach_Lieferant">
+                <source>Offen_nach_Lieferant</source>
+                <target>Offen nach Lieferant</target>
+            </trans-unit>
+            <trans-unit id="vy79yWb" resname="Bestellt">
+                <source>Bestellt</source>
+                <target>Bestellt</target>
+            </trans-unit>
+            <trans-unit id="cX_MCMH" resname="Geliefert">
+                <source>Geliefert</source>
+                <target>Geliefert</target>
+            </trans-unit>
+            <trans-unit id="TqqAaJn" resname="Historie">
+                <source>Historie</source>
+                <target>Historie</target>
+            </trans-unit>
+            <trans-unit id="9XUKXXI" resname="Einstellungen">
+                <source>Einstellungen</source>
+                <target>Einstellungen</target>
+            </trans-unit>
+            <trans-unit id="Iq409_Q" resname="Komponententype">
+                <source>Komponententype</source>
+                <target>Komponententype</target>
+            </trans-unit>
+            <trans-unit id="ee4X.0j" resname="Mengeneinheiten">
+                <source>Mengeneinheiten</source>
+                <target>Mengeneinheiten</target>
+            </trans-unit>
+            <trans-unit id="bQcCGwk" resname="Schiffstypen">
+                <source>Schiffstypen</source>
+                <target>Schiffstypen</target>
+            </trans-unit>
+            <trans-unit id="W0WbeB." resname="Hafenliste">
+                <source>Hafenliste</source>
+                <target>Hafenliste</target>
+            </trans-unit>
+            <trans-unit id="x45KcRi" resname="Kostenstellen">
+                <source>Kostenstellen</source>
+                <target>Kostenstellen</target>
+            </trans-unit>
+            <trans-unit id="qvbVj_e" resname="Suchbegriff">
+                <source>Suchbegriff</source>
+                <target>Suchbegriff</target>
+            </trans-unit>
+            <trans-unit id="pPKSLi2" resname="Suche">
+                <source>Suche</source>
+                <target>Suche</target>
+            </trans-unit>
+            <trans-unit id="t.39v_p" resname="Projektdaten">
+                <source>Projektdaten</source>
+                <target>Projektdaten</target>
+            </trans-unit>
+            <trans-unit id="weGqmCy" resname="Projekt bearbeiten">
+                <source>Projekt bearbeiten</source>
+                <target>Projekt bearbeiten</target>
+            </trans-unit>
+            <trans-unit id="A11k7Wq" resname="Komponentenliste">
+                <source>Komponentenliste</source>
+                <target>Komponentenliste</target>
+            </trans-unit>
+            <trans-unit id="cXbwRdz" resname="Projekt Mengen">
+                <source>Projekt Mengen</source>
+                <target>Projekt Mengen</target>
+            </trans-unit>
+            <trans-unit id="P3MB.EM" resname="Anlagen">
+                <source>Anlagen</source>
+                <target>Anlagen</target>
+            </trans-unit>
+            <trans-unit id="HNFYrhC" resname="IP Adressen">
+                <source>IP Adressen</source>
+                <target>IP Adressen</target>
+            </trans-unit>
+            <trans-unit id="2TZ6YjW" resname="Netzwerk Struktur">
+                <source>Netzwerk Struktur</source>
+                <target>Netzwerk Struktur</target>
+            </trans-unit>
+            <trans-unit id="K0zCwzR" resname="Export Excel">
+                <source>Export Excel</source>
+                <target>Export Excel</target>
+            </trans-unit>
+            <trans-unit id="G8mpPQ." resname="Komponenten bestellen">
+                <source>Komponenten bestellen</source>
+                <target>Komponenten bestellen</target>
+            </trans-unit>
+            <trans-unit id="XoH0KXH" resname="Projekt Galerie">
+                <source>Projekt Galerie</source>
+                <target>Projekt Galerie</target>
+            </trans-unit>
+            <trans-unit id="u0.ddJR" resname="Polyestergehäuse H647xB436xT250mm">
+                <source>Polyestergehäuse H647xB436xT250mm</source>
+                <target>Polyestergehäuse H647xB436xT250mm</target>
+            </trans-unit>
+            <trans-unit id="IRJBoCz" resname="Wechselstrombuchse">
+                <source>Wechselstrombuchse</source>
+                <target>Wechselstrombuchse</target>
+            </trans-unit>
+            <trans-unit id="aKv9bsT" resname="Netzkabel 3 m">
+                <source>Netzkabel 3 m</source>
+                <target>Netzkabel 3 m</target>
+            </trans-unit>
+            <trans-unit id="NqAmR81" resname="SFP Module">
+                <source>SFP Module</source>
+                <target>SFP Module</target>
+            </trans-unit>
+            <trans-unit id="b1XBGPo" resname="Polyestergehäuse H430xB330xT200mm">
+                <source>Polyestergehäuse H430xB330xT200mm</source>
+                <target>Polyestergehäuse H430xB330xT200mm</target>
+            </trans-unit>
+            <trans-unit id="kXj.jgT" resname="Fehler - Seite nicht gefunden.">
+                <source>Fehler - Seite nicht gefunden.</source>
+                <target>Fehler - Seite nicht gefunden.</target>
+            </trans-unit>
+            <trans-unit id="FuisNj4" resname="Komponente hinzufügen">
+                <source>Komponente hinzufügen</source>
+                <target>Komponente hinzufügen</target>
+            </trans-unit>
+            <trans-unit id="aTN.bek" resname="Vorschau">
+                <source>Vorschau</source>
+                <target>Vorschau</target>
+            </trans-unit>
+            <trans-unit id="vBKlSoa" resname="Keine Artikel Anlagen vorhanden.">
+                <source>Keine Artikel Anlagen vorhanden.</source>
+                <target>Keine Artikel Anlagen vorhanden.</target>
+            </trans-unit>
+            <trans-unit id="MGXd9bK" resname="Artikel Montage Galerie">
+                <source>Artikel Montage Galerie</source>
+                <target>Artikel Montage Galerie</target>
+            </trans-unit>
+            <trans-unit id="jNvCE8O" resname="Netzwerk verbunden mit">
+                <source>Netzwerk verbunden mit</source>
+                <target>Netzwerk verbunden mit</target>
+            </trans-unit>
+            <trans-unit id="6l40F6q" resname="Ändern">
+                <source>Ändern</source>
+                <target>Ändern</target>
+            </trans-unit>
+            <trans-unit id="QvpN1H0" resname="Baugruppe Entfernen">
+                <source>Baugruppe Entfernen</source>
+                <target>Baugruppe Entfernen</target>
+            </trans-unit>
+            <trans-unit id="bC01IWH" resname="Löschen">
+                <source>Löschen</source>
+                <target>Löschen</target>
+            </trans-unit>
+            <trans-unit id="rqsyjhB" resname="Artikel Bearbeiten">
+                <source>Artikel Bearbeiten</source>
+                <target>Artikel Bearbeiten</target>
+            </trans-unit>
+            <trans-unit id="5nizzH4" resname="Der Artikel wurde erfolgreich geändert.">
+                <source>Der Artikel wurde erfolgreich geändert.</source>
+                <target>Der Artikel wurde erfolgreich geändert.</target>
+            </trans-unit>
+            <trans-unit id="HejHqFS" resname="Der Artikel wurde erfolgreich angelegt.">
+                <source>Der Artikel wurde erfolgreich angelegt.</source>
+                <target>Der Artikel wurde erfolgreich angelegt.</target>
+            </trans-unit>
+            <trans-unit id="w2EE05O" resname="Artikel Liste">
+                <source>Artikel Liste</source>
+                <target>Artikel Liste</target>
+            </trans-unit>
+            <trans-unit id="UnrqYy5" resname="Artikel nicht gefunden">
+                <source>Artikel nicht gefunden</source>
+                <target>Artikel nicht gefunden</target>
+            </trans-unit>
+            <trans-unit id="qrGmUIL" resname="Ungültige Anfrage.">
+                <source>Ungültige Anfrage.</source>
+                <target>Ungültige Anfrage.</target>
+            </trans-unit>
+            <trans-unit id="TVMIe7V" resname="Ungültiger CSRF-Token.">
+                <source>Ungültiger CSRF-Token.</source>
+                <target>Ungültiger CSRF-Token.</target>
+            </trans-unit>
+            <trans-unit id="jCoQt4Z" resname="Anlage nicht gefunden.">
+                <source>Anlage nicht gefunden.</source>
+                <target>Anlage nicht gefunden.</target>
+            </trans-unit>
+            <trans-unit id="GXe2o29" resname="Möchtest du dieses Bild wirklich löschen?">
+                <source>Möchtest du dieses Bild wirklich löschen?</source>
+                <target>Möchtest du dieses Bild wirklich löschen?</target>
+            </trans-unit>
+            <trans-unit id="_WxF0ny" resname="Fehler beim Löschen des Bildes.">
+                <source>Fehler beim Löschen des Bildes.</source>
+                <target>Fehler beim Löschen des Bildes.</target>
+            </trans-unit>
+            <trans-unit id="pEQ1hRQ" resname="Fehler beim Löschen (Netzwerk oder Serverproblem).">
+                <source>Fehler beim Löschen (Netzwerk oder Serverproblem).</source>
+                <target>Fehler beim Löschen (Netzwerk oder Serverproblem).</target>
+            </trans-unit>
+            <trans-unit id="9ZJ42NX" resname="Fehler beim Laden.">
+                <source>Fehler beim Laden.</source>
+                <target>Fehler beim Laden.</target>
+            </trans-unit>
+            <trans-unit id="IjzTjJq" resname="Artikel anlegen">
+                <source>Artikel anlegen</source>
+                <target>Artikel anlegen</target>
+            </trans-unit>
+            <trans-unit id="sFMZYun" resname="Anlagen zum Artikel">
+                <source>Anlagen zum Artikel</source>
+                <target>Anlagen zum Artikel</target>
+            </trans-unit>
+            <trans-unit id="JpiYE0I" resname="Hier können z. B. Anleitungen, Zertifikate etc. hochladen werden.">
+                <source>Hier können z. B. Anleitungen, Zertifikate etc. hochladen werden.</source>
+                <target>Hier können z. B. Anleitungen, Zertifikate etc. hochladen werden.</target>
+            </trans-unit>
+            <trans-unit id="NZf9LN1" resname="Dateien hierher ziehen oder klicken">
+                <source>Dateien hierher ziehen oder klicken</source>
+                <target>Dateien hierher ziehen oder klicken</target>
+            </trans-unit>
+            <trans-unit id="ClG.8Oi" resname="Fehler beim Löschen">
+                <source>Fehler beim Löschen</source>
+                <target>Fehler beim Löschen</target>
+            </trans-unit>
+            <trans-unit id="UU.Ol9J" resname="Herkunft">
+                <source>Herkunft</source>
+                <target>Herkunft</target>
+            </trans-unit>
+            <trans-unit id="MtpRdWL" resname="Hersteller">
+                <source>Hersteller</source>
+                <target>Hersteller</target>
+            </trans-unit>
+            <trans-unit id="l_gvLZl" resname="BestellNr.">
+                <source>BestellNr.</source>
+                <target>BestellNr.</target>
+            </trans-unit>
+            <trans-unit id="FfhueK6" resname="Artikel Kopieren">
+                <source>Artikel Kopieren</source>
+                <target>Artikel Kopieren</target>
+            </trans-unit>
+            <trans-unit id="eRBcPRT" resname="aktive Artikel">
+                <source>aktive Artikel</source>
+                <target>aktive Artikel</target>
+            </trans-unit>
+            <trans-unit id="8SR6jyB" resname="entfernte Artikel">
+                <source>entfernte Artikel</source>
+                <target>entfernte Artikel</target>
+            </trans-unit>
+            <trans-unit id="5Ft4rWL" resname="-- Optional --">
+                <source>-- Optional --</source>
+                <target>-- Optional --</target>
+            </trans-unit>
+            <trans-unit id="v7WL2GB" resname="Der Artikel wurde erfolgreich KOPIERT.">
+                <source>Der Artikel wurde erfolgreich KOPIERT.</source>
+                <target>Der Artikel wurde erfolgreich KOPIERT.</target>
+            </trans-unit>
+            <trans-unit id="8l8HhTM" resname="Die Bestellung wurde erfolgreich geändert">
+                <source>Die Bestellung wurde erfolgreich geändert</source>
+                <target>Die Bestellung wurde erfolgreich geändert</target>
+            </trans-unit>
+            <trans-unit id="WKwSprq" resname="FEHLER: beim Ändern der Bestellung ist ein Fehler aufgetreten.">
+                <source>FEHLER: beim Ändern der Bestellung ist ein Fehler aufgetreten.</source>
+                <target>FEHLER: beim Ändern der Bestellung ist ein Fehler aufgetreten.</target>
+            </trans-unit>
+            <trans-unit id="bKeMKx2" resname="Bestellung">
+                <source>Bestellung</source>
+                <target>Bestellung</target>
+            </trans-unit>
+            <trans-unit id="V6MyArI" resname="Die Angegebene Komponente wurde nicht gefunden.">
+                <source>Die Angegebene Komponente wurde nicht gefunden.</source>
+                <target>Die Angegebene Komponente wurde nicht gefunden.</target>
+            </trans-unit>
+            <trans-unit id="hORe5zQ" resname="Bearbeiten">
+                <source>Bearbeiten</source>
+                <target>Bearbeiten</target>
+            </trans-unit>
+            <trans-unit id="Z6UE2lx" resname="Aus Baugruppe entfernen.">
+                <source>Aus Baugruppe entfernen.</source>
+                <target>Aus Baugruppe entfernen.</target>
+            </trans-unit>
+            <trans-unit id="jWLpri8" resname="Angelegt am">
+                <source>Angelegt am</source>
+                <target>Angelegt am</target>
+            </trans-unit>
+            <trans-unit id="snKv26_" resname="letzte Änderung">
+                <source>letzte Änderung</source>
+                <target>letzte Änderung</target>
+            </trans-unit>
+            <trans-unit id="oSllnlN" resname="Geliefert am">
+                <source>Geliefert am</source>
+                <target>Geliefert am</target>
+            </trans-unit>
+            <trans-unit id="uICmiBx" resname="Kostenstelle">
+                <source>Kostenstelle</source>
+                <target>Kostenstelle</target>
+            </trans-unit>
+            <trans-unit id="7k5ymut" resname="- Keine Kostenstelle -">
+                <source>- Keine Kostenstelle -</source>
+                <target>- Keine Kostenstelle -</target>
+            </trans-unit>
+            <trans-unit id="NZTwG7x" resname="- Optional Kostenstelle -">
+                <source>- Optional Kostenstelle -</source>
+                <target>- Optional Kostenstelle -</target>
+            </trans-unit>
+            <trans-unit id="kg5BPH1" resname="Status">
+                <source>Status</source>
+                <target>Status</target>
+            </trans-unit>
+            <trans-unit id="mFh5BEE" resname="Net komponente">
+                <source>Net komponente</source>
+                <target>Net komponente</target>
+            </trans-unit>
+            <trans-unit id=".Q1Ge1a" resname="- Keine Komponente -">
+                <source>- Keine Komponente -</source>
+                <target>- Keine Komponente -</target>
+            </trans-unit>
+            <trans-unit id="4wx5cWc" resname="Bestellnummer">
+                <source>Bestellnummer</source>
+                <target>Bestellnummer</target>
+            </trans-unit>
+            <trans-unit id="Myd4h8s" resname="ek Brutto">
+                <source>ek Brutto</source>
+                <target>ek Brutto</target>
+            </trans-unit>
+            <trans-unit id="t5f8e20" resname="Bestell Faktor">
+                <source>Bestell Faktor</source>
+                <target>Bestell Faktor</target>
+            </trans-unit>
+            <trans-unit id="4p4HIs5" resname="Gebinde grösse">
+                <source>Gebinde grösse</source>
+                <target>Gebinde grösse</target>
+            </trans-unit>
+            <trans-unit id="cVz0dxC" resname="Mengeneinheit">
+                <source>Mengeneinheit</source>
+                <target>Mengeneinheit</target>
+            </trans-unit>
+            <trans-unit id="em1Xoh5" resname="Gewicht in g">
+                <source>Gewicht in g</source>
+                <target>Gewicht in g</target>
+            </trans-unit>
+            <trans-unit id="pqMtvFY" resname="Link">
+                <source>Link</source>
+                <target>Link</target>
+            </trans-unit>
+            <trans-unit id="iUQpL7r" resname="Produktbild">
+                <source>Produktbild</source>
+                <target>Produktbild</target>
+            </trans-unit>
+            <trans-unit id="6SYvAH3" resname="Beschreibung">
+                <source>Beschreibung</source>
+                <target>Beschreibung</target>
+            </trans-unit>
+            <trans-unit id="2lZQ5bk" resname="angefragt">
+                <source>angefragt</source>
+                <target>angefragt</target>
+            </trans-unit>
+            <trans-unit id="aJFtxD3" resname="aktive">
+                <source>aktive</source>
+                <target>aktive</target>
+            </trans-unit>
+            <trans-unit id="W24XZq9" resname="auslauf">
+                <source>auslauf</source>
+                <target>auslauf</target>
+            </trans-unit>
+            <trans-unit id="9eZYJRR" resname="deprecated">
+                <source>deprecated</source>
+                <target>deprecated</target>
+            </trans-unit>
+            <trans-unit id="t5h.7z5" resname="geloescht">
+                <source>geloescht</source>
+                <target>geloescht</target>
+            </trans-unit>
+            <trans-unit id="co.PyPS" resname="Angebotspflicht">
+                <source>Angebotspflicht</source>
+                <target>Angebotspflicht</target>
+            </trans-unit>
+            <trans-unit id="y7lc8Ct" resname="Hinzufügen">
+                <source>Hinzufügen</source>
+                <target>Hinzufügen</target>
+            </trans-unit>
+            <trans-unit id="ZjXMsO6" resname="Seebebiet">
+                <source>Seebebiet</source>
+                <target>Seebebiet</target>
+            </trans-unit>
+            <trans-unit id="ECZY8R2" resname="At anchor">
+                <source>At anchor</source>
+                <target>vor Anker</target>
+            </trans-unit>
+            <trans-unit id="08y4_Il" resname="Under way using engine">
+                <source>Under way using engine</source>
+                <target>Unterwegs</target>
+            </trans-unit>
+            <trans-unit id="_5I7eoD" resname="Moored">
+                <source>Moored</source>
+                <target>Festgemacht</target>
+            </trans-unit>
+            <trans-unit id="00wO_26" resname="Anlegen">
+                <source>Anlegen</source>
+                <target>Anlegen</target>
+            </trans-unit>
+            <trans-unit id="hy11_Qk" resname="Restricted manoeuverability">
+                <source>Restricted manoeuverability</source>
+                <target>Eingeschränkte Manövrierfähig</target>
+            </trans-unit>
+            <trans-unit id="3QZuwb8" resname="Parameter">
+                <source>Parameter</source>
+                <target>Parameter</target>
+            </trans-unit>
+            <trans-unit id="fjR9ql7" resname="Wert">
+                <source>Wert</source>
+                <target>Wert</target>
+            </trans-unit>
+            <trans-unit id="QRIXnIm" resname="Bitte wählen">
+                <source>Bitte wählen</source>
+                <target>Bitte wählen</target>
+            </trans-unit>
+            <trans-unit id="TaI8rz5" resname="Nächstes Ziel">
+                <source>Nächstes Ziel</source>
+                <target>Nächstes Ziel</target>
+            </trans-unit>
+            <trans-unit id="8Nqa1HE" resname="Entfernung">
+                <source>Entfernung</source>
+                <target>Entfernung</target>
+            </trans-unit>
+            <trans-unit id="Bx_OaCt" resname="Länge">
+                <source>Länge</source>
+                <target>Länge</target>
+            </trans-unit>
+            <trans-unit id="KCQMJ53" resname="Breite">
+                <source>Breite</source>
+                <target>Breite</target>
+            </trans-unit>
+            <trans-unit id="ZQTtFcU" resname="Tiefgang">
+                <source>Tiefgang</source>
+                <target>Tiefgang</target>
+            </trans-unit>
+            <trans-unit id="Gd71uVp" resname="lte.alarm.subject">
+                <source>lte.alarm.subject</source>
+                <target>LTE-Alarm: {{ shipName }} tritt in Reichweite ein!</target>
+            </trans-unit>
+            <trans-unit id="vq75IwL" resname="lte.alarm.body.line1">
+                <source>lte.alarm.body.line1</source>
+                <target>
+                    <![CDATA[Das Schiff <strong>{{ shipName }}</strong> hat die {{ distanceLimit }}km Grenze unterschritten und ist nun in potenzieller LTE-Reichweite.]]></target>
+            </trans-unit>
+            <trans-unit id="HWTyf.V" resname="lte.alarm.body.line2">
+                <source>lte.alarm.body.line2</source>
+                <target><![CDATA[Aktuelle Distanz zur Küste: <strong>{{ currentDistance }} km</strong>.]]></target>
+            </trans-unit>
+            <trans-unit id="TpJSkMV" resname="lte.alarm.body.line3">
+                <source>lte.alarm.body.line3</source>
+                <target>Bitte überprüfen, ob die manuelle LTE-Verbindung aufgebaut werden soll.</target>
+            </trans-unit>
+            <trans-unit id="aTvAmF0" resname="vorherige Häfen">
+                <source>vorherige Häfen</source>
+                <target>vorherige Häfen</target>
+            </trans-unit>
+            <trans-unit id="Eker7Ww" resname="Aktuell in">
+                <source>Aktuell in</source>
+                <target>Aktuell in</target>
+            </trans-unit>
+            <trans-unit id="YEuIA4F" resname="flash.invalid_request">
+                <source>flash.invalid_request</source>
+                <target>Ungültige Anfrage. Bitte versuchen Sie es erneut.</target>
+            </trans-unit>
+            <trans-unit id="C8tetYP" resname="flash.error_occurred">
+                <source>flash.error_occurred</source>
+                <target>Ein Fehler ist aufgetreten: %error%'</target>
+            </trans-unit>
+            <trans-unit id="xmm1c68" resname="flash.port_update.date_in_future">
+                <source>flash.port_update.date_in_future</source>
+                <target>Das "Bis Datum" darf nicht in der Zukunft liegen.</target>
+            </trans-unit>
+            <trans-unit id="ksC1vA8" resname="flash.port_update.date_order_invalid">
+                <source>flash.port_update.date_order_invalid</source>
+                <target>Das "Von Datum" darf nicht nach dem "Bis Datum" liegen.</target>
+            </trans-unit>
+            <trans-unit id="QPGYLWw" resname="flash.port_update.success">
+                <source>flash.port_update.success</source>
+                <target>Die Hafen-Informationen wurden erfolgreich aktualisiert.</target>
+            </trans-unit>
+            <trans-unit id="U0tRxd_" resname="flash.port_update.invalid_period">
+                <source>flash.port_update.invalid_period</source>
+                <target>Bitte geben Sie einen gültigen Zeitraum an.</target>
+            </trans-unit>
+            <trans-unit id="4wNO2ev" resname="flash.port_update.start_fetch">
+                <source>flash.port_update.start_fetch</source>
+                <target>Starte Abruf der Hafendaten für %ship%...</target>
+            </trans-unit>
+            <trans-unit id="jAj5WYl" resname="flash.port_update.no_data">
+                <source>flash.port_update.no_data</source>
+                <target>Keine Hafendaten im angegebenen Zeitraum gefunden.</target>
+            </trans-unit>
+            <trans-unit id="Dc1Q6Fk" resname="flash.port_update.process_success">
+                <source>flash.port_update.process_success</source>
+                <target>%count% Hafeneinträge für %ship% erfolgreich verarbeitet.</target>
+            </trans-unit>
+            <trans-unit id="A2tqTlS" resname="flash.port_update.fetch_error">
+                <source>flash.port_update.fetch_error</source>
+                <target>Fehler beim Abrufen der Hafendaten: %error%</target>
+            </trans-unit>
+            <trans-unit id="OnhpU4i" resname="Home">
+                <source>Home</source>
+                <target>Startseite</target>
+            </trans-unit>
+            <trans-unit id="ijn6UGL" resname="ais Status">
+                <source>ais Status</source>
+                <target>AIS Status</target>
+            </trans-unit>
+            <trans-unit id="7kd76d_" resname="lte Entfernung">
+                <source>lte Entfernung</source>
+                <target>lte Entfernung</target>
+            </trans-unit>
+            <trans-unit id="Urk7rix" resname="Südamerika Ostküste">
+                <source>Südamerika Ostküste</source>
+                <target>Südamerika Ostküste</target>
+            </trans-unit>
+            <trans-unit id="2fH3MlK" resname="North Sea">
+                <source>North Sea</source>
+                <target>Nordsee</target>
+            </trans-unit>
+            <trans-unit id="IUWJPNc" resname="Betrieb">
+                <source>Betrieb</source>
+                <target>Betrieb</target>
+            </trans-unit>
+            <trans-unit id="WpF_ELj" resname="AKTIV">
+                <source>AKTIV</source>
+                <target>AKTIV</target>
+            </trans-unit>
+            <trans-unit id="sjrgWE9" resname="breadcrumb.home">
+                <source>breadcrumb.home</source>
+                <target>Startseite</target>
+            </trans-unit>
+            <trans-unit id="p8fw_Us" resname="breadcrumb.projects_overview">
+                <source>breadcrumb.projects_overview</source>
+                <target>Projekte Übersicht</target>
+            </trans-unit>
+            <trans-unit id="mAF161p" resname="breadcrumb.project_detail">
+                <source>breadcrumb.project_detail</source>
+                <target>Projekt %name%</target>
+            </trans-unit>
+            <trans-unit id="r4lQBK." resname="breadcrumb.project_components">
+                <source>breadcrumb.project_components</source>
+                <target>Projekt Komponenten</target>
+            </trans-unit>
+            <trans-unit id="5hrSdEX" resname="breadcrumb.net_einstellungen">
+                <source>breadcrumb.net_einstellungen</source>
+                <target>Einstellungen</target>
+            </trans-unit>
+            <trans-unit id="Aom5b_K" resname="breadcrumb.seitenparameter">
+                <source>breadcrumb.seitenparameter</source>
+                <target>Seitenparameter</target>
+            </trans-unit>
+            <trans-unit id="X7eAxIZ" resname="Flaggenstaaten">
+                <source>Flaggenstaaten</source>
+                <target>Flaggenstaaten</target>
+            </trans-unit>
+            <trans-unit id="wFxR5L1" resname="hafenliste">
+                <source>hafenliste</source>
+                <target>Hafenliste</target>
+            </trans-unit>
+            <trans-unit id="RLvHez6" resname="South America East Coast">
+                <source>South America East Coast</source>
+                <target>Südamerika Ostküste</target>
+            </trans-unit>
+            <trans-unit id="PgSdeNl" resname="South Africa">
+                <source>South Africa</source>
+                <target>Südafrika</target>
+            </trans-unit>
+            <trans-unit id="TLSQLas" resname="suedamerika_ostkueste">
+                <source>suedamerika_ostkueste</source>
+                <target>Südamerika Ostküste</target>
+            </trans-unit>
+            <trans-unit id=".Vr3yzr" resname="in Vorbereitung">
+                <source>in Vorbereitung</source>
+                <target>in Vorbereitung</target>
+            </trans-unit>
+            <trans-unit id="rQR87xH" resname="INAKTIV">
+                <source>INAKTIV</source>
+                <target>INAKTIV</target>
+            </trans-unit>
+            <trans-unit id="L_f5K.a" resname="hinzufuegen">
+                <source>hinzufuegen</source>
+                <target>Hinzufügen</target>
+            </trans-unit>
+            <trans-unit id="vyCqCkV" resname="anlagen_hinzufuegen">
+                <source>anlagen_hinzufuegen</source>
+                <target>Anlagen hinzufügen</target>
+            </trans-unit>
+            <trans-unit id="DtKKoh0" resname="bild">
+                <source>bild</source>
+                <target>Bild</target>
+            </trans-unit>
+            <trans-unit id="Jy_c_2y" resname="link_kostenstelle">
+                <source>link_kostenstelle</source>
+                <target>Link Kostenstelle</target>
+            </trans-unit>
+            <trans-unit id="yT6fp0k" resname="aktion">
+                <source>aktion</source>
+                <target>Aktion</target>
+            </trans-unit>
+            <trans-unit id="lO4FkzX" resname="TEST">
+                <source>TEST</source>
+                <target>TEST</target>
+            </trans-unit>
+            <trans-unit id="n4bQgYh" resname="test">
+                <source>test</source>
+                <target>test</target>
+            </trans-unit>
+            <trans-unit id="MTn8xA_" resname="aktiv">
+                <source>aktiv</source>
+                <target>aktiv</target>
+            </trans-unit>
+            <trans-unit id="fVpI2sk" resname="calendar.week_short">
+                <source>calendar.week_short</source>
+                <target>KW%weekNumber%</target>
+            </trans-unit>
+            <trans-unit id="Wzyl.yA" resname="days.sun">
+                <source>days.sun</source>
+                <target>So</target>
+            </trans-unit>
+            <trans-unit id="PBxrF47" resname="days.mon">
+                <source>days.mon</source>
+                <target>Mo</target>
+            </trans-unit>
+            <trans-unit id="azX.agn" resname="days.tue">
+                <source>days.tue</source>
+                <target>Di</target>
+            </trans-unit>
+            <trans-unit id="jrJqvns" resname="days.wed">
+                <source>days.wed</source>
+                <target>Mi</target>
+            </trans-unit>
+            <trans-unit id="fZ3hpJQ" resname="days.thu">
+                <source>days.thu</source>
+                <target>Do</target>
+            </trans-unit>
+            <trans-unit id="mNQ72LO" resname="days.fri">
+                <source>days.fri</source>
+                <target>Fr</target>
+            </trans-unit>
+            <trans-unit id=".SFLaxk" resname="days.sat">
+                <source>days.sat</source>
+                <target>Sa</target>
+            </trans-unit>
+            <trans-unit id="_uFMOnW" resname="hafenlog.edit">
+                <source>hafenlog.edit</source>
+                <target>Bitte geben Sie den Zeitraum an, für den die Hafendaten von der AIS-API abgerufen werden
+                    sollen.
+                </target>
+            </trans-unit>
+            <trans-unit id="Qj1ElaL" resname="action.cancel">
+                <source>action.cancel</source>
+                <target>Abbrechen</target>
+            </trans-unit>
+            <trans-unit id="XCNCzu_" resname="port.departure">
+                <source>port.departure</source>
+                <target>Abfahrt</target>
+            </trans-unit>
+            <trans-unit id="jdbtx6z" resname="action.add">
+                <source>action.add</source>
+                <target>Hinzufügen</target>
+            </trans-unit>
+            <trans-unit id="wfSeU9G" resname="table.action">
+                <source>table.action</source>
+                <target>Aktion</target>
+            </trans-unit>
+            <trans-unit id="5pI_J3O" resname="port.arrival">
+                <source>port.arrival</source>
+                <target>Ankunft</target>
+            </trans-unit>
+            <trans-unit id="tAjU1u9" resname="action.add_attachment">
+                <source>action.add_attachment</source>
+                <target>Anlagen hinzufügen</target>
+            </trans-unit>
+            <trans-unit id="yAxzhhm" resname="article.list">
+                <source>article.list</source>
+                <target>Artikelliste</target>
+            </trans-unit>
+            <trans-unit id="L94NuHU" resname="order.list_overview">
+                <source>order.list_overview</source>
+                <target>Bestellliste Übersicht</target>
+            </trans-unit>
+            <trans-unit id="zcFi1Ye" resname="common.image">
+                <source>common.image</source>
+                <target>Bild</target>
+            </trans-unit>
+            <trans-unit id="u3obdHB" resname="form.date_to">
+                <source>form.date_to</source>
+                <target>Bis Datum</target>
+            </trans-unit>
+            <trans-unit id="axdlJIS" resname="action.fetch_data">
+                <source>action.fetch_data</source>
+                <target>Daten abrufen</target>
+            </trans-unit>
+            <trans-unit id="xGEkIy3" resname="ship.flag_states">
+                <source>ship.flag_states</source>
+                <target>Flaggenstaaten</target>
+            </trans-unit>
+            <trans-unit id="oqsHGwK" resname="common.port">
+                <source>common.port</source>
+                <target>Hafen</target>
+            </trans-unit>
+            <trans-unit id="Xa2bJXh" resname="port.edit_stay">
+                <source>port.edit_stay</source>
+                <target>Hafenaufenthalt bearbeiten</target>
+            </trans-unit>
+            <trans-unit id="YjvkvYq" resname="port.list">
+                <source>port.list</source>
+                <target>Hafenliste</target>
+            </trans-unit>
+            <trans-unit id="aWGD.xL" resname="port.update_logbook">
+                <source>port.update_logbook</source>
+                <target>Hafen-Logbuch aktualisieren</target>
+            </trans-unit>
+            <trans-unit id="M5.0jNc" resname="status.inactive">
+                <source>status.inactive</source>
+                <target>INAKTIV</target>
+            </trans-unit>
+            <trans-unit id="Qfp34MA" resname="common.link_cost_center">
+                <source>common.link_cost_center</source>
+                <target>Link Kostenstelle</target>
+            </trans-unit>
+            <trans-unit id="4ISsdR7" resname="project.overview">
+                <source>project.overview</source>
+                <target>Projekte Übersicht</target>
+            </trans-unit>
+            <trans-unit id="U4O2KA_" resname="region.south_africa">
+                <source>region.south_africa</source>
+                <target>Südafrika</target>
+            </trans-unit>
+            <trans-unit id="QIZS8Dg" resname="common.test">
+                <source>common.test</source>
+                <target>TEST</target>
+            </trans-unit>
+            <trans-unit id="J2.6H7T" resname="Unbekannt">
+                <source>Unbekannt</source>
+                <target>Unbekannt</target>
+            </trans-unit>
+            <trans-unit id="9Zizb9b" resname="form.date_from">
+                <source>form.date_from</source>
+                <target>Von Datum</target>
+            </trans-unit>
+            <trans-unit id="XEVXvoB" resname="Containerschiff">
+                <source>Containerschiff</source>
+                <target>Containerschiff</target>
+            </trans-unit>
+            <trans-unit id="uFB.awa" resname="Vehicles Carrier">
+                <source>Vehicles Carrier</source>
+                <target>Fahrzeugtransporter</target>
+            </trans-unit>
+            <trans-unit id="5mOdBsV" resname="Planung">
+                <source>Planung</source>
+                <target>Planung</target>
+            </trans-unit>
+            <trans-unit id="gd8sEx3" resname="Werkstatt">
+                <source>Werkstatt</source>
+                <target>Werkstatt</target>
+            </trans-unit>
+            <trans-unit id="VUSdVEg" resname="Kein Status">
+                <source>Kein Status</source>
+                <target>Kein Status</target>
+            </trans-unit>
+            <trans-unit id="w3L_6bR" resname="Speed">
+                <source>Speed</source>
+                <target>Fahrt</target>
+            </trans-unit>
+            <trans-unit id="IJbO_6B" resname="Course">
+                <source>Course</source>
+                <target>Kurs</target>
+            </trans-unit>
+            <trans-unit id="d0sS9mr" resname="flash.position_update.success">
+                <source>flash.position_update.success</source>
+                <target>Position für %ship% erfolgreich aktualisiert.</target>
+            </trans-unit>
+            <trans-unit id="Ze1CqQP" resname="flash.position_update.no_change">
+                <source>flash.position_update.no_change</source>
+                <target>Positionsdaten für %ship% waren bereits aktuell.</target>
+            </trans-unit>
+            <trans-unit id="fegcIBF" resname="button.update_position.label">
+                <source>button.update_position.label</source>
+                <target>Position aktualisieren</target>
+            </trans-unit>
+            <trans-unit id="M3djqQJ" resname="button.update_position.title">
+                <source>button.update_position.title</source>
+                <target>Ruft die aktuelle Position von der AIS-API ab.</target>
+            </trans-unit>
+            <trans-unit id="H.1tDhx" resname="age.days_hours">
+                <source>age.days_hours</source>
+                <target>{days, plural, =1 {1 Tag} other {# Tage}}, {hours, plural, =1 {1 Std.} other {# Std.}}</target>
+            </trans-unit>
+            <trans-unit id=".jW3qkf" resname="age.hours_minutes">
+                <source>age.hours_minutes</source>
+                <target>{hours, plural, =1 {1 Std.} other {# Std.}}, {minutes, plural, =1 {1 Min.} other {# Min.}}
+                </target>
+            </trans-unit>
+            <trans-unit id="pjUWCt_" resname="age.minutes">
+                <source>age.minutes</source>
+                <target>{minutes, plural, =1 {1 Min.} other {# Min.}}</target>
+            </trans-unit>
+            <trans-unit id="xof9w.o" resname="timestamp.with_age">
+                <source>timestamp.with_age</source>
+                <target>%datetime% Uhr (%age%)</target>
+            </trans-unit>
+            <trans-unit id="A9egI9." resname="Constrained by her draught">
+                <source>Constrained by her draught</source>
+                <target>Durch Bauart eingeschränkt</target>
+            </trans-unit>
+            <trans-unit id="6dezM.f" resname="Keine Positionsdaten verfügbar">
+                <source>Keine Positionsdaten verfügbar</source>
+                <target>Keine Positionsdaten verfügbar</target>
+            </trans-unit>
+            <trans-unit id="tymjXMF" resname="unit.days">
+                <source>unit.days</source>
+                <target>Tag(en)</target>
+            </trans-unit>
+            <trans-unit id="EWaWkwv" resname="unit.hours">
+                <source>unit.hours</source>
+                <target>Std.</target>
+            </trans-unit>
+            <trans-unit id="8ay5Los" resname="unit.minutes">
+                <source>unit.minutes</source>
+                <target>Min.</target>
+            </trans-unit>
+            <trans-unit id="kntb9Or" resname="timestamp.with_age.format">
+                <source>timestamp.with_age.format</source>
+                <target>%datetime% Uhr (%age%)</target>
+            </trans-unit>
+            <trans-unit id="9fSxrFp" resname="North East Atlantic Ocean">
+                <source>North East Atlantic Ocean</source>
+                <target>Nordostatlantik</target>
+            </trans-unit>
+            <trans-unit id="Z3DDGf9" resname="Tage">
+                <source>Tage</source>
+                <target>Tage</target>
+            </trans-unit>
+            <trans-unit id="35EpEJB" resname="breadcrumb.hafen_liste">
+                <source>breadcrumb.hafen_liste</source>
+                <target>Liste der Häfen</target>
+            </trans-unit>
+            <trans-unit id="j_ysOUC" resname="Häfen von">
+                <source>Häfen von</source>
+                <target>Häfen von</target>
+            </trans-unit>
+            <trans-unit id="6qeHvLa" resname="Einstellungen Seiten Parameter">
+                <source>Einstellungen Seiten Parameter</source>
+                <target>Einstellungen Seiten Parameter</target>
+            </trans-unit>
+            <trans-unit id="U7Kq68C" resname="Offen nach Lieferant">
+                <source>Offen nach Lieferant</source>
+                <target>Offen nach Lieferant</target>
+            </trans-unit>
+            <trans-unit id="wwmD8kk" resname="Projekt Status">
+                <source>Projekt Status</source>
+                <target>Projekt Status</target>
+            </trans-unit>
+            <trans-unit id="rTUGlqw" resname="Gültig bis">
+                <source>Gültig bis</source>
+                <target>Gültig bis</target>
+            </trans-unit>
+            <trans-unit id="Vlb5Lbe" resname="Aktionen">
+                <source>Aktionen</source>
+                <target>Aktionen</target>
+            </trans-unit>
+            <trans-unit id="I6EqVTW" resname="Neuen Parameter hinzufügen">
+                <source>Neuen Parameter hinzufügen</source>
+                <target>Neuen Parameter hinzufügen</target>
+            </trans-unit>
+            <trans-unit id="CjFBl5m" resname="Einstellungen AIS Recover">
+                <source>Einstellungen AIS Recover</source>
+                <target>Einstellungen AIS Recover</target>
+            </trans-unit>
+            <trans-unit id="B8WBoy." resname="Recover AIS">
+                <source>Recover AIS</source>
+                <target>Recover AIS</target>
+            </trans-unit>
+            <trans-unit id=".mnfqVE" resname="breadcrumb.ais.recover">
+                <source>breadcrumb.ais.recover</source>
+                <target>AIS Recover</target>
+            </trans-unit>
+            <trans-unit id="D3WRfGk" resname="Bitte ein Schiff wählen">
+                <source>Bitte ein Schiff wählen</source>
+                <target>Bitte ein Schiff wählen</target>
+            </trans-unit>
+            <trans-unit id="458Lavf" resname="Auswahl erneut verarbeiten">
+                <source>Auswahl erneut verarbeiten</source>
+                <target>Auswahl erneut verarbeiten</target>
+            </trans-unit>
+            <trans-unit id="0jpPYJy" resname="Funktionen">
+                <source>Funktionen</source>
+                <target>Funktionen</target>
+            </trans-unit>
+            <trans-unit id="86mJO.r" resname="Baugruppen Summen">
+                <source>Baugruppen Summen</source>
+                <target>Baugruppen Summen</target>
+            </trans-unit>
+            <trans-unit id="Jmb2FWJ" resname="breadcrumb.project_componentsgoups">
+                <source>breadcrumb.project_componentsgoups</source>
+                <target>Projekt Baugruppen Summen</target>
+            </trans-unit>
+            <trans-unit id="LFXNKnW" resname="Gesamtpreis">
+                <source>Gesamtpreis</source>
+                <target>Gesamtpreis</target>
+            </trans-unit>
+            <trans-unit id="ptyNRzF" resname="Gesamtgewicht">
+                <source>Gesamtgewicht</source>
+                <target>Gesamtgewicht</target>
+            </trans-unit>
+            <trans-unit id="jSuwH22" resname="Häfen">
+                <source>Häfen</source>
+                <target>Häfen</target>
+            </trans-unit>
+            <trans-unit id="cXTeIrr" resname="Anzahl">
+                <source>Anzahl</source>
+                <target>Anzahl</target>
+            </trans-unit>
+            <trans-unit id="958uJuT" resname="Preis Baugruppe">
+                <source>Preis Baugruppe</source>
+                <target>Preis Baugruppe</target>
+            </trans-unit>
+            <trans-unit id="hAUFYGO" resname="Gewicht Baugruppe">
+                <source>Gewicht Baugruppe</source>
+                <target>Gewicht Baugruppe</target>
+            </trans-unit>
+            <trans-unit id="KT1ASlA" resname="Destination">
+                <source>Destination</source>
+                <target>Reiseziel</target>
+            </trans-unit>
+            <trans-unit id="Z6km9wC" resname="Not available">
+                <source>Not available</source>
+                <target>Nicht verfügbar</target>
+            </trans-unit>
+            <trans-unit id="85PaoGk" resname="letzer Check">
+                <source>letzer Check</source>
+                <target>letzter Check</target>
+            </trans-unit>
+            <trans-unit id="BUAdEXD" resname="Navpunkte">
+                <source>Navpunkte</source>
+                <target>Navpunkte</target>
+            </trans-unit>
+            <trans-unit id="xNPsKb4" resname="Netzwerk Raw">
+                <source>Netzwerk Raw</source>
+                <target>Netzwerk Raw</target>
+            </trans-unit>
+            <trans-unit id="fZ63rLE" resname="Close">
+                <source>Close</source>
+                <target>schliessen</target>
+            </trans-unit>
+            <trans-unit id="03zeW1o" resname="Artikelliste">
+                <source>Artikelliste</source>
+                <target>Artikelliste</target>
+            </trans-unit>
+            <trans-unit id="mIMpHmZ" resname="Preis">
+                <source>Preis</source>
+                <target>Preis</target>
+            </trans-unit>
+            <trans-unit id="gsuZ7AF" resname="Bestand">
+                <source>Bestand</source>
+                <target>Bestand</target>
+            </trans-unit>
+            <trans-unit id="1.FgXBB" resname="Projekte Übersicht">
+                <source>Projekte Übersicht</source>
+                <target>Projekte Übersicht</target>
+            </trans-unit>
+            <trans-unit id="IPZcKGc" resname="check">
+                <source>check</source>
+                <target>check</target>
+            </trans-unit>
+            <trans-unit id="Xgywtme" resname="West Africa">
+                <source>West Africa</source>
+                <target>West Africa</target>
+            </trans-unit>
+            <trans-unit id="FKIya2u" resname="monitoring">
+                <source>monitoring</source>
+                <target>monitoring</target>
+            </trans-unit>
+            <trans-unit id="DUWfS49" resname="Verbaut">
+                <source>Verbaut</source>
+                <target>Verbaut</target>
+            </trans-unit>
+            <trans-unit id="pQ3DRqi" resname="breadcrumb.deck_plan">
+                <source>breadcrumb.deck_plan</source>
+                <target>Deck Plan Bays</target>
+            </trans-unit>
+            <trans-unit id="0ZzNQsg" resname="Komponenten Wartung">
+                <source>Komponenten Wartung</source>
+                <target>Wartungslog</target>
+            </trans-unit>
+            <trans-unit id="VXtB9Ez" resname="Bays Oberdeck">
+                <source>Bays Oberdeck</source>
+                <target>Bays Oberdeck</target>
+            </trans-unit>
+            <trans-unit id="piv2_NQ" resname="breadcrumb.ship.dashboard">
+                <source>breadcrumb.ship.dashboard</source>
+                <target>Wartung Dashboard</target>
+            </trans-unit>
+            <trans-unit id="fflEI8O" resname="Komponente Details">
+                <source>Komponente Details</source>
+                <target>Komponente Details</target>
+            </trans-unit>
+            <trans-unit id="x4_VmXI" resname="Stammdaten">
+                <source>Stammdaten</source>
+                <target>Stammdaten</target>
+            </trans-unit>
+            <trans-unit id="Vw9QHLn" resname="MAC Adresse">
+                <source>MAC Adresse</source>
+                <target>MAC Adresse</target>
+            </trans-unit>
+            <trans-unit id="W5Uvj9y" resname="Wartung protokollieren">
+                <source>Wartung protokollieren</source>
+                <target>Wartung protokollieren</target>
+            </trans-unit>
+            <trans-unit id="zIJrkqr" resname="Inspektion / Prüfung">
+                <source>Inspektion / Prüfung</source>
+                <target>Inspektion / Prüfung</target>
+            </trans-unit>
+            <trans-unit id=".aIgJeP" resname="Defekt gefunden">
+                <source>Defekt gefunden</source>
+                <target>Defekt gefunden</target>
+            </trans-unit>
+            <trans-unit id="iSVbpIn" resname="Batteriewechsel">
+                <source>Batteriewechsel</source>
+                <target>Batteriewechsel</target>
+            </trans-unit>
+            <trans-unit id="hf3VMQ8" resname="Schaden melden">
+                <source>Schaden melden</source>
+                <target>Schaden melden</target>
+            </trans-unit>
+            <trans-unit id="4ezVD1S" resname="Reparatur durchgeführt">
+                <source>Reparatur durchgeführt</source>
+                <target>Reparatur durchgeführt</target>
+            </trans-unit>
+            <trans-unit id="dLSH2dI" resname="Notiz">
+                <source>Notiz</source>
+                <target>Notiz</target>
+            </trans-unit>
+            <trans-unit id="yyqBpBa" resname="Kommentar / Befund">
+                <source>Kommentar / Befund</source>
+                <target>Kommentar / Befund</target>
+            </trans-unit>
+            <trans-unit id="X9cDEdH" resname="Verlauf">
+                <source>Verlauf</source>
+                <target>Verlauf</target>
+            </trans-unit>
+            <trans-unit id="VTZJRNT" resname="Lade Daten...">
+                <source>Lade Daten...</source>
+                <target>Lade Daten...</target>
+            </trans-unit>
+            <trans-unit id="9.8ReK8" resname="Abbrechen">
+                <source>Abbrechen</source>
+                <target>Abbrechen</target>
+            </trans-unit>
+            <trans-unit id="n9coxmy" resname="Add">
+                <source>Add</source>
+                <target>Hinzufügen</target>
+            </trans-unit>
+            <trans-unit id="ny2Jjy9" resname="Hafenaufenthalt bearbeiten">
+                <source>Hafenaufenthalt bearbeiten</source>
+                <target>Hafenaufenthalt bearbeiten</target>
+            </trans-unit>
+            <trans-unit id="8HlxEYe" resname="Ankunft">
+                <source>Ankunft</source>
+                <target>Ankunft</target>
+            </trans-unit>
+            <trans-unit id="Q82iIQy" resname="Abfahrt">
+                <source>Abfahrt</source>
+                <target>Abfahrt</target>
+            </trans-unit>
+            <trans-unit id="tvD2phH" resname="Anlagen hinzufügen">
+                <source>Anlagen hinzufügen</source>
+                <target>Anlagen hinzufügen</target>
+            </trans-unit>
+            <trans-unit id="QSV8VGc" resname="Projekt Anlagen">
+                <source>Projekt Anlagen</source>
+                <target>Projekt Anlagen</target>
+            </trans-unit>
+            <trans-unit id="m1N478n" resname="Dateiname">
+                <source>Dateiname</source>
+                <target>Dateiname</target>
+            </trans-unit>
+            <trans-unit id="xp5TzWI" resname="Dateiname (Optional)">
+                <source>Dateiname (Optional)</source>
+                <target>Dateiname (Optional)</target>
+            </trans-unit>
+            <trans-unit id="LlFtaPQ" resname="Revision">
+                <source>Revision</source>
+                <target>Revision</target>
+            </trans-unit>
+            <trans-unit id="qwUgA7D" resname="(Optional)">
+                <source>(Optional)</source>
+                <target>(Optional)</target>
+            </trans-unit>
+            <trans-unit id="gAM.glj" resname="Benutzer">
+                <source>Benutzer</source>
+                <target>Benutzer</target>
+            </trans-unit>
+            <trans-unit id="xvzDv2w" resname="Projekt Komponenten">
+                <source>Projekt Komponenten</source>
+                <target>Projekt Komponenten</target>
+            </trans-unit>
+            <trans-unit id="Z7aWRoY" resname="Dashboard">
+                <source>Dashboard</source>
+                <target>Dashboard</target>
+            </trans-unit>
+            <trans-unit id="f51kA1L" resname="Aktueller technischer Status">
+                <source>Aktueller technischer Status</source>
+                <target>Aktueller technischer Status
+                </target>
+            </trans-unit>
+            <trans-unit id="8iHqlqm" resname="Wartungslog">
+                <source>Wartungslog</source>
+                <target>Wartungslog</target>
+            </trans-unit>
+            <trans-unit id="RLzKRsH" resname="Wartung durchgeführt">
+                <source>Wartung durchgeführt</source>
+                <target>Wartung durchgeführt</target>
+            </trans-unit>
+            <trans-unit id="qOtqQLO" resname="Komponenten Gesamt">
+                <source>Komponenten Gesamt</source>
+                <target>Komponenten Gesamt</target>
+            </trans-unit>
+            <trans-unit id="NTGmZ3m" resname="Einstellungen Flaggenstaaten">
+                <source>Einstellungen Flaggenstaaten</source>
+                <target>Einstellungen Flaggenstaaten</target>
+            </trans-unit>
+            <trans-unit id="prIz8JD" resname="Flagge hochladen">
+                <source>Flagge hochladen</source>
+                <target>Flagge hochladen</target>
+            </trans-unit>
+            <trans-unit id="qOvqQrO" resname="menge">
+                <source>menge</source>
+                <target>menge</target>
+            </trans-unit>
+            <trans-unit id="OJH8iyh" resname="ges. Preis">
+                <source>ges. Preis</source>
+                <target>ges. Preis</target>
+            </trans-unit>
+            <trans-unit id="ctZxys9" resname="Masse">
+                <source>Masse</source>
+                <target>Masse</target>
+            </trans-unit>
+            <trans-unit id="zAsFTke" resname="Inventur">
+                <source>Inventur</source>
+                <target>Inventur</target>
+            </trans-unit>
+            <trans-unit id="J3A2jhB" resname="Inventur starten">
+                <source>Inventur starten</source>
+                <target>Inventur starten</target>
+            </trans-unit>
+            <trans-unit id="XsupVeh" resname="Lagerort:">
+                <source>Lagerort:</source>
+                <target>Lagerort:</target>
+            </trans-unit>
+            <trans-unit id="5vaJyAj" resname="Lagerort">
+                <source>Lagerort</source>
+                <target>Lagerort</target>
+            </trans-unit>
+            <trans-unit id="Dq4kIkX" resname="alle Bestellungen">
+                <source>alle Bestellungen</source>
+                <target>alle Bestellungen</target>
+            </trans-unit>
+            <trans-unit id="golY6sp" resname="Lager Übersicht">
+                <source>Lager Übersicht</source>
+                <target>Lager Übersicht</target>
+            </trans-unit>
+            <trans-unit id="7ry2FAG" resname="SerienNr.">
+                <source>SerienNr.</source>
+                <target>SerienNr.</target>
+            </trans-unit>
+            <trans-unit id="ATZQfEQ" resname="Artikel ins Lager">
+                <source>Artikel ins Lager</source>
+                <target>Artikel ins Lager</target>
+            </trans-unit>
+            <trans-unit id="i0Gnbpk" resname="Komponenten verbauen">
+                <source>Komponenten verbauen</source>
+                <target>Komponenten verbauen</target>
+            </trans-unit>
+            <trans-unit id="EY4bRiV" resname="Komponenten ausbauen">
+                <source>Komponenten ausbauen</source>
+                <target>Komponenten ausbauen</target>
+            </trans-unit>
+            <trans-unit id="maAfmXT" resname="Kallibriet">
+                <source>Kallibriet</source>
+                <target>Kallibriet</target>
+            </trans-unit>
+            <trans-unit id="EOxAC.I" resname="SEC Artikel">
+                <source>SEC Artikel</source>
+                <target>SEC Artikel</target>
+            </trans-unit>
+            <trans-unit id="4cEApe1" resname="label.description">
+                <source>label.description</source>
+                <target>Beschreibung</target>
+            </trans-unit>
+            <trans-unit id="ExObrIV" resname="error.beschreibung_zu_lang">
+                <source>error.beschreibung_zu_lang</source>
+                <target>Die Beschreibung darf maximal %limit% Zeichen lang sein.</target>
+            </trans-unit>
+            <trans-unit id="nWMiwfT" resname="Login">
+                <source>Login</source>
+                <target>Login</target>
+            </trans-unit>
+            <trans-unit id="0FJ_Sz1" resname="Logout">
+                <source>Logout</source>
+                <target>Logout</target>
+            </trans-unit>
+            <trans-unit id="Kx7RQm8" resname="bearbeiten">
+                <source>bearbeiten</source>
+                <target>bearbeiten</target>
+            </trans-unit>
+            <trans-unit id="E4MmTP." resname="Gebindegrösse">
+                <source>Gebindegrösse</source>
+                <target>Gebindegrösse</target>
+            </trans-unit>
+            <trans-unit id="8U78mWF" resname="offen zum bestellen">
+                <source>offen zum bestellen</source>
+                <target>offen zum bestellen</target>
+            </trans-unit>
+            <trans-unit id="JVbQvji" resname="Netzwerktool Login">
+                <source>Netzwerktool Login</source>
+                <target>Netzwerktool Login</target>
+            </trans-unit>
+            <trans-unit id="_CRZOSc" resname="Letzter Log">
+                <source>Letzter Log</source>
+                <target>Letzter Log</target>
+            </trans-unit>
+            <trans-unit id="vVRahQ2" resname="Kalibriert">
+                <source>Kalibriert</source>
+                <target>Kalibriert</target>
+            </trans-unit>
+            <trans-unit id="LJLXeui" resname="Foto hinzufügen">
+                <source>Foto hinzufügen</source>
+                <target>Foto hinzufügen</target>
+            </trans-unit>
+            <trans-unit id="Wb5xMzy" resname="Optional">
+                <source>Optional</source>
+                <target>Optional</target>
+            </trans-unit>
+            <trans-unit id="hea_Lqz" resname="Benutzerliste">
+                <source>Benutzerliste</source>
+                <target>Benutzerliste</target>
+            </trans-unit>
+            <trans-unit id="Up_TjZv" resname="E-Mail Adresse">
+                <source>E-Mail Adresse</source>
+                <target>E-Mail Adresse</target>
+            </trans-unit>
+            <trans-unit id="0td7b.p" resname="Vorname">
+                <source>Vorname</source>
+                <target>Vorname</target>
+            </trans-unit>
+            <trans-unit id="slNY7dS" resname="Nachname">
+                <source>Nachname</source>
+                <target>Nachname</target>
+            </trans-unit>
+            <trans-unit id="A2t0n2E" resname="Berechtigungen">
+                <source>Berechtigungen</source>
+                <target>Berechtigungen</target>
+            </trans-unit>
+            <trans-unit id="59PnafP" resname="Administrator">
+                <source>Administrator</source>
+                <target>Administrator</target>
+            </trans-unit>
+            <trans-unit id="1NKq6hq" resname="Tealleiter">
+                <source>Tealleiter</source>
+                <target>Teamleiter</target>
+            </trans-unit>
+            <trans-unit id="Yicjx0g" resname="Benutzer (Standard)">
+                <source>Benutzer (Standard)</source>
+                <target>Benutzer (Standard)</target>
+            </trans-unit>
+            <trans-unit id="CcGFUIM" resname="Techniker">
+                <source>Techniker</source>
+                <target>Techniker</target>
+            </trans-unit>
+            <trans-unit id="Dgc2BQm" resname="Bestelllung">
+                <source>Bestelllung</source>
+                <target>Bestellung</target>
+            </trans-unit>
+            <trans-unit id="jDVcUML" resname="Passwort (leer lassen, wenn unverändert)">
+                <source>Passwort (leer lassen, wenn unverändert)</source>
+                <target>Passwort (leer lassen, wenn unverändert)</target>
+            </trans-unit>
+            <trans-unit id="ThOud6P" resname="Neuen Benutzer anlegen">
+                <source>Neuen Benutzer anlegen</source>
+                <target>Neuen Benutzer anlegen</target>
+            </trans-unit>
+            <trans-unit id="Mkm3BwL" resname="Benutzerverwaltung">
+                <source>Benutzerverwaltung</source>
+                <target>Benutzerverwaltung</target>
+            </trans-unit>
+            <trans-unit id="nDbgTcW" resname="Neuer Benutzer">
+                <source>Neuer Benutzer</source>
+                <target>Neuer Benutzer</target>
+            </trans-unit>
+            <trans-unit id="zTCmOtu" resname="Keine Benutzer gefunden">
+                <source>Keine Benutzer gefunden</source>
+                <target>Keine Benutzer gefunden</target>
+            </trans-unit>
+            <trans-unit id="OEOXHc." resname="ID">
+                <source>ID</source>
+                <target>ID</target>
+            </trans-unit>
+            <trans-unit id="L65vsws" resname="E-Mail">
+                <source>E-Mail</source>
+                <target>E-Mail</target>
+            </trans-unit>
+            <trans-unit id="dPobLXQ" resname="Rollen">
+                <source>Rollen</source>
+                <target>Rollen</target>
+            </trans-unit>
+            <trans-unit id="wcIksDz" resname="Admin">
+                <source>Admin</source>
+                <target>Admin</target>
+            </trans-unit>
+            <trans-unit id="tRLZfny" resname="User">
+                <source>User</source>
+                <target>User</target>
+            </trans-unit>
+            <trans-unit id="GQpIo3l" resname="Benutzer Liste">
+                <source>Benutzer Liste</source>
+                <target>Benutzer Liste</target>
+            </trans-unit>
+            <trans-unit id="P4vKDY4" resname="Einstellungen Mengeneinheiten">
+                <source>Einstellungen Mengeneinheiten</source>
+                <target>Einstellungen Mengeneinheiten</target>
+            </trans-unit>
+            <trans-unit id="2utQ0yN" resname="Einstellungen Schiffstypen">
+                <source>Einstellungen Schiffstypen</source>
+                <target>Einstellungen Schiffstypen</target>
+            </trans-unit>
+            <trans-unit id="VfQBCdq" resname="Status Bezeichnung">
+                <source>Status Bezeichnung</source>
+                <target>Status Bezeichnung</target>
+            </trans-unit>
+            <trans-unit id="6r0Qfii" resname="css Klasse für Hintergrund">
+                <source>css Klasse für Hintergrund</source>
+                <target>css Klasse für Hintergrund</target>
+            </trans-unit>
+            <trans-unit id="nnwxulQ" resname="Einstellungen Hafenliste">
+                <source>Einstellungen Hafenliste</source>
+                <target>Einstellungen Hafenliste</target>
+            </trans-unit>
+            <trans-unit id="bgKl1Iw" resname="Bestellungen Kostenstellen">
+                <source>Bestellungen Kostenstellen</source>
+                <target>Bestellungen Kostenstellen</target>
+            </trans-unit>
+            <trans-unit id="lzLlEpR" resname="Nummer">
+                <source>Nummer</source>
+                <target>Nummer</target>
+            </trans-unit>
+            <trans-unit id="XBQ_sIC" resname="log.duplicate_sn">
+                <source>log.duplicate_sn</source>
+                <target>Die Seriennummer "%sn%" ist bereits bei der Komponente an Position %pos% hinterlegt. Bitte
+                    prüfen!
+                </target>
+            </trans-unit>
+            <trans-unit id=".RBjgcD" resname="Die Komponente wurde erfolgreich geändert.">
+                <source>Die Komponente wurde erfolgreich geändert.</source>
+                <target>Die Komponente wurde erfolgreich geändert.</target>
+            </trans-unit>
+            <trans-unit id="vW7SzdK" resname="Hinweis: Änderung nur mit Techniker-Rechten möglich.">
+                <source>Hinweis: Änderung nur mit Techniker-Rechten möglich.</source>
+                <target>Hinweis: Änderung nur mit Techniker-Rechten möglich.</target>
+            </trans-unit>
+            <trans-unit id="JOLnqKG" resname="Stueck">
+                <source>Stueck</source>
+                <target>Stueck</target>
+            </trans-unit>
+            <trans-unit id="lbF2JoA" resname="Stück">
+                <source>Stück</source>
+                <target>Stück</target>
+            </trans-unit>
+            <trans-unit id="pZrP9bu" resname="Offen Bestellungen">
+                <source>Offen Bestellungen</source>
+                <target>Offen Bestellungen</target>
+            </trans-unit>
+            <trans-unit id="tqrOkDI" resname="Der Lagerbestand wurde aktualisiert.">
+                <source>Der Lagerbestand wurde aktualisiert.</source>
+                <target>Der Lagerbestand wurde aktualisiert.</target>
+            </trans-unit>
+            <trans-unit id="ZDT19XC" resname="Fehler beim Lager abgleich.">
+                <source>Fehler beim Lager abgleich.</source>
+                <target>Fehler beim Lager abgleich.</target>
+            </trans-unit>
+            <trans-unit id="_lu6mcc" resname="Die angegebene Bestellung ist erledigt.">
+                <source>Die angegebene Bestellung ist erledigt.</source>
+                <target>Die angegebene Bestellung ist erledigt.</target>
+            </trans-unit>
+            <trans-unit id="ZY2L8Vb" resname="Die angegebene Bestellung wurde nur zum Teil geliefert.">
+                <source>Die angegebene Bestellung wurde nur zum Teil geliefert.</source>
+                <target>Die angegebene Bestellung wurde nur zum Teil geliefert.</target>
+            </trans-unit>
+            <trans-unit id="B38ap4p" resname="Der Artikel wurde aus der Bestellung entfernt.">
+                <source>Der Artikel wurde aus der Bestellung entfernt.</source>
+                <target>Der Artikel wurde aus der Bestellung entfernt.</target>
+            </trans-unit>
+            <trans-unit id="5b4zkrl" resname="artikel.suche">
+                <source>artikel.suche</source>
+                <target>Filter suche nach %suche%</target>
+            </trans-unit>
+            <trans-unit id="M02NLPk" resname="baugruppe.add.fehler1">
+                <source>baugruppe.add.fehler1</source>
+                <target>Das Projekt mit der ID %projektid% konnte nicht geladen werden.</target>
+            </trans-unit>
+            <trans-unit id="fRfpsE4" resname="baugruppe.add.fehler2">
+                <source>baugruppe.add.fehler2</source>
+                <target>Es muss eine Menge angegeben werden.</target>
+            </trans-unit>
+            <trans-unit id="32yK0Ql" resname="baugruppe.add">
+                <source>baugruppe.add</source>
+                <target>Die Komponente "%bezeichnung%" wurde %count% mal erfolgreich %projektName% hinzugefügt.</target>
+            </trans-unit>
+            <trans-unit id="wnt8reB" resname="dem Projekt">
+                <source>dem Projekt</source>
+                <target>dem Projekt</target>
+            </trans-unit>
+            <trans-unit id="_c46F15" resname="baugruppe.bearbeitet">
+                <source>baugruppe.bearbeitet</source>
+                <target>Die Baugruppe wurde erfolgreich geändert.</target>
+            </trans-unit>
+            <trans-unit id="jF7S57d" resname="Baugruppen Liste">
+                <source>Baugruppen Liste</source>
+                <target>Baugruppen Liste</target>
+            </trans-unit>
+            <trans-unit id="eXLwbic" resname="Baugruppe Details">
+                <source>Baugruppe Details</source>
+                <target>Baugruppe Details</target>
+            </trans-unit>
+            <trans-unit id="3.ULdTC" resname="Baugruppe bearbeiten">
+                <source>Baugruppe bearbeiten</source>
+                <target>Baugruppe bearbeiten</target>
+            </trans-unit>
+            <trans-unit id="cqM7l4i" resname="Baugruppe anlegen">
+                <source>Baugruppe anlegen</source>
+                <target>Baugruppe anlegen</target>
+            </trans-unit>
+            <trans-unit id="KoRUV2F" resname="Die Baugruppe wurde erfolgreich angelegt.">
+                <source>Die Baugruppe wurde erfolgreich angelegt.</source>
+                <target>Die Baugruppe wurde erfolgreich angelegt.</target>
+            </trans-unit>
+            <trans-unit id="v8oswK5" resname="Die Baugruppe wurde erfolgreich KOPIERT.">
+                <source>Die Baugruppe wurde erfolgreich KOPIERT.</source>
+                <target>Die Baugruppe wurde erfolgreich KOPIERT.</target>
+            </trans-unit>
+            <trans-unit id="6y_jJCY" resname="Kopie">
+                <source>Kopie</source>
+                <target>Kopie</target>
+            </trans-unit>
+            <trans-unit id="DyyGdRr" resname="baugruppe.delete">
+                <source>baugruppe.delete</source>
+                <target>Die Baugruppe wurde erfolgreich gelöscht.</target>
+            </trans-unit>
+            <trans-unit id="QkB5Yko" resname="baugruppe.lock">
+                <source>baugruppe.lock</source>
+                <target>Die Baugruppe wurde erfolgreich gesperrt.</target>
+            </trans-unit>
+            <trans-unit id="m6uiSom" resname="baugruppe.delock">
+                <source>baugruppe.delock</source>
+                <target>Die Baugruppe wurde erfolgreich entgesperrt.</target>
+            </trans-unit>
+            <trans-unit id="oIxsp_1" resname="baugruppe.removed.notfound">
+                <source>baugruppe.removed.notfound</source>
+                <target>Der angegebene Artikel konnte nicht in der Artikelliste gefunden werden.</target>
+            </trans-unit>
+            <trans-unit id="Z5rKMiC" resname="baugruppe.removed.error1">
+                <source>baugruppe.removed.error1</source>
+                <target>Fehler beim laden der Baugruppenartikel: (%error%)</target>
+            </trans-unit>
+            <trans-unit id="2mEbqi9" resname="baugruppe.removed.success">
+                <source>baugruppe.removed.success</source>
+                <target>Der Artikel wurde erfolgreich aus der Baugruppe entfernt.</target>
+            </trans-unit>
+            <trans-unit id="tdUlW4E" resname="baugruppe.artikelexport.success">
+                <source>baugruppe.artikelexport.success</source>
+                <target>Es wurden %anzahl% Artikel exportiert.</target>
+            </trans-unit>
+            <trans-unit id="ANEoh2R" resname="baugruppe.error2">
+                <source>baugruppe.error2</source>
+                <target>Fehler beim laden der Kostenstelle: (%error%)</target>
+            </trans-unit>
+            <trans-unit id="Af5LLwB" resname="baugruppe.bestellung.success">
+                <source>baugruppe.bestellung.success</source>
+                <target>Es wurden %row% Artikel zur Bestellung eingetragen.</target>
+            </trans-unit>
+            <trans-unit id="iNeBBKX" resname="Möchtest du diese Anlage wirklich löschen?">
+                <source>Möchtest du diese Anlage wirklich löschen?</source>
+                <target>Are you sure you want to delete this attachment?</target>
+            </trans-unit>
+            <trans-unit id="zxFmtYm" resname="Fehler beim Löschen der Anlage.">
+                <source>Fehler beim Löschen der Anlage.</source>
+                <target>Error deleting the attachment.</target>
+            </trans-unit>
+            <trans-unit id="vtto9gY" resname="Anlage entfernen">
+                <source>Anlage entfernen</source>
+                <target>Remove attachment</target>
+            </trans-unit>
+            <trans-unit id="LVx0lZQ" resname="Baugruppen %projektname% Übersicht">
+                <source>Baugruppen %projektname% Übersicht</source>
+                <target>Baugruppen %projektname% Übersicht</target>
+            </trans-unit>
+            <trans-unit id="YichaCp" resname="Artikel hinzufügen">
+                <source>Artikel hinzufügen</source>
+                <target>Artikel hinzufügen</target>
+            </trans-unit>
+            <trans-unit id="uBtbWfW" resname="Artikel Info">
+                <source>Artikel Info</source>
+                <target>Artikel Info</target>
+            </trans-unit>
+            <trans-unit id="fvkk8Eh" resname="projekt.bearbeiten">
+                <source>projekt.bearbeiten</source>
+                <target>Projekt Bearbeiten</target>
+            </trans-unit>
+            <trans-unit id="Kf8L31I" resname="Projektname">
+                <source>Projektname</source>
+                <target>Projektname</target>
+            </trans-unit>
+            <trans-unit id=".agfQoy" resname="Flagge">
+                <source>Flagge</source>
+                <target>Flagge</target>
+            </trans-unit>
+            <trans-unit id=".6rnf6X" resname="Schiffstyp">
+                <source>Schiffstyp</source>
+                <target>Schiffstyp</target>
+            </trans-unit>
+            <trans-unit id="hImF6d6" resname="Schiffsbild">
+                <source>Schiffsbild</source>
+                <target>Schiffsbild</target>
+            </trans-unit>
+            <trans-unit id="PoSmhUy" resname="Projektstatus">
+                <source>Projektstatus</source>
+                <target>Projektstatus</target>
+            </trans-unit>
+            <trans-unit id="7sO3Swr" resname="bitte.waehlen">
+                <source>bitte.waehlen</source>
+                <target>--- Bitte wählen ---</target>
+            </trans-unit>
+            <trans-unit id="lBm5scM" resname="Benutzer Bearbeiten">
+                <source>Benutzer Bearbeiten</source>
+                <target>Benutzer Bearbeiten</target>
+            </trans-unit>
+            <trans-unit id="0mhz3jA" resname="Neues Passwort (leer lassen zum Behalten)">
+                <source>Neues Passwort (leer lassen zum Behalten)</source>
+                <target>Neues Passwort (leer lassen zum Behalten)</target>
+            </trans-unit>
+            <trans-unit id="rdowzqn" resname="Projekt Eigenschaften">
+                <source>Projekt Eigenschaften</source>
+                <target>Projekt Eigenschaften</target>
+            </trans-unit>
+            <trans-unit id="dEf9NlH" resname="Projekt ins Archiv">
+                <source>Projekt ins Archiv</source>
+                <target>Projekt ins Archiv</target>
+            </trans-unit>
+            <trans-unit id="l2qluFv" resname="Projekt vollständig löschen">
+                <source>Projekt vollständig löschen</source>
+                <target>Projekt vollständig löschen</target>
+            </trans-unit>
+            <trans-unit id="hlV1hmW" resname="breadcrumb.deck_plan_bay">
+                <source>breadcrumb.deck_plan_bay</source>
+                <target>Bay %name%</target>
+            </trans-unit>
+            <trans-unit id="h9a7QZM" resname="Die Baugruppe wurde nicht gefunden.">
+                <source>Die Baugruppe wurde nicht gefunden.</source>
+                <target>Die Baugruppe wurde nicht gefunden.</target>
+            </trans-unit>
+            <trans-unit id="f8dwqno" resname="baugruppe.error1">
+                <source>baugruppe.error1</source>
+                <target>baugruppe.error1</target>
+            </trans-unit>
+            <trans-unit id="ceXGmEG" resname="Bestellliste Übersicht">
+                <source>Bestellliste Übersicht</source>
+                <target>Bestellliste Übersicht</target>
+            </trans-unit>
+            <trans-unit id="4vJbvs6" resname="Der Komponenten-Type wurde erfolgreich geändert.">
+                <source>Der Komponenten-Type wurde erfolgreich geändert.</source>
+                <target>Der Komponenten-Type wurde erfolgreich geändert.</target>
+            </trans-unit>
+            <trans-unit id="Jn8lb8." resname="Der Komponenten-Type wurde erfolgreich hinzugefügt.">
+                <source>Der Komponenten-Type wurde erfolgreich hinzugefügt.</source>
+                <target>Der Komponenten-Type wurde erfolgreich hinzugefügt.</target>
+            </trans-unit>
+            <trans-unit id="9udiJFd" resname="Einstellungen Komponententypen">
+                <source>Einstellungen Komponententypen</source>
+                <target>Einstellungen Komponententypen</target>
+            </trans-unit>
+            <trans-unit id="DeeTl1d" resname="Der Seiten Parameter wurde erfolgreich hinzugefügt.">
+                <source>Der Seiten Parameter wurde erfolgreich hinzugefügt.</source>
+                <target>Der Seiten Parameter wurde erfolgreich hinzugefügt.</target>
+            </trans-unit>
+            <trans-unit id="Oh07HNQ" resname="Der Seiten Parameter wurde erfolgreich geändert.">
+                <source>Der Seiten Parameter wurde erfolgreich geändert.</source>
+                <target>Der Seiten Parameter wurde erfolgreich geändert.</target>
+            </trans-unit>
+            <trans-unit id="4fvc2lw" resname="Der Seiten Parameter wurde gelöscht.">
+                <source>Der Seiten Parameter wurde gelöscht.</source>
+                <target>Der Seiten Parameter wurde gelöscht.</target>
+            </trans-unit>
+            <trans-unit id="xYyCTda" resname="Der Eintrag">
+                <source>Der Eintrag</source>
+                <target>Der Eintrag</target>
+            </trans-unit>
+            <trans-unit id="PRhuHJB" resname="wurde erfolgreich gespeichert.">
+                <source>wurde erfolgreich gespeichert.</source>
+                <target>wurde erfolgreich gespeichert.</target>
+            </trans-unit>
+            <trans-unit id="pdCK6CH" resname="Die neue Einheit wurde erfolgreich hinzugefügt.">
+                <source>Die neue Einheit wurde erfolgreich hinzugefügt.</source>
+                <target>Die neue Einheit wurde erfolgreich hinzugefügt.</target>
+            </trans-unit>
+            <trans-unit id="xR3fUlt" resname="SN bereits vergeben an Position">
+                <source>SN bereits vergeben an Position</source>
+                <target>SN bereits vergeben an Position</target>
+            </trans-unit>
+            <trans-unit id="96T1d5q" resname="Hafen-Logbuch aktualisieren">
+                <source>Hafen-Logbuch aktualisieren</source>
+                <target>Hafen-Logbuch aktualisieren</target>
+            </trans-unit>
+            <trans-unit id="8IsObaj" resname="Von Datum">
+                <source>Von Datum</source>
+                <target>Von Datum</target>
+            </trans-unit>
+            <trans-unit id="rarWeXX" resname="Bis Datum">
+                <source>Bis Datum</source>
+                <target>Bis Datum</target>
+            </trans-unit>
+            <trans-unit id="A4EmE1C" resname="Daten abrufen">
+                <source>Daten abrufen</source>
+                <target>Daten abrufen</target>
+            </trans-unit>
+            <trans-unit id="VnGDlfn" resname="Baugruppen Übersicht">
+                <source>Baugruppen Übersicht</source>
+                <target>Baugruppen Übersicht</target>
+            </trans-unit>
+            <trans-unit id="g1Zf3iz" resname="Nach Lagerort">
+                <source>Nach Lagerort</source>
+                <target>Nach Lagerort</target>
+            </trans-unit>
+            <trans-unit id="ScZphMY" resname="Nach Kostenstelle">
+                <source>Nach Kostenstelle</source>
+                <target>Nach Kostenstelle</target>
+            </trans-unit>
+            <trans-unit id="vxNJqGY" resname="Werkzeug">
+                <source>Werkzeug</source>
+                <target>Werkzeug</target>
+            </trans-unit>
+            <trans-unit id="G0yCbag" resname="Ges. Liste Drucken">
+                <source>Ges. Liste Drucken</source>
+                <target>Ges. Liste Drucken</target>
+            </trans-unit>
+            <trans-unit id="oIQYgFj" resname="Ges. Abgleich/Eingabe">
+                <source>Ges. Abgleich/Eingabe</source>
+                <target>Ges. Abgleich/Eingabe</target>
+            </trans-unit>
+            <trans-unit id="LeJR4MT" resname="Stand">
+                <source>Stand</source>
+                <target>Stand</target>
+            </trans-unit>
+            <trans-unit id="YAOmCUb" resname="Ser.Nr.">
+                <source>Ser.Nr.</source>
+                <target>Ser.Nr.</target>
+            </trans-unit>
+            <trans-unit id="hLtrSTK" resname="Konto / Kto">
+                <source>Konto / Kto</source>
+                <target>Konto / Kto</target>
+            </trans-unit>
+            <trans-unit id="itip0lz" resname="Keine Bestellungen vorhanden">
+                <source>Keine Bestellungen vorhanden</source>
+                <target>Keine Bestellungen vorhanden</target>
+            </trans-unit>
+            <trans-unit id="5dAWxY2" resname="Fehler: Keine Artikel vorhanden.">
+                <source>Fehler: Keine Artikel vorhanden.</source>
+                <target>Fehler: Keine Artikel vorhanden.</target>
+            </trans-unit>
+            <trans-unit id="2i2d_m0" resname="Artikel bestellen">
+                <source>Artikel bestellen</source>
+                <target>Artikel bestellen</target>
+            </trans-unit>
+            <trans-unit id="uAj26XB" resname="Schließen">
+                <source>Schließen</source>
+                <target>Schließen</target>
+            </trans-unit>
+            <trans-unit id="l0q3sYr" resname="Auswahl der Kostenstelle">
+                <source>Auswahl der Kostenstelle</source>
+                <target>Auswahl der Kostenstelle</target>
+            </trans-unit>
+            <trans-unit id="M1jrovT" resname="Bestellen">
+                <source>Bestellen</source>
+                <target>Bestellen</target>
+            </trans-unit>
+            <trans-unit id="1RElbax" resname="Keine Artikel gefunden.">
+                <source>Keine Artikel gefunden.</source>
+                <target>Keine Artikel gefunden.</target>
+            </trans-unit>
+            <trans-unit id="VIYRzlj" resname="Zurück">
+                <source>Zurück</source>
+                <target>Zurück</target>
+            </trans-unit>
+            <trans-unit id="Ta2b7tg" resname="Bay Nummer">
+                <source>Bay Nummer</source>
+                <target>Bay Nummer</target>
+            </trans-unit>
+            <trans-unit id="XVBreOd" resname="Aktuelle Struktur">
+                <source>Aktuelle Struktur</source>
+                <target>Aktuelle Struktur</target>
+            </trans-unit>
+            <trans-unit id="IwLdwTY" resname="Bay">
+                <source>Bay</source>
+                <target>Bay</target>
+            </trans-unit>
+            <trans-unit id="GwJBg8s" resname="Typ">
+                <source>Typ</source>
+                <target>Typ</target>
+            </trans-unit>
+            <trans-unit id="ImUAZkt" resname="Struktur">
+                <source>Struktur</source>
+                <target>Struktur</target>
+            </trans-unit>
+            <trans-unit id="pK0lnnH" resname="Aktion">
+                <source>Aktion</source>
+                <target>Aktion</target>
+            </trans-unit>
+            <trans-unit id="vYgUVLJ" resname="Keine Bays konfiguriert">
+                <source>Keine Bays konfiguriert</source>
+                <target>Keine Bays konfiguriert</target>
+            </trans-unit>
+            <trans-unit id="Tib9IUF" resname="Schiffs-Übersicht">
+                <source>Schiffs-Übersicht</source>
+                <target>Schiffs-Übersicht</target>
+            </trans-unit>
+            <trans-unit id="HVKbXiQ" resname="Bays">
+                <source>Bays</source>
+                <target>Bays</target>
+            </trans-unit>
+            <trans-unit id="2gOTeX0" resname="Fehlende Bay-Strukturen">
+                <source>Fehlende Bay-Strukturen</source>
+                <target>Fehlende Bay-Strukturen</target>
+            </trans-unit>
+            <trans-unit id="yDAsnzy" resname="Für diese Bays existiert Hardware im Plan-Format">
+                <source>Für diese Bays existiert Hardware im Plan-Format</source>
+                <target>Für diese Bays existiert Hardware im Plan-Format</target>
+            </trans-unit>
+            <trans-unit id="ZU60wKO" resname="Zahl">
+                <source>Zahl</source>
+                <target>Zahl</target>
+            </trans-unit>
+            <trans-unit id="cXuxW7S" resname="aber sie sind nicht in der Struktur angelegt">
+                <source>aber sie sind nicht in der Struktur angelegt</source>
+                <target>aber sie sind nicht in der Struktur angelegt</target>
+            </trans-unit>
+            <trans-unit id="XBBYrqa" resname="anlegen">
+                <source>anlegen</source>
+                <target>anlegen</target>
+            </trans-unit>
+            <trans-unit id="2qMIEX4" resname="Projekt zurück aus Archiv">
+                <source>Projekt zurück aus Archiv</source>
+                <target>Projekt zurück aus Archiv</target>
+            </trans-unit>
+            <trans-unit id="f88VN2q" resname="Hafenzeiten">
+                <source>Hafenzeiten</source>
+                <target>Hafenzeiten</target>
+            </trans-unit>
+            <trans-unit id="Mw6pjfK" resname="Neuer Parameter">
+                <source>Neuer Parameter</source>
+                <target>Neuer Parameter</target>
+            </trans-unit>
+            <trans-unit id="N6B3RV3" resname="Artikel&#10;                        Bearbeiten">
+                <source>Artikel
+                    Bearbeiten
+                </source>
+                <target>Artikel Bearbeiten</target>
+            </trans-unit>
+            <trans-unit id="MCXsm1f" resname="Komponente&#10;            hinzufügen">
+                <source>Komponente
+                    hinzufügen
+                </source>
+                <target>Komponente hinzufügen</target>
+            </trans-unit>
+            <trans-unit id="qBdXJLd" resname="Komponente suchen">
+                <source>Komponente suchen</source>
+                <target>Komponente suchen</target>
+            </trans-unit>
+            <trans-unit id="vf50w3m" resname="für alle">
+                <source>für alle</source>
+                <target>für alle</target>
+            </trans-unit>
+            <trans-unit id="48XkiAM" resname="Komponente Bestellen">
+                <source>Komponente Bestellen</source>
+                <target>Komponente Bestellen</target>
+            </trans-unit>
+            <trans-unit id="z8XjdLO" resname="Bildinformationen bearbeiten">
+                <source>Bildinformationen bearbeiten</source>
+                <target>Bildinformationen bearbeiten</target>
+            </trans-unit>
+            <trans-unit id="q8r8gtq" resname="Titel">
+                <source>Titel</source>
+                <target>Titel</target>
+            </trans-unit>
+            <trans-unit id="h86UXTd" resname="Komponente einer Baugruppe zuweisen">
+                <source>Komponente einer Baugruppe zuweisen</source>
+                <target>Komponente einer Baugruppe zuweisen</target>
+            </trans-unit>
+            <trans-unit id="tMnUAEo" resname="Wähle eine Baugruppe im Projekt">
+                <source>Wähle eine Baugruppe im Projekt</source>
+                <target>Wähle eine Baugruppe im Projekt</target>
+            </trans-unit>
+            <trans-unit id="cKw28tf" resname="Lade Baugruppen">
+                <source>Lade Baugruppen</source>
+                <target>Lade Baugruppen</target>
+            </trans-unit>
+            <trans-unit id="Os_bt5g" resname="Zuweisen">
+                <source>Zuweisen</source>
+                <target>Zuweisen</target>
+            </trans-unit>
+            <trans-unit id="CmINSSR" resname="Wartungshistorie">
+                <source>Wartungshistorie</source>
+                <target>Wartungshistorie</target>
+            </trans-unit>
+            <trans-unit id="TIDMGS6" resname="Lade Daten">
+                <source>Lade Daten</source>
+                <target>Lade Daten</target>
+            </trans-unit>
+            <trans-unit id="YtGlldl" resname="Komponentengalerie">
+                <source>Komponentengalerie</source>
+                <target>Komponentengalerie</target>
+            </trans-unit>
+            <trans-unit id="qtp3CRP" resname="Artikel-Dokumentation">
+                <source>Artikel-Dokumentation</source>
+                <target>Artikel-Dokumentation</target>
+            </trans-unit>
+            <trans-unit id="MPVYxTd" resname="Wartungs-Medien">
+                <source>Wartungs-Medien</source>
+                <target>Wartungs-Medien</target>
+            </trans-unit>
+            <trans-unit id="p._dcp." resname="Alles erledigt! Keine offenen Wartungen.">
+                <source>Alles erledigt! Keine offenen Wartungen.</source>
+                <target>Alles erledigt! Keine offenen Wartungen.</target>
+            </trans-unit>
+            <trans-unit id="gFCzUAB" resname="Deck Plan">
+                <source>Deck Plan</source>
+                <target>Deck Plan</target>
+            </trans-unit>
+            <trans-unit id="cDpQKDZ" resname="Bug">
+                <source>Bug</source>
+                <target>Bug</target>
+            </trans-unit>
+            <trans-unit id="xRks5ll" resname="CENTERLINE">
+                <source>CENTERLINE</source>
+                <target>CENTERLINE</target>
+            </trans-unit>
+            <trans-unit id="hmeOVgP" resname="Defekte Komponenten">
+                <source>Defekte Komponenten</source>
+                <target>Defekte Komponenten</target>
+            </trans-unit>
+            <trans-unit id="e0IJeHS" resname="Finden">
+                <source>Finden</source>
+                <target>Finden</target>
+            </trans-unit>
+            <trans-unit id="o5IGs8K" resname="Zu Bay">
+                <source>Zu Bay</source>
+                <target>Zu Bay</target>
+            </trans-unit>
+            <trans-unit id="QQxKaXH" resname="Klicken Sie auf eine Bay, um sie in der Konfiguration anzulegen:">
+                <source>Klicken Sie auf eine Bay, um sie in der Konfiguration anzulegen:</source>
+                <target>Klicken Sie auf eine Bay, um sie in der Konfiguration anzulegen:</target>
+            </trans-unit>
+            <trans-unit id="ROZdWDw" resname="Bitte wählen Sie eine Bay aus der Navigation oben aus.">
+                <source>Bitte wählen Sie eine Bay aus der Navigation oben aus.</source>
+                <target>Bitte wählen Sie eine Bay aus der Navigation oben aus.</target>
+            </trans-unit>
+            <trans-unit id="Yvylz10" resname="In der Übersicht sehen Sie alle verfügbaren Sektionen des Schiffes.">
+                <source>In der Übersicht sehen Sie alle verfügbaren Sektionen des Schiffes.</source>
+                <target>In der Übersicht sehen Sie alle verfügbaren Sektionen des Schiffes.</target>
+            </trans-unit>
+            <trans-unit id="B5JR21t" resname="Hafen">
+                <source>Hafen</source>
+                <target>Hafen</target>
+            </trans-unit>
+            <trans-unit id="PtVcczB" resname="Struktur komplett leeren">
+                <source>Struktur komplett leeren</source>
+                <target>Struktur komplett leeren</target>
+            </trans-unit>
+            <trans-unit id="iwcJfR5" resname="Bay-Struktur Konfiguration">
+                <source>Bay-Struktur Konfiguration</source>
+                <target>Bay-Struktur Konfiguration</target>
+            </trans-unit>
+            <trans-unit id="ZeYkeTd" resname="Bay hinzufügen">
+                <source>Bay hinzufügen</source>
+                <target>Bay hinzufügen</target>
+            </trans-unit>
+            <trans-unit id="Mq1XENL" resname="Fore/Aft">
+                <source>Fore/Aft</source>
+                <target>Fore/Aft</target>
+            </trans-unit>
+            <trans-unit id="bpIWXaW" resname="Inkl.">
+                <source>Inkl.</source>
+                <target>Inkl.</target>
+            </trans-unit>
+            <trans-unit id="AYUHj1w" resname="Login Log">
+                <source>Login Log</source>
+                <target>Login Log</target>
+            </trans-unit>
+            <trans-unit id="SwHzm08" resname="System-Status">
+                <source>System-Status</source>
+                <target>System-Status</target>
+            </trans-unit>
+            <trans-unit id="usHsuSW" resname="Defekt">
+                <source>Defekt</source>
+                <target>Defekt</target>
+            </trans-unit>
+            <trans-unit id="VlM5vE0" resname="OK">
+                <source>OK</source>
+                <target>OK</target>
+            </trans-unit>
+            <trans-unit id="e2x5dX8" resname="Gefahrene Strecke">
+                <source>Gefahrene Strecke</source>
+                <target>Gefahrene Strecke</target>
+            </trans-unit>
+            <trans-unit id="qIb4cQv" resname="Wegpunkte gefunden">
+                <source>Wegpunkte gefunden</source>
+                <target>Wegpunkte gefunden</target>
+            </trans-unit>
+            <trans-unit id="NFwRChj" resname="Status-Details">
+                <source>Status-Details</source>
+                <target>Status-Details</target>
+            </trans-unit>
+            <trans-unit id="ow4ZadY" resname="Einsatzbereit">
+                <source>Einsatzbereit</source>
+                <target>Einsatzbereit</target>
+            </trans-unit>
+            <trans-unit id="ocoTV1m" resname="Prüfen">
+                <source>Prüfen</source>
+                <target>Prüfen</target>
+            </trans-unit>
+            <trans-unit id="KsWEqvI" resname="Letzte Wartung">
+                <source>Letzte Wartung</source>
+                <target>Letzte Wartung</target>
+            </trans-unit>
+            <!--      <trans-unit id=""><source></source><target></target></trans-unit>-->
+            <trans-unit id="l8AEPm4" resname="Ankunfts-Ereignis nicht gefunden.">
+                <source>Ankunfts-Ereignis nicht gefunden.</source>
+                <target>Ankunfts-Ereignis nicht gefunden.</target>
+            </trans-unit>
+            <trans-unit id="wGV8ZvW" resname="Hafenaufenthalt erfolgreich aktualisiert.">
+                <source>Hafenaufenthalt erfolgreich aktualisiert.</source>
+                <target>Hafenaufenthalt erfolgreich aktualisiert.</target>
+            </trans-unit>
+            <trans-unit id="XpalKlU" resname="Gefahrene Strecke ">
+                <source>Gefahrene Strecke</source>
+                <target>Gefahrene Strecke</target>
+            </trans-unit>
+            <trans-unit id="XqvbTBv" resname="AIS Stream Status">
+                <source>AIS Stream Status</source>
+                <target>AIS Stream Status</target>
+            </trans-unit>
+            <trans-unit id="OdmqYra" resname="AIS Stream Monitor">
+                <source>AIS Stream Monitor</source>
+                <target>AIS Stream Monitor</target>
+            </trans-unit>
+            <trans-unit id="gWNFTze" resname="Aktiv">
+                <source>Aktiv</source>
+                <target>Aktiv</target>
+            </trans-unit>
+            <trans-unit id="KHqAQmj" resname="Prozess-ID">
+                <source>Prozess-ID</source>
+                <target>Prozess-ID</target>
+            </trans-unit>
+            <trans-unit id="v3yRcct" resname="Inaktiv">
+                <source>Inaktiv</source>
+                <target>Inaktiv</target>
+            </trans-unit>
+            <trans-unit id="wfZ.pe." resname="Der Dienst wird aktuell nicht ausgeführt.">
+                <source>Der Dienst wird aktuell nicht ausgeführt.</source>
+                <target>Der Dienst wird aktuell nicht ausgeführt.</target>
+            </trans-unit>
+            <trans-unit id="NdkY6sH" resname="Vorhanden">
+                <source>Vorhanden</source>
+                <target>Vorhanden</target>
+            </trans-unit>
+            <trans-unit id="Vyi3seN" resname="Nicht vorhanden">
+                <source>Nicht vorhanden</source>
+                <target>Nicht vorhanden</target>
+            </trans-unit>
+            <trans-unit id="L3FhUV_" resname="Prozess wirklich beenden?">
+                <source>Prozess wirklich beenden?</source>
+                <target>Prozess wirklich beenden?</target>
+            </trans-unit>
+            <trans-unit id="R_hUXbz" resname="Stream stoppen">
+                <source>Stream stoppen</source>
+                <target>Stream stoppen</target>
+            </trans-unit>
+            <trans-unit id="Ay1ARSU" resname="Stream jetzt starten">
+                <source>Stream jetzt starten</source>
+                <target>Stream jetzt starten</target>
+            </trans-unit>
+            <trans-unit id="trMP3Vm" resname="Informationen">
+                <source>Informationen</source>
+                <target>Informationen</target>
+            </trans-unit>
+            <trans-unit id="rac4R_8" resname="Funktionsweise">
+                <source>Funktionsweise</source>
+                <target>Funktionsweise</target>
+            </trans-unit>
+            <trans-unit id="ry9e00S" resname="ais.stream">
+                <source>Der AIS-Stream verbindet sich per WebSocket mit &lt;code&gt;aisstream.io&lt;/code&gt;. Eingehende Daten werden gefiltert und nur gespeichert, wenn die MMSI einem Schiff in Ihrer Datenbank zugeordnet werden kann.</source>
+                <target><![CDATA[Der AIS-Stream verbindet sich per WebSocket mit <code>aisstream.io</code>. Eingehende Daten werden gefiltert und nur gespeichert, wenn die MMSI einem Schiff in Ihrer Datenbank zugeordnet werden kann.]]></target>
+            </trans-unit>
+            <trans-unit id="KmySNXQ" resname="Watchdog-Info">
+                <source>Watchdog-Info</source>
+                <target>Watchdog-Info</target>
+            </trans-unit>
+            <trans-unit id="bDssb6l" resname="aisstream.Cronjob.neu">
+                <source>aisstream.Cronjob.neu</source>
+                <target>Ein Cronjob prüft alle 5 Minuten, ob dieser Prozess läuft und startet ihn bei Bedarf automatisch
+                    neu.
+                </target>
+            </trans-unit>
+            <trans-unit id="jfKdjrX" resname="Konfiguration">
+                <source>Konfiguration</source>
+                <target>Konfiguration</target>
+            </trans-unit>
+            <trans-unit id="7MT3fPI" resname="Dienst">
+                <source>Dienst</source>
+                <target>Dienst</target>
+            </trans-unit>
+            <trans-unit id="Jbj6453" resname="Filtertyp">
+                <source>Filtertyp</source>
+                <target>Filtertyp</target>
+            </trans-unit>
+            <trans-unit id="4MCEFVd" resname="Dynamische MMSI-Liste (Datenbank-basiert)">
+                <source>Dynamische MMSI-Liste (Datenbank-basiert)</source>
+                <target>Dynamische MMSI-Liste (Datenbank-basiert)</target>
+            </trans-unit>
+            <trans-unit id="JWU8YDs" resname="Speichermethode">
+                <source>Speichermethode</source>
+                <target>Speichermethode</target>
+            </trans-unit>
+            <trans-unit id="QyylHmj" resname="NetShipPositionHistory (ORM)">
+                <source>NetShipPositionHistory (ORM)</source>
+                <target>NetShipPositionHistory (ORM)</target>
+            </trans-unit>
+            <trans-unit id="f6qI25f" resname="Projekt Häfen">
+                <source>Projekt Häfen</source>
+                <target>Projekt Häfen</target>
+            </trans-unit>
+            <trans-unit id="x00L0oN" resname="Gallerie-Medien">
+                <source>Gallerie-Medien</source>
+                <target>Gallerie-Medien</target>
+            </trans-unit>
+            <trans-unit id="dPJJMfT" resname="Zeit">
+                <source>Zeit</source>
+                <target>Zeit</target>
+            </trans-unit>
+            <trans-unit id="FTkF1bS" resname="Keine Login Einträge gefunden">
+                <source>Keine Login Einträge gefunden</source>
+                <target>Keine Login Einträge gefunden</target>
+            </trans-unit>
+            <trans-unit id="9xlSW27" resname="Komponenten Installation">
+                <source>Komponenten Installation</source>
+                <target>Komponenten Installation</target>
+            </trans-unit>
+            <trans-unit id="Übersicht Karte">
+                <source>Übersicht Karte</source>
+                <target>Übersicht Karte</target>
+            </trans-unit>
+            <trans-unit id="Military ops">
+                <source>Military ops</source>
+                <target>Military ops</target>
+            </trans-unit>
+            <trans-unit id="Projektübersicht Karte">
+                <source>Projektübersicht Karte</source>
+                <target>Projektübersicht Karte</target>
+            </trans-unit>
+            <trans-unit id="projekt.map.count">
+                <source>In der Karte werden %count% Schiffe angezeigt.</source>
+                <target>In der Karte werden %count% Schiffe angezeigt.</target>
+            </trans-unit>
+            <trans-unit id="Project Overview Map">
+                <source>Project Overview Map</source>
+                <target>Project Overview Map</target>
+            </trans-unit>
+
+            <trans-unit id="Prüfung Batterie nötig">
+                <source>Prüfung Batterie nötig</source>
+                <target>Prüfung Batterie nötig</target>
+            </trans-unit>
+
+            <!--            <trans-unit id=""><source></source><target></target></trans-unit>-->
+<!--            <trans-unit id=""><source></source><target></target></trans-unit>-->
+        </body>
+    </file>
+</xliff>
