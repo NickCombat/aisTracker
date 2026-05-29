@@ -57,19 +57,52 @@
 {% endblock %}
 
 {% block body %}
-    <div class="example-wrapper">
+    <div class="content-wrapper">
+        <div class="mb-3 text-muted small">
+            Insgesamt {{ shipdatas.getTotalItemCount }} aktive Schiffe gefunden.
+        </div>
 
+        {# Das neue CSS Grid #}
+        <div id="projekt-list" style="display: grid;gap: 0.5rem;grid-template-columns: repeat(1, 1fr);">
+            <style>
+                @media (min-width: 576px) {
+                    #projekt-list {
+                        grid-template-columns: repeat(2, 1fr) !important;
+                    }
+                }
 
-        <div class="row g-0">
-            <div  class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-1">
-                {% if(shipdatas) %}
-                    {% for shipdata in shipdatas %}
-                        <div class="col d-flex">
-                            {{ include('projekte_uebersicht/shipCard.html.twig') }}
-                        </div>
-                    {% endfor %}
-                {% endif %}
-            </div>
+                @media (min-width: 768px) {
+                    #projekt-list {
+                        grid-template-columns: repeat(4, 1fr) !important;
+                    }
+                }
+
+                @media (min-width: 1200px) {
+                    #projekt-list {
+                        grid-template-columns: repeat(6, 1fr) !important;
+                    }
+                }
+
+                @media (min-width: 1600px) {
+                    #projekt-list {
+                        grid-template-columns: repeat(8, 1fr) !important;
+                    }
+                }
+            </style>
+            {% if shipdatas|length > 0 %}
+                {% for shipdata in shipdatas %}
+                    <div class="d-flex align-items-stretch">
+                        {{ include('projekte_uebersicht/shipCardSmal.html.twig') }}
+                    </div>
+                {% endfor %}
+            {% else %}
+                <div class="alert alert-info" style="grid-column: 1 / -1;">
+                    Keine aktiven Schiffe gefunden.
+                </div>
+            {% endif %}
+        </div>
+        <div class="d-flex justify-content-center mt-4">
+            {{ knp_pagination_render(shipdatas, '_includes/_pagination.html.twig') }}
         </div>
     </div>
 {% endblock %}

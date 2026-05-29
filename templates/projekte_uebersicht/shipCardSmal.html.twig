@@ -1,0 +1,106 @@
+<!-- uebersicht/liste -->
+{# shipCardSmal.html.twig #}
+<div class="card shadow-sm d-flex flex-column h-100 w-100 border-secondary"
+     data-id="{{ shipdata.id }}"
+     style="background-color: {{ shipdata.isInLteRange ? '#d1f2d1' : '#f8f9fa' }}; font-size: 0.85rem;">
+
+    <a href="{{ path('projekt_deails', {'id': shipdata.id}) }}" title="Zum Projekt">
+        <div style="height: 120px; width: 100%; overflow: hidden; background-color: #dee2e6;">
+            <img src="{{ shipdata.pic ? '/img/projekte/' ~ shipdata.pic : asset('images/no-image-found.png') }}"
+                 class="w-100 h-100" style="object-fit: cover;" alt="{{ shipdata.name }}">
+        </div>
+    </a>
+
+    <div class="card-body p-2 d-flex flex-column flex-grow-1">
+        {# Titel & Flagge #}
+        <div class="d-flex justify-content-between align-items-start mb-2">
+            <h6 class="card-title fw-bold text-truncate mb-0 me-2" title="{{ shipdata.name }}">
+                {{ shipdata.name }}
+            </h6>
+            {% if shipdata.flag and shipdata.flag.flagge %}
+                <span class="ship-flag flex-shrink-0"
+                      data-bs-toggle="tooltip"
+                      data-bs-title="{{ shipdata.flag.amtlichekurzform }}"
+                      style="background-image: url('/img/flaggen/{{ shipdata.flag.flagge }}'); width: 20px; height: 15px; background-size: cover; cursor: help;">
+                </span>
+            {% endif %}
+        </div>
+
+        {# Identifikation & Typ als Badges #}
+        <div class="d-flex flex-wrap gap-1 mb-2">
+            {% if shipdata.imo %}<span class="badge bg-secondary">IMO: {{ shipdata.imo }}</span>{% endif %}
+            {% if shipdata.mmsi %}<span class="badge bg-secondary">MMSI: {{ shipdata.mmsi }}</span>{% endif %}
+            <span class="badge border text-dark">{{ shipdata.type|trans }}</span>
+        </div>
+
+        {# Health Bar #}
+        {% set total   = shipdata.total_count|default(0) %}
+        {% set defects = shipdata.defect_count|default(0) %}
+        {% set checks  = shipdata.check_count|default(0) %}
+        {% set okCount = total - defects - checks %}
+        {% set totalSafe = total > 0 ? total : 1 %}
+
+        <div class="progress mb-2" style="height: 6px;"
+             data-bs-toggle="tooltip" data-bs-html="true"
+             title="<div class='text-start'>Bereit: {{ okCount }}<br>Prüfen: {{ checks }}<br>Defekt: {{ defects }}</div>">
+            <div class="progress-bar bg-success" style="width: {{ (okCount/totalSafe*100) }}%"></div>
+            <div class="progress-bar bg-warning" style="width: {{ (checks/totalSafe*100) }}%"></div>
+            <div class="progress-bar bg-danger" style="width: {{ (defects/totalSafe*100) }}%"></div>
+        </div>
+
+        {# Letzte Position / Status #}
+        {% if shipdata.latestPositionHistory %}
+            <div class="text-truncate text-muted small mb-1" title="{{ shipdata.latestPositionHistory.destination }}">
+                <i class="fas fa-map-marker-alt"></i> {{ shipdata.latestPositionHistory.destination|default('Unbekannt') }}
+            </div>
+        {% endif %}
+
+        {# Status Badge (nimmt restlichen Platz ein, drückt Buttons nach unten) #}
+        <div class="mt-auto pt-2">
+            <div class="badge w-100 {{ shipdata.status.style|default('bg-light text-dark border') }} mb-2 py-1">
+                {{ shipdata.status.bezeichnung|default('Kein Status')|trans }}
+            </div>
+
+            {# Action Buttons (Kompakt in einer Reihe) #}
+            <div class="d-flex justify-content-between align-items-center border-top pt-2">
+                <div class="btn-group">
+                    <a href="{{ path('projekt_deails', {'id': shipdata.id}) }}" class="btn btn-sm btn-outline-secondary"
+                       title="{{ 'Projekt Komponenten'|trans }}">
+                        <i class="fas fa-eye"></i>
+                    </a>
+                    <a href="{{ path('projekt_bearbeiten', {'id': shipdata.id}) }}"
+                       class="btn btn-sm btn-outline-secondary" title="{{ 'Projekt Eigenschaften'|trans }}">
+                        <i class="fas fa-edit"></i>
+                    </a>
+                </div>
+
+                {% if shipdata.imo != 0 or shipdata.mmsi != 0 %}
+                    <div class="d-flex gap-1">
+                        {% if app.user %}
+                            <form action="{{ path('ship_update_position', {'id': shipdata.id}) }}" method="post"
+                                  class="m-0">
+                                <input type="hidden" name="_token"
+                                       value="{{ csrf_token('update-position-' ~ shipdata.id) }}">
+                                <button type="submit" class="btn btn-outline-secondary btn-sm"
+                                        title="{{ 'button.update_position.title'|trans }}">
+                                    <i class="fa-solid fa-earth-europe"></i>
+                                </button>
+                            </form>
+                            <button class="btn btn-sm toggle-ais-btn {{ shipdata.aisUpdate ? 'btn-success' : 'btn-danger' }}"
+                                    data-ship-id="{{ shipdata.id }}"
+                                    data-current-status="{{ shipdata.aisUpdate ? '1' : '0' }}"
+                                    data-toggle-url="{{ path('projekt_toggle_ais', {id: shipdata.id}) }}"
+                                    title="AIS-Update">
+                                <i class="fas fa-satellite-dish"></i>
+                            </button>
+                        {% else %}
+                            <span class="badge {{ shipdata.aisUpdate ? 'bg-success' : 'bg-danger' }}">
+                                <i class="fas fa-satellite-dish"></i>
+                            </span>
+                        {% endif %}
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>

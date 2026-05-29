@@ -25,6 +25,7 @@ use Symfony\Component\Security\Http\Attribute\IsGranted;
 use App\Repository\NetBayStructureRepository;
 use App\Service\GalerieService;
 use App\Entity\NetShipPositionHistory;
+use Knp\Component\Pager\PaginatorInterface;
 
 #[Route( '/projekt/uebersicht' )]
 class ProjekteUebersichtController extends GalerieService
@@ -45,11 +46,19 @@ class ProjekteUebersichtController extends GalerieService
     }
 
     #[Route('/liste', name: 'projekte_uebersicht_list')]
-    public function liste(?NetShipdataRepository $shipdataRepository, EntityManagerInterface $em): Response
+    public function liste(?NetShipdataRepository $shipdataRepository,Request $request, PaginatorInterface $paginator): Response
     {
         try
         {
-            $shipdataObject = $shipdataRepository->findShipdataByStatusNullOrOneWithStats();
+            //$shipdataObject = $shipdataRepository->findShipdataByStatusNullOrOneWithStats();
+            $queryBuilder = $shipdataRepository->createQueryBuilder( 's' )
+                                               ->where( 's.status != :inaktivStatus' )
+                                               ->setParameter( 'inaktivStatus', 2 )
+                                                ->orderBy('s.orderno', 'ASC');
+
+            $shipdataObject = $paginator->paginate(
+                $queryBuilder,
+                $request->query->getInt('page', 1), 16 );
         }
         catch (\Exception $e)
         {
@@ -69,8 +78,8 @@ class ProjekteUebersichtController extends GalerieService
             ]
         ];
 
-        //$hafenListe = $em->getRepository(NetShipdataPort::class)->findNextPortPerShip();
-        $hafenListe = array();
+        $hafenListe = $this->em->getRepository(NetShipdataPort::class)->findNextPortPerShip();
+        //$hafenListe = array();
 
         return $this->render('projekte_uebersicht/index.html.twig', [
             'headline'   => 'Projekte Übersicht',

@@ -1,0 +1,58 @@
+{# templates/includes/_pagination.html.twig #}
+{# templates/projekte_uebersicht/my_pagination.html.twig #}
+{% if pageCount > 1 %}
+    <nav aria-label="Page navigation">
+        <ul class="pagination justify-content-center m-0">
+
+            {# Erste Seite (<<) #}
+            {% if current > 1 %}
+                <li class="page-item">
+                    <a class="page-link" href="{{ path(route, query|merge({(pageParameterName): 1})) }}" title="Zur ersten Seite">&laquo;&laquo;</a>
+                </li>
+            {% else %}
+                <li class="page-item disabled"><span class="page-link">&laquo;&laquo;</span></li>
+            {% endif %}
+
+            {# Zurück-Button (<) #}
+            {% if previous is defined %}
+                <li class="page-item">
+                    <a class="page-link" rel="prev" href="{{ path(route, query|merge({(pageParameterName): previous})) }}">&laquo;</a>
+                </li>
+            {% else %}
+                <li class="page-item disabled"><span class="page-link">&laquo;</span></li>
+            {% endif %}
+
+            {# Die einzelnen Seitenzahlen (1, 2, 3...) #}
+            {% for page in pagesInRange %}
+                {% if page == current %}
+                    <li class="page-item active" aria-current="page">
+                        <span class="page-link">{{ page }}</span>
+                    </li>
+                {% else %}
+                    <li class="page-item">
+                        <a class="page-link" href="{{ path(route, query|merge({(pageParameterName): page})) }}">{{ page }}</a>
+                    </li>
+                {% endif %}
+            {% endfor %}
+
+            {# Weiter-Button (>) #}
+            {% if next is defined %}
+                <li class="page-item">
+                    <a class="page-link" rel="next" href="{{ path(route, query|merge({(pageParameterName): next})) }}">&raquo;</a>
+                </li>
+            {% else %}
+                <li class="page-item disabled"><span class="page-link">&raquo;</span></li>
+            {% endif %}
+
+            {# Letzte Seite (>>) #}
+            {% if current < pageCount %}
+                <li class="page-item">
+                    <a class="page-link" href="{{ path(route, query|merge({(pageParameterName): pageCount})) }}" title="Zur letzten Seite">&raquo;&raquo;</a>
+                </li>
+            {% else %}
+                <li class="page-item disabled"><span class="page-link">&raquo;&raquo;</span></li>
+            {% endif %}
+
+        </ul>
+    </nav>
+{% endif %}

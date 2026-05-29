@@ -2722,10 +2722,6 @@
                     automatiquement si nécessaire.
                 </target>
             </trans-unit>
-            <trans-unit id="uAj26XB" resname="Schließen">
-                <source>Schließen</source>
-                <target>Fermer</target>
-            </trans-unit>
             <trans-unit id="Übersicht Karte">
                 <source>Übersicht Karte</source>
                 <target>Aperçu de la carte</target>

@@ -9,16 +9,25 @@ use Symfony\Component\Routing\Attribute\Route;
 use \Symfony\Component\HttpFoundation\Request;
 use App\Entity\NetShipdataPort;
 use Doctrine\ORM\EntityManagerInterface;
+use Knp\Component\Pager\PaginatorInterface;
 
 class HomeController extends AbstractController
 {
     #[Route('/', name: 'app_home')]
-    public function index(?NetShipdataRepository $shipDataRepository, EntityManagerInterface $em): Response
+    public function index(?NetShipdataRepository $shipdataRepository,Request $request, PaginatorInterface $paginator, EntityManagerInterface $em): Response
     {
-        $shipDataObject = '';
+        $shipdataObject = '';
         try
         {
-            $shipDataObject = $shipDataRepository->findShipdataByStatusNullOrOneWithStats();
+            //$shipdataObject = $shipdataRepository->findShipdataByStatusNullOrOneWithStats();
+            $queryBuilder = $shipdataRepository->createQueryBuilder( 's' )
+                                               ->where( 's.status != :inaktivStatus' )
+                                               ->setParameter( 'inaktivStatus', 2 )
+                                               ->orderBy('s.orderno', 'ASC');
+
+            $shipdataObject = $paginator->paginate(
+                $queryBuilder,
+                $request->query->getInt('page', 1), 16 );
         }
         catch (\Exception $e)
         {
@@ -32,7 +41,7 @@ class HomeController extends AbstractController
         return $this->render('home/index.html.twig', [
             'headline'   => 'Projekte Übersicht',
             'hafenListe' => $hafenListe,
-            'shipdatas'  => $shipDataObject,
+            'shipdatas'  => $shipdataObject,
         ]);
     }
 
