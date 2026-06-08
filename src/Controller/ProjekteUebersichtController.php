@@ -26,6 +26,8 @@ use App\Repository\NetBayStructureRepository;
 use App\Service\GalerieService;
 use App\Entity\NetShipPositionHistory;
 use Knp\Component\Pager\PaginatorInterface;
+use App\Service\SettingsService;
+use Psr\Log\LoggerInterface;
 
 #[Route( '/projekt/uebersicht' )]
 class ProjekteUebersichtController extends GalerieService
@@ -719,7 +721,7 @@ class ProjekteUebersichtController extends GalerieService
     }
 
     #[Route('/ais/map', name: 'projekt_ais_map')]
-    public function map(NetShipdataRepository $repo): Response
+    public function map( NetShipdataRepository $repo, SettingsService $settings, LoggerInterface $logger ): Response
     {
         $ships = $repo->findLatestPositions();
 
@@ -748,6 +750,35 @@ class ProjekteUebersichtController extends GalerieService
             else
             {
                 $ship['formattedEta'] = 'keine Angabe';
+            }
+
+            $rawBoundingBoxes = $settings->get( 'aisstream.api.BoundingBoxes' );
+
+            if (is_string($rawBoundingBoxes))
+            {
+                $boundingBoxes = json_decode($rawBoundingBoxes, true);
+
+                if (json_last_error() !== JSON_ERROR_NONE)
+                {
+                    // FIX: $this->logger zu $logger geändert
+                    $logger->error(sprintf(
+                        "AISStream: BoundingBoxes JSON-Fehler [%s]. Rohdaten: %s",
+                        json_last_error_msg(),
+                        $rawBoundingBoxes
+                    ));
+                    $boundingBoxes = null;
+                }
+            }
+            else
+            {
+                $boundingBoxes = $rawBoundingBoxes;
+            }
+
+            // Fallback, falls das Feld leer ist oder das JSON invalide war
+            if (empty($boundingBoxes) || !is_array($boundingBoxes))
+            {
+                $logger->warning("AISStream: Nutze globalen BoundingBox-Fallback.");
+                $boundingBoxes = [ [ [ -90, -180 ], [ 90, 180 ] ] ];
             }
 
             // Typ-Logik für die Farbe

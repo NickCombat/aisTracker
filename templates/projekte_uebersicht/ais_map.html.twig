@@ -211,5 +211,35 @@
     map.on('moveend', updateVisibleCount);
     updateVisibleCount(); // Erster Aufruf nach fitBounds
 
+    // 1. Die BoundingBoxes aus deiner Symfony-Einstellung (per Twig als JSON übergeben)
+    const boundingBoxes = {{ boundingBoxes|raw }};
+
+    // 2. Funktion zum Zeichnen der Boxen
+    if (Array.isArray(boundingBoxes)) {
+        boundingBoxes.forEach(function(box, index) {
+            // ACHTUNG: Hier prüfen wir die Reihenfolge!
+            // Wenn dein JSON [ [MinLon, MinLat], [MaxLon, MaxLat] ] ist (für aisstream.io),
+            // müssen wir es für Leaflet zu [ [MinLat, MinLon], [MaxLat, MaxLon] ] umdrehen:
+
+            const p1_lon = box[0][0];
+            const p1_lat = box[0][1];
+            const p2_lon = box[1][0];
+            const p2_lat = box[1][1];
+
+            // Leaflet-Format: [[Lat, Lon], [Lat, Lon]]
+            const bounds = [[p1_lat, p1_lon], [p2_lat, p2_lon]];
+
+            // Rechteck auf der Karte zeichnen
+            const rectangle = L.rectangle(bounds, {
+                color: "#ff7800",      // Rahmenfarbe (Orange/Rot)
+                weight: 2,             // Rahmenbreite
+                fillColor: "#00ff78",  // Füllfarbe
+                fillOpacity: 0.15      // Transparenz der Fläche
+            }).addTo(map);
+
+            // Optional: Ein kleines Popup beim Klick auf die Box mit der ID/Nummer
+            rectangle.bindPopup("BoundingBox ID: " + (index + 1));
+        });
+    }
 </script>
 {% endblock %}
