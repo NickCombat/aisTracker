@@ -753,7 +753,7 @@ class ProjekteUebersichtController extends GalerieService
             }
 
             $rawBoundingBoxes = $settings->get( 'aisstream.api.BoundingBoxes' );
-
+            $boundingBoxes    = $rawBoundingBoxes;
             if (is_string($rawBoundingBoxes))
             {
                 $boundingBoxes = json_decode($rawBoundingBoxes, true);
@@ -768,10 +768,6 @@ class ProjekteUebersichtController extends GalerieService
                     ));
                     $boundingBoxes = null;
                 }
-            }
-            else
-            {
-                $boundingBoxes = $rawBoundingBoxes;
             }
 
             // Fallback, falls das Feld leer ist oder das JSON invalide war
@@ -810,10 +806,11 @@ class ProjekteUebersichtController extends GalerieService
         ];
 
         return $this->render('projekte_uebersicht/ais_map.html.twig', [
-            'headline'   => $this->translator->trans('Projektübersicht Karte'),
-            'breadcrumbs'=> $breadcrumbs,
-            'ships_json' => json_encode($ships),
-            'shipcount'  => count($ships)
+            'headline'      => $this->translator->trans('Projektübersicht Karte'),
+            'breadcrumbs'   => $breadcrumbs,
+            'ships_json'    => json_encode($ships),
+            'boundingBoxes' => $boundingBoxes,
+            'shipcount'     => count($ships)
         ]);
     }
 
