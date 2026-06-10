@@ -39,6 +39,7 @@
                         <li><a class="dropdown-item" href="{{ path('ship_status') }}">{{ 'Projekt Status'|trans }}</a></li>
                         <li><a class="dropdown-item" href="{{ path('flaggen_edit') }}">{{ 'Flaggenstaaten'|trans }}</a></li>
                         <li><a class="dropdown-item" href="{{ path('hafen_edit') }}">{{ 'Hafenliste'|trans }}</a></li>
+                        <li><a class="dropdown-item" href="{{ path('reedereien_edit') }}">{{ 'Reedereien'|trans }}</a></li>
                         {% if is_granted('ROLE_ADMIN') %}
                             <li><a class="dropdown-item" href="{{ path('sec_user_index') }}">{{ 'Benutzer'|trans }}</a></li>
                             <li><a class="dropdown-item" href="{{ path('sec_user_login_log') }}">{{ 'Login Log'|trans }}</a></li>

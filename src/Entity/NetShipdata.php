@@ -10,11 +10,12 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\Common\Collections\Criteria;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Doctrine\ORM\EntityManagerInterface;
 
 #[ORM\Entity(repositoryClass: NetShipdataRepository::class)]
 #[UniqueEntity(
-    fields: ['MMSI'],
-    message: 'Die MMSI Nummer ist immer eindeutig.'
+    fields: ['imo'],
+    message: 'Die IMO Nummer ist immer eindeutig.'
 )]
 class NetShipdata
 {
@@ -110,6 +111,24 @@ class NetShipdata
     #[ORM\OneToMany(targetEntity: NetShipdataPortLog::class, mappedBy: 'shipdata', orphanRemoval: true)]
     private Collection $netShipdataPortLog;
 
+    #[ORM\Column(nullable: true)]
+    private ?int $secid = null;
+
+    #[ORM\Column(nullable: true)]
+    private ?int $secrev = null;
+
+    #[ORM\ManyToOne(inversedBy: 'netShipdatas')]
+    private ?NetEigner $eigner = null;
+
+    #[ORM\Column(nullable: true)]
+    private ?int $brt = null;
+
+    #[ORM\Column(length: 150, nullable: true)]
+    private ?string $bauwerft = null;
+
+    #[ORM\Column(length: 10, nullable: true)]
+    private ?string $baujahr = null;
+
     public function __construct()
     {
         $this->netProjektAnlagens = new ArrayCollection();
@@ -141,7 +160,7 @@ class NetShipdata
         return $this->imo;
     }
 
-    public function setImo( $imo): static
+    public function setImo(int $imo): static
     {
         $this->imo = $imo;
 
@@ -369,7 +388,7 @@ class NetShipdata
                                          ->setMaxResults( 1 );
 
             $departureEvent = $this->netShipdataPortLog->matching( $departureCriteria )
-                                                       ->first();
+                                                        ->first();
             $departureTimestamp = $departureEvent ? $departureEvent->getEventTimestamp() : null;
 
             // Filter anwenden: Nur Besuche behalten, die noch andauern,
@@ -928,6 +947,78 @@ class NetShipdata
         }
 
         return $this->status->getId() === self::STATUS_ACTIVE;
+    }
+
+    public function getSecid(): ?int
+    {
+        return $this->secid;
+    }
+
+    public function setSecid(?int $secid): static
+    {
+        $this->secid = $secid;
+
+        return $this;
+    }
+
+    public function getSecrev(): ?int
+    {
+        return $this->secrev;
+    }
+
+    public function setSecrev(?int $secrev): static
+    {
+        $this->secrev = $secrev;
+
+        return $this;
+    }
+
+    public function getEigner(): ?NetEigner
+    {
+        return $this->eigner;
+    }
+
+    public function setEigner(?NetEigner $eigner): static
+    {
+        $this->eigner = $eigner;
+
+        return $this;
+    }
+
+    public function getBrt(): ?int
+    {
+        return $this->brt;
+    }
+
+    public function setBrt(?int $brt): static
+    {
+        $this->brt = $brt;
+
+        return $this;
+    }
+
+    public function getBauwerft(): ?string
+    {
+        return $this->bauwerft;
+    }
+
+    public function setBauwerft(?string $bauwerft): static
+    {
+        $this->bauwerft = $bauwerft;
+
+        return $this;
+    }
+
+    public function getBaujahr(): ?string
+    {
+        return $this->baujahr;
+    }
+
+    public function setBaujahr(?string $baujahr): static
+    {
+        $this->baujahr = $baujahr;
+
+        return $this;
     }
 
 }

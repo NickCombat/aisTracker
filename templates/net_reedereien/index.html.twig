@@ -1,0 +1,160 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Einstellungen Hafenliste{% endblock %}
+
+{% block headline%}{{ headline|trans }}{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <style>
+        form,
+        .formHeader{
+            margin-left: 10px;
+            margin-right: 10px;
+            width: 100%;
+        }
+    </style>
+{% endblock %}
+
+{% block breadcrumb %}
+    {{ include('_includes/_breadcrumb.html.twig') }}
+{% endblock %}
+
+{% block body %}
+    <div class="container-fluid" style="max-width: 1200px; margin-top: 20px;">
+
+        <h3 class="mb-4">Vorhandene Reedereien bearbeiten</h3>
+
+        {# --- BESTEHENDE DATENSÄTZE (INLINE EDIT) --- #}
+        {% for form in formArray %}
+            {# Wichtig: Wenn das Wappen ein Datei-Upload ist, muss das Formular multipart/form-data unterstützen #}
+            {{ form_start(form, {'attr': {'enctype': 'multipart/form-data'}}) }}
+
+            <div class="card mb-4 p-3 bg-light-subtle shadow-sm border">
+                {# Zeile 1: Basisdaten & Flagge/Wappen #}
+                <div class="row g-3 align-items-end mb-2">
+                    <div class="col-md-2">
+                        <label class="form-label fw-bold small text-muted">Flagge / Kürzel</label>
+                        <div class="d-flex align-items-center gap-2">
+                            <span class="ship-flag flex-shrink-0"
+                                  data-bs-toggle="tooltip"
+                                  data-bs-title="{{ form.vars.value.flag.AmtlicheKurzform|default('Keine Flagge') }}"
+                                  style="background-image: url('/img/flaggen/{{ form.vars.value.flag.flagge|default('default.png') }}'); width: 20px; height: 15px; background-size: cover; cursor: help; display: inline-block; border: 1px solid #ccc;">
+                            </span>
+                            {{ form_widget(form.kuerzel) }}
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <label class="form-label fw-bold small text-muted">Bezeichnung</label>
+                        {{ form_widget(form.bezeichnung) }}
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label fw-bold small text-muted">Sitz</label>
+                        {{ form_widget(form.sitz) }}
+                    </div>
+                    <div class="col-md-3">
+                        <label class="form-label fw-bold small text-muted">Wappen (Bild)</label>
+                        <div class="d-flex align-items-center gap-2">
+                            {# Anzeige des bestehenden Wappens, falls in der Entität hinterlegt #}
+                            {% if form.vars.value.wappen %}
+                                <img src="/img/wappen/{{ form.vars.value.wappen }}"
+                                     alt="Wappen"
+                                     style="max-height: 34px; max-width: 50px; object-fit: contain;"
+                                     class="border rounded bg-white p-1 flex-shrink-0"
+                                     title="Aktuelles Wappen">
+                            {% endif %}
+                            {{ form_widget(form.wappen) }}
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label fw-bold small text-muted">Land</label>
+                        {{ form_widget(form.flag) }}
+                    </div>
+                </div>
+
+                {# Zeile 2: Details, Geschäftsfeld & Absenden #}
+                <div class="row g-3 align-items-end">
+                    <div class="col-md-3">
+                        <label class="form-label fw-bold small text-muted">Leitung</label>
+                        {{ form_widget(form.leitung) }}
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label fw-bold small text-muted">Gründung</label>
+                        {{ form_widget(form.gruendung) }}
+                    </div>
+                    <div class="col-md-5">
+                        <label class="form-label fw-bold small text-muted">Geschäftsfeld</label>
+                        {{ form_widget(form.geschaeftsfeld) }}
+                    </div>
+                    <div class="col-md-2">
+                        <button type="submit" name="submit_id" value="{{ form.vars.value.id }}" class="btn btn-primary w-100">
+                            Ändern
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="d-none">
+                {{ form_rest(form) }}
+            </div>
+            {{ form_end(form) }}
+        {% endfor %}
+
+
+        {# --- NEUER DATENSATZ ANLEGEN --- #}
+        <div class="card mt-5 shadow-sm border-success">
+            <div class="card-header bg-success text-white">
+                <h5 class="mb-0">Neue Reederei hinzufügen</h5>
+            </div>
+            <div class="card-body">
+                {{ form_start(formNew, {'attr': {'enctype': 'multipart/form-data'}}) }}
+
+                <div class="row mb-3 g-3">
+                    <div class="col-md-2">
+                        {{ form_row(formNew.kuerzel) }}
+                    </div>
+                    <div class="col-md-4">
+                        {{ form_row(formNew.bezeichnung) }}
+                    </div>
+                    <div class="col-md-3">
+                        {{ form_row(formNew.sitz) }}
+                    </div>
+                    <div class="col-md-3">
+                        {{ form_row(formNew.flag) }}
+                    </div>
+                </div>
+
+                <div class="row mb-3 g-3">
+                    <div class="col-md-3">
+                        {{ form_row(formNew.leitung) }}
+                    </div>
+                    <div class="col-md-2">
+                        {{ form_row(formNew.gruendung) }}
+                    </div>
+                    <div class="col-md-4">
+                        {# Beim Anlegen gibt es noch kein Bild anzuzeigen, daher reicht form_row #}
+                        {{ form_row(formNew.wappen) }}
+                    </div>
+                    <div class="col-md-3">
+                        {# Falls vorhanden, sonst über form_widget gelöst #}
+                        {% if formNew.webseite is defined %}
+                            {{ form_row(formNew.webseite) }}
+                        {% endif %}
+                    </div>
+                </div>
+
+                <div class="row align-items-end g-3">
+                    <div class="col-md-10">
+                        {{ form_row(formNew.geschaeftsfeld) }}
+                    </div>
+                    <div class="col-md-2">
+                        {{ form_widget(formNew.add, {'attr': {'class': 'btn btn-success w-100'}}) }}
+                    </div>
+                </div>
+
+                {{ form_end(formNew) }}
+            </div>
+        </div>
+
+    </div>
+{% endblock %}

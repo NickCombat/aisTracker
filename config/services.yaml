@@ -27,3 +27,11 @@ services:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+    # Macht den versteckten Doctrine-Service unter einer eigenen ID öffentlich zugänglich:
+    app.public_dependency_factory:
+        alias: 'doctrine.migrations.dependency_factory'
+        public: true
+
+    # Unser Command bleibt ebenfalls öffentlich
+    App\Command\ForceMigrationCommand:
+        public: true

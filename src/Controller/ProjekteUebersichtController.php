@@ -725,6 +725,9 @@ class ProjekteUebersichtController extends GalerieService
     {
         $ships = $repo->findLatestPositions();
 
+        $rawBoundingBoxes = $settings->get( 'aisstream.api.BoundingBoxes' );
+        $boundingBoxes    = $rawBoundingBoxes;
+
         foreach ( $ships as &$ship )
         {
             $ship['detailUrl'] = $this->generateUrl('projekt_deails', ['id' => $ship['shipId']]);
@@ -752,8 +755,6 @@ class ProjekteUebersichtController extends GalerieService
                 $ship['formattedEta'] = 'keine Angabe';
             }
 
-            $rawBoundingBoxes = $settings->get( 'aisstream.api.BoundingBoxes' );
-            $boundingBoxes    = $rawBoundingBoxes;
             if (is_string($rawBoundingBoxes))
             {
                 $boundingBoxes = json_decode($rawBoundingBoxes, true);

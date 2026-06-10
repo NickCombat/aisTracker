@@ -9,6 +9,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use App\Entity\NetProjektStatus;
@@ -16,6 +17,7 @@ use Doctrine\ORM\EntityRepository;
 use App\Entity\NetShipTyp;
 use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\Validator\Constraints\Length;
+use App\Entity\NetEigner;
 
 class NetShipdataModType extends AbstractType
 {
@@ -57,6 +59,26 @@ class NetShipdataModType extends AbstractType
                 'label' => 'Breite',
                 'required' => false
             ])
+            ->add('brt', TextType::class, [
+                'label' => 'Tournage',
+                'required' => false
+            ])
+            ->add('bauwerft', TextType::class, [
+                'label' => 'Bauwerft',
+                'required' => false
+            ])
+            ->add('baujahr', TextType::class, [
+                'label' => 'Baujahr',
+                'required' => false
+            ])
+            ->add('eigner', EntityType::class, [
+                'class' => NetEigner::class,
+                // Welches Feld aus NetEigner soll im Dropdown angezeigt werden?
+                'choice_label' => 'bezeichnung',
+                'placeholder' => 'Bitte Eigner wählen...',
+                'label' => 'Eigner / Reederei',
+                'required' => false, // Setze auf true, wenn es ein Pflichtfeld sein soll
+            ])
             ->add('type', EntityType::class, [
                 'class' => NetShipTyp::class,
                 'choice_label' => 'bezeichnung',
@@ -75,6 +97,14 @@ class NetShipdataModType extends AbstractType
             ])
             ->add('Schiffsbild', FileType::class, [
                 'mapped'   => false,
+                'required' => false
+            ])
+            ->add('secid', IntegerType::class,[
+                'label' => 'SEC ProjektId',
+                'required' => false
+            ])
+            ->add('secrev', IntegerType::class,[
+                'label' => 'SEC Revision',
                 'required' => false
             ])
             ->add('status', EntityType::class, [

@@ -47,42 +47,115 @@
 {% endblock %}
 
 {% block body %}
-    <div class="row g-0" >
-        <a href="{{ path('projekte_uebersicht_list') }}" class="btn btn-primary">{{'Zurück'|trans}}</a>
-        <div class="card mb-3">
+    <div class="row g-0">
+        <div class="mb-3">
+            <a href="{{ path('projekte_uebersicht_list') }}" class="btn btn-primary">{{'Zurück'|trans}}</a>
+        </div>
+
+        <div class="card mb-3 shadow-sm">
             <div class="row g-0">
-                <div class="col-md-4">
-                {% if(shipdata) %}
-                    {% if(shipdata.pic) %}
-                    <img src="/img/projekte/{{ shipdata.pic }}" class="card-img" alt="{{ shipdata.name }}">
-                    {% endif %}                       
-                {% else %}
-                <img src="{{ asset('images/no-image-found.png') }}" class="card-img" alt="...">
-                {% endif %}
+
+                {# Linke Spalte: Bild (Verkleinert auf 3 Spalten für mehr Platz im Formular) #}
+                <div class="col-md-3 border-end">
+                    {% if(shipdata) %}
+                        {% if(shipdata.pic) %}
+                            <img src="/img/projekte/{{ shipdata.pic }}" class="img-fluid rounded-start w-100" alt="{{ shipdata.name }}" style="object-fit: cover;">
+                        {% endif %}
+                    {% else %}
+                        <img src="{{ asset('images/no-image-found.png') }}" class="img-fluid rounded-start w-100" alt="...">
+                    {% endif %}
                     <div id="image-container">
                         <img id="flag-image" src="" alt="Flag Image" style="display: none;">
                     </div>
                 </div>
-                <div class="col-md-8">
+
+                {# Rechte Spalte: Kompaktes Formular (Verbreitert auf 9 Spalten) #}
+                <div class="col-md-9">
                     <div class="card-body">
                         {{ form_start(form) }}
-                            {{ form_row(form.name) }}
-                            {{ form_row(form.imo) }}
-                            {{ form_row(form.MMSI) }}
-                            {{ form_row(form.flag) }}
-                            {{ form_row(form.Rufzeichen) }}
-                            {{ form_row(form.laenge) }}
-                            {{ form_row(form.breite) }}
-                        {{ form_end(form) }}
+
+                        {# Bootstrap Grid für kompakte Darstellung (g-2 sorgt für schmale Abstände) #}
+                        <div class="row g-2">
+
+                            {# Zeile 1: Basisdaten #}
+                            <div class="col-md-8">
+                                {{ form_row(form.name) }}
+                            </div>
+                            <div class="col-md-4">
+                                {{ form_row(form.type) }}
+                            </div>
+
+                            {# Zeile 2: Schiffs-IDs #}
+                            <div class="col-md-3">
+                                {{ form_row(form.imo) }}
+                            </div>
+                            <div class="col-md-3">
+                                {{ form_row(form.MMSI) }}
+                            </div>
+                            <div class="col-md-3">
+                                {{ form_row(form.Rufzeichen) }}
+                            </div>
+                            <div class="col-md-3">
+                                {{ form_row(form.flag) }}
+                            </div>
+
+                            {# Zeile 3: Dimensionen #}
+                            <div class="col-md-4">
+                                {{ form_row(form.laenge) }}
+                            </div>
+                            <div class="col-md-4">
+                                {{ form_row(form.breite) }}
+                            </div>
+                            <div class="col-md-4">
+                                {{ form_row(form.brt) }}
+                            </div>
+
+                            {# Zeile 4: Werft & Besitzer #}
+                            <div class="col-md-4">
+                                {{ form_row(form.bauwerft) }}
+                            </div>
+                            <div class="col-md-4">
+                                {{ form_row(form.baujahr) }}
+                            </div>
+                            <div class="col-md-4">
+                                {{ form_row(form.eigner) }}
+                            </div>
+
+                            {# Zeile 5: SEC Projekt Daten #}
+                            <div class="col-md-4">
+                                {{ form_row(form.secid) }}
+                            </div>
+                            <div class="col-md-4">
+                                {{ form_row(form.secrev) }}
+                            </div>
+                            <div class="col-md-4">
+                                {{ form_row(form.status) }}
+                            </div>
+
+                            {# Zeile 6: Datei-Upload und Speichern #}
+                            <div class="col-md-9">
+                                {{ form_row(form.Schiffsbild) }}
+                            </div>
+                            <div class="col-md-3 d-flex align-items-end">
+                                {{ form_widget(form.add, {'attr': {'class': 'btn btn-success w-100 mb-3'}}) }}
+                            </div>
+
+                        </div>
+
+                        {# form_end rendert versteckte Token und schließt den Tag #}
+                        <div class="d-none">
+                            {{ form_end(form) }}
+                        </div>
+
                         {# Verstecktes Hilfsformular für Bay-Aktionen #}
                         {% if(shipdata) %}
-                        <form id="js-add-bay-form" action="{{ path('projekt_add_single_bay', {id: shipdata.id}) }}" method="post" style="display:none;">
-                            <input type="hidden" name="new_bay_nr" id="js-input-nr">
-                            <input type="hidden" name="with_20ft" id="js-input-20">
-                        </form>
+                            <form id="js-add-bay-form" action="{{ path('projekt_add_single_bay', {id: shipdata.id}) }}" method="post" style="display:none;">
+                                <input type="hidden" name="new_bay_nr" id="js-input-nr">
+                                <input type="hidden" name="with_20ft" id="js-input-20">
+                            </form>
 
-                        <form id="js-delete-bay-form" action="" method="post" style="display:none;"></form>
-                        <form id="js-clear-all-form" action="{{ path('projekt_clear_bays', {id: shipdata.id}) }}" method="post" style="display:none;"></form>
+                            <form id="js-delete-bay-form" action="" method="post" style="display:none;"></form>
+                            <form id="js-clear-all-form" action="{{ path('projekt_clear_bays', {id: shipdata.id}) }}" method="post" style="display:none;"></form>
                         {% endif %}
                     </div>
                 </div>
@@ -92,108 +165,108 @@
         <hr>
         {# Bay-Struktur Konfiguration Card #}
         {% if (shipdata and shipdata.type.id == 1) %}
-        <div class="card border-primary mb-4">
-            <div class="card-header bg-primary text-white d-flex justify-content-between">
-                <span><i class="fas fa-th-list"></i> {{ 'Bay-Struktur Konfiguration'|trans }}</span>
-                <form action="{{ path('projekt_clear_bays', {id: shipdata.id}) }}" method="post" onsubmit="return confirm('ALLES LÖSCHEN?')">
-                    <button class="btn btn-danger btn-sm">{{ 'Struktur komplett leeren'|trans }}</button>
-                </form>
-            </div>
-            <div class="card-body">
-                <div class="row">
-                    {# Formular zum Hinzufügen einer einzelnen Bay #}
-                    <div class="col-md-4">
-                        <h6>{{ 'Bay hinzufügen'|trans }}</h6>
-                        <div class="bg-light p-3 rounded border">
-                            <div class="mb-3">
-                                <label for="manual_bay_nr" class="form-label">40' {{ 'Bay Nummer'|trans }}</label>
-                                <input id="manual_bay_nr" type="number" class="form-control" placeholder="z.B. 12">
+            <div class="card border-primary mb-4">
+                <div class="card-header bg-primary text-white d-flex justify-content-between">
+                    <span><i class="fas fa-th-list"></i> {{ 'Bay-Struktur Konfiguration'|trans }}</span>
+                    <form action="{{ path('projekt_clear_bays', {id: shipdata.id}) }}" method="post" onsubmit="return confirm('ALLES LÖSCHEN?')">
+                        <button class="btn btn-danger btn-sm">{{ 'Struktur komplett leeren'|trans }}</button>
+                    </form>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        {# Formular zum Hinzufügen einer einzelnen Bay #}
+                        <div class="col-md-4">
+                            <h6>{{ 'Bay hinzufügen'|trans }}</h6>
+                            <div class="bg-light p-3 rounded border">
+                                <div class="mb-3">
+                                    <label for="manual_bay_nr" class="form-label">40' {{ 'Bay Nummer'|trans }}</label>
+                                    <input id="manual_bay_nr" type="number" class="form-control" placeholder="z.B. 12">
+                                </div>
+                                <div class="form-check form-switch mb-3">
+                                    <input class="form-check-input" type="checkbox" id="manual_check20" checked>
+                                    <label class="form-check-label" for="manual_check20">{{ 'Inkl.'|trans }} 20' {{ 'Fore/Aft'|trans }} (±1)</label>
+                                </div>
+                                <button type="button" id="btn-execute-add" class="btn btn-success btn-sm w-100">{{'Hinzufügen'|trans}}</button>
                             </div>
-                            <div class="form-check form-switch mb-3">
-                                <input class="form-check-input" type="checkbox" id="manual_check20" checked>
-                                <label class="form-check-label" for="manual_check20">{{ 'Inkl.'|trans }} 20' {{ 'Fore/Aft'|trans }} (±1)</label>
+                        </div>
+                        {# Liste der vorhandenen Bays zur Kontrolle #}
+                        <div class="col-md-8">
+                            <h6>{{ 'Aktuelle Struktur'|trans }}</h6>
+                            <div class="table-responsive" style="max-height: 300px;">
+                                <table class="table table-hover table-sm">
+                                    <thead class="table-secondary">
+                                    <tr>
+                                        <th>{{ 'Bay'|trans }}</th>
+                                        <th>{{ 'Typ'|trans }}</th>
+                                        {#                                    <th>{{ 'Struktur'|trans }}</th>#}
+                                        <th>{{ 'Aktion'|trans }}</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% for bay in mainBays %}
+                                        <tr>
+                                            <td><strong>{{ bay.bayNumber|format('%02d') }}</strong></td>
+                                            <td>40'</td>
+                                            {#                                        <td>40'</td> #}
+                                            <td>
+                                                {# Einzel-Löschen Button ohne Form-Tag #}
+                                                <button type="button"
+                                                        class="btn btn-link text-danger p-0 btn-delete-single"
+                                                        data-url="{{ path('projekt_delete_single_bay', {bayId: bay.id}) }}">
+                                                    <i class="fas fa-trash-alt"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    {% else %}
+                                        <tr>
+                                            <td colspan="3"
+                                                class="text-center text-muted italic">{{ 'Keine Bays konfiguriert'|trans }}.
+                                            </td>
+                                        </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
                             </div>
-                            <button type="button" id="btn-execute-add" class="btn btn-success btn-sm w-100">{{'Hinzufügen'|trans}}</button>
                         </div>
                     </div>
-                    {# Liste der vorhandenen Bays zur Kontrolle #}
-                    <div class="col-md-8">
-                        <h6>{{ 'Aktuelle Struktur'|trans }}</h6>
-                        <div class="table-responsive" style="max-height: 300px;">
-                            <table class="table table-hover table-sm">
-                                <thead class="table-secondary">
-                                <tr>
-                                    <th>{{ 'Bay'|trans }}</th>
-                                    <th>{{ 'Typ'|trans }}</th>
-{#                                    <th>{{ 'Struktur'|trans }}</th>#}
-                                    <th>{{ 'Aktion'|trans }}</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                {% for bay in mainBays %}
-                                    <tr>
-                                        <td><strong>{{ bay.bayNumber|format('%02d') }}</strong></td>
-                                        <td>40'</td>
-                                        {#                                        <td>40'</td> #}
-                                        <td>
-                                            {# Einzel-Löschen Button ohne Form-Tag #}
-                                            <button type="button"
-                                                    class="btn btn-link text-danger p-0 btn-delete-single"
-                                                    data-url="{{ path('projekt_delete_single_bay', {bayId: bay.id}) }}">
-                                                <i class="fas fa-trash-alt"></i>
+
+                    <div class="bay-navigation mb-4 p-3 bg-light border rounded">
+                        <h5>{{ 'Schiffs-Übersicht'|trans }} ({{ 'Bays'|trans }})</h5>
+                        <div class="d-flex flex-wrap gap-2">
+                            {% for bay in bayRange %}
+                                {% set b = bay.bayNumber %}
+                                {% if b % 2 == 0 %}
+                                    {% set isOccupied = b in allBays %}
+                                    <a href="{{ path('projekt_show_deck_foundation', {id: shipdata.id, bay: b}) }}"
+                                       class="btn btn-sm btn-outline-secondary opacity-50"
+                                       style="min-width: 45px;">
+                                        {{ b|format('%02d') }}
+                                        {% if isOccupied %}<br><small style="font-size: 0.6rem;">●</small>{% endif %}
+                                    </a>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+
+                        {% if orphanedBays is not empty %}
+                            <div class="alert alert-warning mt-3">
+                                <h6><i class="fas fa-tools"></i> {{ 'Fehlende Bay-Strukturen'|trans }}</h6>
+                                <p>{{ 'Für diese Bays existiert Hardware im Plan-Format'|trans }} ({{ 'Zahl'|trans }}
+                                    |...), {{ 'aber sie sind nicht in der Struktur angelegt'|trans }}:</p>
+                                <div class="d-flex flex-wrap gap-2">
+                                    {% for ob in orphanedBays %}
+                                        {% if ob matches '/^\\d+$/' %}
+                                            <button type="button" class="btn btn-sm btn-danger btn-quick-add" data-bay="{{ ob }}">
+                                                + Bay {{ ob }} {{ 'anlegen'|trans }}
                                             </button>
-                                        </td>
-                                    </tr>
-                                {% else %}
-                                    <tr>
-                                        <td colspan="3"
-                                            class="text-center text-muted italic">{{ 'Keine Bays konfiguriert'|trans }}.
-                                        </td>
-                                    </tr>
-                                {% endfor %}
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bay-navigation mb-4 p-3 bg-light border rounded">
-                    <h5>{{ 'Schiffs-Übersicht'|trans }} ({{ 'Bays'|trans }})</h5>
-                    <div class="d-flex flex-wrap gap-2">
-                        {% for bay in bayRange %}
-                            {% set b = bay.bayNumber %}
-                            {% if b % 2 == 0 %}
-                                {% set isOccupied = b in allBays %}
-                                <a href="{{ path('projekt_show_deck_foundation', {id: shipdata.id, bay: b}) }}"
-                                   class="btn btn-sm btn-outline-secondary opacity-50"
-                                   style="min-width: 45px;">
-                                    {{ b|format('%02d') }}
-                                    {% if isOccupied %}<br><small style="font-size: 0.6rem;">●</small>{% endif %}
-                                </a>
-                            {% endif %}
-                        {% endfor %}
-                    </div>
-
-                    {% if orphanedBays is not empty %}
-                        <div class="alert alert-warning mt-3">
-                            <h6><i class="fas fa-tools"></i> {{ 'Fehlende Bay-Strukturen'|trans }}</h6>
-                            <p>{{ 'Für diese Bays existiert Hardware im Plan-Format'|trans }} ({{ 'Zahl'|trans }}
-                                |...), {{ 'aber sie sind nicht in der Struktur angelegt'|trans }}:</p>
-                            <div class="d-flex flex-wrap gap-2">
-                                {% for ob in orphanedBays %}
-                                    {% if ob matches '/^\\d+$/' %}
-                                        <button type="button" class="btn btn-sm btn-danger btn-quick-add" data-bay="{{ ob }}">
-                                            + Bay {{ ob }} {{ 'anlegen'|trans }}
-                                        </button>
-                                    {% endif %}
-                                {% endfor %}
+                                        {% endif %}
+                                    {% endfor %}
+                                </div>
                             </div>
-                        </div>
-                    {% endif %}
-                </div>
+                        {% endif %}
+                    </div>
 
+                </div>
             </div>
-        </div>
         {% endif %}
     </div>
 {% endblock %}

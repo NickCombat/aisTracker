@@ -220,7 +220,7 @@ class NetShipdataRepository extends ServiceEntityRepository
         return $shipdata;
     }
 
-    public function findLatestPositions()
+    public function findLatestPositions(): array
     {
         $entityManager = $this->getEntityManager();
 
