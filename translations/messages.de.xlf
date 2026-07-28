@@ -1115,7 +1115,7 @@
             </trans-unit>
             <trans-unit id="pqMtvFY" resname="Link">
                 <source>Link</source>
-                <target>Link</target>
+                <target>Bestell Link</target>
             </trans-unit>
             <trans-unit id="iUQpL7r" resname="Produktbild">
                 <source>Produktbild</source>
@@ -2725,10 +2725,6 @@
                 <source>AIS Stream Status</source>
                 <target>AIS Stream Status</target>
             </trans-unit>
-            <trans-unit id="OdmqYra" resname="AIS Stream Monitor">
-                <source>AIS Stream Monitor</source>
-                <target>AIS Stream Monitor</target>
-            </trans-unit>
             <trans-unit id="gWNFTze" resname="Aktiv">
                 <source>Aktiv</source>
                 <target>Aktiv</target>
@@ -2774,8 +2770,12 @@
                 <target>Funktionsweise</target>
             </trans-unit>
             <trans-unit id="ry9e00S" resname="ais.stream">
-                <source>Der AIS-Stream verbindet sich per WebSocket mit &lt;code&gt;aisstream.io&lt;/code&gt;. Eingehende Daten werden gefiltert und nur gespeichert, wenn die MMSI einem Schiff in Ihrer Datenbank zugeordnet werden kann.</source>
-                <target><![CDATA[Der AIS-Stream verbindet sich per WebSocket mit <code>aisstream.io</code>. Eingehende Daten werden gefiltert und nur gespeichert, wenn die MMSI einem Schiff in Ihrer Datenbank zugeordnet werden kann.]]></target>
+                <source>Der AIS-Stream verbindet sich per WebSocket mit &lt;code&gt;aisstream.io&lt;/code&gt;.
+                    Eingehende Daten werden gefiltert und nur gespeichert, wenn die MMSI einem Schiff in Ihrer Datenbank
+                    zugeordnet werden kann.
+                </source>
+                <target>
+                    <![CDATA[Der AIS-Stream verbindet sich per WebSocket mit <code>aisstream.io</code>. Eingehende Daten werden gefiltert und nur gespeichert, wenn die MMSI einem Schiff in Ihrer Datenbank zugeordnet werden kann.]]></target>
             </trans-unit>
             <trans-unit id="KmySNXQ" resname="Watchdog-Info">
                 <source>Watchdog-Info</source>
@@ -2851,13 +2851,304 @@
                 <source>Project Overview Map</source>
                 <target>Project Overview Map</target>
             </trans-unit>
-
             <trans-unit id="Prüfung Batterie nötig">
                 <source>Prüfung Batterie nötig</source>
                 <target>Prüfung Batterie nötig</target>
             </trans-unit>
+            <trans-unit id="Reedereien">
+                <source>Reedereien</source>
+                <target>Reedereien</target>
+            </trans-unit>
 
-            <!--            <trans-unit id=""><source></source><target></target></trans-unit>-->
+            <trans-unit id="Profil bearbeiten">
+                <source>Profil bearbeiten</source>
+                <target>Profil bearbeiten</target>
+            </trans-unit>
+            <trans-unit id="Profilbild hochladen">
+                <source>Profilbild hochladen</source>
+                <target>Profilbild hochladen</target>
+            </trans-unit>
+            <trans-unit id="Erstellte Best.">
+                <source>Erstellte Best.</source>
+                <target>Erstellte Best.</target>
+            </trans-unit>
+            <trans-unit id="Bestellungen Übersicht">
+                <source>Bestellungen Übersicht</source>
+                <target>Bestellungen Übersicht</target>
+            </trans-unit>
+            <trans-unit id="- Alle offenen Lieferanten -">
+                <source>- Alle offenen Lieferanten -</source>
+                <target>- Alle offenen Lieferanten -</target>
+            </trans-unit>
+            <trans-unit id="Link zum Artikel">
+                <source>Link zum Artikel</source>
+                <target>Link zum Artikel</target>
+            </trans-unit>
+            <trans-unit id="Leer lassen für keine Wartung">
+                <source>Leer lassen für keine Wartung</source>
+                <target>Leer lassen für keine Wartung</target>
+            </trans-unit>
+            <trans-unit id="Letzte Wartung / Einbau">
+                <source>Letzte Wartung / Einbau</source>
+                <target>Letzte Wartung / Einbau</target>
+            </trans-unit>
+            <trans-unit id="Wann wurde das Teil zuletzt geprüft oder eingebaut?">
+                <source>Wann wurde das Teil zuletzt geprüft oder eingebaut?</source>
+                <target>Wann wurde das Teil zuletzt geprüft oder eingebaut?</target>
+            </trans-unit>
+            <trans-unit id="Nächste Wartung (Manuell / Auto)">
+                <source>Nächste Wartung (Manuell / Auto)</source>
+                <target>Nächste Wartung (Manuell / Auto)</target>
+            </trans-unit>
+            <trans-unit id="Wird automatisch berechnet. Kann manuell geändert werden.">
+                <source>Wird automatisch berechnet. Kann manuell geändert werden.</source>
+                <target>Wird automatisch berechnet. Kann manuell geändert werden.</target>
+            </trans-unit>
+            <trans-unit id="Abgang nach">
+                <source>Abgang nach</source>
+                <target>Abgang nach</target>
+            </trans-unit>
+            <trans-unit id="Wartungsintervall (Tage)">
+                <source>Wartungsintervall (Tage)</source>
+                <target>Wartungsintervall (Tage)</target>
+            </trans-unit>
+            <trans-unit id="-- Option wählen --">
+                <source>-- Option wählen --</source>
+                <target>-- Option wählen --</target>
+            </trans-unit>
+            <trans-unit id="Suchen">
+                <source>Suchen</source>
+                <target>Suchen</target>
+            </trans-unit>
+            <trans-unit id="Sprache">
+                <source>Sprache</source>
+                <target>Sprache</target>
+            </trans-unit>
+            <trans-unit id="bestellt">
+                <source>bestellt</source>
+                <target>bestellt</target>
+            </trans-unit>
+            <trans-unit id="Bestellung bearbeiten">
+                <source>Bestellung bearbeiten</source>
+                <target>Bestellung bearbeiten</target>
+            </trans-unit>
+            <trans-unit id="Fehler: Keine weiteren Seiten mit Bestellungen vorhanden.">
+                <source>Fehler: Keine weiteren Seiten mit Bestellungen vorhanden.</source>
+                <target>Fehler: Keine weiteren Seiten mit Bestellungen vorhanden.</target>
+            </trans-unit>
+            <trans-unit id="Suchbegriff...">
+                <source>Suchbegriff...</source>
+                <target>Suchbegriff...</target>
+            </trans-unit>
+            <trans-unit id="ges. Preis (Bestellung)">
+                <source>ges. Preis (Bestellung)</source>
+                <target>ges. Preis (Bestellung)</target>
+            </trans-unit>
+            <trans-unit id="Suche...">
+                <source>Suche...</source>
+                <target>Suche...</target>
+            </trans-unit>
+            <trans-unit id="Lagerartikel bearbeiten">
+                <source>Lagerartikel bearbeiten</source>
+                <target>Lagerartikel bearbeiten</target>
+            </trans-unit>
+            <trans-unit id="Diesen Artikel einem Projekt hinzufügen">
+                <source>Diesen Artikel einem Projekt hinzufügen</source>
+                <target>Diesen Artikel einem Projekt hinzufügen</target>
+            </trans-unit>
+            <trans-unit id="LagerArtikel Löschen">
+                <source>LagerArtikel Löschen</source>
+                <target>LagerArtikel Löschen</target>
+            </trans-unit>
+            <trans-unit id="Möchten Sie diesen Lagerartikel wirklich löschen?">
+                <source>Möchten Sie diesen Lagerartikel wirklich löschen?</source>
+                <target>Möchten Sie diesen Lagerartikel wirklich löschen?</target>
+            </trans-unit>
+            <trans-unit id="settings.master_data">
+                <source>settings.master_data</source>
+                <target>Einstellungen &amp; Stammdaten</target>
+            </trans-unit>
+            <trans-unit id="Komponententypen">
+                <source>Komponententypen</source>
+                <target>Komponententypen</target>
+            </trans-unit>
+            <trans-unit id="Vorhandene Schiffstypen">
+                <source>Vorhandene Schiffstypen</source>
+                <target>Vorhandene Schiffstypen</target>
+            </trans-unit>
+            <trans-unit id="Neuen Schiffstyp anlegen">
+                <source>Neuen Schiffstyp anlegen</source>
+                <target>Neuen Schiffstyp anlegen</target>
+            </trans-unit>
+            <trans-unit id="Vorhandene Flaggenstaaten">
+                <source>Vorhandene Flaggenstaaten</source>
+                <target>Vorhandene Flaggenstaaten</target>
+            </trans-unit>
+            <trans-unit id="Neuen Flaggenstaat anlegen">
+                <source>Neuen Flaggenstaat anlegen</source>
+                <target>Neuen Flaggenstaat anlegen</target>
+            </trans-unit>
+            <trans-unit id="System-Parameter">
+                <source>System-Parameter</source>
+                <target>System-Parameter</target>
+            </trans-unit>
+            <trans-unit id="Möchten Sie diesen Parameter wirklich löschen?">
+                <source>Möchten Sie diesen Parameter wirklich löschen?</source>
+                <target>Möchten Sie diesen Parameter wirklich löschen?</target>
+            </trans-unit>
+            <trans-unit id="Vorhandene Komponententypen">
+                <source>Vorhandene Komponententypen</source>
+                <target>Vorhandene Komponententypen</target>
+            </trans-unit>
+            <trans-unit id="Neuen Komponententyp anlegen">
+                <source>Neuen Komponententyp anlegen</source>
+                <target>Neuen Komponententyp anlegen</target>
+            </trans-unit>
+            <trans-unit id="OdmqYra" resname="AIS Stream Monitor">
+                <source>AIS Stream Monitor</source>
+                <target>AIS Stream Monitor</target>
+            </trans-unit>
+            <trans-unit id="settings.maretim_projekt">
+                <source>settings.maretim_projekt</source>
+                <target>Maritim &amp; Projekte</target>
+            </trans-unit>
+            <trans-unit id="setting.system_logistik">
+                <source>setting.system_logistik</source>
+                <target>System &amp; Logistik</target>
+            </trans-unit>
+            <trans-unit id="Administration">
+                <source>Administration</source>
+                <target>Administration</target>
+            </trans-unit>
+            <trans-unit id="Vorhandene Häfen">
+                <source>Vorhandene Häfen</source>
+                <target>Vorhandene Häfen</target>
+            </trans-unit>
+            <trans-unit id="Kürzel">
+                <source>Kürzel</source>
+                <target>Kürzel</target>
+            </trans-unit>
+            <trans-unit id="Land">
+                <source>Land</source>
+                <target>Land</target>
+            </trans-unit>
+            <trans-unit id="Flagge (Auswahl)">
+                <source>Flagge (Auswahl)</source>
+                <target>Flagge (Auswahl)</target>
+            </trans-unit>
+            <trans-unit id="Neuen Hafen anlegen">
+                <source>Neuen Hafen anlegen</source>
+                <target>Neuen Hafen anlegen</target>
+            </trans-unit>
+            <trans-unit id="Einstellungen Reedereien">
+                <source>Einstellungen Reedereien</source>
+                <target>Einstellungen Reedereien</target>
+            </trans-unit>
+            <trans-unit id="Vorhandene Reedereien">
+                <source>Vorhandene Reedereien</source>
+                <target>Vorhandene Reedereien</target>
+            </trans-unit>
+            <trans-unit id="Flagge / Kürzel">
+                <source>Flagge / Kürzel</source>
+                <target>Flagge / Kürzel</target>
+            </trans-unit>
+            <trans-unit id="Sitz">
+                <source>Sitz</source>
+                <target>Sitz</target>
+            </trans-unit>
+            <trans-unit id="Wappen (Bild)">
+                <source>Wappen (Bild)</source>
+                <target>Wappen (Bild)</target>
+            </trans-unit>
+            <trans-unit id="Leitung">
+                <source>Leitung</source>
+                <target>Leitung</target>
+            </trans-unit>
+            <trans-unit id="Gründung">
+                <source>Gründung</source>
+                <target>Gründung</target>
+            </trans-unit>
+            <trans-unit id="Geschäftsfeld">
+                <source>Geschäftsfeld</source>
+                <target>Geschäftsfeld</target>
+            </trans-unit>
+            <trans-unit id="Webseite">
+                <source>Webseite</source>
+                <target>Webseite</target>
+            </trans-unit>
+            <trans-unit id="Neue Reederei hinzufügen">
+                <source>Neue Reederei hinzufügen</source>
+                <target>Neue Reederei hinzufügen</target>
+            </trans-unit>
+            <trans-unit id="Wappen (Upload)">
+                <source>Wappen (Upload)</source>
+                <target>Wappen (Upload)</target>
+            </trans-unit>
+            <trans-unit id="Vorhandene Mengeneinheiten">
+                <source>Vorhandene Mengeneinheiten</source>
+                <target>Vorhandene Mengeneinheiten</target>
+            </trans-unit>
+            <trans-unit id="Einheit (Kürzel)">
+                <source>Einheit (Kürzel)</source>
+                <target>Einheit (Kürzel)</target>
+            </trans-unit>
+            <trans-unit id="Neue Mengeneinheit anlegen">
+                <source>Neue Mengeneinheit anlegen</source>
+                <target>Neue Mengeneinheit anlegen</target>
+            </trans-unit>
+            <trans-unit id="Name (z.B. Kilogramm)">
+                <source>Name (z.B. Kilogramm)</source>
+                <target>Name (z.B. Kilogramm)</target>
+            </trans-unit>
+            <trans-unit id="Kürzel (z.B. kg)">
+                <source>Kürzel (z.B. kg)</source>
+                <target>Kürzel (z.B. kg)</target>
+            </trans-unit>
+            <trans-unit id="Vorhandene Kostenstellen">
+                <source>Vorhandene Kostenstellen</source>
+                <target>Vorhandene Kostenstellen</target>
+            </trans-unit>
+            <trans-unit id="Neue Kostenstelle anlegen">
+                <source>Neue Kostenstelle anlegen</source>
+                <target>Neue Kostenstelle anlegen</target>
+            </trans-unit>
+            <trans-unit id="Registrierte Benutzer">
+                <source>Registrierte Benutzer</source>
+                <target>Registrierte Benutzer</target>
+            </trans-unit>
+            <trans-unit id="Mengeneiheiten">
+                <source>Mengeneiheiten</source>
+                <target>Mengeneiheiten</target>
+            </trans-unit>
+            <trans-unit id="Reederreien">
+                <source>Reederreien</source>
+                <target>Reederreien</target>
+            </trans-unit>
+            <trans-unit id="Komponente bearbeiten">
+                <source>Komponente bearbeiten</source>
+                <target>Komponente bearbeiten</target>
+            </trans-unit>
+            <trans-unit id="breadcrumb.project_auswertung">
+                <source>breadcrumb.project_auswertung</source>
+                <target>Auswertung Projekt</target>
+            </trans-unit>
+            <trans-unit id="breadcrumb.project_auswertung_details">
+                <source>breadcrumb.project_auswertung_details</source>
+                <target>Auswertung Details</target>
+            </trans-unit>
+            <trans-unit id="breadcrumb.project_auswertung_vergleich">
+                <source>breadcrumb.project_auswertung_vergleich</source>
+                <target>Auswertung Vergleich</target>
+            </trans-unit>
+<!--            <trans-unit id="">-->
+<!--                <source></source>-->
+<!--                <target></target>-->
+<!--            </trans-unit>-->
+<!--            <trans-unit id="">-->
+<!--                <source></source>-->
+<!--                <target></target>-->
+<!--            </trans-unit>-->
+
 <!--            <trans-unit id=""><source></source><target></target></trans-unit>-->
         </body>
     </file>

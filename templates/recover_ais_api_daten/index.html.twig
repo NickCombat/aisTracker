@@ -14,6 +14,22 @@
     {{ include('_includes/_breadcrumb.html.twig') }}
 {% endblock %}
 
+{% block submenue %}
+    <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+        <div class="sidebar-sticky">
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <div class="text-truncate">
+                        <b>{{ 'calendar.week_short'|trans({ '%weekNumber%': "now"|date("W") }) }}</b> <span id="date-time-display" data-days-json="{{ translated_days|json_encode }}"></span>
+                    </div>
+                </li>
+                <li><a class="nav-link d-flex align-items-center" href="{{ path('app_recover_ais_api_daten') }}">{{ 'Recover AIS'|trans }}</a></li>
+                <li><a class="nav-link d-flex align-items-center" href="{{ path('ais_control') }}">{{ 'AIS Stream Monitor'|trans }}</a></li>
+            </ul>
+        </div>
+    </nav>
+{% endblock %}
+
 {% block body %}
     <div class="row g-0">
         <form action="{{ path('app_work_recover_ais_api_daten') }}" method="post">
@@ -25,6 +41,7 @@
                 </div>
                 <div class="card col-md-1">
                     <span class="text-md-center">
+                        {% if datei.path == 'vesselfinder_raw' %}
                         <input
                                 type="checkbox"
                                 class="form-check-input form-check-input"
@@ -32,6 +49,9 @@
                                 name="fileArray[]"
                                 value="{{ datei.name }}"
                         >
+                        {% else %}
+                            -
+                        {% endif %}
                     </span>
                 </div>
                 <div class="card col-md-5">
@@ -55,12 +75,14 @@
                             title="Inhalt anzeigen">
                         <i class="fas fa-eye"></i> Vorschau
                     </button>
+                    {% if datei.path == 'vesselfinder_raw' %}
                     <a href="{{ path('app_work_recover_ais_api_file', {'restore': datei.name}) }}"
                        class="btn btn-sm btn-outline-primary"
                        onclick="return confirm('Möchten Sie die Daten aus {{ datei.name }} wirklich wiederherstellen?')"
                        title="Wiederherstellen">
                         <i class="fas fa-sync-alt"></i>
                     </a>
+                    {% endif %}
                 </div>
             </div>
         {% endfor %}

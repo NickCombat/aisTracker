@@ -2818,6 +2818,258 @@
                 <source>Project Overview Map</source>
                 <target>Project Overview Map</target>
             </trans-unit>
+            <trans-unit id="Reedereien">
+                <source>Reedereien</source>
+                <target>Shipping Companies</target>
+            </trans-unit>
+            <trans-unit id="Profil bearbeiten">
+                <source>Profil bearbeiten</source>
+                <target>Edit Profile</target>
+            </trans-unit>
+            <trans-unit id="Profilbild hochladen">
+                <source>Profilbild hochladen</source>
+                <target>Upload Profile Picture</target>
+            </trans-unit>
+            <trans-unit id="Bestellungen Übersicht">
+                <source>Bestellungen Übersicht</source>
+                <target>Orders Overview</target>
+            </trans-unit>
+            <trans-unit id="- Alle offenen Lieferanten -">
+                <source>- Alle offenen Lieferanten -</source>
+                <target>- All Open Suppliers -</target>
+            </trans-unit>
+            <trans-unit id="Link zum Artikel">
+                <source>Link zum Artikel</source>
+                <target>Link to article</target>
+            </trans-unit>
+            <trans-unit id="Leer lassen für keine Wartung">
+                <source>Leer lassen für keine Wartung</source>
+                <target>Leave blank for no maintenance</target>
+            </trans-unit>
+            <trans-unit id="Letzte Wartung / Einbau">
+                <source>Letzte Wartung / Einbau</source>
+                <target>Last Maintenance / Installation</target>
+            </trans-unit>
+            <trans-unit id="Wann wurde das Teil zuletzt geprüft oder eingebaut?">
+                <source>Wann wurde das Teil zuletzt geprüft oder eingebaut?</source>
+                <target>When was the part last checked or installed?</target>
+            </trans-unit>
+            <trans-unit id="Nächste Wartung (Manuell / Auto)">
+                <source>Nächste Wartung (Manuell / Auto)</source>
+                <target>Next Maintenance (Manual / Auto)</target>
+            </trans-unit>
+            <trans-unit id="Wird automatisch berechnet. Kann manuell geändert werden.">
+                <source>Wird automatisch berechnet. Kann manuell geändert werden.</source>
+                <target>Calculated automatically. Can be changed manually.</target>
+            </trans-unit>
+            <trans-unit id="Abgang nach">
+                <source>Abgang nach</source>
+                <target>Issue to / Dispatch to</target>
+            </trans-unit>
+            <trans-unit id="Wartungsintervall (Tage)">
+                <source>Wartungsintervall (Tage)</source>
+                <target>Maintenance Interval (Days)</target>
+            </trans-unit>
+            <trans-unit id="-- Option wählen --">
+                <source>-- Option wählen --</source>
+                <target>-- Select option --</target>
+            </trans-unit>
+            <trans-unit id="Suchen">
+                <source>Suchen</source>
+                <target>Search</target>
+            </trans-unit>
+            <trans-unit id="Sprache">
+                <source>Sprache</source>
+                <target>Language</target>
+            </trans-unit>
+            <trans-unit id="bestellt">
+                <source>bestellt</source>
+                <target>ordered</target>
+            </trans-unit>
+            <trans-unit id="Bestellung bearbeiten">
+                <source>Bestellung bearbeiten</source>
+                <target>Edit order</target>
+            </trans-unit>
+            <trans-unit id="Fehler: Keine weiteren Seiten mit Bestellungen vorhanden.">
+                <source>Fehler: Keine weiteren Seiten mit Bestellungen vorhanden.</source>
+                <target>Error: No more pages with orders available.</target>
+            </trans-unit>
+            <trans-unit id="Suchbegriff...">
+                <source>Suchbegriff...</source>
+                <target>Search term...</target>
+            </trans-unit>
+            <trans-unit id="ges. Preis (Bestellung)">
+                <source>ges. Preis (Bestellung)</source>
+                <target>Total price (Order)</target>
+            </trans-unit>
+            <trans-unit id="Suche...">
+                <source>Suche...</source>
+                <target>Search...</target>
+            </trans-unit>
+            <trans-unit id="Lagerartikel bearbeiten">
+                <source>Lagerartikel bearbeiten</source>
+                <target>Edit stock item</target>
+            </trans-unit>
+            <trans-unit id="Diesen Artikel einem Projekt hinzufügen">
+                <source>Diesen Artikel einem Projekt hinzufügen</source>
+                <target>Add this item to a project</target>
+            </trans-unit>
+            <trans-unit id="LagerArtikel Löschen">
+                <source>LagerArtikel Löschen</source>
+                <target>Delete stock item</target>
+            </trans-unit>
+            <trans-unit id="Möchten Sie diesen Lagerartikel wirklich löschen?">
+                <source>Möchten Sie diesen Lagerartikel wirklich löschen?</source>
+                <target>Are you sure you want to delete this stock item?</target>
+            </trans-unit>
+            <trans-unit id="settings.master_data">
+                <source>settings.master_data</source>
+                <target>Settings &amp; Master Data</target>
+            </trans-unit>
+            <trans-unit id="Komponententypen">
+                <source>Komponententypen</source>
+                <target>Component types</target>
+            </trans-unit>
+            <trans-unit id="Vorhandene Schiffstypen">
+                <source>Vorhandene Schiffstypen</source>
+                <target>Existing ship types</target>
+            </trans-unit>
+            <trans-unit id="Neuen Schiffstyp anlegen">
+                <source>Neuen Schiffstyp anlegen</source>
+                <target>Create new ship type</target>
+            </trans-unit>
+            <trans-unit id="Vorhandene Flaggenstaaten">
+                <source>Vorhandene Flaggenstaaten</source>
+                <target>Existing flag states</target>
+            </trans-unit>
+            <trans-unit id="Neuen Flaggenstaat anlegen">
+                <source>Neuen Flaggenstaat anlegen</source>
+                <target>Create new flag state</target>
+            </trans-unit>
+            <trans-unit id="System-Parameter">
+                <source>System-Parameter</source>
+                <target>System parameters</target>
+            </trans-unit>
+            <trans-unit id="Möchten Sie diesen Parameter wirklich löschen?">
+                <source>Möchten Sie diesen Parameter wirklich löschen?</source>
+                <target>Are you sure you want to delete this parameter?</target>
+            </trans-unit>
+            <trans-unit id="Vorhandene Komponententypen">
+                <source>Vorhandene Komponententypen</source>
+                <target>Existing component types</target>
+            </trans-unit>
+            <trans-unit id="Neuen Komponententyp anlegen">
+                <source>Neuen Komponententyp anlegen</source>
+                <target>Create new component type</target>
+            </trans-unit>
+            <trans-unit id="settings.maretim_projekt">
+                <source>settings.maretim_projekt</source>
+                <target>Maritime &amp; Projects</target>
+            </trans-unit>
+            <trans-unit id="setting.system_logistik">
+                <source>setting.system_logistik</source>
+                <target>System &amp; Logistics</target>
+            </trans-unit>
+            <trans-unit id="Administration">
+                <source>Administration</source>
+                <target>Administration</target>
+            </trans-unit>
+            <trans-unit id="Vorhandene Häfen">
+                <source>Vorhandene Häfen</source>
+                <target>Existing ports</target>
+            </trans-unit>
+            <trans-unit id="Kürzel">
+                <source>Kürzel</source>
+                <target>Abbreviation</target>
+            </trans-unit>
+            <trans-unit id="Land">
+                <source>Land</source>
+                <target>Country</target>
+            </trans-unit>
+            <trans-unit id="Flagge (Auswahl)">
+                <source>Flagge (Auswahl)</source>
+                <target>Flag (Selection)</target>
+            </trans-unit>
+            <trans-unit id="Neuen Hafen anlegen">
+                <source>Neuen Hafen anlegen</source>
+                <target>Create new port</target>
+            </trans-unit>
+            <trans-unit id="Einstellungen Reedereien">
+                <source>Einstellungen Reedereien</source>
+                <target>Shipping Company Settings</target>
+            </trans-unit>
+            <trans-unit id="Vorhandene Reedereien">
+                <source>Vorhandene Reedereien</source>
+                <target>Existing shipping companies</target>
+            </trans-unit>
+            <trans-unit id="Flagge / Kürzel">
+                <source>Flagge / Kürzel</source>
+                <target>Flag / Abbreviation</target>
+            </trans-unit>
+            <trans-unit id="Sitz">
+                <source>Sitz</source>
+                <target>Headquarters</target>
+            </trans-unit>
+            <trans-unit id="Wappen (Bild)">
+                <source>Wappen (Bild)</source>
+                <target>Coat of arms (Image)</target>
+            </trans-unit>
+            <trans-unit id="Leitung">
+                <source>Leitung</source>
+                <target>Management / Head</target>
+            </trans-unit>
+            <trans-unit id="Gründung">
+                <source>Gründung</source>
+                <target>Founded</target>
+            </trans-unit>
+            <trans-unit id="Geschäftsfeld">
+                <source>Geschäftsfeld</source>
+                <target>Business field</target>
+            </trans-unit>
+            <trans-unit id="Webseite">
+                <source>Webseite</source>
+                <target>Website</target>
+            </trans-unit>
+            <trans-unit id="Neue Reederei hinzufügen">
+                <source>Neue Reederei hinzufügen</source>
+                <target>Add new shipping company</target>
+            </trans-unit>
+            <trans-unit id="Wappen (Upload)">
+                <source>Wappen (Upload)</source>
+                <target>Coat of arms (Upload)</target>
+            </trans-unit>
+            <trans-unit id="Vorhandene Mengeneinheiten">
+                <source>Vorhandene Mengeneinheiten</source>
+                <target>Existing units of measure</target>
+            </trans-unit>
+            <trans-unit id="Einheit (Kürzel)">
+                <source>Einheit (Kürzel)</source>
+                <target>Unit (Abbreviation)</target>
+            </trans-unit>
+            <trans-unit id="Neue Mengeneinheit anlegen">
+                <source>Neue Mengeneinheit anlegen</source>
+                <target>Create new unit of measure</target>
+            </trans-unit>
+            <trans-unit id="Name (z.B. Kilogramm)">
+                <source>Name (z.B. Kilogramm)</source>
+                <target>Name (e.g., Kilogram)</target>
+            </trans-unit>
+            <trans-unit id="Kürzel (z.B. kg)">
+                <source>Kürzel (z.B. kg)</source>
+                <target>Abbreviation (e.g., kg)</target>
+            </trans-unit>
+            <trans-unit id="Vorhandene Kostenstellen">
+                <source>Vorhandene Kostenstellen</source>
+                <target>Existing cost centers</target>
+            </trans-unit>
+            <trans-unit id="Neue Kostenstelle anlegen">
+                <source>Neue Kostenstelle anlegen</source>
+                <target>Create new cost center</target>
+            </trans-unit>
+            <trans-unit id="Registrierte Benutzer">
+                <source>Registrierte Benutzer</source>
+                <target>Registered users</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

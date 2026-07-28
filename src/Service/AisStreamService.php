@@ -3,7 +3,7 @@
 namespace App\Service;
 
 use WebSocket\Client;
-use Doctrine\ORM\EntityManagerInterface;
+use WebSocket\ConnectionException;
 use App\Repository\NetShipdataRepository;
 use App\Entity\NetShipPositionHistory;
 use Symfony\Component\HttpKernel\KernelInterface;
@@ -14,39 +14,38 @@ use App\Entity\NetShipNavStatus;
 use App\Entity\NetPort;
 use App\Entity\Flaggenstaaten;
 use App\Entity\NetShipdataPortLog;
-use App\Entity\NetProjektStatus;
 use App\Entity\NetShipTyp;
-use WebSocket\TimeoutException;
-use WebSocket\ConnectionException;
+use App\Entity\AisStreamStatus;
+use Symfony\Contracts\Cache\CacheInterface;
+use Doctrine\Persistence\ManagerRegistry;
 
-class AisStreamService extends
-    addService
+class AisStreamService extends addService
 {
-
-    private string $apiKey;
-
-    //private string $apiUrl;
 
     protected string $rawLogPath;
 
-    protected array $currentMmsis;
-
-    protected int $lastMmsiUpdate;
+    private int $lastMmsiUpdate;
 
     private int $messageCount = 0;
 
     public function __construct(
-        private readonly EntityManagerInterface $entityManager,
-        private readonly SettingsService        $settings,
-        protected readonly KernelInterface      $kernel,
-        protected readonly LoggerInterface      $logger,
-        protected readonly RequestStack         $requestStack,
-        private readonly NetShipdataRepository  $shipRepository
+        private readonly    SettingsService     $settings,
+        protected readonly  KernelInterface     $kernel,
+        protected readonly  LoggerInterface     $logger,
+        protected readonly  RequestStack        $requestStack,
+        private readonly NetShipdataRepository  $shipRepository,
+        private             CacheInterface      $cache,
+        private             ManagerRegistry     $registry
     )
     {
-        $this->apiKey = $this->settings->get( 'aisstream.api.key' ) || null;
-        //$this->apiUrl     = "wss://stream.aisstream.io/v0/stream";
+        // 1. Zuerst den EntityManager initialisieren!
+        $this->registry = $registry;
+        $this->entityManager = $registry->getManager();
+        // 2. Logischer Fehler behoben: ?? statt ||
+        $this->apiKey     = $this->settings->get( 'aisstream.api.key' ) ?? null;
         $this->rawLogPath = $this->kernel->getProjectDir() . '/var/log/aisstream_raw/';
+        // 3. Jetzt kann der EntityManager sicher verwendet werden
+        $this->statusRepository = $this->entityManager->getRepository(AisStreamStatus::class)->findLastEntry();
     }
 
     /**
@@ -55,137 +54,173 @@ class AisStreamService extends
      */
     public function listen(): void
     {
-        $lockFile = $this->kernel->getProjectDir() . '/var/log/ais_stream.lock';
-        $this->rawLogPath = $this->kernel->getProjectDir() . '/var/log/aisstream_raw/';
-        touch( $lockFile );
-
-        $this->currentMmsis = $this->fetchShipMMSI();
-        // Initialer Zeitstempel für das Update-Intervall
-        $this->lastMmsiUpdate = time();
-
-        if ( empty( $this->apiKey ) || $this->apiKey == '1' )
+        try
         {
-            $this->apiKey = $this->settings->get( 'aisstream.api.key' );
+            $lockFile = $this->kernel->getProjectDir() . '/var/log/ais_stream.lock';
+            $this->rawLogPath = $this->kernel->getProjectDir() . '/var/log/aisstream_raw/';
+            touch( $lockFile );
+
+            $currentMmsis = $this->fetchShipMMSI();
+            $this->lastMmsiUpdate = time();
+
+            $apiKey = $this->settings->get( 'aisstream.api.key' );
+            $rawBoundingBoxes = $this->settings->get( 'aisstream.api.BoundingBoxes' );
+
+            if ( is_string( $rawBoundingBoxes ) )
+            {
+                $boundingBoxes = json_decode( $rawBoundingBoxes, true );
+                if ( json_last_error() !== JSON_ERROR_NONE )
+                {
+                    $this->logger->error( sprintf( "AISStream: BoundingBoxes JSON-Fehler [%s]. Rohdaten: %s", json_last_error_msg(), $rawBoundingBoxes ) );
+                    $boundingBoxes = null;
+                }
+            }
+            else
+            {
+                $boundingBoxes = $rawBoundingBoxes;
+            }
+
+            if ( empty( $boundingBoxes ) || ! is_array( $boundingBoxes ) )
+            {
+                $this->logger->warning( "AISStream: Nutze globalen BoundingBox-Fallback." );
+                $boundingBoxes = [ [ [ -90, -180 ], [ 90, 180 ] ] ];
+            }
+
+            $this->entityManager->getConnection()
+                                ->getConfiguration()
+                                ->setMiddlewares( [] );
+            $options = [ 'timeout' => 60, 'fragment_size' => 65536 ];
+
+            $subscribeData = [ "APIKey"        => $apiKey,
+                               "BoundingBoxes" => $boundingBoxes
+            ];
+            if ( ! empty( $currentMmsis ) )
+            {
+                $subscribeData["FiltersShipMMSI"] = $currentMmsis;
+            }
+
+            while ( true )
+            {
+                try
+                {
+                    $client = new Client( "wss://stream.aisstream.io/v0/stream", $options );
+                    $client->setTimeout( 60 );
+
+                    $subscribeMessage = json_encode( $subscribeData );
+                    $this->logger->critical( "Sende an AISStream: " . $subscribeMessage );
+                    $client->text( $subscribeMessage );
+
+                    // Bei erfolgreichem Connect: Status auf 'online'
+                    $this->updateStatus( 'online', 'Verbunden' );
+
+                    while ( true )
+                    {
+                        $suffix = '';
+                        if ( ! file_exists( $lockFile ) )
+                        {
+                            $this->logger->warning( "Lock-File fehlt. Beende AisStreamService regulär." );
+                            break 2;
+                        }
+
+                        if ( time() - $this->lastMmsiUpdate > 1800 )
+                        {
+                            $subscribeMessage = json_encode( $subscribeData );
+                            $client->text( $subscribeMessage );
+                            $this->lastMmsiUpdate = time();
+                        }
+
+                        try
+                        {
+                            $message = $client->receive();
+
+                            // Aktualisiert nur das Timestamp für 'online'
+                            $this->updateStatus( 'online' );
+
+                            if ( ! $message )
+                            {
+                                continue;
+                            }
+
+                            $data = json_decode( $message, true );
+                            $mmsi = $data['MetaData']['MMSI'] ?? null;
+                            if ( ! $mmsi || $mmsi === '0' )
+                            {
+                                continue;
+                            }
+                            $suffix .= '_mmsi' . $mmsi . '_' . $data['MessageType'];
+
+                            $ship = $this->entityManager->getRepository( NetShipdata::class )
+                                                        ->findOneBy( [ 'MMSI' => $mmsi ] );
+                            if ( ! $ship || $ship->getStatus() === 2 )
+                            {
+                                continue;
+                            }
+
+                            if ( in_array( $data['MessageType'], [ 'PositionReport',
+                                                                   //'ShipStaticData',
+                                                                   //'Interrogation',
+                                                                   //'UnknownMessage',
+                                                                   //'DataLinkManagementMessage',
+                                                                   'StandardClassBPositionReport'
+                            ] ) )
+                            {
+                                $this->savePosition( $data, $ship );
+                                fwrite( STDERR, date( "Y.m.d H:i:s" ) . ' ' . $data['MessageType'] . ' ' . $mmsi );
+                            }
+
+                            if ( $data['MessageType'] === 'ShipStaticData' )
+                            {
+                                $this->updateShipData( $data, $ship );
+                                $this->saveDestination( $data, $ship );
+                                fwrite( STDERR, date( "Y.m.d H:i:s" ) . ' ' . $data['MessageType'] . ' ' . $mmsi );
+                            }
+
+                            $this->saveRawData( json_encode( $data ), $suffix );
+                            $this->cleanupMemory();
+                        }
+                        catch ( \WebSocket\TimeoutException $e )
+                        {
+                            $client->ping();
+                            continue;
+                        }
+                    }
+                }
+                catch ( ConnectionException $e )
+                {
+                    $errorMessage = "Verbindungsabbruch (TCP Timeout) - Verbinde neu...";
+                    $this->logger->info( $errorMessage );
+
+                    $this->updateStatus( 'offline', $errorMessage );
+                    sleep( 15 );
+                }
+                catch ( \Throwable $e )
+                {
+                    $errorMsg = sprintf( "Fehler [%s] in %s:%d - %s", get_class( $e ), $e->getFile(), $e->getLine(), $e->getMessage() );
+                    $this->logger->error( $errorMsg );
+
+                    $this->updateStatus( 'error', $errorMsg );
+
+                    if ( isset( $client ) )
+                    {
+                        $client->close();
+                    }
+
+                    if ( str_contains( $e->getMessage(), 'Empty read' ) || str_contains( $e->getMessage(), 'Timeout' ) )
+                    {
+                        sleep( 5 );
+                        $this->cleanupMemory();
+                        continue;
+                    }
+
+                    sleep( 15 );
+                }
+            }
         }
-
-        $rawBoundingBoxes = $this->settings->get( 'aisstream.api.BoundingBoxes' );
-        $boundingBoxes = is_string( $rawBoundingBoxes ) ? json_decode( $rawBoundingBoxes, true ) : $rawBoundingBoxes;
-
-        if ( empty( $boundingBoxes ) || !is_array( $boundingBoxes ) )
+        catch ( \Exception $e )
         {
-            $boundingBoxes = [ [ [ -90, -180 ], [ 90, 180 ] ] ];
-        }
-
-        $this->entityManager->getConnection()
-                            ->getConfiguration()
-                            ->setMiddlewares( [] );
-        $options = [ 'timeout' => 120, 'fragment_size' => 65536 ];
-
-        while ( true )
-        {
-            try
-            {
-                $client = new Client( "wss://stream.aisstream.io/v0/stream", $options );
-                $subscribeMessage = json_encode( [
-                    "APIKey"                  => $this->apiKey,
-                    "BoundingBoxes"           => $boundingBoxes,
-                    //"FiltersSpecificShipMMSI" => $this->currentMmsis
-                ] );
-                $client->text( $subscribeMessage );
-
-                while ( true )
-                {
-                    $suffix = '';
-
-                    if ( ! file_exists( $lockFile ) )
-                    {
-                        break 2; // Beendet beide Schleifen
-                    }
-
-                    // Update-Check alle 30 Minuten
-                    if ( time() - $this->lastMmsiUpdate > 1800 )
-                    {
-                        $this->currentMmsis = $this->fetchShipMMSI();
-                        $subscribeMessage = json_encode( [
-                            "APIKey"                  => $this->apiKey,
-                            "BoundingBoxes"           => $boundingBoxes,
-                            //"FiltersSpecificShipMMSI" => $this->currentMmsis
-                        ] );
-
-                        $client->text( $subscribeMessage );
-                        $this->lastMmsiUpdate = time();
-                    }
-
-                    $message = $client->receive();
-                    if ( ! $message )
-                    {
-                        continue;
-                    }
-
-                    $data = json_decode( $message, true );
-                    $mmsi = $data['MetaData']['MMSI'] ?? null;
-                    if ( ! $mmsi || $mmsi === '0' )
-                    {
-                        continue;
-                    }
-                    $suffix .= '_mmsi' . $mmsi;
-                    $suffix .= '_' . $data['MessageType'];
-
-                    // Schiff frisch laden (Identity Map Refresh nach clear())
-                    $ship = $this->entityManager->getRepository( NetShipdata::class )
-                                                ->findOneBy( [ 'MMSI' => $mmsi ] );
-                    if ( ! $ship && $data['MetaData']['ShipName'] !== '' )
-                    {
-                        $this->saveShipData( $data );
-                    }
-                    if ( ! $ship || $ship->getStatus() === 2 )
-                    {
-                        continue;
-                    }
-
-                    if ( $data['MessageType'] === 'PositionReport' )
-                    {
-                        $this->savePosition( $data, $ship );
-                    }
-                    elseif ( $data['MessageType'] === 'ShipStaticData' )
-                    {
-                        $this->saveDestination( $data, $ship );
-                    }
-
-                    $this->saveRawData( json_encode( $data ), $suffix );
-
-                    $this->cleanupMemory();
-                }
-            }
-            catch ( TimeoutException $e )
-            {
-                continue;
-            }
-            catch ( ConnectionException $e )
-            {
-                $this->logger->error( 'Verbindung zu AIS Stream abgebrochen: ' . $e->getMessage() );
-                break;
-            }
-            catch ( \Exception $e )
-            {
-                $errorMsg = sprintf( "Fehler [%s] in %s:%d - %s", get_class( $e ), $e->getFile(), $e->getLine(), $e->getMessage() );
-                $this->logger->error( $errorMsg );
-
-                fwrite( STDERR, $errorMsg . PHP_EOL );
-
-                if ( isset( $client ) )
-                {
-                    $client->close();
-                }
-
-                // Reconnect bei Netzwerkfehlern
-                if ( str_contains( $e->getMessage(), 'Empty read' ) || str_contains( $e->getMessage(), 'Timeout' ) )
-                {
-                    sleep( 2 );
-                    continue;
-                }
-                exit( 1 ); // Bei echten Fehlern beenden, Cronjob regelt den Neustart
-            }
+            $this->logger->critical( "FATAL STARTUP ERROR: " . $e->getMessage() );
+            $this->updateStatus( 'error', "FATAL: " . $e->getMessage() );
+            exit( 1 );
         }
     }
 
@@ -195,56 +230,67 @@ class AisStreamService extends
      */
     private function createNewPort( string $rawDestination ): NetPort
     {
-        $locodeCandidate = strtoupper( str_replace( ' ', '', $rawDestination ) );
-        $landKuerzel = 'xx'; // Standard-Fallback für "Unbekannt"
+        $locodeCandidate = strtoupper(str_replace(' ', '', $rawDestination));
+        $landKuerzel     = 'xx'; // Standard-Fallback für "Unbekannt"
 
-        if ( strlen( $locodeCandidate ) === 5 && preg_match( '/^[A-Z]{2}[A-Z0-9]{3}$/', $rawDestination ) )
+        if (strlen($locodeCandidate) === 5 && preg_match('/^[A-Z]{2}[A-Z0-9]{3}$/', $rawDestination))
         {
-            $landKuerzel = strtolower( substr( $locodeCandidate, 0, 2 ) );
+            $landKuerzel = strtolower(substr($locodeCandidate, 0, 2));
         }
         else
         {
             // Optionale Logik: Hier könnte man eine Liste bekannter Namen abgleichen
             // Oder man lässt es bei 'xx' und pflegt den Port später manuell im Admin-Panel nach.
-            $this->logger->info( "Klarnamen-Hafen erkannt: " . $rawDestination );
+            $this->logger->info("Klarnamen-Hafen erkannt: " . $rawDestination);
         }
 
-        $flagge = $this->entityManager->getRepository( Flaggenstaaten::class )
-                                      ->findOneBy( [ 'kuerzel' => $landKuerzel ] );
+        $flagge = $this->entityManager->getRepository(Flaggenstaaten::class)
+                                      ->findOneBy(['kuerzel' => $landKuerzel]);
 
         $port = new NetPort();
-        $port->setKuerzel( substr( $rawDestination, 0, 6 ) )
+        $port->setKuerzel( substr($rawDestination,0,6) )
              ->setFlag( $flagge )
              ->setBezeichnung( $rawDestination ?? '-NA-' )
              ->setLand( $landKuerzel );
 
         $this->entityManager->persist( $port );
         $this->entityManager->flush();
-        $this->entityManager->refresh( $port );
+        $this->entityManager->refresh($port);
 
         $this->logOrFlash( 'notice', 'New port added: (LOCODE: ' . $rawDestination . ')' );
 
         return $port;
     }
 
-    private function saveDestination( mixed $data, NetShipdata $ship ): void
+    private function saveDestination( mixed $data, NetShipdata $ship ):void
     {
         $shipStaticData = $data['Message']['ShipStaticData'];
         // Validierung (IMO)
         //if ( 0 !== $shipStaticData['ImoNumber'] && $shipStaticData['ImoNumber'] !== $ship->getImo() )
         //{
-        //    $this->logOrFlash( 'warning', 'Falsche Hafendaten für ' . $ship->getName() . ' (IMO: ' . $ship->getImo()
-        //                                  . ')empfangen. [' . $shipStaticData['ImoNumber'] . ']' );
+        //    $message = 'Falsche Hafendaten für ' . $ship->getName() . ' ';
+        //    if ( $ship->getImo() )
+        //    {
+        //        $message .= '(IMO: ' . $ship->getImo() . ') ';
+        //    }
+        //    elseif ( $ship->getMMSI() )
+        //    {
+        //        $message .= '(mmsi: ' . $ship->getMMSI() . ') ';
+        //    }
+        //    $message .= '[' . $shipStaticData['ImoNumber'] . '] ';
+        //
+        //    $message .= 'empfangen.';
+        //
+        //    $this->logOrFlash( 'warning', $message );
         //
         //    return;
         //}
 
         // Port-Handling (Robustere Erkennung)
-        $rawDestination = trim( $shipStaticData['Destination'] );
-        if ( empty( $rawDestination ) || $rawDestination === '@@@@@@@@' )
+        $rawDestination = $this->cleanUpDestination( $shipStaticData['Destination'] );
+        if (empty($rawDestination) || $rawDestination === '@@@@@@@@')
         {
-            $this->logOrFlash( 'warning', 'Kein Ziel für ' . $ship->getName() . ' (IMO: ' . $ship->getImo()
-                                          . ') angegeben.' );
+            $this->logOrFlash( 'warning', 'Kein Ziel für ' . $ship->getName() . ' (mmsi: ' . $ship->getMMSI() . ') angegeben.' );
 
             return;
         }
@@ -253,43 +299,46 @@ class AisStreamService extends
         $port = $this->entityManager->getRepository( NetPort::class )
                                     ->findOneBy( [ 'kuerzel' => $rawDestination ] );
         // 2. Versuch: Falls nicht gefunden, suche nach Name (Klarnamen-Logik)
-        if ( null === $port )
+        if (null === $port)
         {
-            $port = $this->entityManager->getRepository( NetPort::class )
-                                        ->findOneBy( [ 'bezeichnung' => $rawDestination ] );
+            $port = $this->entityManager->getRepository(NetPort::class)
+                                        ->findOneBy(['bezeichnung' => $rawDestination]);
         }
         // 3. Fallback: Neuen Hafen anlegen mit intelligenter Land-Erkennung
-        if ( null === $port )
+        if (null === $port)
         {
-            $port = $this->createNewPort( $rawDestination );
+            $port = $this->createNewPort($rawDestination);
         }
-        if ( ! $this->entityManager->contains( $port ) )
+        if (!$this->entityManager->contains($port))
         {
-            $port = $this->entityManager->find( NetPort::class, $port->getId() );
+            $port = $this->entityManager->find(NetPort::class, $port->getId());
         }
 
         // Intelligentes ETA-Jahr
         $etaMonth = (int)$shipStaticData['Eta']['Month'];
         $etaDay   = (int)$shipStaticData['Eta']['Day'];
 
-        if ( $etaMonth === 0 || $etaDay === 0 )
+        if ($etaMonth === 0 || $etaDay === 0)
         {
             return; // Ungültige ETA
         }
 
-        $currentYear  = (int)date( 'Y' );
-        $currentMonth = (int)date( 'n' );
+        $currentYear  = (int)date('Y');
+        $currentMonth = (int)date('n');
 
         // Wenn ETA im Januar/Februar liegt, wir aber im Dezember sind -> nächstes Jahr
-        $year = ( $etaMonth < $currentMonth && $currentMonth >= 11 ) ? $currentYear + 1 : $currentYear;
+        $year = ($etaMonth < $currentMonth && $currentMonth >= 11) ? $currentYear + 1 : $currentYear;
 
-        $timestampStr = sprintf( '%04d-%02d-%02d %02d:%02d:00', $year, $etaMonth, $etaDay, $shipStaticData['Eta']['Hour'], $shipStaticData['Eta']['Minute'] );
+        $timestampStr = sprintf('%04d-%02d-%02d %02d:%02d:00',
+            $year, $etaMonth, $etaDay,
+            $shipStaticData['Eta']['Hour'], $shipStaticData['Eta']['Minute']
+        );
 
         try
         {
-            $apiTimestamp = new \DateTimeImmutable( $timestampStr );
+            $apiTimestamp = new \DateTimeImmutable($timestampStr);
         }
-        catch ( \Exception $e )
+        catch (\Exception $e)
         {
             return; // Ungültiges Datum abfangen
         }
@@ -301,22 +350,23 @@ class AisStreamService extends
         }
 
         // 4. Duplicate Check & Log
-        $logRepository = $this->entityManager->getRepository( NetShipdataPortLog::class );
+        $logRepository = $this->entityManager->getRepository(NetShipdataPortLog::class);
 
-        $existingLog = $logRepository->findOneBy( [ 'shipdata'       => $ship->getId(),
-                                                    'eventTimestamp' => $apiTimestamp,
-                                                    'eventType'      => 'ARRIVAL'
-        ] );
+        $existingLog = $logRepository->findOneBy([
+            'shipdata'       => $ship->getId(),
+            'eventTimestamp' => $apiTimestamp,
+            'eventType'      => 'ARRIVAL'
+        ]);
 
-        if ( null === $existingLog )
+        if (null === $existingLog)
         {
             $history = new NetShipdataPortLog();
-            $history->setShipdata( $ship );
-            $history->setEventTimestamp( $apiTimestamp );
-            $history->setPort( $port );
-            $history->setEventType( 'ARRIVAL' );
+            $history->setShipdata($ship);
+            $history->setEventTimestamp($apiTimestamp);
+            $history->setPort($port);
+            $history->setEventType('ARRIVAL');
 
-            $this->entityManager->persist( $history );
+            $this->entityManager->persist($history);
         }
 
         $qb = $logRepository->createQueryBuilder( 'log' );
@@ -339,36 +389,51 @@ class AisStreamService extends
             $newDepartureLog->setShipdata( $ship );
             $newDepartureLog->setPort( $port );
             $newDepartureLog->setEventType( 'DEPARTURE' );
-            $newDepartureLog->setEventTimestamp( $apiTimestamp->modify( '+2 days' ) );
+            $newDepartureLog->setEventTimestamp($apiTimestamp->modify('+2 days'));
 
-            $this->entityManager->persist( $newDepartureLog );
+            $this->entityManager->persist($newDepartureLog);
         }
 
-        $this->processAisMessage( $data, $ship );
+        //$this->processAisMessage($data, $ship);
     }
 
     private function savePosition( array $data, NetShipdata $ship ): void
     {
-        $lastEntry = $this->entityManager->getRepository( NetShipPositionHistory::class )
-                                         ->findOneBy( [ 'netShipdata' => $ship ], [ 'timestamp' => 'DESC' ] );
+        $lastEntry = $this->entityManager->getRepository(NetShipPositionHistory::class)
+                                         ->findOneBy(['netShipdata' => $ship], ['timestamp' => 'DESC']);
         if ( $lastEntry )
         {
             $lastTime = $lastEntry->getTimestamp();
             $now = new \DateTimeImmutable();
 
-            // Berechne die Differenz in Sekunden (3600 Sek = 1 Stunde)
-            $diffInSeconds = $now->getTimestamp() - $lastTime->getTimestamp();
-            //$this->logOrFlash('info', 'Time Diff.: ' . $diffInSeconds . ' sekunden');
-            if ( $diffInSeconds < 1800 )
+            $diffInMinutes = ( $now->getTimestamp() - $lastTime->getTimestamp() ) / 60;
+            if ( $diffInMinutes >= 0 && $diffInMinutes < 30 )
             {
-                //$this->logOrFlash('info', 'Zeit zu kurz. return (' . $ship->getName() . ')' );
-                // Weniger als eine Stunde vergangen -> Ignorieren
+                $this->logger->info('Zeit zu kurz. return (' . $ship->getName() . ') ' . $now->getTimestamp() . '-' . $lastTime->getTimestamp() . ' ['.$diffInMinutes.'] ' . $data['MessageType']);
                 return;
             }
         }
 
-        $this->logger->debug( 'aisstream ' . $data['MetaData']['MMSI'] . ' Daten gespeichert' );
-        $this->processAisMessage( $data, $ship );
+        $this->processAisMessage($data, $ship);
+    }
+
+    private function updateShipData( array $data, NetShipdata $ship ): void
+    {
+        $newData  = $data['Message']['ShipStaticData'];
+        if($ship->getRufzeichen() !== $newData['CallSign'])
+        {
+            $ship->setRufzeichen( $newData['CallSign'] );
+        }
+        if($ship->getImo() !== $newData['ImoNumber'])
+        {
+            $ship->setImo( $newData['ImoNumber'] );
+        }
+        if($ship->getName() !== trim($newData['Name']))
+        {
+            $ship->setName( trim($newData['Name']) );
+        }
+
+        $this->entityManager->persist( $ship );
     }
 
     private function saveShipData( array $data ): void
@@ -401,41 +466,58 @@ class AisStreamService extends
         $this->processAisMessage( $data, $ship );
     }
 
-    private function fetchStatusAktiv():NetProjektStatus
-    {
-        return $this->entityManager->getRepository( NetProjektStatus::class )
-                                   ->findOneBy( [ 'bezeichnung' => 'aktiv' ] );
-    }
-
-    private function fetchShipType($typeId):?NetShipTyp
-    {
-        return $this->entityManager->getRepository( NetShipTyp::class )
-                                   ->findOneBy(['id' => $typeId ]);
-    }
-
     private function processAisMessage( array $data, $ship ): void
     {
-        if ( $data['MessageType'] === 'PositionReport' )
+        try
         {
-            $pos = $data['Message']['PositionReport'];
-
             $history = new NetShipPositionHistory();
             $history->setNetShipdata( $ship );
-            $history->setLatitude( $pos['Latitude'] );
-            $history->setLongitude( $pos['Longitude'] );
-            $history->setSpeed( $pos['Sog'] ); // Speed over Ground
-            $history->setCourse( $pos['Cog'] ); // Course over Ground
-            $navStatusCode = (int)$pos['NavigationalStatus'];
-            $navStatusEntity = $this->entityManager->getRepository( NetShipNavStatus::class )
-                                                   ->findOneBy( [ 'status' => $navStatusCode ] );
-            if ( $navStatusEntity )
-            {
-                $history->setNavstat( $navStatusEntity );
-                $history->setZone( 'aisStream' );
-            }
-            $history->setTimestamp( new \DateTimeImmutable() );
 
+            if ( in_array($data['MessageType'], ['PositionReport', 'StandardClassBPositionReport']) )
+            {
+                $pos = $data['Message']['PositionReport'];
+                $history->setLatitude( $pos['Latitude'] );
+                $history->setLongitude( $pos['Longitude'] );
+                $history->setSpeed( $pos['Sog'] ); // Speed over Ground
+                $history->setCourse( $pos['Cog'] ); // Course over Ground
+
+                // Class B hat nicht immer einen NavigationalStatus, daher prüfen
+                if ( isset($pos['NavigationalStatus']) )
+                {
+                    $navStatusCode = (int)$pos['NavigationalStatus'];
+                    $navStatusEntity = $this->entityManager->getRepository( NetShipNavStatus::class )
+                                                           ->findOneBy( [ 'status' => $navStatusCode ] );
+                    if ( $navStatusEntity )
+                    {
+                        $history->setNavstat( $navStatusEntity );
+                        $history->setZone( 'aisStream' );
+                    }
+                }
+                $history->setTimestamp( new \DateTimeImmutable() );
+            }
+
+            if ( $data['MetaData'] )
+            {
+                if ( $data['MetaData']['latitude'] && null !== $data['MetaData']['latitude']
+                     && $data['MetaData']['longitude']
+                     && null !== $data['MetaData']['longitude']
+                     && $data['MessageType'] !== 'PositionReport' )
+                {
+                    $history->setLatitude( $data['MetaData']['latitude'] );
+                    $history->setLongitude( $data['MetaData']['longitude'] );
+                }
+                if ( $data['MetaData']['time_utc'] )
+                {
+                    $messageTimestamp = date( 'Y-m-dTH:i:s', strtotime( $data['MetaData']['time_utc'] ) );
+                    $history->setTimestamp( new \DateTimeImmutable( $messageTimestamp ) );
+                }
+            }
             $this->entityManager->persist( $history );
+            $this->entityManager->flush();
+        }
+        catch (\Throwable $e)
+        {
+            $this->logger->info('Fehler beim Log Speichern: ' . $e->getMessage() );
         }
     }
 
@@ -448,7 +530,7 @@ class AisStreamService extends
         {
             $mmsi = $ship->getMmsi();
 
-            if ( $mmsi && (int)$mmsi !== 0 )
+            if ( $mmsi && (int)$mmsi !== 0 && preg_match('/^\d{9}$/', $mmsi) )
             {
                 $relevantMmsis[] = (string)$mmsi;
             }
@@ -466,6 +548,50 @@ class AisStreamService extends
             $this->entityManager->clear();
             gc_collect_cycles(); // Erzwingt PHP-Müllabfuhr
             $this->logger->debug( "Memory Cleanup: " . round( memory_get_usage() / 1024 / 1024, 2 ) . " MB" );
+        }
+    }
+
+    private function fetchShipType( $shipType )
+    {
+        $netShipType = $this->entityManager->getRepository(NetShipTyp::class);
+        return $netShipType->findOneBy( [ 'name' => $shipType ] );
+    }
+
+    /**
+     * Hilfsmethode: Speichert den aktuellen Status in der Datenbank
+     */
+    private function updateStatus( string $state, ?string $message = null ): void
+    {
+        // 1. Prüfen, ob der Manager noch offen ist. Wenn nicht: Reset.
+        if ( ! $this->entityManager->isOpen() )
+        {
+            $this->entityManager = $this->registry->resetManager();
+            $this->logger->info('EntityManager wurde nach einem Fehler zurückgesetzt.');
+        }
+
+        try
+        {
+            $statusRepo = $this->entityManager->getRepository( AisStreamStatus::class );
+            // Versuche den letzten Eintrag zu holen, sonst lege neuen an
+            $status = method_exists( $statusRepo, 'findLastEntry' ) ? $statusRepo->findLastEntry() : null;
+
+            if ( ! $status )
+            {
+                $status = new AisStreamStatus();
+            }
+
+            $status->setStatus( $state );
+
+            $status->setMessage( $message ?? '' );
+
+            $status->setUpdatedAt( new \DateTimeImmutable() );
+
+            $this->entityManager->persist( $status );
+            $this->entityManager->flush();
+        }
+        catch ( \Throwable $e )
+        {
+            $this->logger->error( "Fehler beim Aktualisieren des AIS-Status: " . $e->getMessage() );
         }
     }
 }

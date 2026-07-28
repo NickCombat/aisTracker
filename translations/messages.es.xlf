@@ -2753,6 +2753,262 @@
                 <source>Project Overview Map</source>
                 <target>Mapa de vista general del proyecto</target>
             </trans-unit>
+            <trans-unit id="Reedereien">
+                <source>Reedereien</source>
+                <target>Navieras</target>
+            </trans-unit>
+            <trans-unit id="Profil bearbeiten">
+                <source>Profil bearbeiten</source>
+                <target>Editar perfil</target>
+            </trans-unit>
+            <trans-unit id="Profilbild hochladen">
+                <source>Profilbild hochladen</source>
+                <target>Subir foto de perfil</target>
+            </trans-unit>
+            <trans-unit id="Bestellungen Übersicht">
+                <source>Bestellungen Übersicht</source>
+                <target>Resumen de pedidos</target>
+            </trans-unit>
+            <trans-unit id="- Alle offenen Lieferanten -">
+                <source>- Alle offenen Lieferanten -</source>
+                <target>- Todos los proveedores pendientes -</target>
+            </trans-unit>
+            <trans-unit id="Link zum Artikel">
+                <source>Link zum Artikel</source>
+                <target>Enlace al artículo</target>
+            </trans-unit>
+            <trans-unit id="Leer lassen für keine Wartung">
+                <source>Leer lassen für keine Wartung</source>
+                <target>Dejar en blanco para omitir mantenimiento</target>
+            </trans-unit>
+            <trans-unit id="Letzte Wartung / Einbau">
+                <source>Letzte Wartung / Einbau</source>
+                <target>Último mantenimiento / instalación</target>
+            </trans-unit>
+            <trans-unit id="Wann wurde das Teil zuletzt geprüft oder eingebaut?">
+                <source>Wann wurde das Teil zuletzt geprüft oder eingebaut?</source>
+                <target>¿Cuándo se revisó o instaló la pieza por última vez?</target>
+            </trans-unit>
+            <trans-unit id="Nächste Wartung (Manuell / Auto)">
+                <source>Nächste Wartung (Manuell / Auto)</source>
+                <target>Siguiente mantenimiento (Manual / Auto)</target>
+            </trans-unit>
+            <trans-unit id="Wird automatisch berechnet. Kann manuell geändert werden.">
+                <source>Wird automatisch berechnet. Kann manuell geändert werden.</source>
+                <target>Se calcula automáticamente. Se puede cambiar manualmente.</target>
+            </trans-unit>
+            <trans-unit id="Abgang nach">
+                <source>Abgang nach</source>
+                <target>Salida hacia</target>
+            </trans-unit>
+            <trans-unit id="Wartungsintervall (Tage)">
+                <source>Wartungsintervall (Tage)</source>
+                <target>Intervalo de mantenimiento (Días)</target>
+            </trans-unit>
+            <trans-unit id="-- Option wählen --">
+                <source>-- Option wählen --</source>
+                <target>-- Seleccionar opción --</target>
+            </trans-unit>
+            <trans-unit id="Suchen">
+                <source>Suchen</source>
+                <target>Buscar</target>
+            </trans-unit>
+            <trans-unit id="Sprache">
+                <source>Sprache</source>
+                <target>Idioma</target>
+            </trans-unit>
+            <trans-unit id="bestellt">
+                <source>bestellt</source>
+                <target>pedido</target>
+            </trans-unit>
+            <trans-unit id="Bestellung bearbeiten">
+                <source>Bestellung bearbeiten</source>
+                <target>Editar pedido</target>
+            </trans-unit>
+            <trans-unit id="Fehler: Keine weiteren Seiten mit Bestellungen vorhanden.">
+                <source>Fehler: Keine weiteren Seiten mit Bestellungen vorhanden.</source>
+                <target>Error: No hay más páginas de pedidos disponibles.</target>
+            </trans-unit>
+            <trans-unit id="Suchbegriff...">
+                <source>Suchbegriff...</source>
+                <target>Término de búsqueda...</target>
+            </trans-unit>
+            <trans-unit id="ges. Preis (Bestellung)">
+                <source>ges. Preis (Bestellung)</source>
+                <target>Precio total (Pedido)</target>
+            </trans-unit>
+            <trans-unit id="Suche...">
+                <source>Suche...</source>
+                <target>Buscar...</target>
+            </trans-unit>
+            <trans-unit id="Lagerartikel bearbeiten">
+                <source>Lagerartikel bearbeiten</source>
+                <target>Editar artículo de stock</target>
+            </trans-unit>
+            <trans-unit id="Diesen Artikel einem Projekt hinzufügen">
+                <source>Diesen Artikel einem Projekt hinzufügen</source>
+                <target>Añadir este artículo a un proyecto</target>
+            </trans-unit>
+            <trans-unit id="LagerArtikel Löschen">
+                <source>LagerArtikel Löschen</source>
+                <target>Eliminar artículo de stock</target>
+            </trans-unit>
+            <trans-unit id="Möchten Sie diesen Lagerartikel wirklich löschen?">
+                <source>Möchten Sie diesen Lagerartikel wirklich löschen?</source>
+                <target>¿Realmente desea eliminar este artículo de stock?</target>
+            </trans-unit>
+            <trans-unit id="settings.master_data">
+                <source>settings.master_data</source>
+                <target>Ajustes y Datos maestros</target>
+            </trans-unit>
+            <trans-unit id="Komponententypen">
+                <source>Komponententypen</source>
+                <target>Tipos de componentes</target>
+            </trans-unit>
+            <trans-unit id="Vorhandene Schiffstypen">
+                <source>Vorhandene Schiffstypen</source>
+                <target>Tipos de buques existentes</target>
+            </trans-unit>
+            <trans-unit id="Neuen Schiffstyp anlegen">
+                <source>Neuen Schiffstyp anlegen</source>
+                <target>Crear nuevo tipo de buque</target>
+            </trans-unit>
+            <trans-unit id="Vorhandene Flaggenstaaten">
+                <source>Vorhandene Flaggenstaaten</source>
+                <target>Estados de bandera existentes</target>
+            </trans-unit>
+            <trans-unit id="Neuen Flaggenstaat anlegen">
+                <source>Neuen Flaggenstaat anlegen</source>
+                <target>Crear nuevo estado de bandera</target>
+            </trans-unit>
+            <trans-unit id="System-Parameter">
+                <source>System-Parameter</source>
+                <target>Parámetros del sistema</target>
+            </trans-unit>
+            <trans-unit id="Möchten Sie diesen Parameter wirklich löschen?">
+                <source>Möchten Sie diesen Parameter wirklich löschen?</source>
+                <target>¿Realmente desea eliminar este parámetro?</target>
+            </trans-unit>
+            <trans-unit id="Vorhandene Komponententypen">
+                <source>Vorhandene Komponententypen</source>
+                <target>Tipos de componentes existentes</target>
+            </trans-unit>
+            <trans-unit id="Neuen Komponententyp anlegen">
+                <source>Neuen Komponententyp anlegen</source>
+                <target>Crear nuevo tipo de componente</target>
+            </trans-unit>
+            <trans-unit id="OdmqYra" resname="AIS Stream Monitor">
+                <source>AIS Stream Monitor</source>
+                <target>Monitor de flujo AIS</target>
+            </trans-unit>
+            <trans-unit id="settings.maretim_projekt">
+                <source>settings.maretim_projekt</source>
+                <target>Marítimo &amp; Proyectos</target>
+            </trans-unit>
+            <trans-unit id="setting.system_logistik">
+                <source>setting.system_logistik</source>
+                <target>Sistema &amp; Logística</target>
+            </trans-unit>
+            <trans-unit id="Administration">
+                <source>Administration</source>
+                <target>Administración</target>
+            </trans-unit>
+            <trans-unit id="Vorhandene Häfen">
+                <source>Vorhandene Häfen</source>
+                <target>Puertos existentes</target>
+            </trans-unit>
+            <trans-unit id="Kürzel">
+                <source>Kürzel</source>
+                <target>Abreviatura</target>
+            </trans-unit>
+            <trans-unit id="Land">
+                <source>Land</source>
+                <target>País</target>
+            </trans-unit>
+            <trans-unit id="Flagge (Auswahl)">
+                <source>Flagge (Auswahl)</source>
+                <target>Bandera (Selección)</target>
+            </trans-unit>
+            <trans-unit id="Neuen Hafen anlegen">
+                <source>Neuen Hafen anlegen</source>
+                <target>Crear nuevo puerto</target>
+            </trans-unit>
+            <trans-unit id="Einstellungen Reedereien">
+                <source>Einstellungen Reedereien</source>
+                <target>Ajustes de navieras</target>
+            </trans-unit>
+            <trans-unit id="Vorhandene Reedereien">
+                <source>Vorhandene Reedereien</source>
+                <target>Navieras existentes</target>
+            </trans-unit>
+            <trans-unit id="Flagge / Kürzel">
+                <source>Flagge / Kürzel</source>
+                <target>Bandera / Abreviatura</target>
+            </trans-unit>
+            <trans-unit id="Sitz">
+                <source>Sitz</source>
+                <target>Sede social</target>
+            </trans-unit>
+            <trans-unit id="Wappen (Bild)">
+                <source>Wappen (Bild)</source>
+                <target>Escudo (Imagen)</target>
+            </trans-unit>
+            <trans-unit id="Leitung">
+                <source>Leitung</source>
+                <target>Dirección</target>
+            </trans-unit>
+            <trans-unit id="Gründung">
+                <source>Gründung</source>
+                <target>Fundación</target>
+            </trans-unit>
+            <trans-unit id="Geschäftsfeld">
+                <source>Geschäftsfeld</source>
+                <target>Área de negocio</target>
+            </trans-unit>
+            <trans-unit id="Webseite">
+                <source>Webseite</source>
+                <target>Sitio web</target>
+            </trans-unit>
+            <trans-unit id="Neue Reederei hinzufügen">
+                <source>Neue Reederei hinzufügen</source>
+                <target>Añadir nueva naviera</target>
+            </trans-unit>
+            <trans-unit id="Wappen (Upload)">
+                <source>Wappen (Upload)</source>
+                <target>Escudo (Subida)</target>
+            </trans-unit>
+            <trans-unit id="Vorhandene Mengeneinheiten">
+                <source>Vorhandene Mengeneinheiten</source>
+                <target>Unidades de medida existentes</target>
+            </trans-unit>
+            <trans-unit id="Einheit (Kürzel)">
+                <source>Einheit (Kürzel)</source>
+                <target>Unidad (Abreviatura)</target>
+            </trans-unit>
+            <trans-unit id="Neue Mengeneinheit anlegen">
+                <source>Neue Mengeneinheit anlegen</source>
+                <target>Crear nueva unidad de medida</target>
+            </trans-unit>
+            <trans-unit id="Name (z.B. Kilogramm)">
+                <source>Name (z.B. Kilogramm)</source>
+                <target>Nombre (p. ej., Kilogramo)</target>
+            </trans-unit>
+            <trans-unit id="Kürzel (z.B. kg)">
+                <source>Kürzel (z.B. kg)</source>
+                <target>Abreviatura (p. ej., kg)</target>
+            </trans-unit>
+            <trans-unit id="Vorhandene Kostenstellen">
+                <source>Vorhandene Kostenstellen</source>
+                <target>Centros de costes existentes</target>
+            </trans-unit>
+            <trans-unit id="Neue Kostenstelle anlegen">
+                <source>Neue Kostenstelle anlegen</source>
+                <target>Crear nuevo centro de costes</target>
+            </trans-unit>
+            <trans-unit id="Registrierte Benutzer">
+                <source>Registrierte Benutzer</source>
+                <target>Usuarios registrados</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

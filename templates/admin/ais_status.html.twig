@@ -30,6 +30,22 @@
     </style>
 {% endblock %}
 
+{% block submenue %}
+    <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+        <div class="sidebar-sticky">
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <div class="text-truncate">
+                        <b>{{ 'calendar.week_short'|trans({ '%weekNumber%': "now"|date("W") }) }}</b> <span id="date-time-display" data-days-json="{{ translated_days|json_encode }}"></span>
+                    </div>
+                </li>
+                <li><a class="nav-link d-flex align-items-center" href="{{ path('app_recover_ais_api_daten') }}">{{ 'Recover AIS'|trans }}</a></li>
+                <li><a class="nav-link d-flex align-items-center" href="{{ path('ais_control') }}">{{ 'AIS Stream Monitor'|trans }}</a></li>
+            </ul>
+        </div>
+    </nav>
+{% endblock %}
+
 {% block body %}
     <div class="container mt-4">
         <div class="d-flex justify-content-between align-items-center mb-4">
@@ -38,6 +54,22 @@
                 <i class="fas fa-arrow-left"></i> Zurück
             </a>
         </div>
+
+        {% if aisStatus and aisStatus.status != 'online' %}
+            <div class="alert alert-danger d-flex align-items-center mb-4" role="alert">
+                <i class="fas fa-exclamation-triangle fa-2x me-3"></i>
+                <div>
+                    <h5 class="alert-heading mb-1">AIS Stream Störung!</h5>
+                    <p class="mb-0">
+                        <strong>Status:</strong> {{ aisStatus.status|upper }} |
+                        <strong>Fehler:</strong> {{ aisStatus.message ?? 'Unbekannt' }}
+                    </p>
+                    {% if aisStatus.updatedAt %}
+                        <small class="text-muted">Letzte Meldung: {{ aisStatus.updatedAt|date('d.m.Y H:i:s') }}</small>
+                    {% endif %}
+                </div>
+            </div>
+        {% endif %}
 
         <div class="row">
             <div class="col-md-4">
@@ -86,8 +118,7 @@
                     <div class="card-header fw-bold">{{ 'Informationen'|trans }}</div>
                     <div class="card-body">
                         <h5>{{ 'Funktionsweise'|trans }}</h5>
-                        <p>{{ 'ais.stream'|trans }}</p>
-
+                        <p>{{ 'ais.stream'|trans|raw }}</p>
                         <div class="alert alert-info">
                             <i class="fas fa-info-circle"></i> <strong>{{ 'Watchdog-Info'|trans }}:</strong>
                             {{'aisstream.Cronjob.neu'|trans}}
@@ -97,7 +128,7 @@
                         <table class="table table-sm">
                             <tr>
                                 <td>{{ 'Dienst'|trans }}:</td>
-                                <td>aisstream.io (v0)</td>
+                                <td>aisstream.io (v0) BETA</td>
                             </tr>
                             <tr>
                                 <td>{{ 'Filtertyp'|trans }}:</td>
